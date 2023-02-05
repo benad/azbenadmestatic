@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>JavaBeans - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">JavaBeans</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>For the longest time I kept seeing the word "bean" in Java libraries and frameworks, and still couldn't really grasp what is a "JavaBean".</p>
+
+<p>The <a href="http://java.sun.com/docs/books/tutorial/javabeans/whatis/beanDefinition.html">official</a> definition is that a Bean is a component, that is a "self-contained, reusable software unit[s]". Well, that was vague. So when you trying to grasp what "Entreprise JavaBeans" mean, well you're lost.</p>
+
+<p>A similar concept I found in another language was the structure in the C language. It is simply a block of memory that is <i>structured</i>, that is has multiple fields you can read or write.</p>
+
+<p>If you consider the environment of Object Oriented Design, classes usually represent modularity and functionality, whereas components would represent more a service (as described in my <a href="http://benad.livejournal.com/2440.html">previous post</a>) or a block of data you can pass around in function parameters and such.</p>
+
+<p>If you go back to my example of a structure in C, you'll notice that you cannot really use a C structure to hold and maintain a "service". Also, you could always make in Java something equivalent to a C structure:</p>
+
+<pre>public class FullName {
+  public String firstName;
+  public String lastName;
+}</pre>
+
+<p>So... That's it? Since we have a class, we could "wrap" <tt>firstName</tt> and <tt>lastName</tt> inside a functional interface:</p>
+
+<pre>public class FullName {
+  private String firstName;
+  private String lastName;
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String f) { firstName = f; }
+  public String getLastName() { return lastName; }
+  public void setLastName(String l) { lastName = l; }
+}</pre>
+
+<p>Design-wise, it's not much better, as any class using <tt>FullName</tt> still assume that it has those two properties (firstName and lastName). A difference though is that using functions to get/set parameters gives you the liberty of changing the internal way the properties are stored, as long as your accessor functions (<tt>get*</tt> and <tt>set*</tt>) are not changed.</p>
+
+<p>But there are many other gains to use such wrapper functions in a component compared to not using wrapper functions at all (as in C):</p>
+
+<p><b>Monitors</b>: As soon as you change one of the interval values of a component, it could notify other objects that the component changed.</p>
+
+<p><b>Validation</b>: If the value you pass in the write function of a component's property is invalid, the function could rise a runtime exception.</p>
+
+<p><b>Persistence</b>: The properties of the component do not have to reside in memory. They could be stored on a file on disk or in a database.</p>
+
+<p><b>Proxy</b>: The component could be encapsulated by another class (with the same interface) to intercept all the read/write functions and perform additional logic. Your component could exist on a different machine, and the proxy you use is only a proxy to the real component on the other machine.</p>
+
+<p>And this brings us back to the original question: What is a JavaBean? Simply put, a JavaBean is a <b>design pattern</b>. If you always name you accessor functions the same way, than a library could figure out at run time what are the properties of your component (this is called "introspection"). For JavaBeans, the read function is named like <tt>getFirstName</tt> and the write function like <tt>setFirstName</tt>. Also, the object type returned by the read function must be the same as the only parameter of the write function.</p>
+
+<p>So, that's it for now. There are a lot of things built on top of that simple design pattern, and in the following posts I'll present some of them.</p>
+
+<p>References:</p>
+<ul>
+<li><a href="http://java.sun.com/j2se/1.5.0/docs/guide/beans/index.html">JavaBeans</a></li>
+<li><a href="http://java.sun.com/j2se/1.5.0/docs/guide/reflection/index.html">Reflection</a> (for proxies)</li>
+</ul>
+
+                <p>Published on September 24, 2005 at 14:52 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2005/9/21/ad-hoc-task-list">Ad hoc task list</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2005/9/27/practical-distributed-version-control">Practical Distributed Version Control</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2005/9/24/javabeans";
+this.page.identifier = "https://benad.me/blog/2005/9/24/javabeans";
+this.page.title = "JavaBeans";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

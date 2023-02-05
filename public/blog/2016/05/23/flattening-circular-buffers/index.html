@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Flattening Circular Buffers - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Flattening Circular Buffers</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>A few weeks ago I discovered <a href="https://github.com/michaeltyson/TPCircularBuffer">TPCircularBuffer</a>, a <a href="https://en.wikipedia.org/wiki/Circular_buffer">circular buffer</a> implementation for <a href="https://en.wikipedia.org/wiki/Darwin_%28operating_system%29">Darwin</a> operating system implementations, including Mac OS X and iOS. Now, I&rsquo;ve implemented circular buffers before, so I though there wasn&rsquo;t much need for yet another circular buffer implementation (let alone one specific to iOS), until I noticed something very interesting in the code.</p>
+
+<p>A trick TPCircularBuffer uses is to map two adjacent memory blocks to the same buffer. The buffer holds the actual data, and the virtual memory manager ensures that both maps contain the exact same data, since effectively both virtual memory blocks remaps to the same memory. This makes things a lot easier than my naive implementations: Rather than dealing with convoluted pointer arithmetics each time the producer or consumer reads or writes a sequence of values that cross the end of the buffer, a simple linear read or write works. In fact, the pointers from that doubly-mapped memory can be safely given to any normal function that accepts a pointer, removing the need to make memory copies before each use of the buffer by an external function.</p>
+
+<p>In fact, this optimization is so common that a previous version of the Wikipedia page for circular buffers <a href="https://web.archive.org/web/20081011095409/http://en.wikipedia.org/wiki/Ring_buffer#Exemplary_POSIX_Implementation">had some sample code</a> using common POSIX functions. There&rsquo;s even a 10-year-old <a href="http://vrb.sourceforge.net/">VRB - Virtual Ring Buffer</a> library for Linux systems. As for Windows, I&rsquo;ve yet to seen some good sample code, but you can do the equivalent with <a href="https://msdn.microsoft.com/en-us/library/aa366537%28VS.85%29.aspx">CreateFileMapping</a> and <a href="https://msdn.microsoft.com/en-us/library/aa366761%28VS.85%29.aspx">MapViewOfFile</a>.</p>
+
+<p>Both Wikipedia&rsquo;s and VRB&rsquo;s implementations can be misleading, and not very portable though. On Darwin, and I suspect BSD and many other systems, the mapped memory must be fully aligned to the size of a memory page (&rdquo;<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724958%28v=vs.85%29.aspx">allocation granularity</a>&rdquo; in Windows terms). On POSIX, that means using the value of <code>sysconf(_SC_PAGESIZE)</code>. Since most of the times the page size is a power of 2, that could explain the otherwise strange <code>buffer-&gt;count_bytes = 1UL &lt;&lt; order</code> from Wikipedia&rsquo;s sample code.</p>
+
+<p>By the way, I&rsquo;d like to reiterate how poor the built-in Mac OS X documentation is for POSIX and UNIX-like functions. Though it does warn pretty well about page size alignment and the risks involved with <code>MAP_FIXED</code> of <code>mmap</code>, the rest of the documentation fails to mention how to set permissions of the memory map. Thankfully, the latest Linux man pages for the same functions are far better documented.</p>
+
+                <p>Published on May 23, 2016 at 14:01 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2016/04/26/the-static-blog/">The Static Blog</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2016/07/07/good-enough-wireless-audio/">Good Enough Wireless Audio</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2016/05/23/flattening-circular-buffers/";
+this.page.identifier = "https://benad.me/blog/2016/05/23/flattening-circular-buffers/";
+this.page.title = "Flattening Circular Buffers";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

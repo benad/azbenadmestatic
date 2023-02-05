@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Programming Fonts and Ligatures - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Programming Fonts and Ligatures</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Many programmers, myself included, can be picky about what font we use when writing code. Normally, typefaces made for English and other Latin languages have characters of varying width and that, without context, can be ambiguous. For as long as we needed to display unambigous code that aligns with whitespaces, we needed programming fonts. In the early days of personal computing, magazines would have a print out of some programs you can enter on your computer, and since a single typo could break the code, special care was taken about how every single character in the chosen font should be clear. For example, see <a href="https://archive.org/details/1984-07-compute-magazine/page/n57/mode/2up">those pages from 1984&rsquo;s Compute magazine</a>.</p>
+
+<p>When I started programming, I was on a Macintosh&rsquo;s tiny 512 x 342 pixel screen, so of course my font of choice was Monaco at 9 points. That font was very readable and could fit a &ldquo;console typical&rdquo; 80 columns and 25 rows of characters, even while taking into account the spaced taken by the Macintosh menu bar and window border. Here&rsquo;s a <a href="https://1drv.ms/u/s!Ah9Uh_PgbeBzj75K3BK7qEZJFCYtIg">screenshot of a full screen&rsquo;s worth of text with Monaco 9 on the Macintosh</a>, using <a href="https://en.wikipedia.org/wiki/BBEdit">BBEdit</a>. You can try it yourself on <a href="https://jamesfriend.com.au/pce-js/pce-js-apps/">this online Macintosh emulator</a>.</p>
+
+<p>For many years I used Monaco 9. Being a bitmap font, it remained &ldquo;sharp&rdquo; yet readable, even while the computer monitors&rsquo; sizes that I used gradually increased. But with the introduction of &ldquo;UI scaling&rdquo;, every font moving to <a href="https://en.wikipedia.org/wiki/TrueType">TrueType</a> and <a href="https://en.wikipedia.org/wiki/Subpixel_rendering">subpixel rendering</a>, and Monaco being built in only Macs, I had to start moving to some other font.</p>
+
+<p>I first moved to <a href="https://www.marksimonson.com/fonts/view/anonymous-pro">Mark Simonson&rsquo;s Anonymous Pro</a>, a font that was expressily designed to be similar to Monaco, but with a more permissive distribution license. While it does have embedded bitmap variants at some specific sizes, I generally used it with subpixel rendering regardless.</p>
+
+<p>It was much later that, with <a href="https://www.jetbrains.com/lp/mono/">JetBrains&rsquo; own Mono font</a>, I first saw a programming font that had programming-specific ligatures, and initially I disliked it. I was vaguely familiar with <a href="https://en.m.wikipedia.org/wiki/Ligature_%28writing%29">font ligatures</a> in TrueType fonts, as showcased with the <a href="https://en.m.wikipedia.org/wiki/Zapfino">Zapfino font</a>, bundled with macOS since its early beta days. Basically, certain sequences of characters would be displayed differently. For a programming font, this goes against non-ambuigity: The ligature would not look exactly the same as the individual character seqence that formed it. The most common example is the sequence &ldquo;!=&rdquo; (which means <a href="https://en.wiktionary.org/wiki/!%3D">not equal</a> in most programming languages inspired by B and its successors) would be displayed as &ldquo;≠&rdquo; (similar to <a href="https://en.wiktionary.org/wiki/%E2%89%A0">Unicode U+2260</a>), but with a width identical as two monospaced characters. From looking at &ldquo;≠&rdquo;, you can&rsquo;t really guess that it actually represents the sequence &ldquo;!=&rdquo;, so it&rsquo;s not great to use in a printed or picture form.</p>
+
+<p>And yet, I&rsquo;ve grown to like those &ldquo;programming font ligatures&rdquo;. It was with the <a href="https://github.com/microsoft/cascadia-code#font-features">code ligatures of Cascadia Code</a> that made me appreciate how more pleasant it is to look at code when ligatures are used to display semantic significance. And the fonts I mentioned (JetBrains Mono and Cascadia Code) are far from the only programming fonts that support ligatures. If you browse <a href="https://www.programmingfonts.org/">www.programmingfonts.org</a>, you can filter down to all fonts that support it (the arrow button on the top-left). It should noted that Cascadia Code has &ldquo;horizontal long line&rdquo; ligatures that don&rsquo;t display well on all browsers, but do work well on Chromium-based ones, including what is used by <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</p>
+
+<p>Of course, I keep the habit of using disabling ligatures (or switch to a font that doesn&rsquo;t support them) prior to taking a screenshot, through I find sending screenshots of plain test kind of <em>rude</em> anyway&hellip;</p>
+
+                <p>Published on August 1, 2022 at 21:16 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2022/05/08/the-strange-case-of-the-swiftpoint-gt-mouse/">The Strange Case of the Swiftpoint GT Mouse</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2022/09/07/the-slow-hacker/">The Slow Hacker</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2022/08/01/programming-fonts-and-ligatures/";
+this.page.identifier = "https://benad.me/blog/2022/08/01/programming-fonts-and-ligatures/";
+this.page.title = "Programming Fonts and Ligatures";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

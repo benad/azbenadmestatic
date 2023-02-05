@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>DIY Backup - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">DIY Backup</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>While in the past I did recommend <a href="http://www.code42.com/crashplan/">CrashPlan</a> as an online backup solution, I stopped using it in December. At first I used it because their multi-year, unlimited plans had reasonable prices, and was the only online backup (back in 2011) that had client-side encryption support. But over the years I ran into multiple major issues. In 2013, they started <a href="http://support.code42.com/CrashPlan/4/Troubleshooting/What_Is_Not_Backing_Up">excluding backing up iOS backups done in iTunes</a> in a transparent background update, even though they would <a href="https://twitter.com/crashplan/status/380445125257613312">publicly say otherwise</a>. In fact, that hidden file exclusion list was pushed from their "enterprise" version, which has now moved to a much nicer <a href="https://support.code42.com/Release_Notes/Code42_Platform/5.0">version 5</a> while they abandoned their home users to version 4. In November, their Linux client started requiring Java 1.7, so my older client running in 1.6 kept downloading updates and failing to install it until the hard drive was full. Their pricing just kept increasing over time, making it difficult for me to keep reniewing.</p>
+
+<p>I moved to <a href="https://www.idrive.com/">iDrive</a>, which is half the cost of CrashPlan and works pretty well, though I'm still a bit worried that I have to trust client-side encryption to some closed-source software. Also, if you back up anything beyond 1 TB their pricing becomes punitive.</p>
+
+<p>The main issue that I have with all those backup services is that your backups become locked-in into online storage plans that are more expensive than competing generic cloud storage providers, and your valuable backups are held hostage if they increase their pricing. Even <a href="https://www.tarsnap.com/">tarsnap</a>, with its open-source client for the paranoid, locks you in an expensive storage plan, since the client requires some closed-source server software that only they host. I miss the days of older backup software like <a href="https://en.wikipedia.org/wiki/Backup_%28software%29">MobileMe Backup</a>, where the backup software was somewhat separate from the actual storage solution.</p>
+
+<p><a href="https://www.arqbackup.com/">Arq Backup</a> looks more like this traditional backup software I was looking for. It can back up to <a href="https://www.arqbackup.com/features/">a handful of cloud storage providers</a>, with different pricing models, and many with free initial storage plans if you have small backups. The software is $40 per machine, and then you're free to pick any support cloud storage. The software isn't open-source, but the <a href="http://sreitshamer.github.io/arq_restore/">recovery software</a> is <a href="https://github.com/sreitshamer/arq_restore">open-source</a> and <a href="http://www.haystacksoftware.com/arq/s3_data_format.txt">documented</a>, so you can vouch for its encryption to some extent.</p>
+
+<p>But what if you're on Linux, or insist on an open-source solution (especially for the encryption part)? If you simply want to back up some files once, with no history, you can combine <a href="https://vgough.github.io/encfs/">encfs</a>, in "reverse" mode to have an encrypted view of your existing files, with <a href="http://rclone.org/">Rclone</a>. Note that with this approach extended file information may be lost in the transfer. If you want a more thourough versioned backup solution, <a href="http://duplicity.nongnu.org/index.html">Duplicity</a> should work fine. It encrypts the files with GPG, and does file-level binary deltas to make backup files as small as possible. If duplicity doesn't support your cloud storage directly, you can store the backups to disk and sync them with Rclone. To make using Duplicity easier, you can also use the wrapper tool <a href="http://duply.net/">duply</a>.</p>
+
+<p>As for what cloud storage provider to use, it depends on your needs. If you can fit your backups in less than about 15 GB, you can use the free version of <a href="https://www.google.com/drive/">Google Drive</a>. If you want a flexible pricing and good performance at the lowest cost, <a href="https://cloud.google.com/storage-nearline/">Google Nearline</a> looks like a great deal at 0.01$ per GB per month. If you already have <a href="https://products.office.com/office-365-home">Office 365</a>, then you already have 1 TB of OneDrive, though downloads can be a bit slow. The Unlimited plan of <a href="https://www.amazon.com/clouddrive/">Amazon Cloud Drive</a> has good transfer speeds and is worry-free, though Duplicity doesn't support it.</p>
+
+                <p>Published on February 24, 2016 at 22:56 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2015/11/9/keepass-password-management-apps">KeePass: Password Management Apps</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2016/3/2/amazon-cloud-drive-backend-for-duplicity">Amazon Cloud Drive Backend for Duplicity</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2016/2/24/diy-backup";
+this.page.identifier = "https://benad.me/blog/2016/2/24/diy-backup";
+this.page.title = "DIY Backup";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

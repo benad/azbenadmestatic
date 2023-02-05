@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Modern Command-Line Tools - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Modern Command-Line Tools</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Having used so many different Linux and UNIX-like environments, I started to really appreciate how useful it is to properly learn how to use the POSIX shell (and a few of the more standard GNU extensions). At some point though, typing convulated combinations of <code>find</code>, <code>grep</code>, <code>awk</code> and <code>sed</code> commands gets annoying.</p>
+
+<p>In the past 10 years of so, the modern command-line environment is less worried about the UNIX philosophy of small tools built around plain text. And if they do use plain text, they tend to support structured formats like JSON. This means that they&rsquo;re more comfortable in fully using ANSI color codes and UTF-8 formatting when the output is done to the console. They also depend less on system libraries and are often large binaries, especially when built using Go or Rust.</p>
+
+<p>Here are a few of my favorite modern tools I recently started to use. Of course, there are lots more, for example those listed in <a href="https://github.com/ibraheemdev/modern-unix">ibraheemdev/modern-unix</a>, but I limited my list to those I frequently use.</p>
+
+<p><strong><a href="https://github.com/magicmonty/bash-git-prompt">bash-git-prompt</a></strong>. To be used specifically with Bash, this changes the shell prompt when you&rsquo;re inside a Git repository to display Git status information.</p>
+
+<p><strong><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a></strong> (command: <code>rg</code>). This tool is basically a recursive grep over many files. While GNU&rsquo;s grep does support a recursive option, ripgrep is easier to use, takes into account <code>.gitignore</code> files, supports UTF-8 automatically, supports many compression formats, has a better colorized output and is much faster.</p>
+
+<p><strong><a href="https://github.com/ClementTsang/bottom">bottom</a></strong> (command: <code>btm</code>).  To quickly look at CPU and memory usage, both <code>top</code> and the more modern <code>htop</code> work quite well. But I would often also want to see other metrics, like network and disk usage in a cross-platform way, and without having to install some big system monitoring tool that runs all the time. <code>btm</code> displays all that, with some interactive graphs, fully colorized and interactive.</p>
+
+<p><strong><a href="https://github.com/sharkdp/bat">bat</a></strong>. A <code>cat</code> replacement or a pager (like <code>more</code> and <code>less</code>), but that has many additional options and supports syntax highlighting of many file types. For example, it can be used as a pager for <code>man</code>, introducing color and UTF-8 characters to its output. It can easily be integrated with other tools, like <code>ripgrep</code>, using the scripts in <a href="https://github.com/eth-p/bat-extras">bat-extras</a>.</p>
+
+<p><strong><a href="https://github.com/dandavison/delta">delta</a></strong>. A colorized viewer of <code>diff</code> and <code>git diff</code>, or can be used on its own to compare two files or directories. Its output displays per-character differences, which is greatly helpful when looking for whitespace-only changes. Also does syntax highliting, similar to <code>bat</code>.</p>
+
+<p><strong><a href="https://github.com/Canop/broot">broot</a></strong> (command: <code>broot</code> or <code>br</code>). A file navigation interface that makes finding a file in a complex directory structure as simple and quick as possible. It include a file previewer that also works with image files. The <code>br</code> command is actually a shell function that you can install (for example in <code>.bashrc</code>) that makes it possible to run a command on the selected file in the current shell after <code>broot</code> exits. Customization of the &ldquo;run a command in the shell after exit&rdquo; can be a bit difficult; Look at <a href="https://gist.github.com/benad/6cb229670a667adf1f2926fd4097c6c6#file-conf-hjson">my sample configuration file</a> as an example.</p>
+
+<p><strong><a href="https://curlie.io/">curlie</a></strong>. While I really like <a href="https://httpie.org/">HTTPie</a>&rsquo;s command-line syntax, it&rsquo;s still a slow and heavy Python 3 script. Curlie lets you use the HTTPie syntax but runs using <a href="https://curl.haxx.se/">curl</a> instead and reformats the output to make it similar to HTTPie. You can also get the equivalent <code>curl</code> command.</p>
+
+                <p>Published on September 18, 2021 at 14:20 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2021/08/01/from-remote-desktop-to-remote-gaming/">From Remote Desktop to Remote Gaming</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2022/02/12/more-modern-cli-tools/">More Modern CLI Tools</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2021/09/18/modern-command-line-tools/";
+this.page.identifier = "https://benad.me/blog/2021/09/18/modern-command-line-tools/";
+this.page.title = "Modern Command-Line Tools";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>On C&#43;&#43; Operator Overloading - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">On C&#43;&#43; Operator Overloading</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>I already noted before that user-defined labels in programming languages is the simplest form of "Software Design". At the same time, the fact that only a subset of the programming language can be customized is a good thing. When reading some code, one can expect a level of formalism where the reader doesn't fear that base semantics may mean something completely different without a deep knowledge of how the language was customized.</p>
+
+<p>This is where "operator overloading" makes me uneasy. The root idea is simple: A class can be made to support operator operations through function members named in special ways, making class instances be able to behave like a primitive type of a language. For example, you could define a "<code>Fraction</code>" class which can be used in addition, subtraction and so on like a native <code>double</code>.</p>
+
+<p>When operator overloading try to mimic as closely as possible the original semantics of the built-in operators, then everything is fine. But quickly programmers started twisting those semantics. With strings, the "<code>+</code>" operator now means string concatenation. With the <code>cout</code> instance, you use the left bit shift operator "<code>&lt;&lt;</code>" to output strings to the console. It's not so bad through when you overload operators to introduce completely new semantics, but still those are not well self-documented until you see sample code, unlike defining functions with descriptive names.</p>
+
+<p>For some reason, in the C++ language you can overload nearly every single operator, including casting, assignment (<code>a = b</code>), pointer resolution (<code>*a</code>), array index (<code>a[0]</code>) and even function arguments (<code>a(1, 2)</code>). So, of course, programmers used these to completely abuse the semantics to the point where C++ start behaving like other programming languages. For example, it is assumed that the assignment operator produces copies of the instances. Well, many programmers cleverly overloaded various operators to make certain class behave like in Java, which copies <em>references</em>, and add some garbage collection based on reference counting. At this point, a simple "<code>a = b;</code>" statement may act different than the rest of C and C++, just because some overzealous programmer wanted to introduce some garbage collection in the language.</p>
+
+<p>And so, with operator overloading, you can never tell for sure what a statement does unless you know in advance if every since class used in the statement overloads any operator. Worse, in C++ a class can start acting like a pointer and an array at the same time, meaning that you can't really tell what the class is conceptually supposed to represent in term of the "base" C++ concepts.</p>
+
+<p>Operator overloading in C++ makes it too easy for inexperienced programmers to produce unreadable and unmaintainable code. Unless you work with programmers that are willing to have a deep understanding of C++ before writing any code, it would be safer to simply to restrict yourself to a strict subset of the C++ language. At that point, it would be easier to use another programming language altogether.</p>
+
+<p>Below is some sample C++ code of a class abusing operator overloading, to comical effect:</p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;class T&gt;
+class Fraction
+{
+public:
+    Fraction(T a, T b)
+    {
+        this-&gt;a = a;
+        this-&gt;b = b;
+    }
+    double toDouble()
+    {
+        return (double)a / (double)b;
+    }
+    Fraction&lt;T&gt; &amp;operator=(const Fraction&lt;T&gt; &amp;in)
+    {
+        a = in.a;
+        b = in.b;
+        a++; // Surprise!
+        return *this;
+    }
+    T operator[](int pos)
+    {
+        if (pos == 0) {
+            return a;
+        }
+        else if (pos == 1) {
+            return b;
+        }
+        throw "Uh oh";
+    }
+    T operator()(int pos)
+    {
+        return (*this)[pos];
+    }
+    Fraction&lt;T&gt; *operator-&gt;()
+    {
+        return this;
+    }
+    Fraction&lt;T&gt; &amp;operator*()
+    {
+        return *this;
+    }
+private:
+    T a;
+    T b;
+};
+
+int main(int argc, char* argv[])
+{
+    try {
+        Fraction&lt;int&gt; f = Fraction&lt;int&gt;(3, 4);
+        Fraction&lt;int&gt; g = Fraction&lt;int&gt;(1, 2);
+        g = f;
+        // g is still not equal to f here
+
+        cout &lt;&lt; f.toDouble() &lt;&lt; " " &lt;&lt; g.toDouble() &lt;&lt; endl;
+        cout &lt;&lt; f[0] &lt;&lt; " " &lt;&lt; f[1] &lt;&lt; endl;
+        cout &lt;&lt; f(0) &lt;&lt; " " &lt;&lt; f(1) &lt;&lt; endl;
+        cout &lt;&lt; f-&gt;toDouble() &lt;&lt; endl;
+        cout &lt;&lt; (*f).toDouble() &lt;&lt; endl;
+    }
+    catch (const char *s) {
+        cout &lt;&lt; "Got exception: " &lt;&lt; s &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+                <p>Published on May 21, 2013 at 20:00 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2013/4/26/on-c-templates">On C&#43;&#43; Templates</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2013/6/21/on-bashing-c">On Bashing C&#43;&#43;</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2013/5/21/on-c-operator-overloading";
+this.page.identifier = "https://benad.me/blog/2013/5/21/on-c-operator-overloading";
+this.page.title = "On C++ Operator Overloading";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Raspberry Pi: Your Home Linux Server - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Raspberry Pi: Your Home Linux Server</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Looking at the <a href="https://www.raspberrypi.org/">Raspberry Pi web site</a>, you&rsquo;d think that this small Linux-based computer is only useful for robotics and STEM activities for kids. And yet, for the past few months I&rsquo;ve been using it as my home Linux server.</p>
+
+<p>I&rsquo;ve been looking for a long time for a small &ldquo;embedded&rdquo; server I could use as a hub for my home appliances, and something that stays on so that I can &ldquo;phone home&rdquo; remotely. Sure, I could recycle an old PC or laptop, but that would be too noisy or take too much electricity. Even the small <a href="https://en.wikipedia.org/wiki/Intel_Compute_Stick">Intel &ldquo;compute sticks&rdquo;</a> have small fans, and it&rsquo;s unclear if they can support Linux at all.</p>
+
+<p>The Pi is not only cheap (about $40), but runs Linux, is completely fanless and takes little electricity. In my own tests,  it takes between 240 mA (HDMI off) and 270 mA (HDMI on) on a USB 2 5.1V connection, effectively making it use less power than a sleeping Mac mini (1.22 W vs 1.25 W as per its <a href="https://www.apple.com/environment/reports/docs/Macmini_PER_feb2014.pdf">environmental report</a>). As a result, I leave all my devices in standby or sleep mode, and use the Pi to remotely power on devices using <a href="https://en.wikipedia.org/wiki/Wake-on-LAN">WoL packets</a>.</p>
+
+<p>The Pi runs off a micro SD card, making it easy to swap it out with another Linux system or backup. It supports many Linux distributions, and its main supported one, <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>, is based on the latest Debian 9 &ldquo;stretch&rdquo;. It comes built-in with Python 3 and <code>gcc</code>, so it is easy to install Python modules from Debian itself, or compile them using <code>pip3</code>. Running a small Python web service on it has been a breeze.</p>
+
+<p>If you&rsquo;re unfamilliar with Linux, Python or programming in general, don&rsquo;t worry, the Pi was tailored for schools. It has a full graphical desktop, and several tools to learn programming like <a href="https://scratch.mit.edu/">Scratch</a>, <a href="http://thonny.org/">thonny</a>, and various STEM-related tools.</p>
+
+<p>Sure, its 1 GB of RAM makes browsing the web with it slow and limited, while its shared USB 2 bandwidth makes it slow as a large file server or media center, but otherwise it can do a lot, for very cheap. If you want to learn about programming or web server development on Linux, and use that to do cool things in your house, with very little risk, the Raspbian Pi is for you.</p>
+
+                <p>Published on November 6, 2017 at 20:02 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2017/10/12/hello-ipv6/">Hello, IPv6!</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2017/12/29/batteries-and-planned-obsolescence/">Batteries and Planned Obsolescence</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2017/11/06/raspberry-pi-your-home-linux-server/";
+this.page.identifier = "https://benad.me/blog/2017/11/06/raspberry-pi-your-home-linux-server/";
+this.page.title = "Raspberry Pi: Your Home Linux Server";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

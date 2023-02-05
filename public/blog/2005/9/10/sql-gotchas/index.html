@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>SQL Gotchas - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">SQL Gotchas</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>I noticed over the years that a lot of people are writing code to use big relational databases with SQL and complain that "the database is slow". Again and again I would have to give them some training about what things are faster and what things are slower with a relational database.
+<p/>
+Let's take any database with transactions. If you want to insert or update large quantities of data in the database and you use "auto commit", that is every single update flushes the data immediately, your insertions will be several times slower than what it should be. Why? Because update speed in transactions depend on how fast the database flushes the transaction log, which depends on many, many factors (such as the hard drive's average seek time and memory caches). So, if you put several updates in a single transaction, you can update much faster in total. But too many updates per transaction will make the transaction log so big that it will slow down, since the transaction is too big to "fit" in your caches or the seek time, etc.
+<p/>
+Basically, you have this:
+<p/>
+<span class="full-image-block ssNonEditable"><span><img src="http://static.squarespace.com/static/5005d17ae4b0d534734e7aa0/502e8a15e4b063ee260c5ee9/502e8a15e4b063ee260c6063/1335044437393/1000w" alt=""/></span></span>
+<p/>
+So, to have the best update speed, you'll need to experiment.
+<p/>
+Also, badly constructed or too complex SQL queries can significantly slow down your queries. Usually the database may need to resort to creating temporary tables to compute the "steps" needed to have your query's result, so if that temporary table cannot fit into memory and has to be done on disk things get even slower. This is usually the case for sorting and uniqueness conditions.
+<p/>
+Finally, if you use any abstraction layer for your database, for example <a href="http://www.hibernate.org/">Hibernate</a>, <a href="http://ibatis.apache.org/">iBATIS</a> or <a href="http://db.apache.org/torque/">Torque</a>, you'll have to carefully learn how often and when the layer interacts with the database. Often the defaults are tuned for easier development at the cost of (sometimes catastrophic) slower performance.
+<p/>
+How come I wrote all of this without a <i>single</i> example? Because <i>it all depends</i> on so many factors that even with dozens of examples I wouldn't be able to cover everything.
+<p/>
+The lesson is simple: <b><i>learn</i></b>. With all those abstraction layers and free and easy to install databases, it's too easy to start using a database through some fancy web development framework and JSP pages and hit a wall of bad performance without noticing it. Simply having experience with your database implementation and abstraction layer and knowing a bit of how it works makes you aware of those issues during development, and can save you from having to optimize database performance when it's too late.
+
+                <p>Published on September 10, 2005 at 15:27 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2005/9/9/frameworks-frameworks-frameworks">Frameworks, frameworks, frameworks...</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2005/9/11/making-of">Making Of</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2005/9/10/sql-gotchas";
+this.page.identifier = "https://benad.me/blog/2005/9/10/sql-gotchas";
+this.page.title = "SQL Gotchas";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

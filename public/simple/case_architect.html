@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns:html="http://www.w3.org/TR/xhtml1/strict" xmlns:page="http://benad.me/schema/page" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/xhtml; charset=utf-8"/>
+<title>A Case for Software Architects</title>
+</head>
+<body>
+<h2>A Case for Software Architects</h2>
+<h3>Introduction</h3>
+
+<p>Large software development projects really magnify every part of the process, to the point of work specialization. The most obvious of such specialization is the programmer, but there's also quality assurance, usability, project management, and so on. A lesser known specialization is the software architect.</p>
+
+<p>The software architect role may have been less well defined since not only it overlaps too much with the traditional programming and project management roles, but also because the term "architect, like "engineering", is too often misused only as an indication of seniority.</p>
+
+<p>So it may be worthwhile to properly define "architecture" in the context of software development, since from there it will be easier to see where it fits in the software development process, and how this can lead to the role of software architect.</p>
+
+<h3>Architecture</h3>
+
+<p>Architecture could be vaguely defined as the "environment" or the "foundation". As such, there are two kinds of environments for software development: The architecture of the software (supporting the code), and the architecture of the software development (supporting the developers).</p>
+
+<p>The architecture of software is well known, and is pretty much required nowadays. Above the firmware, we do have the entire operating system stack, and above that a rich environment of APIs and software development libraries. Not only these reduce significantly the amount of development time, but can also give the software some assurances: Isolation and reporting when your software crashes, security and isolation, logs and performance metrics, and so on.</p>
+
+<p>The architecture of software development is more about the environment and tools used to make software development easier beyond simple code reuse. Those include compilers, linkers and IDEs for programming proper, but also a plethora of tools that help in collaborating within a team of developers, such as bug and work trackers, version control systems, continuous integration, automated regression testing, documentation tools, and so on.</p>
+
+<p>As you can see, the line between the two kinds of architecture is pretty thin. Ultimately, the "architecture" in software development translate to the set of infrastructure and tools used to facilitate the development process. They are so much part of the "toolbox" needed to start software development that often programmers expect them to be fully ready at the beginning of development. Still, it may be a good idea to explore what happens when the software architecture is lacking in a project.</p>
+
+<h3>No Architect</h3>
+
+<p>As mentioned before, a software project is likely to be small enough to make software architect role difficult to notice. But given a reasonable size, minimizing its importance or ignoring it can lead to difficult issues, especially if the project grows even bigger over time or lasts for several years.</p>
+
+<p>Without any software architect work, architectural decisions tend to go through the path of least resistance, be it towards familiarity or intuition. This explains well the popularity of software development collaboration services such as <a href="http://sourceforge.net">SourceForge</a>, <a href="https://github.com">GitHub</a>, <a href="https://bitbucket.org/">Bitbucket</a> and so on. In business environments, investing in a new or updated development infrastructure may be too large and risks delaying the beginning of development, thus often whatever old infrastructure already exists is reused. The danger here is that the environment may not be optimal for the project, and waiting for an opportune time to change it may never happen.</p>
+
+<p>On the other end of the spectrum, you have a few brave (or foolish) souls that would prefer or are forced into writing their own tools from scratch. Similarly, writing custom tools from scratch can happen so slowly that it may go unnoticed: A small compilation tool for a very specific scenario may grow enough in functionality to compete with full-featured competitors, yet have so much arcane and required business logic that it become irreplaceable.</p>
+
+<p>Either way, you can see the risks involved in rushing into software development without stepping back a little bit and figure out if that's the best environment for that project, be it early in the project or when it gains significantly in size.</p>
+
+<h3>Architecture by Committee</h3>
+
+<p>The lack of an architect in a large software development project tends to disperse clear decisions into negotiated delegation, agreements on the lowest common denominator or feature creep. Recurring themes is those situations are politics of consensus and a limited empathy for the concern of others.</p>
+
+<p>Looking at the specialization of other roles in software development, you can see the causes of those behaviours. Managers see the software architecture either as task delegation and negotiation, while the software tools are seen as Information Technology overhead that should preferably be outsourced. Programmers prefer using technologies they're familiar with, thus sometimes building their own tools seem easier than to learn an external tool. From either's perspective, the quality of the delivered software is often the first thing that gets compromised in the negotiations.</p>
+
+<p>While having a "benevolent dictator" making architectural decisions seems the best way to resolve those conflicting interests, this merely expedites the decision process, while again risking the quality of the software. Instead, let's look at what unique qualities may help in making the best architectural decisions, for all the stakeholders and for the good of the software itself.</p>
+
+<h3>Architect Qualities</h3>
+
+<p>The most impactful quality is the architect's familiarity with all the roles involved in the development process. Ideally, the architect should be able to do all the tasks in the process, though with any project of significant size and limited budget this would be impractical. At least, this familiarity creates a deep understanding how the architectural decisions impact each task, and from this a better "empathic" decision can be made.</p>
+
+<p>From there, the architect can develop a sense of how much any small thing in the process can have an impact on anything else. A good architect can estimate the impact of the smallest detail in the "big picture" view of the project. This doesn't necessarily translate to perfectionism, as long as the architect can estimate the cost-benefit: Not all details are equally important.</p>
+
+<p>To make good decisions, a good architect should have first hand experience with as many representative options as possible, and be able to tell which options are better in any context. It may even be needed to create brand new solutions. So a good architect must be a quick learner, a good critic, a good decision maker, and also be creative.</p>
+
+<p>Essentially, a good architect must be able to objectively explain why some solution was proposed based on first hand experience, holistic understanding and deep understanding of the domain.</p>
+
+<p>Those qualities seem to be sufficiently unique to warrant a separate role in the software development process. And while the work of an architect may not be as onerous as the other roles in smaller projects, the polyvalence of the architects in their ability to be able to perform other roles allows it to be a temporary or part time role.</p>
+</body>
+</html>

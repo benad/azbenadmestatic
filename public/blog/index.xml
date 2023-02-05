@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Benad&#39;s Blog</title>
+    <link>https://benad.me/blog/</link>
+    <description>Benad&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Jan 2023 15:47:00 -0500</lastBuildDate>
+    <atom:link href="https://benad.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mastodon and the Fediverse</title>
+      <link>https://benad.me/blog/2023/01/22/mastodon-and-the-fediverse/</link>
+      <pubDate>Sun, 22 Jan 2023 15:47:00 -0500</pubDate>
+      
+      <guid>https://benad.me/blog/2023/01/22/mastodon-and-the-fediverse/</guid>
+      <description>&lt;p&gt;As you may have noticed on my &lt;a href=&#34;https://benad.me/links.html&#34;&gt;&amp;ldquo;About&amp;rdquo; page&lt;/a&gt;, I moved away from Twitter to a Mastodon server (my user is &lt;code&gt;@benad@mstdn.party&lt;/code&gt;). This was mostly due to the now uncertain future on Twitter, but also because Twitter is now simply unpleasant to use. Mastodon felt close enough to Twitter to be a good choice.&lt;/p&gt;
+
+&lt;p&gt;As soon as you sign up to Mastodon, you&amp;rsquo;ll notice that it&amp;rsquo;s quite different than other centralized and commercial &amp;ldquo;Web 2.0&amp;rdquo; social networks: You have to pick your server. This is similar to when you sign up to an email host: You pick the host, then your user name. Like email, each server has different ownership and rules. Not all servers are open to the public for registering new accounts.&lt;/p&gt;
+
+&lt;p&gt;Once you have your account, Mastodon feels similar to Usenet, in the sense that you can see and interact with users of other Mastodon servers (&amp;ldquo;instances&amp;rdquo;) through your own server.&lt;/p&gt;
+
+&lt;p&gt;This decentralized approach raised concerns that the Mastodon protocol or service wouldn&amp;rsquo;t scale well. But those problems are far from new. With email, while spam still exists, it is manageable. As for the public content itself, ranging from illegal content to trollish behavior, each server has their own enforced content moderation policies. It is possible for a Mastodon server to refuse to interact with another server (by pulling its content) if their content policies are too incompatible. While this could create isolated clusters, nothing prevents a user from having one account on each of such &amp;ldquo;clusters&amp;rdquo;, as long as the user follows the policies on each.&lt;/p&gt;
+
+&lt;p&gt;Mastodon is also compatible with the &lt;a href=&#34;https://www.w3.org/TR/activitypub/&#34;&gt;ActivityPub&lt;/a&gt; protocol from &lt;a href=&#34;https://www.w3.org/&#34;&gt;W3C&lt;/a&gt;. This makes it possible for Mastodon to interact with &amp;ldquo;activity feeds&amp;rdquo; of other services (often decentralized too). This decentralized &amp;ldquo;federation&amp;rdquo; of services was termed the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fediverse&#34;&gt;Fediverse&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, &lt;a href=&#34;https://joinpeertube.org/&#34;&gt;PeerTube&lt;/a&gt; is an open-source server that lets you host a video publish site, similar to YouTube. Since it supports ActivityPub, a Mastodon user can subscribe to the activity of any PeerTube account. If you wanted, let&amp;rsquo;s say, to subscribe to &lt;a href=&#34;https://www.blender.org/&#34;&gt;Blender&lt;/a&gt;&amp;rsquo;s video channel, user &lt;code&gt;blender&lt;/code&gt; on PeerTube site &lt;code&gt;video.blender.org&lt;/code&gt;, you can use your Mastodon client to subscribe to the user &lt;code&gt;@blender@video.blender.org&lt;/code&gt;, and then you&amp;rsquo;ll see their video on your Mastodon feed.&lt;/p&gt;
+
+&lt;p&gt;This makes Mastodon far more resilient than a centralized, commercial social network. Like email, a company can self-host their own Mastodon server, or make use of a hosting service, and only let their employees have accounts on it. For social networks (or even blogs) that already exist, they can also implement ActivityPub and be part of the Fediverse.&lt;/p&gt;
+
+&lt;p&gt;So, even if Mastodon remains &amp;ldquo;niche&amp;rdquo;, a bit like what became of Usenet (and even email itself), it is unlikely to vanish or break at the whims of the next CEO of the company that owns the entire thing.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Slow Hacker</title>
+      <link>https://benad.me/blog/2022/09/07/the-slow-hacker/</link>
+      <pubDate>Wed, 07 Sep 2022 15:00:00 -0400</pubDate>
+      
+      <guid>https://benad.me/blog/2022/09/07/the-slow-hacker/</guid>
+      <description>
+
+&lt;p&gt;Being an early adopter of new technologies and tools can be exiting. Recently, I&amp;rsquo;ve jumped into some new tools, hacking around to make them work, just to realize that by the time I made it work, a better version that doesn&amp;rsquo;t require so much hacking is released. Here are a few examples.&lt;/p&gt;
+
+&lt;h2 id=&#34;bluetooth-audio-codecs-on-linux:6c5316777de2e282542d6500c0fb31eb&#34;&gt;Bluetooth Audio Codecs on Linux&lt;/h2&gt;
+
+&lt;p&gt;I have bluetooth headphones from different brands, and while all of them support the common &lt;a href=&#34;https://en.wikipedia.org/wiki/SBC_%28codec%29&#34;&gt;SBC codec&lt;/a&gt;, they also each support some better format, like &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Audio_Coding&#34;&gt;AAC&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/AptX&#34;&gt;aptX&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/LDAC_%28codec%29&#34;&gt;LDAC&lt;/a&gt;. I was a bit saddened to see that, out of the box, Ubuntu 20.04 supported only the basic SBC codec. Looking around, I found the article &amp;ldquo;&lt;a href=&#34;https://kn100.me/improving-bluetooth-audio-linux/&#34;&gt;Improving Bluetooth Audio Quality on Ubuntu Linux&lt;/a&gt;&amp;rdquo; that describes how to install those additional codecs. This is a bit risky, as this could potentially mess up the audio stack.&lt;/p&gt;
+
+&lt;p&gt;There was a fork of &lt;a href=&#34;https://github.com/EHfive/pulseaudio-modules-bt&#34;&gt;pulseaudio-modules-bt&lt;/a&gt; that came with all those Bluetooth codecs, and there is a way to replace the built-in Ubuntu&amp;rsquo;s version with this. Once installed, the audio settings panel clearly shows the audio codec being used for your headphones, and you can even try to select another codec.&lt;/p&gt;
+
+&lt;p&gt;I said &amp;ldquo;was&amp;rdquo; because, by the time I started using it, its documentation already mentioned that it was &amp;ldquo;deprecated&amp;rdquo;. Why? Because the additional codecs are now supported in the mainline version of PulseAudio. Sure, there are some delays between when a new feature is added to a package and when that packaged is incorporated into a new major release of Ubuntu, but Ubuntu 22.04 already included that new version. In fact, it is mentioned in its &lt;a href=&#34;https://ubuntu.com/blog/ubuntu-22-04-lts-whats-new-linux-desktop&#34;&gt;release notes&lt;/a&gt;: &amp;ldquo;PulseAudio delivers a number of improvements for Bluetooth headsets, with support for a wider range of devices and battery level reporting&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So, yeah, instead of patching PulseAudio in Ubuntu 20.04, I could have just upgraded to Ubuntu 22.04.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-linux-gui-apps-in-wsl:6c5316777de2e282542d6500c0fb31eb&#34;&gt;Using Linux GUI Apps in WSL&lt;/h2&gt;
+
+&lt;p&gt;Back on Windows, I still end up using a lot Linux through the &amp;ldquo;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/&#34;&gt;Windows Subsystem for Linux&lt;/a&gt;&amp;rdquo;. Unlike a full Linux virtual machine, it doesn&amp;rsquo;t start a desktop environment, or even start systemd. While this means that it is very lightweight, it also means that running an X11 application can be difficult.&lt;/p&gt;
+
+&lt;p&gt;As an example, starting an SSH server so that you can do X11 forwarding (as in &lt;code&gt;ssh -X ...&lt;/code&gt;) has to be done manually every time you start the WSL &amp;ldquo;distribution&amp;rdquo;. And then I needed to figure out what kind of &amp;ldquo;rootless&amp;rdquo; X11 client I can use on Windows&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Another option I found was to run a full Linux desktop in WSL in a VNC server, all running inside of a special systemd environment. While &lt;a href=&#34;https://gist.github.com/tdcosta100/385636cbae39fc8cd0937139e87b1c74&#34;&gt;this document&lt;/a&gt; describes the process, it&amp;rsquo;s not very user-friendly. It makes use of &lt;a href=&#34;https://github.com/arkane-systems/genie&#34;&gt;genie&lt;/a&gt;, a tool that will run the systemd environment in WSL. The obvious downside to all this is that, well, it takes almost as much memory as running a full Linux virtual machine, negating a bit the point of using WSL in the first place.&lt;/p&gt;
+
+&lt;p&gt;Well, I could have just waited for the latest versions of Windows 11. The document &amp;ldquo;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps&#34;&gt;Run Linux GUI apps on the Windows Subsystem for Linux&lt;/a&gt;&amp;rdquo; describes the process, and it&amp;rsquo;s very easy to use. If you&amp;rsquo;re already on version 22000 or higher (and up-to-date video drivers), there&amp;rsquo;s nothing else to install, other than installing the Linux apps themselves. Impressively, it fully supports UI scaling, and even dynamic UI scaling with newer GTK apps if you move the window between differently scaled monitors. It even supports adding the &lt;code&gt;*.desktop&lt;/code&gt; shortcuts in the Start menu.&lt;/p&gt;
+
+&lt;h2 id=&#34;podman-on-windows:6c5316777de2e282542d6500c0fb31eb&#34;&gt;Podman on Windows&lt;/h2&gt;
+
+&lt;p&gt;I really like &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;, not only as a fully open-source alternative to Docker, but also for its unique features. And I also intensely dislike &lt;a href=&#34;https://www.docker.com/products/docker-desktop/&#34;&gt;Docker Desktop&lt;/a&gt;, which is &lt;em&gt;not&lt;/em&gt; open source and is quite buggy. So, I wondered if there was a way to use Podman on Windows and tried installing it inside my Ubuntu distribution in WSL, set up the SSH connection so that I can use it &amp;ldquo;remotely&amp;rdquo; from Windows&amp;rsquo; command line, and so on.&lt;/p&gt;
+
+&lt;p&gt;Well, it just so happens that there is now a &lt;a href=&#34;https://www.redhat.com/sysadmin/run-podman-windows&#34;&gt;version of Podman for Windows&lt;/a&gt;. Not only that, but there is an early version of &amp;ldquo;Podman Desktop&amp;rdquo;, which makes installing and using Podman much more &amp;ldquo;graphical&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The only thing that prevented it for me from being an almost direct replacement of Docker is its policy about &lt;a href=&#34;https://www.redhat.com/sysadmin/container-image-short-names&#34;&gt;&amp;ldquo;image short names&amp;rdquo; not defaulting to Docker Hub by default&lt;/a&gt;. I fixed it like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;podman machine ssh
+sudo sed -i.backup &#39;s/^short-name-mode=.*/short-name-mode=&amp;quot;permissive&amp;quot;/&#39; /etc/containers/registries.conf
+exit
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Programming Fonts and Ligatures</title>
+      <link>https://benad.me/blog/2022/08/01/programming-fonts-and-ligatures/</link>
+      <pubDate>Mon, 01 Aug 2022 21:16:44 -0400</pubDate>
+      
+      <guid>https://benad.me/blog/2022/08/01/programming-fonts-and-ligatures/</guid>
+      <description>&lt;p&gt;Many programmers, myself included, can be picky about what font we use when writing code. Normally, typefaces made for English and other Latin languages have characters of varying width and that, without context, can be ambiguous. For as long as we needed to display unambigous code that aligns with whitespaces, we needed programming fonts. In the early days of personal computing, magazines would have a print out of some programs you can enter on your computer, and since a single typo could break the code, special care was taken about how every single character in the chosen font should be clear. For example, see &lt;a href=&#34;https://archive.org/details/1984-07-compute-magazine/page/n57/mode/2up&#34;&gt;those pages from 1984&amp;rsquo;s Compute magazine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When I started programming, I was on a Macintosh&amp;rsquo;s tiny 512 x 342 pixel screen, so of course my font of choice was Monaco at 9 points. That font was very readable and could fit a &amp;ldquo;console typical&amp;rdquo; 80 columns and 25 rows of characters, even while taking into account the spaced taken by the Macintosh menu bar and window border. Here&amp;rsquo;s a &lt;a href=&#34;https://1drv.ms/u/s!Ah9Uh_PgbeBzj75K3BK7qEZJFCYtIg&#34;&gt;screenshot of a full screen&amp;rsquo;s worth of text with Monaco 9 on the Macintosh&lt;/a&gt;, using &lt;a href=&#34;https://en.wikipedia.org/wiki/BBEdit&#34;&gt;BBEdit&lt;/a&gt;. You can try it yourself on &lt;a href=&#34;https://jamesfriend.com.au/pce-js/pce-js-apps/&#34;&gt;this online Macintosh emulator&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For many years I used Monaco 9. Being a bitmap font, it remained &amp;ldquo;sharp&amp;rdquo; yet readable, even while the computer monitors&amp;rsquo; sizes that I used gradually increased. But with the introduction of &amp;ldquo;UI scaling&amp;rdquo;, every font moving to &lt;a href=&#34;https://en.wikipedia.org/wiki/TrueType&#34;&gt;TrueType&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Subpixel_rendering&#34;&gt;subpixel rendering&lt;/a&gt;, and Monaco being built in only Macs, I had to start moving to some other font.&lt;/p&gt;
+
+&lt;p&gt;I first moved to &lt;a href=&#34;https://www.marksimonson.com/fonts/view/anonymous-pro&#34;&gt;Mark Simonson&amp;rsquo;s Anonymous Pro&lt;/a&gt;, a font that was expressily designed to be similar to Monaco, but with a more permissive distribution license. While it does have embedded bitmap variants at some specific sizes, I generally used it with subpixel rendering regardless.&lt;/p&gt;
+
+&lt;p&gt;It was much later that, with &lt;a href=&#34;https://www.jetbrains.com/lp/mono/&#34;&gt;JetBrains&amp;rsquo; own Mono font&lt;/a&gt;, I first saw a programming font that had programming-specific ligatures, and initially I disliked it. I was vaguely familiar with &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Ligature_%28writing%29&#34;&gt;font ligatures&lt;/a&gt; in TrueType fonts, as showcased with the &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Zapfino&#34;&gt;Zapfino font&lt;/a&gt;, bundled with macOS since its early beta days. Basically, certain sequences of characters would be displayed differently. For a programming font, this goes against non-ambuigity: The ligature would not look exactly the same as the individual character seqence that formed it. The most common example is the sequence &amp;ldquo;!=&amp;rdquo; (which means &lt;a href=&#34;https://en.wiktionary.org/wiki/!%3D&#34;&gt;not equal&lt;/a&gt; in most programming languages inspired by B and its successors) would be displayed as &amp;ldquo;≠&amp;rdquo; (similar to &lt;a href=&#34;https://en.wiktionary.org/wiki/%E2%89%A0&#34;&gt;Unicode U+2260&lt;/a&gt;), but with a width identical as two monospaced characters. From looking at &amp;ldquo;≠&amp;rdquo;, you can&amp;rsquo;t really guess that it actually represents the sequence &amp;ldquo;!=&amp;rdquo;, so it&amp;rsquo;s not great to use in a printed or picture form.&lt;/p&gt;
+
+&lt;p&gt;And yet, I&amp;rsquo;ve grown to like those &amp;ldquo;programming font ligatures&amp;rdquo;. It was with the &lt;a href=&#34;https://github.com/microsoft/cascadia-code#font-features&#34;&gt;code ligatures of Cascadia Code&lt;/a&gt; that made me appreciate how more pleasant it is to look at code when ligatures are used to display semantic significance. And the fonts I mentioned (JetBrains Mono and Cascadia Code) are far from the only programming fonts that support ligatures. If you browse &lt;a href=&#34;https://www.programmingfonts.org/&#34;&gt;www.programmingfonts.org&lt;/a&gt;, you can filter down to all fonts that support it (the arrow button on the top-left). It should noted that Cascadia Code has &amp;ldquo;horizontal long line&amp;rdquo; ligatures that don&amp;rsquo;t display well on all browsers, but do work well on Chromium-based ones, including what is used by &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Of course, I keep the habit of using disabling ligatures (or switch to a font that doesn&amp;rsquo;t support them) prior to taking a screenshot, through I find sending screenshots of plain test kind of &lt;em&gt;rude&lt;/em&gt; anyway&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Strange Case of the Swiftpoint GT Mouse</title>
+      <link>https://benad.me/blog/2022/05/08/the-strange-case-of-the-swiftpoint-gt-mouse/</link>
+      <pubDate>Sun, 08 May 2022 19:05:35 -0400</pubDate>
+      
+      <guid>https://benad.me/blog/2022/05/08/the-strange-case-of-the-swiftpoint-gt-mouse/</guid>
+      <description>&lt;p&gt;Using a mouse with an iPad used to be a lot more difficult than simply pairing it using Bluetooth. Before iPad OS supported any Bluetooth pointing devices (iOS 13 as some accessibility feature, and later system-wide), it was either limited to wired USB mice (on an iPad Pro), or a few select “Made for iOS” (“MFI”) devices. If you look at some iOS remote desktop clients, you will still find references to the Swiftpoint GT mouse, for example in the &lt;a href=&#34;https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios#supported-input-devices&#34;&gt;documentation for Microsoft’s RD Client on iOS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I have a Swiftpoint GT mouse, and to put it succinctly, it’s a weird little thing. I can’t say this is a typical review, as this is no longer for sale (more on that later).&lt;/p&gt;
+
+&lt;p&gt;As a mouse, it’s almost uncomfortably too small, and yet big enough that, unlike a flat trackpad you can stack in an iPad’s case or on top of a laptop, is cumbersome enough to be a hassle. It is supposed to counterbalance that by being slightly magnetic, and several magnetized surfaces are offered to be glued on your laptop. Yuck. The magnet is strong enough to hold on the outside of Apple’s iPad case, and yet if anything were to slightly come in contact with the mouse it would just fall off; The provided magnets may fare better, but I don’t want to take that risk..&lt;/p&gt;
+
+&lt;p&gt;One of the mouse’s selling features is the “stylus”. If you incline the mouse to its right side, it will press down on a stylus, which activates a “mode” to perform shortcuts using gestures. Maybe it’s the way I use computer mice, but I end up accidentally triggering that stylus mode far too often, so I just disabled it.&lt;/p&gt;
+
+&lt;p&gt;Speaking of which, the mouse can be configured with the power switch set in the middle of on and off. Initially, this would launch a web browser and go to a web site by simulating a keyboard, but that website is now long gone. Their web site still offers an “offline” site as an archive that you can download.&lt;/p&gt;
+
+&lt;p&gt;The mouse has now been rebranded as the “Propoint”, with the same terrible ergonomics. It is also just far too expensive for a Bluetooth mouse.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>More Modern CLI Tools</title>
+      <link>https://benad.me/blog/2022/02/12/more-modern-cli-tools/</link>
+      <pubDate>Sat, 12 Feb 2022 12:00:00 -0500</pubDate>
+      
+      <guid>https://benad.me/blog/2022/02/12/more-modern-cli-tools/</guid>
+      <description>&lt;p&gt;Since I last posted about some &lt;a href=&#34;https://benad.me/blog/2021/09/18/modern-command-line-tools/&#34;&gt;modern-ish CLI tools&lt;/a&gt;, I noticed that I omitted many tools I extensively use and new ones I discovered since.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.byobu.org/&#34;&gt;byobu&lt;/a&gt;&lt;/strong&gt;. This provides a consistent and user-friendly wrapper on top of either &lt;a href=&#34;https://en.wikipedia.org/wiki/GNU_Screen&#34;&gt;GNU Screen&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Tmux&#34;&gt;tmux&lt;/a&gt;. With it, you can persist on a server some virtual terminals. It uses function keys to do most of its operations, and you can always use the original function keys by pressing &amp;ldquo;shift-F12&amp;rdquo;. It comes with the useful &lt;code&gt;byobu-ugraph&lt;/code&gt; that can simple histograms on the status bar using UTF-8 characters.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/ducaale/xh&#34;&gt;xh&lt;/a&gt;&lt;/strong&gt;. This is yet another alternative to &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;, but rather than simply wrapping &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;, it implements a full HTTP client on its own. It is packaged as a single statically compiled binary, so it is easy to install and faster than HTTPie. If you symbolic-link it as &lt;code&gt;xhs&lt;/code&gt;, it will automatically default to HTTPS.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/aristocratos/btop&#34;&gt;btop++&lt;/a&gt;&lt;/strong&gt;. I was looking for a simple yet comprehensive monitoring tool I can use on the command-line to quickly look at CPU, process, memory, and disk usage. So far, this is my preferred one. While I still prefer &lt;a href=&#34;https://htop.dev/&#34;&gt;htop&lt;/a&gt; as a direct replacement of the &lt;code&gt;top&lt;/code&gt; command, &lt;code&gt;btop&lt;/code&gt; is quite easy to use without additional configuration, and again as a single static binary.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/jpmens/jo&#34;&gt;jo&lt;/a&gt;&lt;/strong&gt;. This is a simple tool to generate valid JSON objects out of command-line parameters.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://stedolan.github.io/jq/&#34;&gt;jq&lt;/a&gt;&lt;/strong&gt;. This is like &lt;code&gt;grep&lt;/code&gt; or &lt;code&gt;sed&lt;/code&gt;, but for JSON input. You can &amp;ldquo;query&amp;rdquo; any part of one or more JSON objects, and generate from that a result JSON fragment, or the plain text raw value. For example, the following uses the REST API of &lt;a href=&#34;https://www.ipify.org/&#34;&gt;ipify.org&lt;/a&gt; to get your IP address:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;xhs api.ipify.org format==json | jq -r .ip
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modern Command-Line Tools</title>
+      <link>https://benad.me/blog/2021/09/18/modern-command-line-tools/</link>
+      <pubDate>Sat, 18 Sep 2021 14:20:51 -0400</pubDate>
+      
+      <guid>https://benad.me/blog/2021/09/18/modern-command-line-tools/</guid>
+      <description>&lt;p&gt;Having used so many different Linux and UNIX-like environments, I started to really appreciate how useful it is to properly learn how to use the POSIX shell (and a few of the more standard GNU extensions). At some point though, typing convulated combinations of &lt;code&gt;find&lt;/code&gt;, &lt;code&gt;grep&lt;/code&gt;, &lt;code&gt;awk&lt;/code&gt; and &lt;code&gt;sed&lt;/code&gt; commands gets annoying.&lt;/p&gt;
+
+&lt;p&gt;In the past 10 years of so, the modern command-line environment is less worried about the UNIX philosophy of small tools built around plain text. And if they do use plain text, they tend to support structured formats like JSON. This means that they&amp;rsquo;re more comfortable in fully using ANSI color codes and UTF-8 formatting when the output is done to the console. They also depend less on system libraries and are often large binaries, especially when built using Go or Rust.&lt;/p&gt;
+
+&lt;p&gt;Here are a few of my favorite modern tools I recently started to use. Of course, there are lots more, for example those listed in &lt;a href=&#34;https://github.com/ibraheemdev/modern-unix&#34;&gt;ibraheemdev/modern-unix&lt;/a&gt;, but I limited my list to those I frequently use.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/magicmonty/bash-git-prompt&#34;&gt;bash-git-prompt&lt;/a&gt;&lt;/strong&gt;. To be used specifically with Bash, this changes the shell prompt when you&amp;rsquo;re inside a Git repository to display Git status information.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/BurntSushi/ripgrep&#34;&gt;ripgrep&lt;/a&gt;&lt;/strong&gt; (command: &lt;code&gt;rg&lt;/code&gt;). This tool is basically a recursive grep over many files. While GNU&amp;rsquo;s grep does support a recursive option, ripgrep is easier to use, takes into account &lt;code&gt;.gitignore&lt;/code&gt; files, supports UTF-8 automatically, supports many compression formats, has a better colorized output and is much faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/ClementTsang/bottom&#34;&gt;bottom&lt;/a&gt;&lt;/strong&gt; (command: &lt;code&gt;btm&lt;/code&gt;).  To quickly look at CPU and memory usage, both &lt;code&gt;top&lt;/code&gt; and the more modern &lt;code&gt;htop&lt;/code&gt; work quite well. But I would often also want to see other metrics, like network and disk usage in a cross-platform way, and without having to install some big system monitoring tool that runs all the time. &lt;code&gt;btm&lt;/code&gt; displays all that, with some interactive graphs, fully colorized and interactive.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sharkdp/bat&#34;&gt;bat&lt;/a&gt;&lt;/strong&gt;. A &lt;code&gt;cat&lt;/code&gt; replacement or a pager (like &lt;code&gt;more&lt;/code&gt; and &lt;code&gt;less&lt;/code&gt;), but that has many additional options and supports syntax highlighting of many file types. For example, it can be used as a pager for &lt;code&gt;man&lt;/code&gt;, introducing color and UTF-8 characters to its output. It can easily be integrated with other tools, like &lt;code&gt;ripgrep&lt;/code&gt;, using the scripts in &lt;a href=&#34;https://github.com/eth-p/bat-extras&#34;&gt;bat-extras&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/dandavison/delta&#34;&gt;delta&lt;/a&gt;&lt;/strong&gt;. A colorized viewer of &lt;code&gt;diff&lt;/code&gt; and &lt;code&gt;git diff&lt;/code&gt;, or can be used on its own to compare two files or directories. Its output displays per-character differences, which is greatly helpful when looking for whitespace-only changes. Also does syntax highliting, similar to &lt;code&gt;bat&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/Canop/broot&#34;&gt;broot&lt;/a&gt;&lt;/strong&gt; (command: &lt;code&gt;broot&lt;/code&gt; or &lt;code&gt;br&lt;/code&gt;). A file navigation interface that makes finding a file in a complex directory structure as simple and quick as possible. It include a file previewer that also works with image files. The &lt;code&gt;br&lt;/code&gt; command is actually a shell function that you can install (for example in &lt;code&gt;.bashrc&lt;/code&gt;) that makes it possible to run a command on the selected file in the current shell after &lt;code&gt;broot&lt;/code&gt; exits. Customization of the &amp;ldquo;run a command in the shell after exit&amp;rdquo; can be a bit difficult; Look at &lt;a href=&#34;https://gist.github.com/benad/6cb229670a667adf1f2926fd4097c6c6#file-conf-hjson&#34;&gt;my sample configuration file&lt;/a&gt; as an example.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://curlie.io/&#34;&gt;curlie&lt;/a&gt;&lt;/strong&gt;. While I really like &lt;a href=&#34;https://httpie.org/&#34;&gt;HTTPie&lt;/a&gt;&amp;rsquo;s command-line syntax, it&amp;rsquo;s still a slow and heavy Python 3 script. Curlie lets you use the HTTPie syntax but runs using &lt;a href=&#34;https://curl.haxx.se/&#34;&gt;curl&lt;/a&gt; instead and reformats the output to make it similar to HTTPie. You can also get the equivalent &lt;code&gt;curl&lt;/code&gt; command.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>From Remote Desktop to Remote Gaming</title>
+      <link>https://benad.me/blog/2021/08/01/from-remote-desktop-to-remote-gaming/</link>
+      <pubDate>Sun, 01 Aug 2021 18:50:25 -0400</pubDate>
+      
+      <guid>https://benad.me/blog/2021/08/01/from-remote-desktop-to-remote-gaming/</guid>
+      <description>&lt;p&gt;Even though &lt;a href=&#34;https://en.wikipedia.org/wiki/Virtual_Network_Computing&#34;&gt;VNC&lt;/a&gt; became the &lt;em&gt;de facto&lt;/em&gt; standard remote desktop protocol for Linux desktops (especially with its integration with the GNOME desktop), I still found it too clunky and slow to use, even on a local network. &lt;a href=&#34;https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst&#34;&gt;The VNC protocol&lt;/a&gt; seems to have been designed from a time of small screen sizes, without &lt;a href=&#34;https://en.wikipedia.org/wiki/Subpixel_rendering&#34;&gt;sub-pixel font smoothing&lt;/a&gt;, or GPU-accelerated window compositing using transparency effects.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, &lt;a href=&#34;https://www.tightvnc.com&#34;&gt;TightVNC&lt;/a&gt; introduced a VNC encoding called “&lt;a href=&#34;https://github.com/rfbproto/rfbproto/blob/master/rfbproto.rst#tight-encoding&#34;&gt;Tight Encoding&lt;/a&gt;” that uses small JPEG images to compress parts of the image. Another VNC implementation called &lt;a href=&#34;https://www.turbovnc.org&#34;&gt;TurboVNC&lt;/a&gt; also brought significant speed improvements in the JPEG compression with its &lt;a href=&#34;https://libjpeg-turbo.org&#34;&gt;libjpeg-turbo&lt;/a&gt; library. The end result is a flavour of VNC that works well with modern Linux desktops, at great speed and reasonable visual quality, even over a slow internet connection.&lt;/p&gt;
+
+&lt;p&gt;Annoyingly, Tight encoding is not widely implemented, neither in VNC servers or clients. For example, on iOS, the only VNC client that I found to be compatible with Tight encoding is &lt;a href=&#34;https://apps.apple.com/ca/app/remote-ripple/id1071186450&#34;&gt;Ripple VNC&lt;/a&gt;. An alternative web-based client called &lt;a href=&#34;https://novnc.com/&#34;&gt;noVNC&lt;/a&gt; not only supports Tight encoding, but also works on all modern browsers, including touch controls on Safari for iOS and Chrome on Android. noVNC can be a little bit difficult to set up (you have to host your own web server), but the provided script &lt;a href=&#34;https://github.com/novnc/noVNC/blob/master/utils/novnc_proxy&#34;&gt;&lt;code&gt;novnc-proxy&lt;/code&gt;&lt;/a&gt; is a good start for most servers.&lt;/p&gt;
+
+&lt;p&gt;The approach of encoding JPEG blocks and then have a way to “move” parts of the image elsewhere makes the VNC protocol feel like an early version of &lt;a href=&#34;https://en.wikipedia.org/wiki/MPEG-1&#34;&gt;MPEG-1&lt;/a&gt;. This led the TurboVNC developers to &lt;a href=&#34;https://turbovnc.org/About/H264&#34;&gt;explore the use of H264 video compression for remote desktop&lt;/a&gt;, and their conclusion was that this would tax too much the CPU, unless hardware acceleration (both for the server and client) can be used. This was written in 2014, and seven years later H264 hardware compression and decompression are widely available. Even the &lt;a href=&#34;https://www.willusher.io/general/2020/11/15/hw-accel-encoding-rpi4&#34;&gt;Raspberry Pi 4 now has hardware-accelerated H264 compression&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many remote desktop solutions now support some H264-accelerated protocol, as proprietary extensions of VNC or as a separate protocol altogether. For example &lt;a href=&#34;https://remotix.com/help/cloud/near/&#34;&gt;Remotix’s “NEAR”&lt;/a&gt; or &lt;a href=&#34;https://support.jumpdesktop.com/hc/en-us/articles/216423983-General-Fluid-Remote-Desktop&#34;&gt;Jump Desktop’s “Fluid”&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But using H264 for a remote screen is more widely used today for playing video games remotely. There is &lt;a href=&#34;https://store.steampowered.com/remoteplay&#34;&gt;Steam Remote Play&lt;/a&gt; for the Steam store. If you have an NVIDIA GPU, there is &lt;a href=&#34;https://support-shield.nvidia.com/gamestream-user-guide/#t=NVIDIA_GameStream.htm%23bc-1&amp;amp;rhtocid=1.0_1&#34;&gt;NVIDIA GameStream&lt;/a&gt;, which also works quite well with the &lt;a href=&#34;https://moonlight-stream.org/&#34;&gt;Moonlight&lt;/a&gt; open-source client. Even if this takes more bandwidth than VNC (in most scenarios), there are now many game streaming services that simply stream the video using H264.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Upgrading to the Pi 400</title>
+      <link>https://benad.me/blog/2021/04/13/upgrading-to-the-pi-400/</link>
+      <pubDate>Tue, 13 Apr 2021 15:54:16 -0400</pubDate>
+      
+      <guid>https://benad.me/blog/2021/04/13/upgrading-to-the-pi-400/</guid>
+      <description>&lt;p&gt;Two years ago, I was tempted to replace my &lt;a href=&#34;https://benad.me/blog/2017/11/06/raspberry-pi-your-home-linux-server/&#34;&gt;Raspberry Pi 3 Linux server&lt;/a&gt; with a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-4-model-b/&#34;&gt;Pi 4&lt;/a&gt;. I would have taken this occasion to upgrade it from its &lt;a href=&#34;https://www.raspbian.org/&#34;&gt;Raspbian OS&lt;/a&gt; that was based on Debian 9 to the new &lt;a href=&#34;https://www.raspberrypi.org/software/&#34;&gt;Raspberry Pi OS&lt;/a&gt;, based on Debian 10.&lt;/p&gt;
+
+&lt;p&gt;Looking at the various kits for the Pi 4, I changed my mind. Unlike the Pi 3, a fan to cool it down is highly recommended, and one of my requirements is to have a fan-less server. Sure, you can run it without a fan, but that requires running it at a significantly slower clock speed, especially if you put it inside a case. To compare, most the of Pi 3 case kits included a heatsink, while for the Pi 4 most of them included a fan.&lt;/p&gt;
+
+&lt;p&gt;Otherwise, the Pi 4 would have been a significant upgrade, especially if you use it as a server. As usual, the CPU is faster, and it supports a lot more RAM (from 0.5 - 1 GB to 2 - 8 GB). More importantly, it supports USB 3 for external devices. To compare, the Pi 3 was limited to USB 2, and the Ethernet port&amp;rsquo;s bandwidth was shared with the USB 2 ports, so all file transfers from an external USB drive would be at best half of the maximum speed of USB 2.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-400/&#34;&gt;Raspberry Pi 400&lt;/a&gt; is internally similar to the Pi 4, but since it comes in the form of a keyboard, it has enough surface to not require any kind of fan. That was perfect for me, so I bought it as soon as I could.&lt;/p&gt;
+
+&lt;p&gt;I backed up the micro SD card of my Pi 3 to a &lt;a href=&#34;https://tldp.org/HOWTO/SquashFS-HOWTO/index.html&#34;&gt;SquashFS&lt;/a&gt; disk image. I found this more practical than using TAR, since it can be mounted (even as user-space with &lt;a href=&#34;https://github.com/vasi/squashfuse&#34;&gt;squashfuse&lt;/a&gt;) and allows me to copy individual files instantly from it.&lt;/p&gt;
+
+&lt;p&gt;As for setting up the Pi 400, I changed my mind about using Raspberry Pi OS, and installed Ubuntu 20.04 on it. Since I want to use it primarily as a server and don&amp;rsquo;t really care about having a GUI, I used Ubuntu Server. This is officially supported by Canonical, and they have a &lt;a href=&#34;https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi&#34;&gt;nice tutorial about how to set it up&lt;/a&gt;. If I want to set up a desktop environment in it later, Ubuntu Server can easily be upgraded to &lt;a href=&#34;https://lubuntu.net/&#34;&gt;Lubuntu&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another big advantage of Ubuntu Server over the Pi OS is that it runs the Pi in ARMv8 64-bit mode rather than the older v7 in 32-bit mode. This means that, combined with the Ubuntu ecosystem, there is a lot more software available for it than Pi OS. In addition, this now means that &lt;a href=&#34;https://benad.me/blog/2017/08/23/forever-64-bit/&#34;&gt;all my &amp;ldquo;computers&amp;rdquo; are finally 64-bit processors&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, after using a little while, I&amp;rsquo;m still blown away by its performance compared to the Pi 3. Maybe it&amp;rsquo;s due in part from using a new micro SD card that is almost twice as fast as your typical U1 cards. Yet, when I was testing it with Raspberry Pi OS and lanched Chromium, I could easily tell that its performance could be compared to some lower-end Chromebooks and could be used as a typical modern computer. Beyond using it as a server like I do, the Pi 400 feels like a modern Linux-based equivalent to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Commodore_64&#34;&gt;Commodore 64&lt;/a&gt;, and a great machine to learn software or computer engineering.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RAM Compression on Linux</title>
+      <link>https://benad.me/blog/2021/02/23/ram-compression-on-linux/</link>
+      <pubDate>Tue, 23 Feb 2021 18:31:39 -0500</pubDate>
+      
+      <guid>https://benad.me/blog/2021/02/23/ram-compression-on-linux/</guid>
+      <description>&lt;p&gt;I recently updated my 2013 MacBook Air to macOS &amp;ldquo;Big Sur&amp;rdquo; 11.1. I was nervous about what could be the last supported version of macOS for that laptop, and even then I wasn&amp;rsquo;t sure the update would be successful, all that because it has only 4 GB of RAM. A ridiculously small amount, considering the bloat of modern web sites and web browsers. And yet, that laptop still runs fine, in no small part with how well macOS can do RAM compression. I wondered if my Raspberry Pi 3 (1 GB of RAM) and my small Ubuntu virtual machine (4 GM of RAM) could use a similar kind of RAM compression under Linux.&lt;/p&gt;
+
+&lt;p&gt;Linux has a kind of &amp;ldquo;RAM disk&amp;rdquo;, actually a RAM-backed block device, that compresses the data prior to storing the data in memory. It is called &lt;a href=&#34;https://www.kernel.org/doc/html/v5.3/admin-guide/blockdev/zram.html&#34;&gt;zram&lt;/a&gt;, surely because it defaults to &lt;a href=&#34;https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Oberhumer&#34;&gt;lzo compression&lt;/a&gt;, one of a handful of compression techniques used for their speed. zram has been available by default in the Linux kernel for years, so there is no need to compile a custom kernel or add it as a kernel module.&lt;/p&gt;
+
+&lt;p&gt;While this doesn&amp;rsquo;t &lt;em&gt;directly&lt;/em&gt; solves the issue of compressing existing RAM, its nature as a block device makes it possible to add a zram device as a swap device. On Linux, you can have multiple swap devices or files, ordered by priority, so you could add a zram device as a higher priority than your disk-based swap devices. That way, if the kernel needs to swap some memory out, it will first try to move existing RAM into the zram-compressed RAM, and only when that fills up it will resort to use the disk. So while this technique won&amp;rsquo;t compress the &lt;em&gt;existing&lt;/em&gt; RAM usage, at least you could reserve let&amp;rsquo;s say half of the RAM to the zram device, effectively using RAM compression for that half at a lower priority.&lt;/p&gt;
+
+&lt;p&gt;A good example on how to set up zram is in the &lt;a href=&#34;https://launchpad.net/ubuntu/+source/zram-config&#34;&gt;zram-config&lt;/a&gt; package of Ubuntu. It allocates half of the RAM as zram, and splits that up into one block device per CPU core to maximize performance. Once set up, you can monitor the zram usage using the &lt;code&gt;zramctl&lt;/code&gt; command (no need to be &lt;code&gt;root&lt;/code&gt; to run it). I&amp;rsquo;ve used it in my small Linux VM and on my Raspberry Pi, and it worked quite well. Just copy the commands from that package into an &amp;ldquo;activate.sh&amp;rdquo; and &amp;ldquo;deactive.sh&amp;rdquo;, and run them as root.&lt;/p&gt;
+
+&lt;p&gt;Speaking of the Pi, there is an open-source script called &lt;a href=&#34;https://github.com/ecdye/zram-config&#34;&gt;zram-config&lt;/a&gt; (not to be confused with the Ubuntu package) that is far more flexible, using a configuration file to tune the amount of zram, the compression technique and so on. Designed for the Debian-based OS used by the Pi, it also offers using zram as an intermediate device before the &lt;code&gt;tmp&lt;/code&gt; or some other file system, since the Pi&amp;rsquo;s SD-card backed file system can be quite slow.&lt;/p&gt;
+
+&lt;p&gt;The impact on CPU should be minimal (I&amp;rsquo;ve read it uses less than 2% of a CPU core). Still, unless you frequently use the swap device on your Linux system, it may not be worthwhile to reserve a large amount of memory to a zram device.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Restic: Modern Linux Backups</title>
+      <link>https://benad.me/blog/2020/11/28/restic-modern-linux-backups/</link>
+      <pubDate>Sat, 28 Nov 2020 10:55:01 -0500</pubDate>
+      
+      <guid>https://benad.me/blog/2020/11/28/restic-modern-linux-backups/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been using the built-in backup tool of &lt;a href=&#34;https://www.ubuntu.com&#34;&gt;Ubuntu&lt;/a&gt;, called &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt;, for quite a while. Still, all along, Duplicity felt &lt;em&gt;old&lt;/em&gt;. It essentially does backups with &lt;code&gt;tar&lt;/code&gt;, compresses them with &lt;code&gt;gzip&lt;/code&gt; and encrypts them with &lt;code&gt;gpg&lt;/code&gt;, so the whole backup process feels &lt;em&gt;linear&lt;/em&gt;. While Duplicity does use GNU Tar&amp;rsquo;s form of incremental backups and adds in some form of partitioning for each increment, restoring a single file still means that Duplicity may have to decrypt and decompress an entire block if your file just happens to be at the end of that stream.&lt;/p&gt;
+
+&lt;p&gt;There is the obvious benefit that those old tools are quite reliable and proven. Still, they are quite slow and inconvenient, to the point where many users end up using Git as a form of backup. This seems to be evidence that there are different kinds of &amp;ldquo;backups&amp;rdquo; that differ in their usage patterns, and as such different backup tools for each kind may be preferable.&lt;/p&gt;
+
+&lt;p&gt;One backup &amp;ldquo;kind&amp;rdquo; is the full system backup, be it a full &amp;ldquo;byte-level&amp;rdquo; clone of the disk at the &lt;code&gt;dd&lt;/code&gt; level, or a file system one using &lt;code&gt;tar&lt;/code&gt;. It&amp;rsquo;s fine if they are slower and more linear, as this kind of backup is done less often, with lesser concerns about optimizing the increments (if any). The goal is to restore the whole system back to a stable state, and less about restoring a specific file from a history of file changes.&lt;/p&gt;
+
+&lt;p&gt;A system image clone can be done &amp;ldquo;offline&amp;rdquo; by booting into something like &lt;a href=&#34;https://clonezilla.org&#34;&gt;Clonezilla&lt;/a&gt;. If you use &lt;a href=&#34;https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29&#34;&gt;LVM&lt;/a&gt;, &lt;a href=&#34;https://en.m.wikipedia.org/wiki/ZFS&#34;&gt;ZFS&lt;/a&gt; or &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Btrfs&#34;&gt;Btrfs&lt;/a&gt;, you can also use a &amp;ldquo;live snapshot&amp;rdquo; of a file system at a point in time, and then clone that &amp;ldquo;live&amp;rdquo; while the system is still running.&lt;/p&gt;
+
+&lt;p&gt;The other backup “kind” would then be the user files. They are not specifically tied to a specific system, so they can be safely restored on a new computer. Typically, individual files are restored rather than all of them at once, and since user files are often changed it would be preferable to have a longer backup history for each. Practically, this means that restoring user files is more often non-linear than a full system restore.&lt;/p&gt;
+
+&lt;p&gt;And this where something like &lt;code&gt;tar&lt;/code&gt; doesn’t work well. Not all user data compresses well, and it can be argued that most of it, by size at least, are media files that are already compressed. User data is often organized in separate folders that have different backup needs, especially around backup frequency. The user data files could come from multiple computers and yet be backed up in the same destination. User data is typically more “valuable”, so they are often backed up online, where storage and bandwidth are ongoing costs. This also means that encryption of those backups should be enabled by default.&lt;/p&gt;
+
+&lt;p&gt;There are already quite a few commercial backup software made for user data, for example &lt;a href=&#34;https://en.wikipedia.org/wiki/Code42&#34;&gt;Crashplan&lt;/a&gt; and &lt;a href=&#34;https://www.backblaze.com/&#34;&gt;Backblaze&lt;/a&gt; to name a few. But they often don’t support Linux, and users are forced to use their proprietary online storage service. &lt;a href=&#34;https://restic.net/&#34;&gt;Restic&lt;/a&gt; is an open-source backup tool that is storage-agnostic, cross-platform, and is a great alternative to those commercial tools.&lt;/p&gt;
+
+&lt;p&gt;Compared to Duplicity, Restic has some great advantages that a quickly visible. First, it is &lt;em&gt;fast&lt;/em&gt;. If the first thing you do (and you should) is to try running a small local backup and fully verify it, you&amp;rsquo;ll find that Restic is several times faster; In my experience, Restic takes seconds for what would take minutes with Duplicity, with the exact same local backup storage location. Second, it is quite flexible around file sets and backup scheduling. To put it simply, you can add new or updated files to your backup destination (“repository”), whenever you want, in any combination. While it does mean that you have to build up your own scheduled tasks to run the backups, you are then free to combine what files, from what machine, and when backups will run, all to the same backup destination.&lt;/p&gt;
+
+&lt;p&gt;Restic natively supports &lt;a href=&#34;https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html&#34;&gt;a few backup storage types&lt;/a&gt;. It can also integrate with &lt;a href=&#34;https://rclone.org&#34;&gt;rclone&lt;/a&gt; to support, through it, &lt;a href=&#34;https://rclone.org/overview/&#34;&gt;an even larger number of storage locations&lt;/a&gt;. For example, I’ve set up my OneDrive account in rclone, and used that in Restic to use it as my backup storage location, even though Restic doesn’t natively support OneDrive.&lt;/p&gt;
+
+&lt;p&gt;There are a few disadvantages with Restic though. It doesn’t support “per-file” compression, as it would reduce the encryption’s security, and Restic favours security over disk usage. It still uses binary deltas for make backup increments smaller, so it’s not that bad. It is still a command-line standalone tool, so it is not as user-friendly as commercial tools, and isn’t “integrated” with the system, like Duplicity is within Ubuntu for example. This also means that while it is cross-platform, it doesn’t use much OS-specific features, specifically for Windows and macOS. Restic is also a relatively new backup tool, not yet considered “1.0”, so it’s still highly recommended you test your backups thoroughly (Restic has built-in tools to fully verify your backups).&lt;/p&gt;
+
+&lt;p&gt;Even with all those caveats, Restic became my preferred Linux backup tool, both to local and online destinations.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

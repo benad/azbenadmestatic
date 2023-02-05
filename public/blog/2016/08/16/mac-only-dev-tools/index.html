@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Mac-Only Dev Tools - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Mac-Only Dev Tools</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Even though I use Macs, Linux and Windows machines daily and could switch to any of these exclusively, I prefer running my Mac alongside either Linux or Windows. A reason I do so is that there are some development tools that run exclusively on macOS that I prefer over their other platforms&rsquo; equivalents. Here are a few I use regularly.</p>
+
+<p>To be fair, I&rsquo;ll also list for each of those tools what I typically use to replace these on Windows or Linux.</p>
+
+<p><strong>BBEdit</strong></p>
+
+<p>While <a href="http://www.barebones.com/products/bbedit/">BBEdit</a> isn&rsquo;t as flexible or extensible as <a href="http://www.jedit.org/">jEdit</a>, <a href="https://atom.io/">Atom</a>, <a href="https://www.gnu.org/software/emacs/">Emacs</a>, or even <a href="http://www.vim.org/">Vim</a> to some extent, BBEdit feels and act the most as a proper <em>native</em> Mac text editor. It is packed with features, is well supported, and is incredibly fast. It works quite well with <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a>, so I often use it to edit remote files. It also is the editor I used the longest, as I used it since the late 90s.</p>
+
+<p><em>Alternatives</em> : Too many to mention, but I currently prefer <a href="http://code.visualstudio.com/">Visual Studio Code</a> on the desktop and vim on the command-line.</p>
+
+<p><strong>CodeKit</strong></p>
+
+<p><a href="http://incident57.com/codekit/">CodeKit</a>, which <a href="https://benad.me/blog/2014/8/14/client-side-javascript-modules/">I mentioned before</a>, is my &ldquo;go to&rdquo; tool to bootstrap my web development. It sits in the background of your text editor (any one you want) and web browsers, and automatically validates and optimizes your JavaScript code and CSS files to your liking. It also supports many languages that compile to JavaScript or CSS, like <a href="http://coffeescript.org/">CoffeeScript</a> and <a href="http://sass-lang.com/">SASS</a>.</p>
+
+<p><em>Alternative</em> : Once I move closer to production, I do end up using <a href="http://gruntjs.com/">Grunt</a>. You can set it up to auto-rebuild your site like CodeKit using <a href="https://www.npmjs.com/package/grunt-contrib-watch">grunt-contrib-watch</a>, but Grunt isn&rsquo;t as nearly user-friendly as CodeKit.</p>
+
+<p><strong>Paw</strong></p>
+
+<p><a href="https://luckymarmot.com/paw/">Paw</a> quickly became my preferred tool to explore and understand HTTP APIs. It is used to build up HTTP requests with various placeholder variables and then explore the results using multiple built-in viewers for JSON. All your requests and their results are saved, so it&rsquo;s safe to experiment and retrace your way back to your previously working version. You can also create sequences of requests, and use complex authentication like <a href="https://en.wikipedia.org/wiki/OAuth">OAuth</a>. When you&rsquo;re ready, it can generate template code in multiple languages, or <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> commands.</p>
+
+<p><em>Alternative</em> : I like using <a href="http://httpie.org/">httpie</a> for the HTTP requests and <a href="https://stedolan.github.io/jq/">jq</a> to extract values from the JSON results.</p>
+
+<p><strong>Dash</strong></p>
+
+<p>When I was learning Python 3, I constantly made use of <a href="https://kapeli.com/dash">Dash</a> to search its built-in modules. It can do I incremental search in many documentation packages and cheat sheets, and does so very quickly since it is done offline. It also make reading &ldquo;man&rdquo; pages much more convenient.</p>
+
+<p><em>Alternatives</em> : There&rsquo;s Google, of course, but I prefer using the custom search engine of each language&rsquo;s documentation site using the DuckDuckGo &ldquo;<a href="https://duckduckgo.com/bang?c=Tech">bang syntax</a>&rdquo;.</p>
+
+                <p>Published on August 16, 2016 at 19:44 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2016/07/07/good-enough-wireless-audio/">Good Enough Wireless Audio</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2016/09/12/https-the-new-standard/">HTTPS, the New Standard</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2016/08/16/mac-only-dev-tools/";
+this.page.identifier = "https://benad.me/blog/2016/08/16/mac-only-dev-tools/";
+this.page.title = "Mac-Only Dev Tools";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

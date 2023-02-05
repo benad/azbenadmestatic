@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>On the Usability of Strings - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">On the Usability of Strings</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>I&rsquo;ve recently read an article about why programmers should favour Python 2 over Python 3 (&rdquo;<a href="https://web-beta.archive.org/web/20161123042252/https://learnpythonthehardway.org/book/nopython3.html">The Case Against Python 3</a>&rdquo;), and most of it is an incoherent rant that expose the author&rsquo;s deep misunderstanding of how <a href="https://en.wikipedia.org/wiki/Bytecode">bytecode</a> is internally used in scripting languages and how &ldquo;market forces&rdquo; of backwards-compatibility work against new languages. <a href="https://eev.ee/blog/2016/11/23/a-rebuttal-for-python-3/">Somebody else already rebutted</a> those arguments better than I would do, and unlike the original author, his later edits are clear and doesn&rsquo;t involve &ldquo;it was meant as a joke&rdquo;. One interesting a valid technical argument remains: Python 3&rsquo;s opaque support for Unicode strings can be unintuitive for those used to manipulate strings as transparent sequences of bytes.</p>
+
+<p>Many programming languages came from an era where text representation was either for English, or for Western languages that would neatly fit all their possible characters in 8-bit values. Internationalization, then, meant at worst indicating what &ldquo;<a href="https://en.wikipedia.org/wiki/Code_page">code page</a>&rdquo; or character encoding the text was. Having started programming on 90s Macintosh computers, the go-to string memory representation was the <a href="https://en.wikipedia.org/wiki/String_%28computer_science%29#Length-prefixed">Pascal string</a>, where its first byte indicated the string length. This meant that performing the wrong memory manipulation on the string, using the wrong encoding to display it, or even attempting to display corrupted memory would at worst display 255 random characters.</p>
+
+<p>There is a strong argument that <a href="http://utf8everywhere.org">UTF-8 should be used everywhere</a>, and while it takes the occasion to educate programmers about Unicode (for more complete &ldquo;Unicode for programmers&rdquo;, see <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">this article</a> and <a href="http://unicodebook.readthedocs.io">this more recent guide</a>), doing so seems to conflate the two different design (and usability) issues: What encoding should be used to store Human-readable text, and what abstractions (if any) programming languages should offer to represent strings of text?</p>
+
+<p>The &ldquo;UTF-8 Everywhere&rdquo; document already has <a href="http://utf8everywhere.org/#asian">strong arguments for UTF-8 as the best storage format</a> for text, and looking at the popularity of UTF-8 in web standards, all that remains is to move legacy systems to it.</p>
+
+<p>For strings in programming languages, you could imagine one that has absolutely no support for any form of strings, though it&rsquo;s difficult to sell the idea of a language that doesn&rsquo;t even support string literals or an <a href="https://en.wikipedia.org/wiki/&quot;Hello,_World!&quot;_program">&ldquo;Hello World&rdquo; program</a>. The approach of &ldquo;UTF-8 Everywhere&rdquo; is very close to that, and seems to indicate the authors&rsquo; bias towards C and C++ languages: Transparently use UTF-8 to store text, and shift the burden of not breaking multi-byte code points back to the programmer. The argument that counting characters, or &ldquo;grapheme clusters&rdquo;, <a href="http://utf8everywhere.org/#myth.strlen">is seldom needed</a> is misleading: Splitting a UTF-8 string in the middle of a code point <em>will</em> break the validity of the UTF-8 sequence.</p>
+
+<p>In fact, it can be argued that programming languages that offer native abstractions of text strings not only give greater protection against accidentally building invalid byte representations, but also give them a chance to do a myriad of other worthwhile optimizations. Languages that presents strings as immutable sequences of Unicode code points, or that transparently use <a href="https://en.wikipedia.org/wiki/Copy-on-write">copy-on-write</a> when characters are changed, can optimize memory by de-duplicating identical strings. Even if de-duplication is done only for literals (like Java), it can greatly help with memory reuse in programs that process large amount of text. The internal memory representation of strings can even be optimized for size based on the biggest code point used in it, like <a href="http://pyvideo.org/pycon-us-2013/the-guts-of-unicode-in-python.html">Python 3.3 does</a>.</p>
+
+<p>Of course, the biggest usability issue with using abstracted Unicode strings is that it forces the programmer to explicitly tell how to convert a byte sequence in a string and back. The article &ldquo;The Case Against Python 3&rdquo; above mentioned that the language&rsquo;s runtime should automatically detect the encoding, but that is highly error-prone and CPU intensive. The &ldquo;UTF-8 Everywhere&rdquo; argues that since both are using UTF-8, it boils down to memory copy, but then breaking code points is still a risk so you&rsquo;ll need some kind of UTF-8 encoder and parser.</p>
+
+<p>I personally prefer the approach of most modern programming languages, including Perl, Python 3, Java, JavaScript and C#, of supporting both a string and &ldquo;char&rdquo; type, and force the programmer to explicitly mention the input and output encoding when converting to bytes. Because they are older and made when they naively thought that the biggest code point would fit in 2 bytes, meaning before these days of <a href="https://en.wikipedia.org/wiki/Emoji">Emojis</a>, Java and JavaScript use UTF-16 and 2-bytes characters, so they still can let you accidentally break 3 or 4-bytes code points. Also, it would be nice to do like C# and by default assume that the default encoding used when decoding or encoding should be UTF-8, instead of having to explicitly say so each time like in Perl 5 and Java. Still, providing those string and &ldquo;char&rdquo; abstractions while using UTF-8 as its default byte representation reduces the burden on programmers when dealing with Unicode. Sure, learning about Unicode code points and how UTF-8 works is useful, but shouldn&rsquo;t be required from novice programmers that write a &ldquo;Hello World&rdquo; program that outputs an Unicode Emoji to a text file.</p>
+
+                <p>Published on December 26, 2016 at 10:11 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2016/11/10/the-dongle-generation/">The Dongle Generation</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2017/02/11/my-linux-laptop/">My Linux Laptop</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2016/12/26/on-the-usability-of-strings/";
+this.page.identifier = "https://benad.me/blog/2016/12/26/on-the-usability-of-strings/";
+this.page.title = "On the Usability of Strings";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

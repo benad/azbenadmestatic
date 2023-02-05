@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Upgrading to the Pi 400 - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Upgrading to the Pi 400</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Two years ago, I was tempted to replace my <a href="https://benad.me/blog/2017/11/06/raspberry-pi-your-home-linux-server/">Raspberry Pi 3 Linux server</a> with a <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Pi 4</a>. I would have taken this occasion to upgrade it from its <a href="https://www.raspbian.org/">Raspbian OS</a> that was based on Debian 9 to the new <a href="https://www.raspberrypi.org/software/">Raspberry Pi OS</a>, based on Debian 10.</p>
+
+<p>Looking at the various kits for the Pi 4, I changed my mind. Unlike the Pi 3, a fan to cool it down is highly recommended, and one of my requirements is to have a fan-less server. Sure, you can run it without a fan, but that requires running it at a significantly slower clock speed, especially if you put it inside a case. To compare, most the of Pi 3 case kits included a heatsink, while for the Pi 4 most of them included a fan.</p>
+
+<p>Otherwise, the Pi 4 would have been a significant upgrade, especially if you use it as a server. As usual, the CPU is faster, and it supports a lot more RAM (from 0.5 - 1 GB to 2 - 8 GB). More importantly, it supports USB 3 for external devices. To compare, the Pi 3 was limited to USB 2, and the Ethernet port&rsquo;s bandwidth was shared with the USB 2 ports, so all file transfers from an external USB drive would be at best half of the maximum speed of USB 2.</p>
+
+<p>The <a href="https://www.raspberrypi.org/products/raspberry-pi-400/">Raspberry Pi 400</a> is internally similar to the Pi 4, but since it comes in the form of a keyboard, it has enough surface to not require any kind of fan. That was perfect for me, so I bought it as soon as I could.</p>
+
+<p>I backed up the micro SD card of my Pi 3 to a <a href="https://tldp.org/HOWTO/SquashFS-HOWTO/index.html">SquashFS</a> disk image. I found this more practical than using TAR, since it can be mounted (even as user-space with <a href="https://github.com/vasi/squashfuse">squashfuse</a>) and allows me to copy individual files instantly from it.</p>
+
+<p>As for setting up the Pi 400, I changed my mind about using Raspberry Pi OS, and installed Ubuntu 20.04 on it. Since I want to use it primarily as a server and don&rsquo;t really care about having a GUI, I used Ubuntu Server. This is officially supported by Canonical, and they have a <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi">nice tutorial about how to set it up</a>. If I want to set up a desktop environment in it later, Ubuntu Server can easily be upgraded to <a href="https://lubuntu.net/">Lubuntu</a>.</p>
+
+<p>Another big advantage of Ubuntu Server over the Pi OS is that it runs the Pi in ARMv8 64-bit mode rather than the older v7 in 32-bit mode. This means that, combined with the Ubuntu ecosystem, there is a lot more software available for it than Pi OS. In addition, this now means that <a href="https://benad.me/blog/2017/08/23/forever-64-bit/">all my &ldquo;computers&rdquo; are finally 64-bit processors</a>.</p>
+
+<p>So, after using a little while, I&rsquo;m still blown away by its performance compared to the Pi 3. Maybe it&rsquo;s due in part from using a new micro SD card that is almost twice as fast as your typical U1 cards. Yet, when I was testing it with Raspberry Pi OS and lanched Chromium, I could easily tell that its performance could be compared to some lower-end Chromebooks and could be used as a typical modern computer. Beyond using it as a server like I do, the Pi 400 feels like a modern Linux-based equivalent to the <a href="https://en.wikipedia.org/wiki/Commodore_64">Commodore 64</a>, and a great machine to learn software or computer engineering.</p>
+
+                <p>Published on April 13, 2021 at 15:54 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2021/02/23/ram-compression-on-linux/">RAM Compression on Linux</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2021/08/01/from-remote-desktop-to-remote-gaming/">From Remote Desktop to Remote Gaming</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2021/04/13/upgrading-to-the-pi-400/";
+this.page.identifier = "https://benad.me/blog/2021/04/13/upgrading-to-the-pi-400/";
+this.page.title = "Upgrading to the Pi 400";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

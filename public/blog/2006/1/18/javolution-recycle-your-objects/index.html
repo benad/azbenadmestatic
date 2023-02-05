@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Javolution: Recycle Your Objects! - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Javolution: Recycle Your Objects!</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>If you are coding in C, C++ or Objective C, there are two things you are surely paranoid about: null pointers and memory leaks. Null pointers, because it crashes the whole process. Memory leaks, because objects you create in the heap by using <tt>malloc</tt> or <tt>new</tt> are not automatically deleted when the function (or the code block) that created it  exits.</p>
+
+<p>One design trick commonly used in Objective C to prevent memory leaks is simple: a function (or code block) is responsible to free the memory it allocated on the heap. If you are consistent using that design, then having memory leaks are less likely.</p>
+
+<p>If you're lazy and don't want to write all this code to free memory, you can always use a garbage collector like <a href="http://benad.livejournal.com/5981.html">Boehm's garbage collector for C</a>. This could actually be faster than the code you would write to "figure out" what memory blocks to free in a set of structures that point to each other.</p>
+
+<p>A problem remains though. Imagine you write a function that needs a total 100MB of temporary memory to work, in the form of thousands of little memory blocks. If you expect to call the function many times, then a lot of time will be wasted freeing memory you will allocate all over again the next time. In that case, you want to keep and reuse the memory you allocated <i>just in case</i> you're going to call the function again.</p>
+
+<p>Well, in Java, even though you have a garbage collector silently running in a background thread, things are more complicated. Not only making a new object instance is more costly than a <tt>malloc</tt> in C, but if you create and throw away too many objects the garbage collector will unexpectedly slow down your code.</p>
+
+<p>And so comes <a href="http://www.javolution.org/">Javolution</a>. This library lets you create objects from a "heap context", which is a Factory that recycles objects you don't use anymore. Because the context keeps a reference to all the objects it controls, Java's garbage collector will <b>not</b> collect those objects. That way, not only you will increase performance by not having to re-create those objects every time, but also the execution time of your function will be consistent. Or, another way of saying it, your function will have <i>"real time" predictability</i>.</p>
+
+<p>Javolution also implements some typical classes from <tt><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/package-summary.html">java.lang</a></tt> and <tt><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/package-summary.html">java.util</a></tt> such as <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/StringBuffer.html">StringBuffer</a> (<a href="http://www.javolution.org/api/javolution/lang/Text.html">Text</a> and <a href="http://www.javolution.org/api/javolution/lang/TextBuilder.html">TextBuilder</a>), <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/ArrayList.html">ArrayList</a> (<a href="http://www.javolution.org/api/javolution/util/FastList.html">FastList</a>) and <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/HashMap.html">HashMap</a> (<a href="http://www.javolution.org/api/javolution/util/FastMap.html">FastMap</a>) using contexts and the same design approach (reuse objects as much as possible), with spectacular performance improvements.</p>
+
+<p>I wonder what would happen to the performance of real-time network-based Java applications such as <a href="http://azureus.sourceforge.net/">Azureus</a>, <a href="http://freenetproject.org/">Freenet</a> or <a href="http://i2p.net/">i2p</a> if they used a bit Javolution...</p>
+
+                <p>Published on January 18, 2006 at 15:24 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2006/1/2/jedit-it-does-the-job">jEdit: It Does The Job</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2006/2/2/valgrind-destroy-the-corruption">Valgrind: Destroy the Corruption</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2006/1/18/javolution-recycle-your-objects";
+this.page.identifier = "https://benad.me/blog/2006/1/18/javolution-recycle-your-objects";
+this.page.title = "Javolution: Recycle Your Objects!";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

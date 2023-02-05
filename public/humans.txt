@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Benoit Nadeau -- Main developer -- @benad
+
+# THANKS
+
+    Bootstrap and Initializr teams
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery 1.9.1, Modernizr 1.1.0

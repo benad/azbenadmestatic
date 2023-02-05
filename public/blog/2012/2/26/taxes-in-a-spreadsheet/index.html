@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Taxes in a Spreadsheet - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Taxes in a Spreadsheet</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <div class='posterous_autopost'><p>So, this is tax season again. You might ask what me, a programmer, would use to fill my tax forms in Québec, Canada. Do I buy some software? If so, what software? Do I &ldquo;outsource&rdquo; it? Do I write my own code?</p>  <p>Three years ago I did consider writing my own software. To give you an idea of what&rsquo;s involved, here&rsquo;s a bit of a background of taxes in Québec and Canada (they&rsquo;re quite similar). There&rsquo;s a main form that can refer to a few additional annexes. Each form or annex is a bunch of numbered boxes that either have to be filled in or computed from other boxes. When there&rsquo;s a computation to be made, it can refer to some other boxes by number (and annex name if it comes from an annex) or to a range of boxes, for example &ldquo;fields 100 to 199&rdquo;. To add to the confusion, some boxes are identified by two numbers: one using an absolute number unique across all annexes (&ldquo;field 100&rdquo;) and one local to an annex (&ldquo;row 31 or annex B&rdquo;).</p>  <p>You could write the code for that if you really wanted to. Cells are user-entered or computed, and either way they can both be read. Computed cells are computed at once after all user-entered cells are ready. Cells are referred through a two-layered hash of the annex name followed by the cell number. To support ranged sums (&ldquo;fields 100 to 199&rdquo;), the hash contained in an annex should be an ordered hash that can be iterated in order from a key.</p>  <p>If that sounds familiar, it&rsquo;s not just you. That sounds like the typical spreadsheet, but with the added functionality of supporting hashed references to a value. So rather than coding everything myself, I looked at a way to do that in Apple&rsquo;s <a href="http://www.apple.com/iwork/numbers/">Numbers</a> (though it should work with <a href="http://www.libreoffice.org/">LibreOffice</a> and <a href="http://office.microsoft.com/en-us/excel/">Microsoft Excel</a>). I found a way to do it, so here it is.</p>  <p>In a worksheet, which represents a single annex, you place only two columns, the first containing cell numbers (column A) and the second with their corresponding values (column B). The rows are sorted by the cell numbers. To make things look cleaner, I placed a header row with &ldquo;CellNum&rdquo; in A1 and &ldquo;Value&rdquo; in B, and I placed a background highlight for all computed cells so that I don&rsquo;t accidentally overwrite them with some number of my own.</p>  <p>To lookup a single value for a cell number, here let&rsquo;s say cell 101, you do this:</p>  <div class="CodeRay"> <div class="code"><pre>=VLOOKUP(101,A:B,2,FALSE)</pre></div> </div>   <p>Note that due to some quirks in Numbers (and maybe Excel), you have to pre-fill all cells with values of 0.</p>  <p>For a range, let&rsquo;s say 101 to 199, it&rsquo;s a bit more complicated:</p>  <div class="CodeRay"> <div class="code"><pre>=SUM(OFFSET(B2,MATCH(101,A:A)-2,0,MATCH(199,A:A)-MATCH(101,A:A)+1,1))</pre></div> </div>   <p>Some of the offset tweaks made here depends on the existence of a header row. Also notice you have to set the minimum cell number (101) twice.</p>  <p>A small but important detail is the way spreadsheet software keeps track of sub-cent values. On a paper form (which I&rsquo;m filling), there is no clear guide about how to deal with sub-cent values, other than to &ldquo;round&rdquo; them. So, whenever there are operations that might introduce rounding issues (for example, multiplying by 20%), I do this:</p>  <div class="CodeRay"> <div class="code"><pre>=ROUND(VLOOKUP(101,A:B,2,FALSE)*0.2,2)</pre></div> </div>   <p>Finally, if there is a cell value which is the sum of various things in my receipts, I simply place them as a formula so that I don&rsquo;t do the sum myself.</p>  <div class="CodeRay"> <div class="code"><pre>=1000+2000+3000</pre></div> </div>   <p>Now, that still means that every year I have to make two spreadsheet templates before I can actually do my taxes (one for Québec&rsquo;s provincial taxes, one for Canada&rsquo;s federal one). Still, that gives me the occasion to look closely at all the exemptions, rules and whatnots, also making sure I didn&rsquo;t forget any paperwork needed to fill in the forms. After that, it&rsquo;s as simple as filling in the numbers, seeing the &ldquo;amount due&rdquo; update in real-time, and writing down the final numbers on the paper form.</p></div>
+
+                <p>Published on February 26, 2012 at 12:34 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2012/2/25/blind-iphone">Blind iPhone</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2012/2/27/nasty-avast-7-update">Nasty Avast 7 Update</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2012/2/26/taxes-in-a-spreadsheet";
+this.page.identifier = "https://benad.me/blog/2012/2/26/taxes-in-a-spreadsheet";
+this.page.title = "Taxes in a Spreadsheet";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

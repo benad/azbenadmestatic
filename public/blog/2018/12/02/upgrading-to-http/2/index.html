@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Upgrading to HTTP/2 - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Upgrading to HTTP/2</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>A side effect of <a href="https://benad.me/blog/2018/06/29/stretching-to-debian-9/">upgrading my web server to Debian 9</a> is that its version of <a href="https://httpd.apache.org/">Apache HTTPD</a> now optionally supports <a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a>. Not to be confused with the old &ldquo;<a href="https://en.wikipedia.org/wiki/Web_2.0">Web 2.0</a>&rdquo; thing, this version 2 of the <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Hypertext Transfer Protocol</a> brings many optimizations for concurrent transfers within a single connection.</p>
+
+<p>Enabling HTTP/2 on Debian 9 for this site was easy. I set up a file <code>/etc/apache2/conf-available/http2.conf</code> like this:</p>
+
+<pre><code>&lt;IfModule http2_module&gt;
+    Protocols h2 h2c http/1.1
+    H2Direct on
+&lt;/IfModule&gt;
+</code></pre>
+
+<p>And then I ran the following commands (each prefixed with sudo):</p>
+
+<pre><code>a2enconf http2
+a2enmod http2
+systemctl restart apache2
+</code></pre>
+
+<p>To help test it out I used Google Chrome with the <a href="https://chrome.google.com/webstore/detail/http2-and-spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin">HTTP/2 and SPDY indicator</a> and <a href="chrome://net-internals/#events">chrome://net-internals/#events</a> to monitor the connections. Newer versions of <a href="https://curl.haxx.se/">cURL</a> also support the &ldquo;HTTP2&rdquo; protocol, and fetching a page with the &ldquo;verbose&rdquo; option should show you the connection&rsquo;s upgrade to HTTP/2. If you try it out right now on this page, you should see a confirmation that this server indeed supports HTTP/2.</p>
+
+<p>I normally run &ldquo;HTTP application services&rdquo; like Python or Java behind a reverse proxy and not directly accessible from the internet, and it can be argued that most HTTP REST-like services don&rsquo;t gain much from parallelism within a connection that HTTP/2 brings. Still, they are now starting to support HTTP/2, for example with <a href="https://github.com/python-hyper/hyper-h2/blob/master/examples/twisted/twisted-server.py">python-hyper</a> and <a href="http://www.eclipse.org/jetty/documentation/current/http2.html">Jetty</a>. Here&rsquo;s a rather comprehensive <a href="https://github.com/http2/http2-spec/wiki/Implementations">list of client and server HTTP/2 implementations</a>.</p>
+
+<p>We&rsquo;re still a few years before &ldquo;HTTP/3&rdquo; or <a href="https://tools.ietf.org/html/draft-ietf-quic-http-16">QUIC</a> gains much use outside of Google&rsquo;s own services, but for now enabling HTTP/2 is so simple it should almost be considered a default. The only thing that could complicate its deployment is that most HTTP/2 clients require TLS, but then if you&rsquo;re still not using TLS you have bigger issues.</p>
+
+                <p>Published on December 2, 2018 at 20:48 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2018/09/16/a-eulogy-for-small-phones/">A Eulogy for Small Phones</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2019/02/10/monorepos-and-semantic-versioning/">Monorepos and Semantic Versioning</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2018/12/02/upgrading-to-http/2/";
+this.page.identifier = "https://benad.me/blog/2018/12/02/upgrading-to-http/2/";
+this.page.title = "Upgrading to HTTP/2";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

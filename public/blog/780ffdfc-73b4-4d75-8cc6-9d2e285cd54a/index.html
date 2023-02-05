@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Really Secure Online Storage - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Really Secure Online Storage</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Of all the online services I use, three deserve kudos for automatically encrypting the data using a decryption key they can never know: <a href="http://www.crashplan.com/">CrashPlan</a>, <a href="https://lastpass.com">LastPass</a> and <a href="https://www.wuala.com/">Wuala</a>. CrashPlan uses a separate encryption key which can be used instead of your password to encrypt the data before it is sent to their servers.</p>
+
+<p>LastPass and Wuala are using a clever trick. (I can only speculate for Wuala, but given its lack of a separate encryption key seems to indicate they use the same technique.) The user has a user name and password, but to log in the user is sent and the &#8220;login key&#8221;, which is a hash of &#8220;user + password&#8221;. That way, the servers never know the password. For encryption the &#8220;crypto key&#8221; is the hash of &#8220;login key + user + password&#8221;. Because the server doesn&#8217;t know the original password, it is impossible for it to guess the user&#8217;s crypto key. That way, the user only has to remember a simple user name and password, and they have full security. Only downside: If you forget your password, you lose all your data. Which is fine, since most password recovery mechanism are flawed (security questions are horrible). (LastPass has a clever way of storing both locally and on the server a per-machine backup password that can be used on local cached data to restore the crypto key, but that&#8217;s a different story.)</p>
+
+<p>My point is that there is just no technical reason why an online storage service should have access to all your file unencrypted. It introduces liability for the online storage company, encourages government spying (thus extra costs and hassle for the storage company for all those requests), and could be a major loss of privacy for users. Given the fact that <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> is <a href="http://www.truecrypt.org/docs/?s=hardware-acceleration">now hardware-accelerated</a> (on most Intel CPUs since 2010), transparent encryption can be easy, fast <em>and</em> secure, so there&#8217;s no excuse anymore.</p>
+
+                <p>Published on August 21, 2012 at 19:10 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/3b95310a-84b0-497e-ac39-33f25b967eef">Email Backups</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/49b1231d-4e46-416e-9653-2768a2f15e90">The LogMeIn Fix</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/780ffdfc-73b4-4d75-8cc6-9d2e285cd54a";
+this.page.identifier = "https://benad.me/blog/780ffdfc-73b4-4d75-8cc6-9d2e285cd54a";
+this.page.title = "Really Secure Online Storage";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

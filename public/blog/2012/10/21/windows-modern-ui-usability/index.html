@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Windows Modern UI Usability - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Windows Modern UI Usability</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Windows "<a href="http://en.wikipedia.org/wiki/Metro_%28design_language%29">Modern UI</a>", previously known as "Metro", rubs me the wrong way. Not because it is different, not because it is made to work on both desktops and tablets, but because it is ridden with usability issues here and there, small and large. But there's one problem that is so jarring that, unless you get Windows 8 on a new computer that was designed for it, I would highly recommend users <em>not</em> to upgrade Windows 7 desktops to Windows 8.</p>
+
+<p>I'll take one major usability issue with Modern and explore it in detail, since I think it is quite representative of why so many users have issues with it. My experience with Windows 8 has been months of near continuous use for development purposes, using both the Desktop and Modern interfaces quite often. So what's the issue about? <em>Scrolling</em>.</p>
+
+<p><strong>Everybody Scrolls</strong></p>
+
+<p>Some background is needed. If your usability experience was based only on how actors on TV and movies use computers, you'd assume its primary input is typing. Even "hacking" involves far more mouse usage than hackers would like to admit. But then, even moving the mouse and clicking aren't the primary inputs method anymore. In a way, the (graphical) Web changed everything, as computers became less interactive and more consumption devices. Browsing around and glancing at Web pages became the primary usage of computers (other than playing video games).</p>
+
+<p>At the same time Web browsing became increasingly popular, the "scroll wheel" made its appearance on computer mice, making it the primary input method. A typical user scrolls up and down a web page, reads a bit, then eventually moves the mouse and clicks. Clicking to place a window in focus isn't even needed anymore, as now the scroll wheel scrolls whatever is under the mouse pointer.</p>
+
+<p>An important point about mouse wheels is that they were designed for reading "pages", meaning for content that is primarily vertical. Only recently since the mid-2000s did multi-directional scrolling appeared, first with Apple's trackpads to a few touch-based button-less mice. It is understandable that even up to now scrolling horizontally is seen as a feature needed only for "pro" users in the field of photography and visual design, where pictures and canvases tend to have a more horizontal aspect. <em>(I'm purposely avoiding the terms "portrait" and "landscape", since those terms don't apply well to scrolling directions.)</em></p>
+
+<p>So, if you use a computer, you spend most of your time scrolling, <em>vertically</em>. And not only computers: Even touch-based phones are primarily used vertically, for content that scrolls vertically. What about Windows 8 Modern, both on desktops, tablets and phones?</p>
+
+<p><strong>The Modern Disposition</strong></p>
+
+<p>So, what is exactly the orientation and disposition of Modern? Well, it seems to be the opposite of all other GUIs... On most "modern" phone GUIs, menu items are displayed vertically, and pressing an items scrolls to the right at the next level to the sub menu. Once content is found at the leaf of a menu tree, it is primarily consumed top-down.</p>
+
+<p>On Modern, top-level menus are scrolled left-right from a scrolling header, sub-menus top-down once the menu header is locked on the top-left corner, and content is consumed left-right on desktops and tablets, top-down on phones (<a href="http://en.wikipedia.org/wiki/File:Wp7_musicvideo.jpg">example here</a>). On desktops, multiple menus can be showed at once, display a mix of menu and sub-menus in grid-like fashion, on phones only one menu at a time.</p>
+
+<p>Over time, computer screens became far more horizontal than vertical, posing a strange challenge for web designers: either embed your pages within large margins, or hopefully assume users will resize their browser windows to less than two-thirds of the screen's horizontal size. So of course, attempting to display content horizontally seems to make far more sense for computers. Tablets, though, have been avoiding the issue altogether, since without keyboards they can easily rotated vertically.</p>
+
+<p>Hence the worst-case usability scenario for Modern: Tablets can't be rotated and horizontal scrolling is required since all content has to be done horizontally. Ouch. If you're a current desktop user, it is highly unlikely you have any horizontal scrolling input device, and if you're about to buy a Windows Surface, sucks for you if you want to read a book or magazine.</p>
+
+<p><strong>Scrolling Controls in Graphical Interfaces</strong></p>
+
+<p>There is something to be said about how we are quickly shifting away from Xerox PARC's original scrolling bar design in our GUIs. Relative to the screen size, the scrolling bars were quite big, and so can be easily pointed and clicked on by a mouse. As now having a scroll wheel is almost considered standard, the scroll back became relatively smaller. On Mac OS X, Apple even went to the extreme of hiding the vertical scroll bars <em>completely</em> if it detects that you use a mouse with a scroll wheel or the trackpad, though to permit faster scrolling by click-and-drag, they are shown when pointed in the vicinity by the mouse.</p>
+
+<p>With touch input, the entire surface is the scrolling device. By simply making the distinction between a drag and a tap, then combined with acceleration, friction and "rubber" effects as a result of the drag, scrolling works quite well.</p>
+
+<p>No wonder that in Modern scroll bars are an afterthought. Actually, since layout is horizontal, having a horizontal scroll bar at the bottom at all times would significantly constrain the limited vertical space, ever more limited by new 16:9 aspect ratios.</p>
+
+<p><strong>A Recipe for Disaster</strong></p>
+
+<p>So, the primary input is <em>made</em> for vertical scrolling on desktops, web content is almost always vertical, and Microsoft decided to throw all of that away. You're going to want to scroll horizontally in Modern all the time, but tough luck, your mouse can't do that. Oh, the tiny, unusable scroll bar at the bottom? Good luck aiming at it!</p>
+
+<p>You think you're clever and want to use the arrows on your keyboard? Sorry, that's not a standard GUI behaviour. What about the screen scrolling a bit to the left each time you jam your mouse cursor to the right edge of the screen? Again, non-standard, so sometimes it works, sometimes not. You'd think that they would map vertical scrolling to horizontal visually, but of course they didn't think of that. What about just click-dragging anywhere on screen as if you were touching it? Nope.</p>
+
+<p>What about jamming your mouse to the bottom-right corner, where hopefully should be located the right arrow of the scroll bar? Sorry, it has to move a bit to the left because they have to place (inconsistently) a "zoom out" button that emulates a pinch-to-zoom-out touch gesture. At any rate, doing so starts displaying the charms bar on the right, expecting you to do a bottom-right corner then up mouse movement.</p>
+
+<p>Yes, all of that can be fixed in individual Modern app with updates. But then that means that there is no standard widget of mechanism of scrolling that can be consistently used across 3rd-party apps.</p>
+
+<p>So, if I'm getting this right, what users will want to do <em>all the time</em> in their GUI is the one thing they just "forgot" to design well, consistently, or even at all. Why? Because, as desktop users, Microsoft doesn't give a damn about you. Modern is a long-term replacement to the legacy desktop so that they can take a cut of all Windows software ever sold, and because they want to sell hardware. As a Windows 7 desktop user, you are worth nothing to them, so they spent just that much time designing Modern for you (meaning little to none at all).</p>
+
+<p>I hope I was just going way over the top with this article. But then, just watch a typical Windows desktop user trying to use Modern, and you'll notice it too: The scrolling sucks really bad, and that's what users want to do above all else. You will rage at the inconsistency of such an important GUI interaction. You will find that Internet Explorer 10 in Modern jarring in full screen. You will <em>want</em> to touch at the screen, because if your trackpad doesn't support horizontal scrolling, the user experience is even worse than with a good mouse.</p>
+
+<p><strong>Only the Beginning</strong></p>
+
+<p>Scrolling is just one of those issues. And I haven't even started to talk about clicking (and right-clicking), multi-tasking, or even the near complete lack of visual <a href="http://en.wikipedia.org/wiki/Affordance">affordance</a>. Yes, Modern is good looking. But try working and being productive with it, and you can't. Beyond the marketing and the cries of "fanboys" that tell you otherwise, Modern is a bad user experience. After 25 years of bad GUIs coming from Microsoft, I shouldn't be surprised anymore.</p>
+
+                <p>Published on October 21, 2012 at 20:09 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2012/10/20/trust-us-security">&#34;Trust Us&#34; Security</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2012/10/22/defining-processes">Defining Processes</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2012/10/21/windows-modern-ui-usability";
+this.page.identifier = "https://benad.me/blog/2012/10/21/windows-modern-ui-usability";
+this.page.title = "Windows Modern UI Usability";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

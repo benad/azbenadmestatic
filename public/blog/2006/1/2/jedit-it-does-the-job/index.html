@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>jEdit: It Does The Job - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">jEdit: It Does The Job</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>OK, now the one million dollar question: Emacs or Vi?</p>
+
+<p>Well, let me first go back in time. I was trying to set up a bare-bones image of <a href="http://www.redhat.com/docs/manuals/linux/RHL-7.3-Manual/">RedHat 7.3</a> when I realized that <i>no</i> editor was installed <i>except</i> a pretty old version of <a href="http://www.vim.org/">Vim</a>. So, like all new users of Vim, I panicked a little bit, then I started going through the tutorial...</p>
+
+<p>For your information, I used to be an <a href="http://www.gnu.org/software/emacs/emacs.html">Emacs</a> user, because the combination of Emacs and Perl is what was commonly used in the company I was working for. I quickly noticed that, around me at the workplace, no one actually read the manual of either Emacs of (worse) Perl, and the learning curve of actually reading the manuals was pretty steep.</p>
+
+<p>Over time, though, I started to really like Emacs, especially for C development. The <tt>c-toggle-auto-state</tt> option would automatically create newlines and indentation as you write the code, so you never have to press the enter key. Also, the <tt>c-toggle-hungry-state</tt> option would, when you press backspace, delete all the spaces and newlines in one go.</p>
+
+<p>But then, panic, the GUI version of Emacs that I used for Mac OS X stopped working. Even though I found a <a href="http://home.att.ne.jp/alpha/z123/emacs-mac-e.html">working version</a> last week, that incident prompted me to look for something else...</p>
+
+<p>The problem that I had with Emacs (and Vim, which I'm learning right now) is that it's simply not intuitive, in the sense of not following the "new" Mac/XeroxParc/Win32 standards for text editing. While it works well on the command-line, it just doesn't cut it when you use the mouse for copy-pasting or using the menus, etc. Actually, even for simple text editing on a terminal, I found <a href="http://www.nano-editor.org/">GNU nano</a> to be much more intuitive.</p>
+
+<p>I tried looking for GUI-based editors, but either they are part of an full IDE, are Sharewares, works only on one platform (Windows or Mac OS X), or are plain ugly.</p>
+
+<p>And then, a co-worker (Michel) introduced me to <a href="http://www.jedit.org/">jEdit</a>. It's a fully-featured GUI-based text editor in Java. What made me "switch" to it was that it could do a lot of things Emacs can, but in a much more simple and intuitive way, for example regular expression searches and rectangular selections. Also, it follows the typical standards for text editing, supports drag-and-drop, and runs everywhere Java does.</p>
+
+<p>Personally, I still prefer <a href="http://www.netbeans.org/">NetBeans</a> for Java development and Emacs for C, but for anything else I move to jEdit because of its simplicity and kick-ass support of XML files. So if I recommend it, it's not because it was so painful for me to learn that I have to justify my decision to protect my ego (thus leading to those stupid "Emacs vs. Vi" arguments), but because it's cool, it's easy to learn, and it does the job.</p>
+
+                <p>Published on January 2, 2006 at 13:00 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2005/12/11/virtualization-as-a-solution-for-package-management">Virtualization As A Solution For Package Management</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2006/1/18/javolution-recycle-your-objects">Javolution: Recycle Your Objects!</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2006/1/2/jedit-it-does-the-job";
+this.page.identifier = "https://benad.me/blog/2006/1/2/jedit-it-does-the-job";
+this.page.title = "jEdit: It Does The Job";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>iOS and Android Development Tools - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">iOS and Android Development Tools</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>As I <a href="http://blog.benad.me/blog/2014/4/2/a-week-with-android">previously mentioned</a>, I've started doing some iOS and Android development. While I haven't done any App of reasonable size in either, I've read a few books and developed some "beginner's software in both, namely "<a href="http://www.amazon.ca/Android-Programming-Ranch-Guide-Guides-ebook/dp/B00C893P8U/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1399803088&amp;sr=1-1&amp;keywords=big+nerd+ranch+android">Android Programming: The Big Nerd Ranch Guide</a>" and "<a href="http://www.amazon.ca/Learn-iOS-7-App-Development-ebook/dp/B00DREFPY2/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1399803307&amp;sr=1-1&amp;keywords=Learn+ios+7+app+development">Learn iOS 7 App Development</a>". I've also delved a little bit deeper with both platforms, specifically Core Animation and Android NDK.</p>
+
+<p>And, being opinionated about everything, I quickly formed an opinion of the development tools for iOS, with Xcode, and Android, with Eclipse ADT and Android Studio.</p>
+
+<h2 id="xcodeforios">Xcode for iOS</h2>
+
+<p>Xcode does represent well Apple's aesthetics in software: Over-simplified GUI, limited, but if you can live within those limits it is highly efficient. The GUI is hit-and-miss, and it lacks a ton of features you can now expect from modern IDEs, for example refactoring. If you want a more advanced IDE for Objective-C, you may want to look at 
+<a href="http://www.jetbrains.com/objc/" title="AppCode">AppCode</a> from <a href="http://www.jetbrains.com/">JetBrains</a>, the makers of <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a>.</p>
+
+<p>Its build system is similar to Microsoft Visual Studio, in the sense that it has projects with various settings, and it compiles your code with its own proprietary system. You can use the command-line <code>xcodebuild</code> to build an Xcode project from the command-line. If you have to use Makefiles to build some cross-platform code, you may want to look at <a href="http://www.macports.org/">MacPorts</a>, or use the <code>xcrun</code> command to look for the compiler tools specific to an SDK (<code>xcrun --sdk iphoneos ...</code>).  Of course, you can add custom build steps that run custom scripts that in turn will execute your external Makefiles.</p>
+
+<p>Still, you won't want to leave Xcode much. Everything is well integrated in there, including the "Quick Help" in the side bar, simple packaging and signing of the iOS app packages, running and debugging with an emulator or a real device plugged in with a USB cable, and so on. It is a complete, self-contained environment, with no surprises. Considering that most of it is closed-source and that you'd have no other option if it didn't work well, it is comforting that it is quite stable.</p>
+
+<p>It should be noted that Xcode includes a superbly packaged set of documentation. The quality of the documentation is very high and comes very close to MSDN.</p>
+
+<h2 id="adtandandroidstudio">ADT and Android Studio</h2>
+
+<p>If I were asked a few years ago to develop a mobile OS, I would have surely done something quite similar to Android. Based of Java (at least, its API, so Dalvik), Linux (but with a simplified user-space API, so Bionic), a bunch of XML files, a hacked version of Eclipse, and so on. This sounds like praise, but it's not, considering how wrong I were and how much I didn't know any better back then.</p>
+
+<p>Let's start with the Eclipse-based Android Developer Tool. Whatever was there on Google's web site was broken out of the box. Its update mechanism had missing update server sources, so updating it would break its Android 4.4 support. Usability is garbage, but that's expected from Eclipse. The emulator is shockingly slow, even on my bleeding-edge Intel Haswell i7 with 16 GB or RAM. Of course, you can use the virtualized Android VM for Intel chips, but the version that was there a few months ago would crash Mac OS X 10.9, and once you fix it with a patch from Intel, it's still twice slower than the iPhone simulator. Oh, and rotations in the Android 4.4 simulator don't work. Go figure.</p>
+
+<p>Of course, I could switch one beta-quality IDE, ADT, to another beta-quality IDEA-based one, Android Studio. It sucks and it's buggy, but just slightly less so than ADT. It insists on converting the integrated build system of ADT to a bunch of equally obscure <a href="http://www.gradle.org/">Gradle</a> plugins. In theory this is more flexible, but editing a Gradle build file is as intuitive as Maven, meaning not at all.</p>
+
+<p>Oh, and if after all those dire warnings that you should not attempt to develop native, non-Java code on Android you still do so with the Native Development Kit (NDK), you'll be slapped in the face with a horrible hacked build system built atop Makefiles (<code>ndk-build</code>). Of course, NDK with its Makefiles hack doesn't integrate well with ADT, and can't seem to be integrated <em>at all</em> with Android Studio. You can also forget about your slightly faster virtualized Intel Android VM: Back to the slow ARM emulator.</p>
+
+<p>Basically, Android development tools suck. Plan ahead a few days of work to set it up.</p>
+
+<p>Hey, I could have been a video game programmer for game consoles, so I should stop complaining about crappy development environments.</p>
+
+                <p>Published on May 26, 2014 at 20:27 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2014/4/14/openssl-my-heart-is-bleeding">OpenSSL: My Heart is Bleeding</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2014/6/28/google-play-music-in-canada">Google Play Music in Canada</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2014/5/26/ios-and-android-development-tools";
+this.page.identifier = "https://benad.me/blog/2014/5/26/ios-and-android-development-tools";
+this.page.title = "iOS and Android Development Tools";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

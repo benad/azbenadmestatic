@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Mastodon and the Fediverse - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Mastodon and the Fediverse</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>As you may have noticed on my <a href="https://benad.me/links.html">&ldquo;About&rdquo; page</a>, I moved away from Twitter to a Mastodon server (my user is <code>@benad@mstdn.party</code>). This was mostly due to the now uncertain future on Twitter, but also because Twitter is now simply unpleasant to use. Mastodon felt close enough to Twitter to be a good choice.</p>
+
+<p>As soon as you sign up to Mastodon, you&rsquo;ll notice that it&rsquo;s quite different than other centralized and commercial &ldquo;Web 2.0&rdquo; social networks: You have to pick your server. This is similar to when you sign up to an email host: You pick the host, then your user name. Like email, each server has different ownership and rules. Not all servers are open to the public for registering new accounts.</p>
+
+<p>Once you have your account, Mastodon feels similar to Usenet, in the sense that you can see and interact with users of other Mastodon servers (&ldquo;instances&rdquo;) through your own server.</p>
+
+<p>This decentralized approach raised concerns that the Mastodon protocol or service wouldn&rsquo;t scale well. But those problems are far from new. With email, while spam still exists, it is manageable. As for the public content itself, ranging from illegal content to trollish behavior, each server has their own enforced content moderation policies. It is possible for a Mastodon server to refuse to interact with another server (by pulling its content) if their content policies are too incompatible. While this could create isolated clusters, nothing prevents a user from having one account on each of such &ldquo;clusters&rdquo;, as long as the user follows the policies on each.</p>
+
+<p>Mastodon is also compatible with the <a href="https://www.w3.org/TR/activitypub/">ActivityPub</a> protocol from <a href="https://www.w3.org/">W3C</a>. This makes it possible for Mastodon to interact with &ldquo;activity feeds&rdquo; of other services (often decentralized too). This decentralized &ldquo;federation&rdquo; of services was termed the <a href="https://en.wikipedia.org/wiki/Fediverse">Fediverse</a>.</p>
+
+<p>For example, <a href="https://joinpeertube.org/">PeerTube</a> is an open-source server that lets you host a video publish site, similar to YouTube. Since it supports ActivityPub, a Mastodon user can subscribe to the activity of any PeerTube account. If you wanted, let&rsquo;s say, to subscribe to <a href="https://www.blender.org/">Blender</a>&rsquo;s video channel, user <code>blender</code> on PeerTube site <code>video.blender.org</code>, you can use your Mastodon client to subscribe to the user <code>@blender@video.blender.org</code>, and then you&rsquo;ll see their video on your Mastodon feed.</p>
+
+<p>This makes Mastodon far more resilient than a centralized, commercial social network. Like email, a company can self-host their own Mastodon server, or make use of a hosting service, and only let their employees have accounts on it. For social networks (or even blogs) that already exist, they can also implement ActivityPub and be part of the Fediverse.</p>
+
+<p>So, even if Mastodon remains &ldquo;niche&rdquo;, a bit like what became of Usenet (and even email itself), it is unlikely to vanish or break at the whims of the next CEO of the company that owns the entire thing.</p>
+
+                <p>Published on January 22, 2023 at 15:47 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2022/09/07/the-slow-hacker/">The Slow Hacker</a></p>
+                </p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2023/01/22/mastodon-and-the-fediverse/";
+this.page.identifier = "https://benad.me/blog/2023/01/22/mastodon-and-the-fediverse/";
+this.page.title = "Mastodon and the Fediverse";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

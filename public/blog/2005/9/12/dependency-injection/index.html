@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Dependency Injection - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Dependency Injection</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Now for something a little more complex. Imagine you're writing an application that both provides and uses several "system services", or components, for example a database, some caching, network services, etc. Here, since those are system resources, we have to make sure that only a maximum of one instance of the class that represents a component is instantiated and used.</p>
+
+<p>Let's say you write one component that make use of one of those services, <tt>SQLDataStore</tt>. When you want to get something from the <tt>SQLDataStore</tt> in your component/class <tt>MyService</tt>, you could get away by using the Factory and Singleton pattern by simply calling some static function in the class <tt>SQLDataStore</tt>. Here's the constructor of the <tt>MyService</tt> class:</p>
+
+<pre>public MyService() {
+  //...
+  SQLDataStore store = SQLDataStore.Factory.getSQLDataStore();
+}</pre>
+
+<p>Well, if you want to replace the use of <tt>SQLDataStore</tt> with <tt>XMLDataStore</tt>, then you'll have to change code in all your components that used <tt>SQLDataStore</tt>. You could say: "I'll just define an <i>interface</i> called <tt>DataStore</tt>, then make a generic Factory that returns either an <tt>SQLDataStore</tt> or <tt>XMLDataStore</tt> depending on some system settings!" Still, that setting would be <i>global</i>, so it would be difficult to have some components using one type of <tt>DataStore</tt> and some of another type. And the Factory would be "coupled" with references to <i>all</i> possible <tt>DataStore</tt>, so it would be difficult to maintain.</p>
+
+<p>What if the code that instantiates <tt>MyService</tt> is responsible to give it an instance of <tt>DataStore</tt>? You'll now have this:</p>
+
+<pre>public MyService(DataStore store) {
+  //...
+}</pre>
+
+<p>That didn't <i>really</i> solved the problem... It just moved it elsewhere, but at least somewhere better. "Container" libraries, such as <a href="http://picocontainer.org/">PicoContainer</a> will manage the component dependencies for you by doing what is called "dependency injection":</p>
+
+<pre>MutablePicoContainer pico = new DefaultPicoContainer();
+pico.registerComponentImplementation(MyService.class);
+pico.registerComponentImplementation(SQLDataStore.class);
+MyService myService = (MyService) pico.getComponentInstance(MyService.class);</pre>
+
+<p>For you PicoContainer will create a unique instance of <tt>SQLDataStore</tt> and pass it to the constructor of <tt>MyService</tt>. It more complex cases, it builds up the dependency graph for you and figures out in what order to create the components. As you can see, <tt>MyService</tt> doesn't have to rely on a static function anymore.</p>
+
+<p>Other libraries such as <a href="http://nanocontainer.org/">NanoContainer</a> and <a href="http://www.springframework.org/">Spring</a> offer more advanced features, for example you could define in an XML document what is the default implementation of <tt>DataStore</tt> and for some specific cases override it. Also, since the container library is the one that instantiate the class, it can do "magical" things, like not giving you the "real" instance, but instead a "proxy" that transparently adds feature to the component... I'll talk more about these later...</p>
+
+<p><i>References</i>:<br/>
+<ul><li><a href="http://picocontainer.org/">PicoContainer</a></li>
+<li><a href="http://nanocontainer.org/">NanoContainer</a></li>
+<li><a href="http://www.springframework.org/">Spring</a></li>
+<li>Original article by Martin Fowler: <a href="http://www.martinfowler.com/articles/injection.html">Inversion of Control Containers and Dependency Injection</a></li></p>
+
+                <p>Published on September 12, 2005 at 17:40 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2005/9/11/making-of">Making Of</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2005/9/13/automating-java-builds-with-cruisecontrol">Automating Java Builds with CruiseControl</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2005/9/12/dependency-injection";
+this.page.identifier = "https://benad.me/blog/2005/9/12/dependency-injection";
+this.page.title = "Dependency Injection";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

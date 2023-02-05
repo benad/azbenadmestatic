@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>NestedVM: Compile (almost) Anything To Java - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">NestedVM: Compile (almost) Anything To Java</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Recently I was looking for a <a href="http://java.sun.com/javase/6/docs/technotes/guides/jdbc/">JDBC</a> driver for <a href="http://sqlite.org/">SQLite</a>. I always tend to prefer pure Java drivers, as my development environment is on Mac OS X, Linux and even at times Windows, so not having to recompile the library used by the driver (through <a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/index.html">JNI</a>) on every platform I use and having the freedom of bundling the JAR file of the driver with my JARs saves me a headache. Foolishly, I searched for a pure-Java SQLite driver, forgetting that it's an <i>embedded</i> database in C, meaning it shouldn't technically exist.</p>
+
+<p>Well, until I discovered <a href="http://www.zentus.com/sqlitejdbc/">SQLiteJDBC</a>, which is available in both JNI (faster) and 100% pure Java. Uh, <i><b>what?</b></i> How is that even possible? Well, the author, used tool that makes a binary translation of <a href="http://en.wikipedia.org/wiki/MIPS_architecture">MIPS</a> object code to Java bytecode, called <a href="http://nestedvm.ibex.org/">NestedVM</a>. Basically, anything you can compile for the MIPS chip can be <i>translated</i> to Java, including all your memory leaks and buffer overflows.</p>
+
+<p>Of course, that won't work well if your code depends on too much system calls (because you'll have to rewrite them all in Java) or if your code is sensitive to <a href="http://en.wikipedia.org/wiki/Endianness">endianness</a>, since both MIPS and Java are big-endian while x86 is little-endian.</p>
+
+<p>Still, this is perfect for those weird audio and video codecs (performance will have a hit, but it works), obscure compression engines, encryption, weird network protocols, etc. And if you didn't got it yet, it works for <i><b>any</b></i> language (C, C++, D, C#, Haskel, whatever).</p>
+
+<p>Also, if you implement the missing system calls you need in Java, there's noting stopping you from using <a href="http://gcc.gnu.org/java/">GCJ</a> to compile your system calls to native code, while keeping your native MIPS library in native code, thus maximizing performance in a simple recompile.</p>
+
+<p>My dream with this is to have a Java implementation of the <a href="http://apr.apache.org/">Apache Portable Runtime</a> (APR), or at least one that would compile against the limited set of system calls already provided by NestedVM. That way, I would have a "rich" runtime environment, and it would make it really easy to port anything code development using (exclusively) APR into pure Java. There's also this dream of combining that with a Java implementation of the X server like <a href="http://www.jcraft.com/weirdx/index.html">WeirdX</a>, a new X client implementation and some window manager to have a <i>real</i> Java desktop...</p>
+
+                <p>Published on January 22, 2008 at 14:35 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2008/1/2/surviving-on-the-mobile-web">Surviving on the mobile web</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2008/3/5/css-survival-kit">CSS Survival Kit</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2008/1/22/nestedvm-compile-almost-anything-to-java";
+this.page.identifier = "https://benad.me/blog/2008/1/22/nestedvm-compile-almost-anything-to-java";
+this.page.title = "NestedVM: Compile (almost) Anything To Java";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

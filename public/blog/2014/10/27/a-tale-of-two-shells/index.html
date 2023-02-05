@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>A Tale of Two Shells - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">A Tale of Two Shells</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Last year, I completed "properly" learning the bash ("Bash"?) shell, using a combination of the book "<a href="http://www.amazon.ca/Learning-bash-Shell-Unix-Programming/dp/0596009658/">Learning the bash Shell</a>" and reading from start to finish the <a href="http://linuxcommand.org/man_pages/bash1.html">gigantic "<code>man</code>" page</a>. And that was enough to convince me that, regardless of its ubiquity, I don't like it much, be it as a scripting language or as a command-line shell.</p>
+
+<p>Having already learned <a href="http://www.tcsh.org/Welcome">tcsh</a>, because it was the default shell on Mac OS X and is still popular, I was ready to try out more modern shells, rather than ones stuck in the 80s.</p>
+
+<p>First, on Windows, DOS is quite archaic and annoying. Simple things like sleeping for a second require <a href="http://stackoverflow.com/questions/1672338/how-to-sleep-for-5-seconds-in-windowss-command-prompt-or-dos">unintuitive workarounds</a>. DOS batch scripting is painfully difficult, so I was eager to find something better. And since Windows 7, this strange "<a href="https://en.wikipedia.org/wiki/Windows_PowerShell">PowerShell</a>" is now installed by default, and was heralded as a revolutionary step in command-line shells. Is it?</p>
+
+<p>After reading a few tutorials, including this <a href="http://powershell.com/cs/blogs/ebookv2/default.aspx">"free ebook"</a> on <a href="http://powershell.com/">powershell.com</a>, things became clear. Windows PowerShell is essentially a shell built atop <a href="https://en.wikipedia.org/wiki/.NET_Framework">.NET</a> that manipulates streams of objects rather than plain text across pipes, though thankfully formats the objects as plain text on the console screen by default. It provides many "cmdlets" that can manipulate that stream in a more convenient way than <code>grep</code> and <code>awk</code>. For example, listing all files in a directory greater than a megabyte is trivial in PowerShell, while on UNIX shell requires an awkward (pun intended) combination of extracting character positions and arithmetic. The "PowerShell IDE", also provided with PowerShell, can even perform tab-completion of the fields of the objects out of the current pipe, making it easy to extract their attributes. Because so much of the Windows internals are accessible using <a href="https://en.wikipedia.org/wiki/Component_Object_Model">COM</a> and .NET, it is easy to perform system administration with it, for example installing system services and querying their status. The only major issue I've found with PowerShell is that executing PowerShell scripts is completely disabled by default until unlocked by an administrator. Also, as a minor gripe, the version of PowerShell that came out of the box with Windows 7 is quite outdated. Overall, if there was a "grand vision" of ".NET" in Windows, it is best represented by PowerShell.</p>
+
+<p>Back on UNIX-like systems, it seems like users are quite happy with old shells, or at least incremental evolutions of the old "<a href="http://en.wikipedia.org/wiki/Bourne_shell">Bourne shell</a>" and Berkeley's "<a href="http://en.wikipedia.org/wiki/C_shell">C Shell</a>". Looking around, I found "<a href="http://fishshell.com/">fish</a>", the "Friendly Interactive SHell". I liked its ironic tagline of "Finally, a command line shell for the 90s", since it was initially released in 2005. It is, indeed, friendly, as it has a deliberately limited set of features, and has default out-of-the-box functionality that makes interactive use enjoyable. It was built around a comprehensive <a href="http://fishshell.com/docs/current/design.html">design document</a> that explicitly favours usability over compatibility with older or popular shells. The results are spectacular: Everything has colour, TAB and arrow keys completion with a type ahead preview in light grey, inline argument completion for most commands (including "<code>man</code>") that present interactively all the options and their meaning automatically extracted from the "<code>man</code>" pages, editing the configuration through a built-in web service, applying configuration changes to all shells instantly, I could go on. Its scripting is quite limited, but that may be a good thing considering the <a href="https://en.wikipedia.org/wiki/Shellshock_%28software_bug%29">Shellshock bug</a> (Not that "fish" has no security holes, but at least they're not "as designed").</p>
+
+<p>Personally, I am ready to move to both PowerShell and "fish" for day-to-day use. While they both don't have much in common to older shells, they are far more usable. I highly recommend to all command-line users.</p>
+
+                <p>Published on October 27, 2014 at 21:37 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2014/10/14/moniker-the-security-weak-point">Moniker, the Security Weak Point</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2014/11/25/modern-mvc-in-the-browser">Modern MVC in the Browser</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2014/10/27/a-tale-of-two-shells";
+this.page.identifier = "https://benad.me/blog/2014/10/27/a-tale-of-two-shells";
+this.page.title = "A Tale of Two Shells";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

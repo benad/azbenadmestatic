@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Your Passwords Suck - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Your Passwords Suck</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>I'm sorry, but the password you remember sucks. It's not your fault, it's just the way our brain works. Our brains love finding and remembering patterns. If you can reuse the same password for multiple things and web sites, you would prefer it (and most of you end up doing that). If you made up the password from scratch, then surely it contains some patterns that you (your pattern-oriented brain) like. I can bore you with how selecting a password that's both long and contains special characters contains more entropy and is harder to "crack", but whatever, your password was chosen <em>because</em> it has lower entropy than just a purely random one. Even if your were offered multiple computer-generated passwords, you would select one that's "easier to remember", which is wrong. Oh, and if you do remember a truly, painfully random and long password, it took you so much effort to remember it that you will be more likely to either reuse it, or divulge it by accident or otherwise.</p>
+
+<p><em>The best password is the one you can't remember.</em></p>
+
+<p>So, of course, that means that the compromise was to use a unique, randomly generated and nearly impossible to remember password for everything except a password to your "keychain". That "keychain" is an encrypted file containing all your passwords but protected with a supposedly strong "master password" that you must remember. That's a lot better, but it still shifts the problem by essentially putting all your passwords within a single point of failure.</p>
+
+<p>One dangerous thing about passwords is that, well, even a good password is not secure enough. Password databases are often stolen, and it still doesn't change the fact that a simple faked login form you got from that email could be enough to impersonate you in a web site. So, two-factor authentication is the next step: Your user name is validated against "something you know", your password, and "something you have", typically your cellphone. It could be a "number generator" App, or it could be as simple as getting a code from a SMS.</p>
+
+<p>This leads to the biggest problem with security: Good security tends to be so much less usable that, in the end, users end up using the less secure option. Users see security as an obstacle to "getting access to the thing", so if they can use "12345" as a password, they'll do, and if they can't, they'll be annoyed. So, to convince users to set up two-factor authentication won't appeal to much apart to a few paranoid and security freaks.</p>
+
+<p>That's why I find <a href="https://www.grc.com/sqrl/sqrl.htm">SQRL</a> so interesting. <a href="http://www.sqrl.pl/">The SQRL fan-made introduction page </a>will surely explain it better than I can using text alone, but suffice to say that logging in to a web site becomes as simple as unlocking the SQRL App and taking a photo of the web page.</p>
+
+<p>A few interesting things should be noticed about SQRL. First, instead of communicating a password to the web site, the SQRL App communicates with a huge 256-bit master key, which is equivalent to a password of over 60 characters. Also, this master key was safely randomly generated by a computer, for computers. This is very similar to public key cryptographic tools like PGP and SSH, that store private keys in a password-protected keychain.</p>
+
+<p>Now, there are two potential issues. First, how do you "backup" that master key? Writing it down would be quite painful, like those old NES games that would "save" your game by having you write down a 40-character code. Your backup could be printed, but then, who prints from their cellphones? The safest bet would be to save it in picture form and backed up with your other (non-public) photos, but of course encrypted with your password.</p>
+
+<p>But that leads to the second issue: What if you forget your password, or if somebody steals your master key <em>and</em> its password? Well, it shows you need <em>three-factor</em> authentication: Something you know, something you have, and something you <em>are</em>, meaning your <em>identity</em>. Typically, it resolves to those highly-insecure "security questions" or "password hints", which are worse than almost any bad password. But in the case of SQRL, it means making a backup of a "identity unlock lock" file that can be used to <em>revoke</em> an insecure (stolen or forgotten) master key. This time, to close the loop, the identity unlock lock key is encrypted with a randomly-generated password, a painful 20 or some character sequence that you <em>must</em> write down and never, ever place online or in the same place as the identity lock key. Annoying, but then if you've ever dealt with FileVault on Mac OS X or entering activation codes in Windows, it's not that bad if done only once.</p>
+
+<p>Hopefully, I just scared you into changing all your passwords <em>right now</em>. Don't worry, new things like SQRL will make it easier for you. Until then, I recommend <a href="https://lastpass.com">LastPass</a> (or <a href="https://www.keepassx.org">KeyPassX</a>), using two-factor authentication everywhere it is offered, and filling those security questions with non-sensical garbage (that can be spoken over the phone) that will be stored in an encrypted file you regularly back up with a copy of your encrypted password database. That sucks, but, hey, not as badly as your passwords.</p>
+
+                <p>Published on November 25, 2013 at 20:45 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2013/11/10/revision-a">Revision A</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2013/12/2/cutting-the-cord">Cutting the Cord</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2013/11/25/your-passwords-suck";
+this.page.identifier = "https://benad.me/blog/2013/11/25/your-passwords-suck";
+this.page.title = "Your Passwords Suck";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

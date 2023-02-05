@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Pull The Plug Testing - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Pull The Plug Testing</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>You&rsquo;ve head about the &ldquo;<a href="http://youtu.be/U0zptZwcr2A">Have you tried turning it off and on again</a>&rdquo; method of fixing software, but what if rebooting your computer actually made the problem worse? System administrators often brag about their computers&rsquo; <a href="https://en.wikipedia.org/wiki/Uptime">uptime</a>, but what if that&rsquo;s to hide that they never tested rebooting their systems?</p>
+
+<p>Contrast this to how processes are handled on iOS and Android: They can be killed at any time for any reason, and if fact some users took the habit of killing background processes at regular intervals to save on battery life. The net effect is that the system as a whole is more stable and doesn&rsquo;t have to be rebooted often; When was the last time you rebooted your phone?</p>
+
+<p>On an individual process level, the risk is with the corruption of the process&rsquo; external state, wherever it is stored. If the external state is transient, for example the other process in a client-server system, then you can restart all involved. For storage, the solution can be as simple as using a transaction-aware storage library, such as <a href="https://en.wikipedia.org/wiki/Berkeley_DB">BerkleyDB</a> or <a href="http://sqlite.org/">SQLite</a>. In fact, SQLite is the primary mechanism in iOS and Android to safely store app data, as it is quite reliable and works quite well on small embedded devices.</p>
+
+<p>I would go as far as recommending SQLite for all software to reliably store files unless you have to use a specific format or by design you don&rsquo;t care about data loss. While SQLite cannot guarantee protection against &ldquo;<a href="https://en.wikipedia.org/wiki/Data_degradation#Data_degradation_in_storage">data rot</a>&rdquo; if random bytes on the storage are changed, or data loss if the process is killed in the middle of a <a href="http://sqlite.org/atomiccommit.html">transaction</a>, at least the data can be recovered to a stable state. Rolling up your own logic to safely saving files is a lot more difficult than it seems, so at the very least SQLite is a good place to start.</p>
+
+<p>And what about rebooting the whole system? We don&rsquo;t think twice about powering off the embedded systems running on our TVs and other home appliances, yet for PCs we have to carefully shut down and reboot them otherwise they can just break. Windows still has those messages about not turning off your PC during system updates, and even during normal use I&rsquo;ve had my fair share of Windows corrupting itself because I turned off the machine at unexpected times.</p>
+
+<p>To protect against bad system updates or reboots, you can use a file system that supports creating complete &ldquo;shapshots&rdquo; (instant backups) of the system&rsquo;s files. This is something that is commonly done with <a href="https://en.wikipedia.org/wiki/ZFS">ZFS</a> on Solaris 10, and could be done with <a href="http://zfsonlinux.org/">ZFS on Linux</a> or with <a href="https://en.wikipedia.org/wiki/Btrfs">Btrfs</a>. If your storage has some redundancy, then using RAID can not only prevent data loss, but in some setups the computer will keep running as long as enough redundant drives are still available. Last time I set up a storage server with OpenSolaris and ZFS, one of my tests was to litterally pull the plug out of the drives while the system was running, and everything kept running without interruption. It&rsquo;s a scary test, but it&rsquo;s worth doing it before storing valuable data in it.</p>
+
+<p>On larger-scale clusters of servers, setting up the system in &ldquo;<a href="https://en.wikipedia.org/wiki/High_availability">high availability</a>&rdquo; is one thing, but few are confident enough to use a process to randomly kill a server from time to time <em>in production</em>, like Netflix does with its &ldquo;<a href="https://medium.com/netflix-techblog/5-lessons-weve-learned-using-aws-1f2a28588e4c">Chaos Monkey</a>&rdquo;. In fact, you can take advantage of reliable redundancy to deploy gradual updates in production, be it to replace your drives with bigger ones on ZFS or to deploy security patches on your cluster of servers.</p>
+
+                <p>Published on June 5, 2017 at 19:12 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2017/03/18/my-ubuntu-tips/">My Ubuntu Tips</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2017/08/23/forever-64-bit/">Forever 64-bit</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2017/06/05/pull-the-plug-testing/";
+this.page.identifier = "https://benad.me/blog/2017/06/05/pull-the-plug-testing/";
+this.page.title = "Pull The Plug Testing";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

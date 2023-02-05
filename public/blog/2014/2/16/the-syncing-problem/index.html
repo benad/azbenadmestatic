@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>The Syncing Problem - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">The Syncing Problem</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <h2 id="conflictseverywhere">Conflicts Everywhere</h2>
+
+<p>For the past few months I've been using a simple iOS app to track the episodes I've seen in the TV shows I follow. One of its advertised features is its ability to synchronize itself to all of your iOS devices, in my case my iPhone and iPad. Well, that feature barely works. Series that I would remove from my watch list would show up again the next time I launch the app. Or I would mark an episode as watched and within a few seconds it would show up again.</p>
+
+<p>I can't blame the developer: Apple promised that the iOS Core Data integration with iCloud would make synchronization seamless, and yet until iOS 7 it would regularly corrupt your data silently. Worse, it's over-simplistic API hide the countless pitfalls about its use, and I suspect the developer of my simple TV show tracker fell in every single one of them.</p>
+
+<p>Synchronizing stuff across devices isn't a particularly new problem. Personally, I've never experienced synchronizing a <a href="http://en.wikipedia.org/wiki/Personal_digital_assistant">PDA</a> with a dock and some proprietary software, but I've experienced a bit the nightmare of synchronizing my old Motorola RAZR phone with <a href="http://en.wikipedia.org/wiki/ISync">iSync</a> and various online address book services. It wasn't just that the various software interpreted the address book structure differently, causing countless duplicated entries, but also that if I dared modifying my address book from multiple devices before a sync, it would surely create conflicts that I would have to fix everywhere.</p>
+
+<p>Nowadays, synchronization issues still loom over every "cloud-based" service, be if for note-taking like <a href="https://evernote.com/">Evernote</a> or seamless file synchronization like <a href="https://www.dropbox.com/">Dropbox</a> and countless others. In every case, synchronization conflicts are delegated to an "exceptional scenario" for which the usability is horrendous: If you're lucky, elements are renamed, if not, data gets deleted. In almost every case, you'll have to find back previous versions of your data, while keeping older versions of your data is considered a "premium" feature.</p>
+
+<p>This is frustrating. Data synchronization across electronic devices is not something new, and this is now becoming commonplace. Even with a single client device, the server could use a highly-scalable "<a href="http://en.wikipedia.org/wiki/NoSQL">NoSQL</a>" database that can make the storage service out-of-sync <em>with itself</em>. Imagine how surprised I was when I learned that the database developer is responsible to handle document conflicts in <a href="http://couchdb.apache.org/">CouchDB</a>, and that those conflicts would "naturally" happen if the database is replicated across multiple machines! The more distributed the data, be it on client-side devices or on the server side, the more synchronization conflicts will inevitably happen.</p>
+
+<p>And yet, for several years, programmers have been daily using tools that solved this problem...</p>
+
+<h2 id="dvcs">DVCS</h2>
+
+<p>Going back to the example of the TV show tracker, one of the problem with most synchronization systems is that they synchronize documents rather then the user action themselves. If I marked a TV show episode as "watched", then, unless for some reason I marked it as "unwatched" on another device, the show tracker should never come up with the action of "unwatching" an episode.</p>
+
+<p>Similarly, if on one device I mark an episode as "watched", then revert it back to "unwatched", yet on another device that is unaware of those action I completely remove the TV series, then the synchronization should prioritize the latter. Put another way, conflicts are often resolved by taking into context on what state of the data the action was made.</p>
+
+<p>In addition to storing the data model, each device should also track the sequence of actions done on each device. Synchronization would value the user actions first, and then resolve back those actions into the data model. In effect, the devices should be tracking divergeant user action histories.</p>
+
+<p>Yeah, that's what we call "<a href="http://en.wikipedia.org/wiki/Distributed_revision_control">Distributed Version Control Systems</a>". Programmers have been using DVCS like <a href="http://git-scm.com/">git</a>, <a href="http://mercurial.selenic.com/">Mercurial</a> and <a href="http://en.wikipedia.org/wiki/List_of_revision_control_software#Distributed_model">many others</a> for over a decade now. If the solution have been a part of our programming tools for so long, why are we still having problems with automated synchronization in our software?</p>
+
+<h2 id="itsaplaintextworld">It's a Plain Text World</h2>
+
+<p>Sadly, DVCS are made almost solely for plain-text programming source code.  Not only that, but marking user actions as "commits" is carefully done manually, and so are resolving synchronization conflicts. Sure, they <em>can</em> support binary files, but they won't be merged like other text files.</p>
+
+<p>As for how DVCS treat a group of files, it went to the complete opposite of older version control systems. In the past, each file had its own set of versions. This is an issue with source code, since usually files have interdependencies that the version control system isn't aware of. Now, with DVCS, a "version" is the state of all the files in the "repository", so changing two different files on two different devices require user intervention as this could cause a conflict from the point of view of those implicit interdependencies. Sure, you can make each file its own repository with clever use of "sub-repositories", but the overhead of doing so in most DVCS makes this impractical.</p>
+
+<p>For individual text files, DVCS (and most VCS in general) treat them as a sequence of text lines. A line of text is considered atomic, and computed deltas between two text files will tend to promote large chunks of sequential line modifications over individual changes. While this may work fine for most programming languages, a few cases cause issues. As an example, in C, it is common practice to indent lines with space characters to make the code more readable, and to increase indentation for each increasing level on nesting. Changing the code a little bit could affect the nesting level of some code block, and by good practice, the indentation level. The result, from a DVCS perspective, is that the entire code block changed because every line had space characters prepended, even if in reality the code semantic is identical for that block.</p>
+
+<p>Basically, DVCS are really made only for plain text documents. And yet, with some effort, some of their underlying design could be used to build a generic and automated synchronization system.</p>
+
+<h2 id="thelongandsnowyroad">The Long and Snowy Road</h2>
+
+<p>Having a version control system on data structures made by software rather than plain text files made by humans isn't particularly new. Microsoft Word does it internally. Photoshop also, through it's "infinite undo" system.</p>
+
+<p>Computing the difference between two file structures is surely something that was solved ages ago by computer scientists. In the end, if each file is just a combination of well-known structures like lists, sets, keyed sets and so on, then one could easily make a generic file difference engine. Plain text files, viewed as simple lists of lines, or even to a certain extent binary files, viewed as lists of bytes, could easily fit in such an engine.</p>
+
+<p>There would be a great effort required to change any existing "programmer's DVCS" into a generic synchronization engine. Everything is oriented towards user interaction, source code text files, deltas represented as the result of a <code>diff</code> command, a single history graph for all the files in the repository, and so on. But on the other way, a generic DVCS can be used as a basis for a programmer's DVCS without too much issue. It would be even quite amazing for it to version control not only the source code, but also the source annotated with compiler output, so that the conflict resolution system would be dealing with the semantics of the source code and not just plain text.</p>
+
+<p>There are a few novel issues that are specific to device synchronization that would affect a generic DVCS, for example having a mechanism to safely prune old data history that is not needed anymore because all devices are up-to-date (to a known point). In fact, unlike existing DVCS, maybe not all devices need to support peer-to-peer synchronization.</p>
+
+<p>But implementing a generic DVCS for automated synchronization do feel like reinventing the wheel. At minimum, things that were already implemented in today's DVCS have to be redone in almost the same way, but with a few important changes to make them work on generic data structures.</p>
+
+<p>On top of that, I have the nagging feeling <em>somebody</em>, <em>somewhere</em> already did this. Or maybe some asshole patented it and then nobody can implement it anymore for fear of being sued into oblivion. This isn't a novel idea <em>by that much</em> (so it shouldn't be patented anyway). Many already considered backing up their entire computers with version control meant for source code, and while impractical, it kind of worked. The extra step of integrating that into a software's data model serialization isn't a big mental leap either. Apple could have done it with Core Data on iCloud, but, like everybody else, synchronization conflicts was an afterthought.</p>
+
+<p>Right now, if I had to write some software that synchronize data with other devices, there would be no generic solution I could use that would implement a generic DVCS, so I would surely do my best to ignore the hard problem of data conflicts until enough users complain. Or maybe by then I'll get fed up and write my own generic DVCS, if nobody else did it first.</p>
+
+<p><em>Note to self: I may want to post this as an article on <a href="http://benad.me/">my web site</a>.</em></p>
+
+                <p>Published on February 16, 2014 at 19:00 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2014/1/5/back-to-objective-c">Back to Objective-C</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2014/3/30/going-root">Going Root</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2014/2/16/the-syncing-problem";
+this.page.identifier = "https://benad.me/blog/2014/2/16/the-syncing-problem";
+this.page.title = "The Syncing Problem";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

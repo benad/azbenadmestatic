@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>A Code&#39;s First Draft - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">A Code&#39;s First Draft</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p><a href="http://en.wikipedia.org/wiki/Iterative_and_incremental_development">Incremental software development</a>, or evolutions of it, is now pretty much the standard approach, as we now expect requirements to be changed all the time. But this too easily leads to "over engineering", as since we expect change at all times, we spend too much effort on maximizing the flexibility of the code over any other quality.</p>
+
+<p>I admit that in the past I too fell into the trap of over engineering my code, for the sake of "beautiful design" over functionality,  making the code far too unnecessarily difficult to understand. From that experience, I now make incremental design changes more reactively.</p>
+
+<p>Practically, it means that I always make a "first draft" of my code with minimal design, and then, based on that experience, make a second draft with a first draft of the design, all that before the first wave of requirements changes. This is quite different than <a href="http://en.wikipedia.org/wiki/Software_prototyping">software prototyping</a>, where the first iteration is expected to be deleted or completely rewritten over time. In my case, most of the code of the first draft remains, but moved and refactored to fit the first design change.</p>
+
+<p>The first code draft is done primarily as a proof of concept that demonstrates feasibility, to reduce future risk as much as possible. That way, regardless of future design or functional changes, at least we have a simple functional version of the code. That first draft could even be used as some "sample pseudo-code" to document the functional mechanism of the code, outside of the design and architectural complexities that are added later on as the software grows. That implies that the first code draft should be so clear and simple that it is (almost fully) self-documented.</p>
+
+<p>Secondarily, it helps in making worthwhile design decisions early. Once you have working code, it's easier to see what design patterns would be useful, and precisely where. You can see in context the costs and benefits of each design pattern, and only those that are worth it are applied as a first design iteration. Once additional features are added or existing one changed some new design decisions may be needed, but if by the time of the second draft you have sound code and design, it will be easier to adapt than if you greedily made inappropriate or unnecessary design choice.</p>
+
+<p>At some point, though, the extra effort in doing design changes on top of purely functional coding changes may be too costly if requirements changes are chaotic or indisciplined. This may be why so many programmers invest in design upfront while they have the chance, dooming the code to over engineering. The software engineers may be the only ones in the software development process that can present (and defend) the impact of endless changes on quality (bad code, inappropriate design, etc.), so over-design may be indicative of greater organizational issues.</p>
+
+                <p>Published on May 31, 2015 at 22:18 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2015/5/3/the-mystery-of-logitech-wireless-interferences">The Mystery of Logitech Wireless Interferences</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2015/8/2/10s-everywhere">10s Everywhere</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2015/5/31/a-codes-first-draft";
+this.page.identifier = "https://benad.me/blog/2015/5/31/a-codes-first-draft";
+this.page.title = "A Code's First Draft";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

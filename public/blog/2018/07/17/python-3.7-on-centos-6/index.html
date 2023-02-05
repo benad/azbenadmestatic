@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Python 3.7 on CentOS 6 - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Python 3.7 on CentOS 6</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>The latest <a href="https://www.python.org/downloads/release/python-370/">Python 3.7</a> at last upped its version requirement for OpenSSL, though it sadly means that out of the box it cannot use the version of OpenSSL available with (the now rather old) CentOS 6. Sure, you <em>can</em> set up Python 3.7 without the <code>ssl</code> module, but you won’t be able to install anything with <code>pip</code> since HTTPS is required for downloading modules.</p>
+
+<p>Here’s what I did. This is from a minimal install of CentOS 6.10, though it should work with older versions of CentOS 6. For my setup, I installed OpenSSL 1.1.0h under <code>/usr/local/openssl11</code> and Python 3.7.0 under <code>/usr/local/python37</code>. The trick is to use the <code>rpath</code> option for the linker (in GCC, that means <code>-Wl,rpath=...</code>) to point to the custom location of OpenSSL, otherwise you’d have to set <code>LD_LIBRARY_PATH</code> each time. Also, there are a bunch of <code>*-devel</code> packages that are needed for Python’s optional modules.</p>
+
+<pre><code># yum install -y xz
+# yum groupinstall -y 'Development Tools'
+# curl -LO 'https://www.openssl.org/source/openssl-1.1.0h.tar.gz'
+# tar -xf openssl-1.1.0h.tar.gz
+# cd openssl-1.1.0h
+# ./config shared --prefix=/usr/local/openssl11 --openssldir=/usr/local/openssl11 &amp;&amp; make &amp;&amp; make install
+# cd ..
+# curl -LO 'https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz'
+# tar -xf Python-3.7.0.tar.xz
+# cd Python-3.7.0
+In Modules/Setup.dist, edit the following, making sure you remove the leading pound characters:
+SSL=/usr/local/openssl11
+_ssl _ssl.c \
+        -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
+        -L$(SSL)/lib -lssl -lcrypto
+# yum install -y libffi-devel bzip2-devel ncurses-devel gdbm-devel xz-devel sqlite-devel readline-devel zlib-devel libuuid-devel
+# LDFLAGS=&quot;-Wl,-rpath=/usr/local/openssl11/lib&quot; ./configure --prefix=/usr/local/python37 --with-openssl=/usr/local/openssl11 --with-system-ffi &amp;&amp; make &amp;&amp; make install
+# ln -s /usr/local/python37/bin/*3.7* /usr/local/bin
+</code></pre>
+
+                <p>Published on July 17, 2018 at 20:55 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2018/07/11/streaming-music-from-google-play-to-apple/">Streaming Music From Google Play to Apple</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2018/09/16/a-eulogy-for-small-phones/">A Eulogy for Small Phones</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2018/07/17/python-3.7-on-centos-6/";
+this.page.identifier = "https://benad.me/blog/2018/07/17/python-3.7-on-centos-6/";
+this.page.title = "Python 3.7 on CentOS 6";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

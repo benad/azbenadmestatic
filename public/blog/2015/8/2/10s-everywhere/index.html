@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>10s Everywhere - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">10s Everywhere</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>So recently I installed Windows 10 on my MacBook Pro alongside Mac OS X Yosemite 10.10. If you're keeping count, that's four 10s.</p>
+
+<p>Upgrading Windows 8.1 to 10 was a strange experience. First, the Windows 10 notification icon never showed up. Looking at the Event Logs of <code>GWX.exe</code> ("Get Windows 10", I guess), it kept crashing with "data is invalid" for the past few months. Yet, the same logs showed clearly that my license was valid and ready to be upgraded to 10. Luckily, Microsoft now offers the <a href="https://www.microsoft.com/en-us/software-download/windows10ISO">Windows 10 ISO download</a>, and the software used to download and "burn" a USB key also allowed for an in-place upgrade with no need for a USB key or DVD.</p>
+
+<p>Yet, after the upgrade, I noticed that all network connections were disabled. Yes, the Boot Camp drivers were installed correctly, and Windows insisted the drivers were correctly working, but it's as if the entire TCP stack was removed. I tried everything for a few hours, getting lost in <code>regedit</code>, so I gave up and used the option to revert back to Windows 8.1. Once back, it was now worse, with even all keyboards disabled.</p>
+
+<p>Before reverting back to 8.1, I attempted to remove all 3rd-party software that could have an impact on the network, including an old copy of the Cisco VPN client and the Avast anti-virus. The Cisco VPN client refused to be uninstalled for some reason. Back on 8.1, I could easily remove the VPN client (using the on-screen keyboard), but it's as if 8.1 kept trace of the Avast install even though Avast was not there anymore. Luckily, I found the download link to the full offline Avast 2015 installer in the <a href="https://forum.avast.com/index.php?topic=168666.0">user forums</a>. After doing so, both the keyboard and the network were enabled.</p>
+
+<p>Having learned that VPN and Anti-virus software can break things in Windows 10, I uninstalled all of these, and then upgraded to 10 again. I had to reinstall the Boot Camp drivers for my model of MacBook Pro, and this time everything was working fine. I could restore easily Avast, but the old Cisco VPN driver clearly couldn't work anymore. This isn't a big issue, since I keep a Windows 7 virtual machine for that.</p>
+
+<p>What about using Boot Camp in a virtual machine? Well, there are two workarounds I had to do to make it work with Parallels Desktop. First, <a href="http://kb.parallels.com/en/122808">Article ID 122808</a> describes how to patch the file <code>C:\Windows\inf\volume.inf</code> so that Parallels can detect the Windows 10 partition. It just so happens that I already had my copy of <a href="http://www.paragon-software.com/home/ntfs-mac/">Paragon NTFS for Mac</a>, so changing the file when booted in the Mac partition was easy. Then, from <a href="http://kb.parallels.com/en/116582">Article ID 116582</a>, since I'm using a 64-bit EFI installation of Windows, I had to run their strange <code>bootcamp-enable-efi.sh</code> script. It needs administrator privileges, so I temporarily enabled that on my user account to run it. After all of this, Windows got a bit confused about the product activation, but after a few reboots between native and virtual machine modes, it somehow picked up the activation.</p>
+
+<p>So, what about Windows 10 itself? For me, It worked fine. It isn't a huge upgrade compared to Windows 8.1, but it's more usable in a desktop environment. For Windows 7 users, I would definitively recommend it, maybe after a few months until they fix the remaining bugs. As usual, backing up your files is highly recommended (even if you don't upgrade).</p>
+
+                <p>Published on August 2, 2015 at 15:57 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2015/5/31/a-codes-first-draft">A Code&#39;s First Draft</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2015/9/15/exploring-reactive-programming">Exploring Reactive Programming</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2015/8/2/10s-everywhere";
+this.page.identifier = "https://benad.me/blog/2015/8/2/10s-everywhere";
+this.page.title = "10s Everywhere";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

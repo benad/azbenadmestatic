@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^([^/]*)\.xml$ $1.html [R=permanent]
+
+RewriteCond %{HTTP_REFERER} semalt\.com [NC]
+RewriteRule .* - [F]

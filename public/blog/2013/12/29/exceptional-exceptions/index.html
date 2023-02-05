@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Exceptional Exceptions - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Exceptional Exceptions</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>When I learned the C++ programming language in 1997, I assumed that exception handling was a completely optional language feature, since it was presented in the latter chapters of the C++ books, and up to that chapter none of the code examples would use exceptions. I was wrong, of course, but this mentality is what partly caused my biggest programming mistake of 2013.</p>
+
+<p>Exception handling is a critical language feature in programming that you simply can't ignore, for at least two reasons.</p>
+
+<p>First, in languages compiled for a run-time virtual machine, exceptions are part of the execution environment. In "system programming compiled languages" like C, C++ or D, many operations, like dereferencing NULL references or dividing an integer by 0, cause the operating system to throw a signal to the process that makes it crash. In VMs, they would cause an exception to be thrown at that point in the process. But then, in all VM-based languages I've seen, simply not attempting to catch any of these VM-level exception would cause the default exception handler to crash the process, which is equivalent to system languages.</p>
+
+<p>Second, exceptions are "implicit", meaning they can be thrown from anywhere without warning. Sure, in Java "normal" exceptions are part of the function signatures, forcing exception handling to be handled properly for these at compilation time, but run-time exceptions can still happen. In C++, C# and most other modern programming languages, function signatures don't carry exception types as part of their interfaces.</p>
+
+<p>This would be fine if all exceptions were "bad" to the extent that they would warrant crashing the entire process. But that's not what happened over the years. In Object-Oriented design, object constructors would often be used to perform both the object creation <em>and</em> its initialization to a fully working state. While languages guarantees object creation under all circumstances (actually, before the constructor function is called), initialization can fail. Since the only functional interface of the constructor is to return an object instance, the only other obvious way to report an initialization error is to throw an exception. <em>(Of course, the object could remain in an "uninitialized" state and return an "uninitialized" error for every other function call, but most developers are too lazy to do that.)</em></p>
+
+<p>For objects that wrap system resources, initialization can fail under normal execution. For example, an object that wraps a file could produce an error "file not found". Personally, I don't think the whole process should crash for something like that. But then, if opening a file is part of the object's constructor, then throwing an exception is the <em>de-facto</em> way of reporting that system error.</p>
+
+<p>The lack of "finalize" statements in C++ kind of forces "<a href="http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">Resource Acquisition Is Initialization</a>" design for objects that wrap system resources, which in turns forces reference counting, and so on. It is typical that in most C++ software and libraries, exceptions are avoided as much as possible. Personally, I just avoided C++ altogether.</p>
+
+<p>But for C# and .NET, the result is nearly catastrophic: Anything can and <em>will</em> throw exceptions, without any compilation warning, and not handling those exceptions <em>will</em> crash the entire process. And not just "exceptional exceptions" that ought to crash the process, but for simple things like attempting to open a file that doesn't exist.</p>
+
+<p>Sure, you can add "try / catch" blocks everywhere, but things can get complicated if your code doesn't own all the execution threads. Combine COM objects, callbacks from foreign DLLs and using delegates with WPF, and now there is no simple "catch-all" solution to exception handling. Sure, there are last-chance exception handlers like <a href="http://msdn.microsoft.com/en-us/library/system.windows.application.dispatcherunhandledexception%28v=vs.110%29.aspx">Application.DispatcherUnhandledException</a> and <a href="http://msdn.microsoft.com/en-us/library/system.appdomain.unhandledexception.aspx">AppDomain.UnhandledException</a>, but when was the last time you saw <em>any</em> book or sample code using these? So, of course, by ignorance I didn't set up those exception handlers in my code before it was too late.</p>
+
+<p>My point is that exceptions should be avoided in programming interfaces as much as possible. Separating object creation and initialization would be a good step in that direction. Also, throwing exceptions should be reserved for "fatal" run-time errors that normally would be impossible to recover from and ought to crash the entire process.</p>
+
+<p>As for the "other" part of my "biggest programming mistake", it's all about what various versions of the Windows kernel do when a process crashes. Coming from UNIX with its simple "fork / exec" and signal handling, what Windows does is just plain disgusting. But then, it's Windows, so even if Windows 7 is "less crap", I don't know what I expected from its programming environment when you look under its rug…</p>
+
+                <p>Published on December 29, 2013 at 14:30 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2013/12/2/cutting-the-cord">Cutting the Cord</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2014/1/5/back-to-objective-c">Back to Objective-C</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2013/12/29/exceptional-exceptions";
+this.page.identifier = "https://benad.me/blog/2013/12/29/exceptional-exceptions";
+this.page.title = "Exceptional Exceptions";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

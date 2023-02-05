@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Going Root - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Going Root</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>So, I've just changed the host for <a href="http://benad.me/">my web site</a>. Not because I was unhappy with the excellent <a href="http://www.fused.com">Fused</a>, but because, well, I've outgrown shared hosting. If my web site ought to be some kind of professional image, then at the very least I should <em>own</em> the entire software stack, and not be restricted with whatever versions of Apache or PHP the host decide to rent me.</p>
+
+<p>A decade ago, having a web site meant choosing between shared hosting and "bare metal", but since then VPS (virtual private servers) became a viable option that sits in between. For the past few years I was put off VPS because of the costs, using <a href="http://aws.amazon.com/ec2/">Amazon EC2</a> as a reference. Considering that I have to maintain a complete server, paying $50 a month for the privilege to do so was just too much for me.</p>
+
+<p>Luckily, pricing for VPS became quite competitive, especially for a web site as simple as mine. So I tried out <a href="http://ramnode.com">RamNode</a>, and after a few weeks of use I trust it enough to move my web site to it, and save a hundred dollars per year in the process.</p>
+
+<p>Migrating to a Debian 7 environment was a bit of a challenge. My background, due to my workplace experience, is mostly with RedHat environments, so it took a little while to adapt to Debian. I really like how lean and fast a well-configured Linux server can be, and having automated security updates on a locked-down stable Debian environment is comforting. I still don't host any dynamic content on my site, but if I ever do, it will be <em>my</em> code, not some 3rd-party PHP script that will become another attack vector.</p>
+
+<p>In the end, nobody will notice, but it really like the idea that I now fully own "my web site", from the IP address to the domain name, down to the version of the web server and operating system, short of the hardware. In a world where most people's online presence is done entirely through social networks that treat your content at their whim, owning a web site is the closest thing to complete free speech one can have. That, and it's a cool thing to add to my résumé.</p>
+
+                <p>Published on March 30, 2014 at 16:06 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2014/2/16/the-syncing-problem">The Syncing Problem</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2014/4/2/a-week-with-android">A Week with Android</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2014/3/30/going-root";
+this.page.identifier = "https://benad.me/blog/2014/3/30/going-root";
+this.page.title = "Going Root";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Surviving on the mobile web - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Surviving on the mobile web</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>My first experiences with the "mobile web" on my cellphone were scarring. My Motorola V3C phone came with a crappy <a href="http://www.wapforum.org/what/technical.htm">WAP</a> browser that could render <i>some</i> normal <a href="http://www.w3.org/html/">HTML</a> pages. If you don't know, WAP is some bastard child of HTML 4 (see the graph <a href="http://en.wikipedia.org/wiki/Image:Mobile_web_standards_evolution.png">here</a>) that uses <a href="http://en.wikipedia.org/wiki/Wireless_Markup_Language">WML</a> for the page contents. It was made for the context of mobile phones that can display at best 4 lines of text in black and write.</p>
+
+<p>As you would expect it, adoption of WAP was limited to those foolish enough to rewrite their web sites in a completely different markup language with no obvious way of testing it without a mobile phone.</p>
+
+<p>The rationale behind WAP is that you can't obviously take today's standard HTML page (including Flash, JavaScript, and tons of browser hacks) and render it on a mobile phone. That, and web pages are now so large (typically 1MB to 4MB) that the costs of transferring that page to your mobile would be too high.</p>
+
+<p>Still, rewriting entire web sites in WAP is too expensive, so it never cought on. As a result, almost all forms of "mobile web browsing" sucks, except maybe a few "smartphones" and Apple's <a href="http://www.apple.com/iphone/">iPhone</a>. And even in those cases (where the CPU is fast enough to render full HTML pages), the cost of data plans are still ridiculously expensive.</p>
+
+<p>The <i>other</i> solution, then, could be something as simple as a some kind of <i>proxy</i> that re-renders a complex HTML page into a form that smaller and simpler for any basic web browser. The most popular of those services is <a href="http://www.skweezer.net/">Skweezer</a>. It works pretty well with most web sites, and the interface is quite clean and simple to use. There's also the startup <a href="http://www.t9space.com/">T9space</a>, with its own mobile-optimized versions of popular sites, but with generally bigger pages than Skweezer.</p>
+
+<p>The ultimate "proxy" for mobile web browsing is <a href="http://www.operamini.com/">Opera Mini</a>. It is its own Java software that you install on your mobile phone and acts as a client to Opera's proxies. What happens then is that Opera's servers renders the web page, shrinks it down, and then sends it in a highly compressed form to the Opera Mini software on your mobile phone. Because of this remote rendering, the pages are smaller and more complete (with most CSS and even some JavaScript) than almost all other mobile browsers. And, somehow, it is free, without ads. You can try the <a href="http://www.operamini.com/demo/">live demo</a> yourself before installing it. I consider Opera Mini as essential to reduce to a minimum my data plan fees.</p>
+
+<p>Even with Opera Mini or with Skweezer, it's still valuable to go to web sites optimized for mobile phones. I found an amazing list of such sites on <a href="http://cantoni.mobi/">cantoni.mobi</a>. Some of my favorite sites are <a href="http://m.gmail.com/">Gmail</a> for all my emails, <a href="http://mobile.bloglines.com/">Bloglines</a> for my newsfeeds, <a href="http://slashdot.org/palm/">Slashdot</a> for tech news and <a href="http://m.rememberthemilk.com/">Remember The Milk</a> for my TODO lists. I also placed my "mobile" bookmarks on <a href="http://del.icio.us/html/benad/mobile_menu?extended=body&amp;tags=no&amp;rssbutton=no&amp;count=100&amp;bullet=">del.icio.us</a> using the "HTML render" options to display the smallest page possible (see the <a href="http://del.icio.us/help/html">HTML feeds</a> documentation). The address is then shortened using <a href="http://qurl.com/">Qurl</a>, a <a href="http://tinyurl.com/">TinyURL.com</a>-clone that I prefer using.</p>
+
+<p>And so, with all of this, mobile web starts to be usable and cheap enough to be a reality.</p>
+
+                <p>Published on January 2, 2008 at 09:40 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2007/10/10/living-in-ld-low-definition">Living in LD (low definition)</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2008/1/22/nestedvm-compile-almost-anything-to-java">NestedVM: Compile (almost) Anything To Java</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2008/1/2/surviving-on-the-mobile-web";
+this.page.identifier = "https://benad.me/blog/2008/1/2/surviving-on-the-mobile-web";
+this.page.title = "Surviving on the mobile web";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Exploring Reactive Programming - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Exploring Reactive Programming</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>A few months ago, I discovered the oddly-named JavaScript library "<a href="https://baconjs.github.io/">bacon.js</a>". Essentially, it lets you declare and compose event channels. While it seems overly abstract, the sample code intrigued me, as it introduced me to what is called "<a href="https://en.wikipedia.org/wiki/Reactive_programming">reactive programming</a>".</p>
+
+<p>Let's put this in context of typical UI programming. Let's say you want to write a GUI with a button that initiates a file download. You can't simply make the download synchronous, as it would "freeze" the entire GUI. The classical way to handle that is to create a new background thread that executes the download and also sends appropriate GUI events to display the state of the download.</p>
+
+<p>The problem with that approach is that if you change the GUI, you now have to not only change the code that gets called when the download button is clicked, but also all the GUI updates done by the background thread. The GUI logic is intermingled with all the logic to start the thread, also intermingled with the download logic proper.</p>
+
+<p>In more modern concurrency interfaces, the GUI code can spawn a new "<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html">Future</a>", and describe what should happen when it completes outside of the code the Future will execute. This works well if the GUI doesn't have a download progress bar of some kind, and makes the download logic free of GUI logic. Still, this is risky: If for any reason the GUI vanishes (window closed, etc.), there is no easy way for the code related to the button click to describe how to cancel the background download, and when.</p>
+
+<p>This is where "event channels" come into play. The most known implementation are the UNIX shells, where you would "pipe" one process' output to another's input. If the first process is terminated, the second process will get an interruption event when it attempts to read from the pipe, which by default cause the second process to be terminated. This is an easy way to create process groups, without having to explicitly tell the kernel about it.</p>
+
+<p>Similar "process group" patterns exist in programming languages that support event communication between pseudo-processes or threads, for example the <a href="http://www.erlang.org/doc/man/supervisor.html">OTP Supervisor</a> in <a href="https://en.wikipedia.org/wiki/Erlang_%28programming_language%29">Erlang</a>.</p>
+
+<p>Even will all of this (Futures, process pipes, supervisors), there are still a few things missing to make the implementation of a GUI download button simpler. First, there is no easy way to connect changes to mutable values, if the download button is active or not for example, to an event channel, and vice-versa. Basically, we need some kind of <a href="https://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a>, but applied to event handling. This has been my main gripe about <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> since, well, <a href="http://blog.benad.me/blog/2005/9/8/bad-mvc-good-mvc.html">a long time ago</a>. Also, there is no easy way to compose event channels together, even something as simple as aggregating multiple channel sources together into a new channel. While all that isn't terribly new in the networking world, with things like <a href="https://en.wikipedia.org/wiki/%C3%98MQ">ZeroMQ</a> and so on, in a programming environment without unreliability inherent in networking and no need for an interoperable packet-oriented stack, combining "networking" events together as a design pattern is quite compelling.</p>
+
+<p>Hence why I was intrigued by <a href="https://baconjs.github.io/">bacon.js</a>. It was inspired by the more comprehensive <a href="https://rxjs.codeplex.com/">RxJs</a> by Microsoft, and complements the <a href="http://facebook.github.io/react/">React JavaScript library</a> by Facebook. In fact, there even is a <a href="http://www.reactivemanifesto.org/">reactive programming manifesto</a>, though it may be more the result of consultants hungry for the next wave of buzzwords than anything else. Still, it feels like what <a href="https://en.wikipedia.org/wiki/Aspect-oriented_programming">Aspect-Oriented Programming</a> did to the <a href="https://en.wikipedia.org/wiki/Inversion_of_control">Inversion of Control pattern</a>, but applied to asynchronous event-based programming, which is to say that it brings it to a whole new level.</p>
+
+                <p>Published on September 15, 2015 at 19:46 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2015/8/2/10s-everywhere">10s Everywhere</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2015/10/10/the-twilight-zone-top-10-episodes-spoilers-free">The Twilight Zone: Top 10 Episodes (Spoilers-Free)</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2015/9/15/exploring-reactive-programming";
+this.page.identifier = "https://benad.me/blog/2015/9/15/exploring-reactive-programming";
+this.page.title = "Exploring Reactive Programming";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

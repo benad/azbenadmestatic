@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://benad.me/schema/page"
+    xmlns:page="http://benad.me/schema/page"
+    elementFormDefault="qualified">
+    <xsd:element name="page">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="page:head"/>
+                <xsd:element ref="page:body"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="body">
+        <xsd:complexType>
+            <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+                <xsd:element ref="page:section"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="head">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="title" type="xsd:string"/>
+                <xsd:element name="id" type="xsd:ID"/>
+                <xsd:element name="meta" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+                            <xsd:any namespace="http://www.w3.org/TR/xhtml1/strict" processContents="lax"/>
+                        </xsd:choice>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="section">
+        <xsd:complexType>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element ref="page:p"/>
+                <xsd:element ref="page:codeblock"/>
+                <xsd:element ref="page:img"/>
+                <xsd:element ref="page:subsection"/>
+                <xsd:any namespace="http://www.w3.org/TR/xhtml1/strict" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="title" type="xsd:string" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="subsection">
+        <xsd:complexType>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element ref="page:p"/>
+                <xsd:element ref="page:codeblock"/>
+                <xsd:element ref="page:img"/>
+                <xsd:any namespace="http://www.w3.org/TR/xhtml1/strict" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="title" type="xsd:string" use="optional"/>
+            <xsd:attribute name="href" type="xsd:anyURI" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:simpleType name="codeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="bash"/>
+            <xsd:enumeration value="shell"/>
+            <xsd:enumeration value="c"/>
+            <xsd:enumeration value="cpp"/>
+            <xsd:enumeration value="diff"/>
+            <xsd:enumeration value="groovy"/>
+            <xsd:enumeration value="javascript"/>
+            <xsd:enumeration value="java"/>
+            <xsd:enumeration value="perl"/>
+            <xsd:enumeration value="plain"/>
+            <xsd:enumeration value="html"/>
+            <xsd:enumeration value="xml"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:element name="codeblock">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="type" type="page:codeType" use="optional"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="img">
+        <xsd:complexType>
+            <xsd:attribute name="src" type="xsd:anyURI" use="required"/>
+            <xsd:attribute name="title" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="p" type="page:spanType"/>
+    
+    <xsd:complexType mixed="true" name="spanType">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            <xsd:element name="span" type="page:spanType"/>
+            <xsd:element name="i" type="page:spanType"/>
+            <xsd:element name="b" type="page:spanType"/>
+            <xsd:element name="tt" type="page:spanType"/>
+            <xsd:element name="a">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                            <xsd:attribute name="href" type="xsd:anyURI" use="required"/>
+                            <xsd:attribute name="title" type="xsd:string" use="optional"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:any namespace="http://www.w3.org/TR/xhtml1/strict" processContents="lax"/>
+        </xsd:choice>
+    </xsd:complexType>
+</xsd:schema>
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>Moniker, the Security Weak Point - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">Moniker, the Security Weak Point</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="//benad.me/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="//benad.me/me.html">About Me</a></p>
+                <p><a href="//benad.me/meta.html">About This Site</a></p>
+                <p><a href="//benad.me/articles.html">Articles</a></p>
+                <p><a href="//benad.me/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>By the time I heard about the "<a href="http://en.wikipedia.org/wiki/Shellshock_(software_bug)">Shellshock bug</a>" security hole in the morning of September 25, already the small Debian Linux server that I built up in <a href="http://ramnode.com/">Ramnode</a> to host <a href="http://benad.me/">my web site</a> patched that security hole by itself. At any rate, my web site hosts only static pages, so it was never impacted.</p>
+
+<p>While I am in control of the security of my web site starting from the Linux kernel, to the web server, up to the web pages it serves, I'm still dependent on its hosting service (Ramnode) to be secure. Another potential danger would be for someone to hijack the "benad.me" domain name, and make it point to a version of the site filled with malware and viruses. Sadly, this almost happened.</p>
+
+<p>Back in 2008 I registered my domain through the registrar Moniker, which used to be recommended partly based on its security. They implemented additional features that one could pay to "lock" the domain and prevent unauthorized transfers from someone that would steal your user name and password. Since then though, the company was bought by another company, and what is now called Moniker is only by name, both in terms of staffing and software.</p>
+
+<p>I did notice a difference in tone in email communications from the new Moniker. They seemed to be highly focused on domain name auctions, and would automatically auction off expired domains. This felt like a conflict of interest, as Moniker would deride higher profit auctioning off your domain than helping you renewing it. Of course, they would never do that on valuable customers that do "domain speculation" and own a large number of (unused) domains, but still that raises the suspicion that the company was sold based on the number of domains it had and how much money they can extract from large speculators rather than providing valuable customer service.</p>
+
+<p>The "new" Moniker <a href="http://news.softpedia.com/news/Domain-Name-Registrar-Moniker-Hacked-Users-Forced-to-Change-Passwords-362278.shtml">had a security hole in 2013</a>, and to fix that Moniker forced users to change their password the next time they logged in. Note though that this happened with the old version of that web site. This summer, the parent company that bought Moniker (and its name) scrapped the old site's code and replaced it with <a href="http://domainnamewire.com/2014/06/02/the-new-moniker-love-it-or-hate-it/">a new broken, buggy interface</a>. The new interface also brought with it <em>worse</em> security, and made the domain locking feature <a href="http://www.domainarts.com/2014/10/07/my-moniker-account-was-breached-security-flaws-persist/">completely ineffective</a>.</p>
+
+<p>By early October, Moniker sent an email to all its users saying that for untold security reasons, <a href="http://acro.net/blog/domains/moniker-password-reset-points-apparent-mass-hacking-accounts/">all the account passwords would be reset</a>. The shock was that the email contained both the user names and passwords of all the user's accounts. I was shocked that my old Moniker account, identified by a standard-looking user name, was placed under a parent, numerically-identified user name I've never seen, and <em>another</em> numerical sub-account that was created without my knowledge. It should be noted that I could never access the numerical sub-account, even when using the password provided in the email. Also, the email said that your new passwords must fit <a href="https://xkcd.com/936/">security requirements</a>, including the use of at least one "special character", even though the passwords provided in the email didn't contain any special character, and when attempting to change passwords, it would refuse most special characters.</p>
+
+<p>OK, I'm not a security expert, but sending user names and passwords in an email, refusing special characters (which would indicate that they don't <a href="http://codahale.com/how-to-safely-store-a-password/">use bcrypt</a>), and resetting the passwords of all users may indicate that they were hacked. Badly. Moniker cited the Shellshock bug, but as reports of stolen domains started to appear, a user came forth saying that <a href="http://domaingang.com/domain-news/moniker-patient-zero-warned-registrar-security-breach-late-august/">the security hole predated Shellshock by a month</a>.</p>
+
+<p>So, I was convinced that Moniker had a pattern of behaviour of not taking security seriously, that is until they experience a mass exodus of their customers. I started the process of domain name transfer the day after they announced the password reset, and I would recommend everybody else to do the same. I transferred to <a href="https://www.namecheap.com/">Namecheap</a>. Despite its name, in my case the price was the same, though as a test I created a new empty account before the transfer, and already I could attest that they take security seriously, including emails for account activity (using secondary email addresses in rotation) and <a href="http://en.wikipedia.org/wiki/Multi-factor_authentication">2-factor authentication</a> (using SMS for now). I completed the transfer yesterday, so that would explain why there was a little bit of downtime when resolving my domain name.</p>
+
+                <p>Published on October 14, 2014 at 21:21 EDT</p>
+                <p>Older post: <a href="https://benad.me/blog/2014/10/4/eventual-consistency-squared">Eventual Consistency, Squared</a></p>
+                <p>Newer post: <a href="https://benad.me/blog/2014/10/27/a-tale-of-two-shells">A Tale of Two Shells</a></p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+		var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<script>
+var disqus_config = function () {
+this.page.url = window.location.protocol + "//" + window.location.hostname + "/blog/2014/10/14/moniker-the-security-weak-point";
+this.page.identifier = "https://benad.me/blog/2014/10/14/moniker-the-security-weak-point";
+this.page.title = "Moniker, the Security Weak Point";
+};
+(function() {
+if (window.location.hostname != 'benad.me')
+    return;
+var d = document, s = d.createElement('script');
+var disqus_shortname = "benadmeblog";
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</body>
+</html>
+

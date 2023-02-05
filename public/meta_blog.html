@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>The Static Blog - Benad's Web Site</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="me" href="https://micro.blog/benad">
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body><!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container">
+<div class="row">
+<h1 class="title">Benad's Web Site</h1>
+<h2 class="pageheader">The Static Blog</h2>
+</div>
+<div class="row">
+<div class="span2 pull-right sidebar">
+<p>
+<a href="/index.html">Home</a>
+</p>
+<p>
+<a href="/blog">Blog</a>
+</p>
+<p>
+<a href="/me.html">About Me</a>
+</p>
+<p>
+<a href="/meta.html">About This Site</a>
+</p>
+<p>
+<a href="/articles.html">Articles</a>
+</p>
+<p>
+<a href="/links.html">Links</a>
+</p>
+</div>
+<div class="span8 offset2">
+<h3>History</h3>
+
+
+<p>I've moved from one blogging platform to another four times in the past 14 years. This isn't unusual, as many hop from one service to another depending on what's trendy or where their social circles reside. In my case, I've never used blogs for social networking, instead looking for some kind of stable environment where blogging would be convenient and simple.</p>
+
+
+<p>I started on <a href="https://slashdot.org/">Slashdot</a> journals around November 2002, during my last year of university (my 6th year of post high school studies). That environment was clearly an afterthought of the Slashdot service and didn't feel much like a proper blogging service. A modern-day equivalent would be to start your own "<a href="https://en.wikipedia.org/wiki/Reddit#Subreddits">subreddit</a>" on <a href="https://www.reddit.com/">Reddit</a>, and make a new post for each blog post. Slashdot is first and foremost a news link service with powerful commenting abilities, so it has quite an added complexity compared to what should have been a simple blogging service.</p>
+
+
+<p>I restarted from scratch my "proper" blog <a href="http://benad.me/blog/2005/9/7/so-what-is-this-all-about/">on September 2005</a> on <a href="http://www.livejournal.com/">LiveJournal</a>. For a little while I even paid for the premium service, though it was useless for me beyond some advanced site template features. The site looked horrible (but whose LiveJournal blog looked good?), and posting to it on anything but a desktop web browser wasn't convenient.</p>
+
+
+<p>In <a href="http://benad.me/blog/2010/7/1/our-national-moving-day/">July 2010</a> I moved to <a href="https://en.wikipedia.org/wiki/Posterous">Posterous</a>, a blogging service that was first designed to make it easy to post anything by email. It is also the first service I used that supported <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>. It was incredibly convenient, simple to use, and the blog looked great. One major downside: This was a tech startup, that unlike Slashdot and LiveJournal was short-lived. The service <a href="https://en.wikipedia.org/wiki/Posterous#Shutting_down_Posterous_and_building_PostHaven">shut down</a> two years later.</p>
+
+
+<p>That time, I got frustrated at moving the URL location of my blog from one place to another, and thought of a more long-term solution. First, I was already in the process of building my web site on my own personal domain <a href="http://benad.me/">benad.me</a>, so I decided to move to a proper, commercial blog hosting service that would support personal domains, in my case <a href="http://blog.benad.me/">blog.benad.me</a>. The service <a href="https://www.squarespace.com/">Squarespace</a> looked trouble-free, with dedicated apps for posting and great-looking templates. A bit expensive, though. Also, its software upgrades <a href="http://benad.me/blog/c2c3ffc1-c0ba-4f65-97ba-7f1029839e5e/">were far from trouble-free</a>. Over time, it was difficult to justify the cost and trouble for what amounted to a simple blog, as Squarespace oriented themselves (and their site templates) towards small e-commerce and design portfolios.</p>
+
+
+<h3>Issues</h3>
+
+
+<p>Over the years, I've had several concerns about using 3rd-party blogging services instead of self-hosting my own solution:</p>
+
+
+<ul>
+
+<li>The hosting service could go away. Now, I admit that LiveJournal, and even Slashdot, are shockingly still up and running after all those years, something unusual for free web services after 15 years. Still, I got badly burned with Posterous, and anything that doesn't have a clean process to export your entire blog from day one, and not as a favour days before the service permanently closes, is risky.</li>
+
+<li>The hosting service can be insecure. Luckily, it wasn't the case for me, but anything resembling <a href="https://wordpress.org/">Wordpress</a>, or countless PHP-based CMS like <a href="https://en.wikipedia.org/wiki/Joomla">Joomla</a> require constant security patches, and are the target of hackers.</li>
+
+<li>Content ownership can be a grey area. Sure, you own the original copyright of your posts, but for the service to work you have to grant them some redistribution rights, at minimum to let them host your content. Over the years, licensing gives those companies greater latitude in selling that content, especially on free hosting services.</li>
+
+<li>Finally, the posts' URLs are unstable. A link to one of my blog post on service X might not work a few years later. I want to use a solution that will give reliable URLs in the future, regardless of my decision of where of how I would host it.</li>
+
+</ul>
+
+
+<h3>A Static Blog</h3>
+
+
+<p>The long-term solution would be to host my blog myself alongside my main web site, yet how can I do that if I want to avoid hosting dynamic content and worry about security?</p>
+
+
+<p>Actually, why do hosting a web blog assume that the content has to be dynamically generated by the web server on demand? Surely there are offsite static blog generators that can build up a collection of generated web pages from some blog "source", and from there I can simply copy over the static pages on my web server.</p>
+
+
+<p>My main site is already using some static template system, but doesn't have any of the logic necessary for presenting many pages in a blog-like structure. I could either code that myself, or use <a href="https://staticsitegenerators.net/">another blog generator tool</a>.</p>
+
+
+<p>Sure, I lose the ability of posting directly using my phone, since I have to regenerate my blog static pages from a computer and then upload that, but over the years I rarely posted a final, unreviewed post from my phone anyway. Also, I would lose blog commenting, unless I use some 3rd-party JavaScript option that injects a comment section dynamically over my otherwise static blog pages.</p>
+
+
+<p>I ended up using <a href="https://gohugo.io/">Hugo</a>, a static web site generator written in <a href="https://golang.org/">Go</a> that has powerful template-building features and supports anything that's needed for a blog. It has enough flexibility to generate my blog pages with the exact same HTML structure as the rest of my web site, making its integration seamless. As for commenting, I used <a href="https://disqus.com/">Disqus</a>.</p>
+
+
+<h3>The Last Import</h3>
+
+
+<p>Moving from Squarespace to Hugo took a few days of effort. Squarespace's only export format was something that was compatible with Wordpress which is a large XML document, while Hugo expects blog posts to be in one individual HTML or Markdown document per post. For some reason, Squarespace's export doesn't contain the original Markdown I used for each post, even though it's still accessible on their web site, so technically their export tool isn't complete.</p>
+
+
+<p>So I wrote my own Python script to parse the XML and dump out individual HTML posts for Hugo. There were a few adjustments to be made to the XML. The post creation times were in <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a>, so I had to adjust them to my time zone (including daylight savings time transitions) using the <a href="http://pythonhosted.org/pytz/">pytz Python module</a>. The URLs had to be adjusted with Hugo's structure, but I couldn't replicate it 100% (especially during the times Squarespace mangled my post URLs), so for a few posts I had to resort to server-side HTTP redirection rules. Ultimately, I was able to test out every single URL to make sure they worked in the new environment.</p>
+
+
+<p>Similarly, the URLs in Squarespace's XML export had to be adjusted for Disqus' import tool so that they match the new Hugo URLs properly.</p>
+
+
+<p>In the end, it all works well. The Hugo templates and CSS could be adjusted to fit better the rest of the site, but otherwise it's fully functional, including the RSS feed. I placed all my scripts and tools in <a href="https://bitbucket.org/">Bitbucket</a>, and since Hugo can be installed by downloading a single binary file, it's easy to replicate the environment on any other machine.</p>
+
+
+<p>In the future I may even use Hugo to replace my own aging XSLT template system for the rest of my web site, but then I wouldn't be able to brag about creating my own custom template system anymore.</p>
+</div>
+</div>
+<footer>
+<hr>
+<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a>
+</p>
+<p>Mastodon: <a rel="me" href="https://mstdn.party/@benad">@benad@mstdn.party</a>
+</p>
+</footer>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script><script src="js/vendor/bootstrap.min.js"></script><script src="js/main.js"></script><script>
+            var _gaq=[['_setAccount','UA-6588628-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+            </script>
+</body>
+</html>
