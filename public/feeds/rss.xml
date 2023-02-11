@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+   <channel>
+      <title>Benad's Web Site</title>
+      <link>https://benad.me/</link>
+      <description>Latest updates on Benad's Web Site</description>
+      <language>en-us</language>
+      <lastBuildDate>Tue, 26 Apr 2016 12:00:00 GMT</lastBuildDate>
+      <managingEditor>benad@me.com (Benoit Nadeau)</managingEditor>
+      <webMaster>benad@me.com (Benoit Nadeau)</webMaster>
+      <atom:link href="https://benad.me/feeds/rss.xml" rel="self" type="application/rss+xml" />
+      <item>
+         <title>February 12, 2022</title>
+         <description>&lt;p&gt;Posts are regularly added to the &lt;a href="https://benad.me/blog/"&gt;blog&lt;/a&gt;, including a new series about modern CLI tools.&lt;/p&gt;</description>
+         <pubDate>Sat, 12 Feb 2022 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20180118</guid>
+      </item>
+      <item>
+         <title>January 18, 2018</title>
+         <description>&lt;p&gt;This site is now &lt;a href="https://benad.me/blog/2016/09/12/https-the-new-standard/"&gt;using HTTPS&lt;/a&gt; and &lt;a href="https://benad.me/blog/2017/10/12/hello-ipv6/"&gt;supports IPv6&lt;/a&gt;.&lt;/p&gt;</description>
+         <pubDate>Thu, 18 Jan 2018 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20180118</guid>
+      </item>
+      <item>
+         <title>April 26, 2016</title>
+         <description>&lt;p&gt;Added &lt;a href="meta_blog.xml"&gt;The Static Blog&lt;/a&gt;, about the relocation of my blog to this site.&lt;/p&gt;</description>
+         <pubDate>Tue, 26 Apr 2016 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20160426</guid>
+      </item>
+      <item>
+         <title>December 6, 2015</title>
+         <description>&lt;p&gt;Added the article &lt;a href="https://benad.me/case_architect.xml"&gt;A Case for Software Architects&lt;/a&gt;, where I try to define the software architect role in a software development project.&lt;/p&gt;</description>
+         <pubDate>Sun, 6 Dec 2015 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20151206</guid>
+      </item>
+      <item>
+         <title>June 30, 2014</title>
+         <description>&lt;p&gt;Added the article &lt;a href="https://benad.me/why_programming.xml"&gt;Why Are You A Programmer?&lt;/a&gt;, listing humorous stereotypes of the various kind of programmers.&lt;/p&gt;</description>
+         <pubDate>Mon, 30 Jun 2014 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20140630</guid>
+      </item>
+      <item>
+         <title>August 4, 2013</title>
+         <description>&lt;p&gt;This web site is now written in HTML5. More information in the article &lt;a href="https://benad.me/meta_html5.html"&gt;The Future is HTML5&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Also, I corrected countless grammatical errors all over the place, but hopefully nobody noticed.&lt;/p&gt;</description>
+         <pubDate>Sun, 4 Aug 2013 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20130804</guid>
+      </item>
+      <item>
+         <title>June 3, 2012</title>
+         <description>&lt;p&gt;First, my blog moved (again) to the permanent URL &lt;a href="https://blog.benad.me"&gt;blog.benad.me.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Second, I added the article "&lt;a href="https://benad.me/software_design.xml"&gt;What is Software Design&lt;/a&gt;".&lt;/p&gt;</description>
+         <pubDate>Sun, 3 Jun 2012 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20120603</guid>
+      </item>
+      <item>
+         <title>March 4, 2012</title>
+         <description>Since January 2012 I'm posting daily on my &lt;a href="https://benad-blog.posterous.com/"&gt;Posterous blog&lt;/a&gt;.</description>
+         <pubDate>Sun, 4 Mar 2012 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20120304</guid>
+      </item>
+      <item>
+         <title>October 9, 2010</title>
+         <description>Added article &lt;a href="https://benad.me/ed.xml"&gt;ed, or How I Learned To Love The Mouse"&lt;/a&gt; and cleaned up the site a bit.</description>
+         <pubDate>Sat, 9 Oct 2010 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20101009</guid>
+      </item>
+      <item>
+         <title>March 1, 2010</title>
+         <description>Completed &lt;a href="https://benad.me/meta_present.xml"&gt;About This Site - The Present&lt;/a&gt; and &lt;a href="https://benad.me/meta_future.xml"&gt;About This Site - The Future&lt;/a&gt;. Hopefully I'll update this site at a faster pace in the following weeks.</description>
+         <pubDate>Mon, 1 Mar 2010 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20100301</guid>
+      </item>
+      <item>
+         <title>September 3, 2009</title>
+         <description>Added the page &lt;a href="https://benad.me/meta_past.xml"&gt;About This Site - The Past&lt;/a&gt; and a (manually crafted, for now) &lt;a href="https://feeds.feedburner.com/benadme"&gt;RSS feed&lt;/a&gt;.</description>
+         <pubDate>Thu, 3 Sep 2009 12:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20090903</guid>
+      </item>
+      <item>
+         <title>August 23, 2009</title>
+         <description>Initial release. For now, only the "&lt;a href="https://benad.me/me.xml"&gt;About Me&lt;/a&gt;" section is complete, but at least it's a start.</description>
+         <pubDate>Sun, 23 Aug 2009 00:00:00 GMT</pubDate>
+         <guid>http://benad.me/#item20090823</guid>
+      </item>
+   </channel>
+</rss>

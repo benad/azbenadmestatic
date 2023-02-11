@@ -9,8 +9,7 @@ cd "$DIR"
 rm -rf public
 mkdir public
 
-rsync -avc ../benadme-generated-git/ ./public --exclude '.hg*' --exclude '*.sh' --exclude 'lftp*' --cvs-exclude --exclude 'archives/lastpass' --exclude 'blog' \
---exclude feeds --exclude '*.xml'
+cp -rv -t public ../benadme-sources-git/public/*
 
 mkdir -p public/blog/
-rsync -avc ../benadme-blog-git/public/blog/ public/blog/
+cp -rv -t public ../benadme-blog-git/public/blog
