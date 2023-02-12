@@ -1,0 +1,15 @@
+{
+    "trailingSlash": "auto",
+    "routes": [
+        {
+            "route": "/index.xml",
+            "rewrite": "/index.html",
+            "statusCode": 301
+        },
+        {
+            "route": "/articles.xml",
+            "rewrite": "/articles.html",
+            "statusCode": 301
+        }
+    ]
+}
