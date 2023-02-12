@@ -3,12 +3,12 @@
     "routes": [
         {
             "route": "/index.xml",
-            "rewrite": "/index.html",
+            "redirect": "/index.html",
             "statusCode": 301
         },
         {
             "route": "/articles.xml",
-            "rewrite": "/articles.html",
+            "redirect": "/articles.html",
             "statusCode": 301
         }
     ]
