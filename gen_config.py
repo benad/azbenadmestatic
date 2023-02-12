@@ -6,7 +6,7 @@ import sys
 
 def generate():
     routes = []
-    config = {"trailingSlash": "auto", "routes": routes}
+    config = {"routes": routes}
     targets = [*glob('*.html', root_dir='public')]
     targets.sort()
     for target in targets:
