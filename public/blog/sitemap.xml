@@ -1,0 +1,2775 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://benad.me/</loc>
+    <lastmod>2023-01-22T15:47:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2023/01/22/mastodon-and-the-fediverse/</loc>
+    <lastmod>2023-01-22T15:47:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2022/09/07/the-slow-hacker/</loc>
+    <lastmod>2022-09-07T15:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2022/08/01/programming-fonts-and-ligatures/</loc>
+    <lastmod>2022-08-01T21:16:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2022/05/08/the-strange-case-of-the-swiftpoint-gt-mouse/</loc>
+    <lastmod>2022-05-08T19:05:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2022/02/12/more-modern-cli-tools/</loc>
+    <lastmod>2022-02-12T12:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2021/09/18/modern-command-line-tools/</loc>
+    <lastmod>2021-09-18T14:20:51-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2021/08/01/from-remote-desktop-to-remote-gaming/</loc>
+    <lastmod>2021-08-01T18:50:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2021/04/13/upgrading-to-the-pi-400/</loc>
+    <lastmod>2021-04-13T15:54:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2021/02/23/ram-compression-on-linux/</loc>
+    <lastmod>2021-02-23T18:31:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2020/11/28/restic-modern-linux-backups/</loc>
+    <lastmod>2020-11-28T10:55:01-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2020/06/29/the-borderlands/</loc>
+    <lastmod>2020-06-29T16:19:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2020/05/18/backing-up-two-factor-authentication-keys/</loc>
+    <lastmod>2020-05-18T18:32:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2020/02/09/the-app-subscription-model/</loc>
+    <lastmod>2020-02-09T14:01:31-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2019/09/29/more-open-source-password-managers/</loc>
+    <lastmod>2019-09-29T14:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2019/05/20/browsing-home/</loc>
+    <lastmod>2019-05-20T14:59:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2019/04/11/saving-the-terminal-to-html/</loc>
+    <lastmod>2019-04-11T17:51:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2019/02/10/monorepos-and-semantic-versioning/</loc>
+    <lastmod>2019-02-10T15:42:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/12/02/upgrading-to-http/2/</loc>
+    <lastmod>2018-12-02T20:48:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/09/16/a-eulogy-for-small-phones/</loc>
+    <lastmod>2018-09-16T20:29:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/07/17/python-3.7-on-centos-6/</loc>
+    <lastmod>2018-07-17T20:55:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/07/11/streaming-music-from-google-play-to-apple/</loc>
+    <lastmod>2018-07-11T21:09:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/06/29/stretching-to-debian-9/</loc>
+    <lastmod>2018-06-29T11:42:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/05/08/watching-youtube-and-twitch-with-mpv/</loc>
+    <lastmod>2018-05-08T19:47:22-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/03/30/those-games-about-the-creed-of-assassins/</loc>
+    <lastmod>2018-03-30T18:48:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2018/01/09/raspberry-pi-as-a-dvr/</loc>
+    <lastmod>2018-01-09T16:59:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/12/29/batteries-and-planned-obsolescence/</loc>
+    <lastmod>2017-12-29T10:59:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/11/06/raspberry-pi-your-home-linux-server/</loc>
+    <lastmod>2017-11-06T20:02:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/10/12/hello-ipv6/</loc>
+    <lastmod>2017-10-12T19:04:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/08/23/forever-64-bit/</loc>
+    <lastmod>2017-08-23T14:19:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/06/05/pull-the-plug-testing/</loc>
+    <lastmod>2017-06-05T19:12:27-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/03/18/my-ubuntu-tips/</loc>
+    <lastmod>2017-03-18T20:24:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2017/02/11/my-linux-laptop/</loc>
+    <lastmod>2017-02-11T14:48:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/12/26/on-the-usability-of-strings/</loc>
+    <lastmod>2016-12-26T10:11:21-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/11/10/the-dongle-generation/</loc>
+    <lastmod>2016-11-10T10:30:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/09/12/https-the-new-standard/</loc>
+    <lastmod>2016-09-12T21:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/08/16/mac-only-dev-tools/</loc>
+    <lastmod>2016-08-16T19:44:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/07/07/good-enough-wireless-audio/</loc>
+    <lastmod>2016-07-07T18:44:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/05/23/flattening-circular-buffers/</loc>
+    <lastmod>2016-05-23T14:01:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/04/26/the-static-blog/</loc>
+    <lastmod>2016-04-26T21:11:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/03/29/final-blog-move/</loc>
+    <lastmod>2016-03-29T15:51:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/3/2/amazon-cloud-drive-backend-for-duplicity</loc>
+    <lastmod>2016-03-02T21:16:19-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2016/2/24/diy-backup</loc>
+    <lastmod>2016-02-24T22:56:28-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/11/9/keepass-password-management-apps</loc>
+    <lastmod>2015-11-09T20:01:10-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/10/10/the-twilight-zone-top-10-episodes-spoilers-free</loc>
+    <lastmod>2015-10-10T21:40:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/9/15/exploring-reactive-programming</loc>
+    <lastmod>2015-09-15T19:46:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/8/2/10s-everywhere</loc>
+    <lastmod>2015-08-02T15:57:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/5/31/a-codes-first-draft</loc>
+    <lastmod>2015-05-31T22:18:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/5/3/the-mystery-of-logitech-wireless-interferences</loc>
+    <lastmod>2015-05-03T17:48:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/3/30/electricity-savings-all-those-blinking-lights</loc>
+    <lastmod>2015-03-30T16:26:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2015/1/13/alpha-my-first-pc</loc>
+    <lastmod>2015-01-13T19:33:59-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/12/30/the-last-retro-final-fantasy</loc>
+    <lastmod>2014-12-30T20:49:20-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/12/29/final-fantasy-vii-a-late-review</loc>
+    <lastmod>2014-12-29T11:40:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/11/25/modern-mvc-in-the-browser</loc>
+    <lastmod>2014-11-25T20:44:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/10/27/a-tale-of-two-shells</loc>
+    <lastmod>2014-10-27T21:37:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/10/14/moniker-the-security-weak-point</loc>
+    <lastmod>2014-10-14T21:21:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/10/4/eventual-consistency-squared</loc>
+    <lastmod>2014-10-04T11:05:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/8/14/client-side-javascript-modules</loc>
+    <lastmod>2014-08-14T23:14:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/7/30/the-case-for-complexity</loc>
+    <lastmod>2014-07-30T22:14:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/7/12/running-final-fantasy-vii-steam-on-mac</loc>
+    <lastmod>2014-07-12T13:50:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/7/12/resuming-final-fantasy-with-vii</loc>
+    <lastmod>2014-07-12T13:23:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/6/28/google-play-music-in-canada</loc>
+    <lastmod>2014-06-28T20:05:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/5/26/ios-and-android-development-tools</loc>
+    <lastmod>2014-05-26T20:27:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/4/14/openssl-my-heart-is-bleeding</loc>
+    <lastmod>2014-04-14T21:29:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/4/2/a-week-with-android</loc>
+    <lastmod>2014-04-02T20:25:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/3/30/going-root</loc>
+    <lastmod>2014-03-30T16:06:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/2/16/the-syncing-problem</loc>
+    <lastmod>2014-02-16T19:00:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2014/1/5/back-to-objective-c</loc>
+    <lastmod>2014-01-05T14:48:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/12/29/exceptional-exceptions</loc>
+    <lastmod>2013-12-29T14:30:01-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/12/2/cutting-the-cord</loc>
+    <lastmod>2013-12-02T22:28:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/11/25/your-passwords-suck</loc>
+    <lastmod>2013-11-25T20:45:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/11/10/revision-a</loc>
+    <lastmod>2013-11-10T19:59:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/9/14/the-user-interface-designer-is-running-the-asylum</loc>
+    <lastmod>2013-09-14T17:09:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/9/4/replacing-google-authenticator</loc>
+    <lastmod>2013-09-04T21:23:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/8/4/my-web-site-now-with-html5</loc>
+    <lastmod>2013-08-04T15:28:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/6/24/backing-up-bitly-bookmarks</loc>
+    <lastmod>2013-06-24T18:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/6/23/learning-the-d-programming-language</loc>
+    <lastmod>2013-06-23T16:34:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/6/21/on-bashing-c</loc>
+    <lastmod>2013-06-21T21:32:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/5/21/on-c-operator-overloading</loc>
+    <lastmod>2013-05-21T20:00:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/4/26/on-c-templates</loc>
+    <lastmod>2013-04-26T21:15:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/4/8/electronic-taxes</loc>
+    <lastmod>2013-04-08T22:18:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2013/1/13/the-wii-u</loc>
+    <lastmod>2013-01-13T19:09:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/31/a-year-in-blogging</loc>
+    <lastmod>2012-12-31T19:47:55-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/30/a-year-of-reading</loc>
+    <lastmod>2012-12-30T21:30:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/29/looking-back-at-2012-in-programming</loc>
+    <lastmod>2012-12-29T20:47:42-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/28/my-geek-resolutions-for-2013</loc>
+    <lastmod>2012-12-28T21:16:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/27/wasting-time-todays-ipad-games</loc>
+    <lastmod>2012-12-27T22:32:55-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/26/proper-javascript-in-java</loc>
+    <lastmod>2012-12-26T21:15:28-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/25/digital-gifts</loc>
+    <lastmod>2012-12-25T22:11:07-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/24/back-to-minecraft</loc>
+    <lastmod>2012-12-24T19:25:53-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/23/all-roads-lead-to-osgi</loc>
+    <lastmod>2012-12-23T22:09:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/22/paying-at-the-speed-of-a-modem</loc>
+    <lastmod>2012-12-22T21:35:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/21/the-end-of-my-work-year</loc>
+    <lastmod>2012-12-21T20:38:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/20/humble-bundles</loc>
+    <lastmod>2012-12-20T21:53:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/19/html5-performance</loc>
+    <lastmod>2012-12-19T21:13:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/18/the-business-of-photos</loc>
+    <lastmod>2012-12-18T21:25:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/17/48-fps-3d-headache</loc>
+    <lastmod>2012-12-17T21:27:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/16/second-screens-for-books</loc>
+    <lastmod>2012-12-16T21:10:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/15/the-faqs</loc>
+    <lastmod>2012-12-15T21:29:34-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/14/the-last-week</loc>
+    <lastmod>2012-12-14T21:15:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/13/the-information-stream</loc>
+    <lastmod>2012-12-13T21:32:05-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/12/its-the-most-most-stressful-time-of-the-year</loc>
+    <lastmod>2012-12-12T21:18:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/11/the-non-sign</loc>
+    <lastmod>2012-12-11T21:48:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/10/the-moving-target-of-apis</loc>
+    <lastmod>2012-12-10T21:37:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/9/a-kindle-move-to-canada</loc>
+    <lastmod>2012-12-09T18:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/8/massive-multiplayer-minecraft</loc>
+    <lastmod>2012-12-08T21:36:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/7/the-windows-bootstrap-problem</loc>
+    <lastmod>2012-12-07T21:26:19-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/6/christmas-office-party</loc>
+    <lastmod>2012-12-06T20:42:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/5/git-workflows</loc>
+    <lastmod>2012-12-05T20:19:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/4/proper-google-ios-apps</loc>
+    <lastmod>2012-12-04T21:30:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/3/the-dawn-of-html5-games</loc>
+    <lastmod>2012-12-03T21:25:01-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/2/the-death-of-im</loc>
+    <lastmod>2012-12-02T20:26:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/12/1/the-party</loc>
+    <lastmod>2012-12-01T21:18:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/30/it-goes-to-11</loc>
+    <lastmod>2012-11-30T21:39:43-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/29/the-cost-of-music-exploration</loc>
+    <lastmod>2012-11-29T21:17:20-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/28/syncing-phone-calls-with-rogers-one-number</loc>
+    <lastmod>2012-11-28T20:17:59-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/27/automatic-bookmarks</loc>
+    <lastmod>2012-11-27T20:33:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/26/newsradio</loc>
+    <lastmod>2012-11-26T21:56:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/25/winter-electronics</loc>
+    <lastmod>2012-11-25T20:24:37-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/24/tv-ads</loc>
+    <lastmod>2012-11-24T20:55:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/23/waterfox</loc>
+    <lastmod>2012-11-23T21:39:33-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/22/where-are-a-and-b</loc>
+    <lastmod>2012-11-22T21:38:07-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/21/single-minded-productivity</loc>
+    <lastmod>2012-11-21T21:21:29-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/20/bracing-for-windows-fanboys</loc>
+    <lastmod>2012-11-20T20:52:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/19/the-wii-u-curiosity</loc>
+    <lastmod>2012-11-19T21:16:33-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/18/no-tv-set</loc>
+    <lastmod>2012-11-18T20:03:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/17/its-now-e-books-turn</loc>
+    <lastmod>2012-11-17T19:40:21-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/16/too-much-windows</loc>
+    <lastmod>2012-11-16T20:43:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/15/error-levels</loc>
+    <lastmod>2012-11-15T20:34:34-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/14/type-less</loc>
+    <lastmod>2012-11-14T21:19:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/13/programming-overtime</loc>
+    <lastmod>2012-11-13T21:08:31-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/12/full-screen-guis</loc>
+    <lastmod>2012-11-12T21:05:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/11/red-dwarf-patience</loc>
+    <lastmod>2012-11-11T20:49:53-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/10/hootsuite-spam-spam-spam</loc>
+    <lastmod>2012-11-10T18:56:24-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/9/trackpads-are-the-new-trackballs</loc>
+    <lastmod>2012-11-09T20:55:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/8/a-fedora-linux-server</loc>
+    <lastmod>2012-11-08T21:52:28-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/7/api-suckers</loc>
+    <lastmod>2012-11-07T21:13:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/6/election-night-in-the-usa</loc>
+    <lastmod>2012-11-06T20:17:59-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/5/json-schemas</loc>
+    <lastmod>2012-11-05T20:53:43-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/4/the-polite-computer</loc>
+    <lastmod>2012-11-04T19:23:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/3/opus-audio-codec</loc>
+    <lastmod>2012-11-03T20:41:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/2/ipad-4th-generation</loc>
+    <lastmod>2012-11-02T22:07:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/11/1/a-plethora-of-tabs</loc>
+    <lastmod>2012-11-01T21:33:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/31/scary-games</loc>
+    <lastmod>2012-10-31T21:55:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/30/does-data-float</loc>
+    <lastmod>2012-10-30T21:44:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/29/abrasive-style</loc>
+    <lastmod>2012-10-29T21:27:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/28/you-dont-need-a-word-processor</loc>
+    <lastmod>2012-10-28T21:25:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/27/ftl</loc>
+    <lastmod>2012-10-27T21:30:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/26/c-and-doxygen</loc>
+    <lastmod>2012-10-26T21:52:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/25/synesthesia</loc>
+    <lastmod>2012-10-25T21:20:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/24/toys-for-adults</loc>
+    <lastmod>2012-10-24T20:13:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/23/the-analog-hole</loc>
+    <lastmod>2012-10-23T19:48:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/22/defining-processes</loc>
+    <lastmod>2012-10-22T21:40:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/21/windows-modern-ui-usability</loc>
+    <lastmod>2012-10-21T20:09:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/20/trust-us-security</loc>
+    <lastmod>2012-10-20T19:34:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/19/book-destination-void-colon</loc>
+    <lastmod>2012-10-19T21:58:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/18/hipster-unix</loc>
+    <lastmod>2012-10-18T22:07:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/17/the-bundle-dilemma</loc>
+    <lastmod>2012-10-17T20:53:37-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/16/if-i-won-the-lottery-i-would</loc>
+    <lastmod>2012-10-16T23:08:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/15/debt</loc>
+    <lastmod>2012-10-15T21:19:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/tm9rawetyw5kluxp</loc>
+    <lastmod>2012-10-14T20:27:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/13/independent-media</loc>
+    <lastmod>2012-10-13T22:13:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/12/christmas-deadline</loc>
+    <lastmod>2012-10-12T21:06:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/11/streaming-music-redux</loc>
+    <lastmod>2012-10-11T21:40:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/10/review</loc>
+    <lastmod>2012-10-10T21:01:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/9/an-alternate-readability-app</loc>
+    <lastmod>2012-10-09T21:16:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/8/the-hdd-comeback</loc>
+    <lastmod>2012-10-08T22:00:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/7/saint-sans-requiem-op-54</loc>
+    <lastmod>2012-10-07T22:04:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/6/the-update-business-model</loc>
+    <lastmod>2012-10-06T21:32:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/5/tiny-core-linux</loc>
+    <lastmod>2012-10-05T21:13:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/4/two-enders</loc>
+    <lastmod>2012-10-04T21:07:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/3/speed-reading</loc>
+    <lastmod>2012-10-03T21:36:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/2/rolling-stone-on-the-rolling-stones</loc>
+    <lastmod>2012-10-02T21:13:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/10/1/the-audiophile-delusions</loc>
+    <lastmod>2012-10-01T21:11:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/30/ssh-tunnels-from-ios</loc>
+    <lastmod>2012-09-30T22:34:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/29/book-a-storm-of-swords</loc>
+    <lastmod>2012-09-29T21:22:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/28/ios-6-maps</loc>
+    <lastmod>2012-09-28T21:28:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/27/i18n</loc>
+    <lastmod>2012-09-27T21:29:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/26/paperless</loc>
+    <lastmod>2012-09-26T21:37:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/25/back-to-firefox</loc>
+    <lastmod>2012-09-25T21:38:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/24/lazy-memory</loc>
+    <lastmod>2012-09-24T21:17:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/23/skeuomorphism-and-design-cliques</loc>
+    <lastmod>2012-09-23T20:16:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/22/twitter-like-email</loc>
+    <lastmod>2012-09-22T20:03:51-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/21/delivery-status-touch</loc>
+    <lastmod>2012-09-21T21:00:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/20/headphone-disintegration</loc>
+    <lastmod>2012-09-20T21:10:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/19/ios-6</loc>
+    <lastmod>2012-09-19T21:53:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/18/bonsai-movies</loc>
+    <lastmod>2012-09-18T21:37:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/vghllvzhbmlzagvk</loc>
+    <lastmod>2012-09-17T19:49:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/16/my-ux-books-queue</loc>
+    <lastmod>2012-09-16T21:26:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/15/why-i-wont-buy-an-iphone-5</loc>
+    <lastmod>2012-09-15T21:11:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/14/sending-documents-to-the-kindle</loc>
+    <lastmod>2012-09-14T21:30:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/13/java-with-no-sdk</loc>
+    <lastmod>2012-09-13T21:25:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/12/playing-with-the-stack</loc>
+    <lastmod>2012-09-12T21:32:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/11/time-shifting-the-web</loc>
+    <lastmod>2012-09-11T21:04:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/10/opening-a-port</loc>
+    <lastmod>2012-09-10T21:46:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/9/closed-platforms-vs-general-purpose-computing</loc>
+    <lastmod>2012-09-09T18:47:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/8/super-hexagon-and-mcpixel</loc>
+    <lastmod>2012-09-08T19:35:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/7/ifttt-if-this-then-that</loc>
+    <lastmod>2012-09-07T20:12:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/6/my-server-in-the</loc>
+    <lastmod>2012-09-06T20:25:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/5/inside-macintosh</loc>
+    <lastmod>2012-09-05T23:38:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/4/prt-voter</loc>
+    <lastmod>2012-09-04T20:59:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/3/vvvvvv</loc>
+    <lastmod>2012-09-03T21:02:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/2/eyes-wide-shut</loc>
+    <lastmod>2012-09-02T22:51:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/9/1/uplink-game-for-ipad</loc>
+    <lastmod>2012-09-01T21:59:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/31/qsyc6a0wo5j9p6m66770gkxlu8h0o9</loc>
+    <lastmod>2012-08-31T21:07:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/30/1wdxoftlunhjjg0zgvodz1mnbhcpxo</loc>
+    <lastmod>2012-08-30T20:53:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/29/a143kfmk624iaj4s9rjvutix6pr6xr</loc>
+    <lastmod>2012-08-29T21:21:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/28/converting-xps-to-pdf-of-mac</loc>
+    <lastmod>2012-08-28T20:23:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/27/web-functional-testing-with-selenium</loc>
+    <lastmod>2012-08-27T21:15:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/26/quiet-elections</loc>
+    <lastmod>2012-08-26T20:24:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/25/fz7o78x6nozj4vpaar6u3udy8sby1p</loc>
+    <lastmod>2012-08-25T21:21:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/24/3slb8x4g54hyoyl46tq5vpcu73773g</loc>
+    <lastmod>2012-08-24T20:54:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/c2c3ffc1-c0ba-4f65-97ba-7f1029839e5e</loc>
+    <lastmod>2012-08-23T21:00:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/49b1231d-4e46-416e-9653-2768a2f15e90</loc>
+    <lastmod>2012-08-22T20:54:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/780ffdfc-73b4-4d75-8cc6-9d2e285cd54a</loc>
+    <lastmod>2012-08-21T19:10:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/3b95310a-84b0-497e-ac39-33f25b967eef</loc>
+    <lastmod>2012-08-20T21:29:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/3843678e-ee65-4d33-904b-aa4ecf928533</loc>
+    <lastmod>2012-08-19T19:37:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/18/the-other-ones-streaming-music-week</loc>
+    <lastmod>2012-08-18T20:09:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/17/8tracks-music-streaming-week</loc>
+    <lastmod>2012-08-17T19:36:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/17/songza-streaming-music-week</loc>
+    <lastmod>2012-08-16T21:16:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/16/jango-radio-streaming-music-week</loc>
+    <lastmod>2012-08-15T21:22:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/15/slacker-radio-streaming-music-week</loc>
+    <lastmod>2012-08-14T20:20:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/14/cbc-music-streaming-music-week</loc>
+    <lastmod>2012-08-13T20:30:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/12/those-hyped-startups</loc>
+    <lastmod>2012-08-12T19:27:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/11/full-metal-jacket</loc>
+    <lastmod>2012-08-11T21:40:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/11/tortoisehg-on-a-mac-1</loc>
+    <lastmod>2012-08-10T21:17:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/10/rubber-duck-programming</loc>
+    <lastmod>2012-08-09T21:42:27-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/8/design-cheat-sheet</loc>
+    <lastmod>2012-08-08T20:52:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/8/faux-hipster</loc>
+    <lastmod>2012-08-07T21:19:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/7/streaming-podcasts</loc>
+    <lastmod>2012-08-06T21:17:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/5/book-the-design-of-everyday-things</loc>
+    <lastmod>2012-08-05T19:26:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/5/your-password-sucks</loc>
+    <lastmod>2012-08-04T21:07:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/3/outlook-in-name-only</loc>
+    <lastmod>2012-08-03T22:08:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/3/feed-free-podcasting</loc>
+    <lastmod>2012-08-02T21:37:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/8/2/creative-focus</loc>
+    <lastmod>2012-08-01T21:26:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/31/goodbye-idisk</loc>
+    <lastmod>2012-07-31T20:11:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/31/the-problem-with-prn</loc>
+    <lastmod>2012-07-30T21:26:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/29/deceptively-good-encryption</loc>
+    <lastmod>2012-07-29T22:14:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/28/cinema-allergy</loc>
+    <lastmod>2012-07-28T21:56:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/27/waking-from-hibernation</loc>
+    <lastmod>2012-07-27T21:01:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/27/forced-disconnect</loc>
+    <lastmod>2012-07-26T21:05:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/26/the-uneventful-update</loc>
+    <lastmod>2012-07-25T20:53:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/25/the-netbeans-move</loc>
+    <lastmod>2012-07-24T21:22:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/24/solar-weather-app</loc>
+    <lastmod>2012-07-23T21:24:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/23/the-dark-night</loc>
+    <lastmod>2012-07-22T20:05:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/21/tiny-wings</loc>
+    <lastmod>2012-07-21T19:44:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/20/interactive-disk-usage</loc>
+    <lastmod>2012-07-20T19:49:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/20/the-save-game</loc>
+    <lastmod>2012-07-19T21:22:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/19/another-blog-move</loc>
+    <lastmod>2012-07-18T21:40:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/17/the-usb-key-key</loc>
+    <lastmod>2012-07-17T21:48:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/17/packaging-usability</loc>
+    <lastmod>2012-07-16T21:10:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/16/portable-security-and-honeypots</loc>
+    <lastmod>2012-07-15T21:16:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/15/the-shining</loc>
+    <lastmod>2012-07-14T22:04:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/14/headless-virtualbox</loc>
+    <lastmod>2012-07-13T21:16:12-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/13/the-death-of-digg</loc>
+    <lastmod>2012-07-12T21:27:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/12/64-bits-the-last-frontier</loc>
+    <lastmod>2012-07-11T21:40:12-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/11/culture-shock</loc>
+    <lastmod>2012-07-10T21:36:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/10/how-to-delete-a-branch-in-mercurial-really</loc>
+    <lastmod>2012-07-09T21:30:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/8/my-top-5-video-games-intros</loc>
+    <lastmod>2012-07-08T20:39:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/7/the-slow-ipad</loc>
+    <lastmod>2012-07-07T19:10:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/7/here-i-am</loc>
+    <lastmod>2012-07-06T21:49:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/6/synchronization-nightmares</loc>
+    <lastmod>2012-07-05T21:30:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/5/the-electrical-bill-factor</loc>
+    <lastmod>2012-07-04T22:01:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/3/inspired-writing</loc>
+    <lastmod>2012-07-03T22:18:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/3/not-cramping-my-style</loc>
+    <lastmod>2012-07-02T20:16:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/1/what-was-the-point-of-posting-every-day-again</loc>
+    <lastmod>2012-07-01T18:41:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/7/1/avoiding-stuff</loc>
+    <lastmod>2012-06-30T20:50:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/29/those-network-walled-gardens</loc>
+    <lastmod>2012-06-29T21:26:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/29/the-quasi-browsers-of-ios</loc>
+    <lastmod>2012-06-28T21:05:22-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/28/the-reddit-lurker</loc>
+    <lastmod>2012-06-27T21:04:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/27/apples-podcasts-app</loc>
+    <lastmod>2012-06-26T20:56:12-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/25/the-mythical-man-month</loc>
+    <lastmod>2012-06-25T19:22:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/25/a-few-iphone-and-ipad-puzzle-games</loc>
+    <lastmod>2012-06-24T22:21:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/23/nintendos-subscription-service</loc>
+    <lastmod>2012-06-23T18:41:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/23/closed-surface</loc>
+    <lastmod>2012-06-22T21:30:29-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/22/multi-tasked-reading</loc>
+    <lastmod>2012-06-21T21:51:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/21/on-demand-tv-channels</loc>
+    <lastmod>2012-06-20T21:53:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/20/pocket-planes</loc>
+    <lastmod>2012-06-19T21:05:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/19/live-tech-news-on-twit</loc>
+    <lastmod>2012-06-18T20:19:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/18/barry-lyndon</loc>
+    <lastmod>2012-06-17T21:52:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/17/a-plethora-of-platforms</loc>
+    <lastmod>2012-06-16T21:16:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/16/locking-down-laptops</loc>
+    <lastmod>2012-06-15T21:52:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/15/automatic-uploads</loc>
+    <lastmod>2012-06-14T21:05:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/13/operas-open-release-candidates</loc>
+    <lastmod>2012-06-13T19:54:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/12/omnigraffle</loc>
+    <lastmod>2012-06-12T19:57:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/12/the-end-of-backbreakers</loc>
+    <lastmod>2012-06-11T20:53:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/11/laptop-symphony</loc>
+    <lastmod>2012-06-10T20:42:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/10/a-clockwork-orange</loc>
+    <lastmod>2012-06-09T21:51:22-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/8/the-quick-death-of-palm</loc>
+    <lastmod>2012-06-08T21:27:51-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/8/password-managers</loc>
+    <lastmod>2012-06-07T21:36:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/7/iphone-case-overkill</loc>
+    <lastmod>2012-06-06T22:35:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/6/yellow-submarine</loc>
+    <lastmod>2012-06-05T21:50:12-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/5/windows-8s-gesture-mnemonics-mess</loc>
+    <lastmod>2012-06-04T21:31:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/3/what-is-software-design</loc>
+    <lastmod>2012-06-03T19:37:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/3/the-reading-indiscipline</loc>
+    <lastmod>2012-06-02T20:25:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/2/the-almighty-clonezilla</loc>
+    <lastmod>2012-06-01T21:13:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/6/1/advice-for-buying-a-tv</loc>
+    <lastmod>2012-05-31T21:16:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/31/kubricks-napoleon</loc>
+    <lastmod>2012-05-30T21:16:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/30/republic-lost</loc>
+    <lastmod>2012-05-29T21:01:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/29/che-2007-movie</loc>
+    <lastmod>2012-05-28T22:37:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/27/almanac-of-compete-world-knowledge</loc>
+    <lastmod>2012-05-27T19:00:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/26/netflix-expirations</loc>
+    <lastmod>2012-05-26T18:47:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/26/the-worst-time-for-an-ipad-jailbreak</loc>
+    <lastmod>2012-05-25T21:10:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/25/the-missing-updater</loc>
+    <lastmod>2012-05-24T22:08:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/23/goodbye-ethernet-port</loc>
+    <lastmod>2012-05-23T21:19:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/22/the-dreaded-restore-disk</loc>
+    <lastmod>2012-05-22T21:51:27-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/22/the-nightmare-before-christmas</loc>
+    <lastmod>2012-05-21T21:43:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/21/an-iphone-4s-on-a-hot-day</loc>
+    <lastmod>2012-05-20T20:32:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/20/30-rock-season-6</loc>
+    <lastmod>2012-05-19T20:31:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/19/missing-out-on-diablo-iii</loc>
+    <lastmod>2012-05-18T20:35:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/17/dynamic-music-in-video-games-part-2</loc>
+    <lastmod>2012-05-17T21:09:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/17/dynamic-music-in-video-games-part-1</loc>
+    <lastmod>2012-05-16T22:38:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/16/memory-and-data-recovery</loc>
+    <lastmod>2012-05-15T21:39:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/15/2001-a-space-odyssey</loc>
+    <lastmod>2012-05-14T20:18:22-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/13/katamari-amore</loc>
+    <lastmod>2012-05-13T18:35:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/13/super-talking-time-brothers-2</loc>
+    <lastmod>2012-05-12T20:31:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/11/trying-out-the-debian-handbook</loc>
+    <lastmod>2012-05-11T22:21:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/11/the-ubiquity-of-cameras</loc>
+    <lastmod>2012-05-10T21:04:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/10/updating-to-ubuntu-1204</loc>
+    <lastmod>2012-05-09T20:27:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/9/flaming-the-fanboys</loc>
+    <lastmod>2012-05-08T21:20:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/8/instacasts-extortion</loc>
+    <lastmod>2012-05-07T20:24:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/7/dr-strangelove</loc>
+    <lastmod>2012-05-06T21:14:37-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/5/airplay-alternatives-1</loc>
+    <lastmod>2012-05-05T21:41:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/4/ping-magic</loc>
+    <lastmod>2012-05-04T21:28:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/4/creative-backup</loc>
+    <lastmod>2012-05-03T20:44:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/2/bad-retention</loc>
+    <lastmod>2012-05-02T23:14:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/1/i-robot</loc>
+    <lastmod>2012-05-01T18:55:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/5/1/tax-time</loc>
+    <lastmod>2012-04-30T20:25:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/30/my-old-laptop</loc>
+    <lastmod>2012-04-29T21:17:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/28/flipping-the-switch</loc>
+    <lastmod>2012-04-28T19:09:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/28/not-getting-lost-anymore</loc>
+    <lastmod>2012-04-27T21:41:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/27/if-i-could-draw</loc>
+    <lastmod>2012-04-26T21:21:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/25/the-adventures-of-lolo</loc>
+    <lastmod>2012-04-25T19:55:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/25/managing-c</loc>
+    <lastmod>2012-04-24T21:58:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/24/freeindiegames</loc>
+    <lastmod>2012-04-23T22:40:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/23/new-web-design-tools-web_development</loc>
+    <lastmod>2012-04-22T21:50:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/21/blog-move-almost-done</loc>
+    <lastmod>2012-04-21T19:45:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/20/learning-a-new-language</loc>
+    <lastmod>2012-04-20T18:17:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/19/kubrick-upgrade</loc>
+    <lastmod>2012-04-19T16:46:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/18/norwegian-wood</loc>
+    <lastmod>2012-04-18T16:57:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/17/server-bloat</loc>
+    <lastmod>2012-04-17T16:47:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/16/back-to-work</loc>
+    <lastmod>2012-04-16T17:49:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/15/lolita</loc>
+    <lastmod>2012-04-15T15:37:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/14/my-blog-is-now-on-blogbenadme</loc>
+    <lastmod>2012-04-14T09:54:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/13/no-console</loc>
+    <lastmod>2012-04-13T17:54:37-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/12/the-plot-is-missing</loc>
+    <lastmod>2012-04-12T17:07:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/11/macs-are-still-not-pc-compatible</loc>
+    <lastmod>2012-04-11T17:03:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/10/the-ten-make-that-nine-habits-of-very-organized-people-make</loc>
+    <lastmod>2012-04-10T17:36:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/9/the-rise-and-fall-of-the-third-reich</loc>
+    <lastmod>2012-04-09T19:18:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/8/blackberry-security</loc>
+    <lastmod>2012-04-08T17:49:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/7/spartacus</loc>
+    <lastmod>2012-04-07T16:06:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/6/spaceward-ho-for-ipad</loc>
+    <lastmod>2012-04-06T17:44:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/5/2012</loc>
+    <lastmod>2012-04-05T18:01:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/4/ios-text-editors</loc>
+    <lastmod>2012-04-04T17:07:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/3/sleep-mode</loc>
+    <lastmod>2012-04-03T16:09:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/2/my-last-physical-book</loc>
+    <lastmod>2012-04-02T17:04:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/4/1/youre-fooling-no-one</loc>
+    <lastmod>2012-04-01T17:12:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/31/time</loc>
+    <lastmod>2012-03-31T18:34:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/30/animated-arts</loc>
+    <lastmod>2012-03-30T18:02:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/29/my-favorite-programming-language</loc>
+    <lastmod>2012-03-29T17:23:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/28/one-week</loc>
+    <lastmod>2012-03-28T17:02:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/27/news-deluge</loc>
+    <lastmod>2012-03-27T17:21:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/26/information-overload-design</loc>
+    <lastmod>2012-03-26T17:55:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/25/white-space-design</loc>
+    <lastmod>2012-03-25T18:20:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/24/the-need-for-djs</loc>
+    <lastmod>2012-03-24T17:56:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/23/rango</loc>
+    <lastmod>2012-03-23T17:59:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/22/rogers-and-the-end-of-the-3-year-cycle</loc>
+    <lastmod>2012-03-22T16:06:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/21/need-vacation</loc>
+    <lastmod>2012-03-21T17:10:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/20/bittrip-part-2</loc>
+    <lastmod>2012-03-20T17:13:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/19/bittrip-part-1</loc>
+    <lastmod>2012-03-19T18:37:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/18/paths-of-glory</loc>
+    <lastmod>2012-03-18T16:13:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/17/not-playing-anymore</loc>
+    <lastmod>2012-03-17T16:11:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/16/trying-out-byword</loc>
+    <lastmod>2012-03-16T18:09:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/15/bad-movies</loc>
+    <lastmod>2012-03-15T15:52:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/14/a-clash-of-kings</loc>
+    <lastmod>2012-03-14T15:30:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/13/long-reads</loc>
+    <lastmod>2012-03-13T17:12:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/12/posterous-to-shut-down</loc>
+    <lastmod>2012-03-12T16:52:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/11/no-screens-today</loc>
+    <lastmod>2012-03-11T08:05:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/10/infinity-blade</loc>
+    <lastmod>2012-03-10T15:27:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/9/magazine-as-the-best-of-websites</loc>
+    <lastmod>2012-03-09T17:10:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/8/design-to-the-rescue</loc>
+    <lastmod>2012-03-08T16:44:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/7/trying-google-play-video-rentals</loc>
+    <lastmod>2012-03-07T16:56:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/6/microsofts-big-bet</loc>
+    <lastmod>2012-03-06T16:46:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/5/work-games-or-the-economics-of-farmville</loc>
+    <lastmod>2012-03-05T15:44:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/4/the-killing</loc>
+    <lastmod>2012-03-04T15:54:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/3/5050</loc>
+    <lastmod>2012-03-03T16:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/2/movies-are-too-long</loc>
+    <lastmod>2012-03-02T16:38:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/3/1/goodbye-com</loc>
+    <lastmod>2012-03-01T14:49:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/29/computer-and-dates</loc>
+    <lastmod>2012-02-29T14:56:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/28/tiny-reads</loc>
+    <lastmod>2012-02-28T16:32:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/27/nasty-avast-7-update</loc>
+    <lastmod>2012-02-27T16:11:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/26/taxes-in-a-spreadsheet</loc>
+    <lastmod>2012-02-26T12:34:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/25/blind-iphone</loc>
+    <lastmod>2012-02-25T15:52:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/24/almost-too-much-online-storage</loc>
+    <lastmod>2012-02-24T16:57:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/23/the-kubrick-movies</loc>
+    <lastmod>2012-02-23T16:14:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/22/trying-out-itunes-u</loc>
+    <lastmod>2012-02-22T17:05:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/21/upgrade-itis</loc>
+    <lastmod>2012-02-21T17:17:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/20/shutter-island</loc>
+    <lastmod>2012-02-20T16:00:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/19/mozart-the-operas</loc>
+    <lastmod>2012-02-19T16:53:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/18/no-more-save</loc>
+    <lastmod>2012-02-18T18:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/17/youtube-on-a-tv</loc>
+    <lastmod>2012-02-17T16:23:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/16/the-young-turks</loc>
+    <lastmod>2012-02-16T16:26:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/15/game-of-thrones-season-2</loc>
+    <lastmod>2012-02-15T16:00:34-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/14/digital-a-love-story</loc>
+    <lastmod>2012-02-14T16:00:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/13/the-fine-line-between-working-and-not</loc>
+    <lastmod>2012-02-13T15:56:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/12/ios-games-the-hacker-and-tweetland</loc>
+    <lastmod>2012-02-12T15:45:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/11/drive</loc>
+    <lastmod>2012-02-11T16:09:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/10/sleep</loc>
+    <lastmod>2012-02-10T16:14:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/9/dropped-emails-posterous-is-starting-to-suck</loc>
+    <lastmod>2012-02-09T16:40:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/8/electronic-newspapers</loc>
+    <lastmod>2012-02-08T16:29:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/7/harry-potter-movies-an-overview</loc>
+    <lastmod>2012-02-07T16:54:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/6/electronic-magazines</loc>
+    <lastmod>2012-02-06T15:55:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/5/my-internet-tv</loc>
+    <lastmod>2012-02-05T14:23:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/4/minecraft-february-update</loc>
+    <lastmod>2012-02-04T13:42:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/3/working-from-bed</loc>
+    <lastmod>2012-02-03T16:54:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/2/avast-viruses-be-gone</loc>
+    <lastmod>2012-02-02T17:11:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/2/1/i-need-maps</loc>
+    <lastmod>2012-02-01T15:38:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/31/against-proprietary-version-control-systems</loc>
+    <lastmod>2012-01-31T15:35:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/30/time-shifting-web-articles-with-instapaper</loc>
+    <lastmod>2012-01-30T16:03:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/29/harry-potter-7-parts-1-and-2</loc>
+    <lastmod>2012-01-29T15:35:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/28/enders-game</loc>
+    <lastmod>2012-01-28T13:21:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/27/the-reading-challenge</loc>
+    <lastmod>2012-01-27T16:58:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/26/taking-note-of-note-taking</loc>
+    <lastmod>2012-01-26T16:37:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/25/effective-reminders-or-oops-i-already-broke-my-resolution</loc>
+    <lastmod>2012-01-25T15:34:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/24/redline</loc>
+    <lastmod>2012-01-24T17:24:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/22/harry-potter-5-and-6</loc>
+    <lastmod>2012-01-22T14:15:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/21/selling-out</loc>
+    <lastmod>2012-01-21T16:22:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/20/why-you-should-use-mercurial</loc>
+    <lastmod>2012-01-20T16:11:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/19/book-the-big-short</loc>
+    <lastmod>2012-01-19T14:55:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/18/about-sopa-pipa</loc>
+    <lastmod>2012-01-18T16:21:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/17/iphone-4s-cases</loc>
+    <lastmod>2012-01-17T16:29:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/16/minecraft-adventures-january-update</loc>
+    <lastmod>2012-01-16T16:42:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/15/harry-potter-3-and-4</loc>
+    <lastmod>2012-01-15T17:02:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/14/nearly-offline</loc>
+    <lastmod>2012-01-14T17:09:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/13/the-thing-with-netflix-and-lists</loc>
+    <lastmod>2012-01-13T17:25:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/12/setting-up-a-new-iphone-or-ipad</loc>
+    <lastmod>2012-01-12T14:56:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/11/catching-up-on-ces</loc>
+    <lastmod>2012-01-11T16:18:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/10/movie-clue</loc>
+    <lastmod>2012-01-10T14:49:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/9/moving-to-instacast</loc>
+    <lastmod>2012-01-09T15:24:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/8/movie-harry-potter-1-and-2</loc>
+    <lastmod>2012-01-08T15:52:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/7/descriptive-vs-prescriptive-desktop-publishing</loc>
+    <lastmod>2012-01-07T16:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/6/the-problem-with-akira</loc>
+    <lastmod>2012-01-06T16:32:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/5/wrapping-my-head-around-c-unit-testing</loc>
+    <lastmod>2012-01-05T16:17:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/4/itunes-match-is-it-worth-it</loc>
+    <lastmod>2012-01-04T15:56:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/3/movie-i-love-you-phillip-morris-2009</loc>
+    <lastmod>2012-01-03T05:30:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/2/init-process</loc>
+    <lastmod>2012-01-02T17:16:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2012/1/1/reboot</loc>
+    <lastmod>2012-01-01T10:26:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/10/9/benadme-site-update</loc>
+    <lastmod>2010-10-09T10:43:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/8/27/anti-social-news-aggregation</loc>
+    <lastmod>2010-08-27T16:17:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/8/17/ipc-between-services-in-the-jvm-part-4-of-4</loc>
+    <lastmod>2010-08-17T14:03:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/7/30/mobileme-member-since-10-years</loc>
+    <lastmod>2010-07-30T14:08:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/7/29/ipc-between-services-in-the-jvm-part-3-of-4</loc>
+    <lastmod>2010-07-29T12:32:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/7/4/ipc-between-services-in-the-jvm-part-2-of-4</loc>
+    <lastmod>2010-07-04T07:14:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/7/1/our-national-moving-day</loc>
+    <lastmod>2010-07-01T09:36:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/6/3/ipc-between-services-in-the-jvm-part-1-of-4</loc>
+    <lastmod>2010-06-03T13:21:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/5/29/markdown-test</loc>
+    <lastmod>2010-05-29T10:43:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/4/19/open-source-warioware</loc>
+    <lastmod>2010-04-19T16:29:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/2/23/passive-entertainment</loc>
+    <lastmod>2010-02-23T15:51:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/2/10/semantic-search-engines</loc>
+    <lastmod>2010-02-10T03:14:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2010/1/1/geek-resolutions-for-2010</loc>
+    <lastmod>2010-01-01T15:34:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/11/28/apj-6-the-future</loc>
+    <lastmod>2009-11-28T10:58:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/11/14/apj-5-java-transcription</loc>
+    <lastmod>2009-11-14T10:33:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/10/9/apj-5-java</loc>
+    <lastmod>2009-10-09T15:17:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/10/5/backup-backup-backup</loc>
+    <lastmod>2009-10-05T16:38:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/9/23/testing-twitterfeed</loc>
+    <lastmod>2009-09-23T12:01:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/9/20/apj-4-learning-perl-transcription</loc>
+    <lastmod>2009-09-20T10:49:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/9/6/apj-4-learning-perl</loc>
+    <lastmod>2009-09-06T10:34:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/29/should-i-learn-javaee</loc>
+    <lastmod>2009-08-29T14:32:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/25/apj-3-c-transcription</loc>
+    <lastmod>2009-08-25T11:45:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/25/apj-2-c-transcription</loc>
+    <lastmod>2009-08-25T11:41:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/23/benadme-released</loc>
+    <lastmod>2009-08-23T10:51:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/14/apj-3-c-my-opinions-about-learning-c-from-a-c-background</loc>
+    <lastmod>2009-08-14T10:54:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/14/apj-2-c-my-experience-learning-the-c-programming-language</loc>
+    <lastmod>2009-08-14T10:41:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/6/apj-1-hypertalk-and-applescript</loc>
+    <lastmod>2009-08-06T15:55:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/8/6/a-programmers-journey</loc>
+    <lastmod>2009-08-06T15:53:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/7/19/first-audio-post-transcription</loc>
+    <lastmod>2009-07-19T18:02:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/7/17/first-audio-post-part-2-of-2</loc>
+    <lastmod>2009-07-17T12:41:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/7/17/first-audio-post-part-1-of-2</loc>
+    <lastmod>2009-07-17T12:38:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/7/6/testing-audio-again</loc>
+    <lastmod>2009-07-06T13:03:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/28/iphone-the-big-merger</loc>
+    <lastmod>2009-06-28T16:19:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/21/fq5-rabbitmq</loc>
+    <lastmod>2009-06-21T09:36:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/21/fq4-osgi-netbeans-netigso</loc>
+    <lastmod>2009-06-21T09:25:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/21/fq3-immutable-classes-in-groovy</loc>
+    <lastmod>2009-06-21T09:21:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/21/fq2-hudson-a-continuous-integration-engine</loc>
+    <lastmod>2009-06-21T09:16:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/21/fq1-java-thread-pools</loc>
+    <lastmod>2009-06-21T09:14:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/6/21/flushing-queue</loc>
+    <lastmod>2009-06-21T09:06:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/3/5/web-tools-i-actually-use</loc>
+    <lastmod>2009-03-05T14:48:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/1/5/beans-binding</loc>
+    <lastmod>2009-01-05T17:06:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2009/1/2/geek-resolutions-for-2009</loc>
+    <lastmod>2009-01-02T11:50:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/12/2/benadme-is-live</loc>
+    <lastmod>2008-12-02T18:12:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/11/19/wall-e-disneyfile-doesnt-work-in-quebec</loc>
+    <lastmod>2008-11-19T15:21:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/11/9/what-i-learned-doing-nothing</loc>
+    <lastmod>2008-11-09T15:30:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/9/9/how-to-clean-up-apple-mighty-mouse</loc>
+    <lastmod>2008-09-09T13:58:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/8/6/some-links</loc>
+    <lastmod>2008-08-06T15:35:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/7/10/update-on-my-laptops-repair</loc>
+    <lastmod>2008-07-10T17:35:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/7/9/surviving-on-my-internet-tablet</loc>
+    <lastmod>2008-07-09T16:31:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/6/13/twitters-backend-should-be-email</loc>
+    <lastmod>2008-06-13T13:21:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/6/9/my-new-pda-kind-of</loc>
+    <lastmod>2008-06-09T17:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/6/6/winclone-clonerestore-bootcamp-partitions-on-macs</loc>
+    <lastmod>2008-06-06T12:29:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/5/28/limpid-log</loc>
+    <lastmod>2008-05-28T17:06:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/5/21/bye-bye-neooffice</loc>
+    <lastmod>2008-05-21T13:02:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/3/25/i-hate-bell-canada</loc>
+    <lastmod>2008-03-25T16:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/3/5/css-survival-kit</loc>
+    <lastmod>2008-03-05T16:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/1/22/nestedvm-compile-almost-anything-to-java</loc>
+    <lastmod>2008-01-22T14:35:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2008/1/2/surviving-on-the-mobile-web</loc>
+    <lastmod>2008-01-02T09:40:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/10/10/living-in-ld-low-definition</loc>
+    <lastmod>2007-10-10T16:40:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/8/9/living-in-hd</loc>
+    <lastmod>2007-08-09T16:56:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/5/26/dilbert-is-my-hero</loc>
+    <lastmod>2007-05-26T13:07:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/5/7/headphones</loc>
+    <lastmod>2007-05-07T16:50:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/4/21/lateness-in-the-chaos</loc>
+    <lastmod>2007-04-21T15:11:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/3/11/i-cant-believe-its-not-real-violin</loc>
+    <lastmod>2007-03-11T18:44:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/2/24/a-10-year-time-travel-in-music</loc>
+    <lastmod>2007-02-24T05:47:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/2/21/my-new-homepage</loc>
+    <lastmod>2007-02-21T17:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/2/14/ghost-in-the-shell-standalone-complex</loc>
+    <lastmod>2007-02-14T15:12:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2007/1/6/many-software-updates</loc>
+    <lastmod>2007-01-06T14:46:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/12/19/decisions</loc>
+    <lastmod>2006-12-19T04:53:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/12/5/living-with-a-razr</loc>
+    <lastmod>2006-12-05T19:44:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/10/9/hardcore-java-tools</loc>
+    <lastmod>2006-10-09T17:25:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/9/12/building-netbeans-projects-without-netbeans</loc>
+    <lastmod>2006-09-12T16:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/5/10/debugging-hell</loc>
+    <lastmod>2006-05-10T07:46:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/4/22/memories-of-uml</loc>
+    <lastmod>2006-04-22T12:13:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/4/1/slow-updates</loc>
+    <lastmod>2006-04-01T10:20:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/2/6/best-birthday-gift-ever-thank-you-dave</loc>
+    <lastmod>2006-02-06T17:56:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/2/2/valgrind-destroy-the-corruption</loc>
+    <lastmod>2006-02-02T15:40:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/1/18/javolution-recycle-your-objects</loc>
+    <lastmod>2006-01-18T15:24:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2006/1/2/jedit-it-does-the-job</loc>
+    <lastmod>2006-01-02T13:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/12/11/virtualization-as-a-solution-for-package-management</loc>
+    <lastmod>2005-12-11T12:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/11/28/groovy-java-perl-style</loc>
+    <lastmod>2005-11-28T16:42:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/11/14/plasticfs-example</loc>
+    <lastmod>2005-11-14T16:52:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/11/14/linux-package-management-a-solution</loc>
+    <lastmod>2005-11-14T15:59:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/11/8/docs-for-abbreviations-in-netbeans-50</loc>
+    <lastmod>2005-11-08T16:54:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/11/3/abbreviations-in-netbeans-50</loc>
+    <lastmod>2005-11-03T17:18:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/29/a-free-garbage-collector-and-leak-detector-for-c-and-c</loc>
+    <lastmod>2005-10-29T06:22:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/25/continuous-integration-with-ivy</loc>
+    <lastmod>2005-10-25T17:30:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/19/test-coverage</loc>
+    <lastmod>2005-10-19T18:19:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/12/when-ego-destroys-open-source</loc>
+    <lastmod>2005-10-12T18:48:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/9/swing-guis-and-functional-testing</loc>
+    <lastmod>2005-10-09T15:58:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/4/java-coding-style-tools</loc>
+    <lastmod>2005-10-04T17:26:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/2/javacast-is-now-the-java-posse</loc>
+    <lastmod>2005-10-02T15:12:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/10/2/manage-your-life-with-subversion</loc>
+    <lastmod>2005-10-02T10:09:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/29/commons-httpclient-and-proxies</loc>
+    <lastmod>2005-09-29T18:42:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/27/practical-distributed-version-control</loc>
+    <lastmod>2005-09-27T18:25:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/24/javabeans</loc>
+    <lastmod>2005-09-24T14:52:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/21/ad-hoc-task-list</loc>
+    <lastmod>2005-09-21T15:34:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/18/using-interfaces-instead-of-inheritance</loc>
+    <lastmod>2005-09-18T17:19:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/13/automating-java-builds-with-cruisecontrol</loc>
+    <lastmod>2005-09-13T17:18:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/12/dependency-injection</loc>
+    <lastmod>2005-09-12T17:40:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/11/making-of</loc>
+    <lastmod>2005-09-11T14:26:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/10/sql-gotchas</loc>
+    <lastmod>2005-09-10T15:27:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/9/frameworks-frameworks-frameworks</loc>
+    <lastmod>2005-09-09T17:10:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/8/bad-mvc-good-mvc</loc>
+    <lastmod>2005-09-08T17:19:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/7/java-news-sources</loc>
+    <lastmod>2005-09-07T17:23:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/7/so-what-is-this-all-about</loc>
+    <lastmod>2005-09-07T17:05:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2005/9/6/stub</loc>
+    <lastmod>2005-09-06T18:33:00-04:00</lastmod>
+  </url>
+  
+</urlset>
