@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>The Static Web Site Server - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="/css/main.css"/>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+            <!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/"> upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+		<div class="container">
+
+<div class="row">
+        <h1 class="title">Benad's Web Site</h1>
+        <h2 class="pageheader">The Static Web Site Server</h2>
+</div>
+<div class="row">
+        <div class="span2 pull-right sidebar">
+                <p><a href="/index.html">Home</a></p>
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="/me.html">About Me</a></p>
+                <p><a href="/meta.html">About This Site</a></p>
+                <p><a href="/articles.html">Articles</a></p>
+                <p><a href="/links.html">Links</a></p>
+        </div>
+
+        <div class="span8 offset2">
+                <p>Hosting this web site on my own server (well, at least my own virtual machine) was a good learning experience, so for me a point of pride. I can at least say that I know how to host a Linux-based web server, buy a domain name, set up its TLS certificate, maintain the server with security updates, set up its backup plan, and so on. But even for a small-scale web site like this, it&rsquo;s still somewhat expensive (about $60 USD per year) and takes a lot of effort. Maybe that was fine in 2009, but do we expect small web sites to do the same in 2023? Is it still worth it to set up and maintain your own Linux server?</p>
+
+<p>The need for static web site hosting didn&rsquo;t go away. Single Page Applications are quite common, or even just a handful of pages (&ldquo;Few Pages Application&rdquo;?). They avoid server-side rendering by generating the DOM from REST-like backends, with caching done on the client-side. So, yeah, a SPA is similar to this humble web site.</p>
+
+<p>What then is the modern, recommended approach to hosting SPAs? I initially though that most of it could be hosted on Content Delivery Networks (CDNs), well, at least all the resources used by the web page. As long as the URL contains the &ldquo;version&rdquo; of the resource, where the page&rsquo;s resources are hosted doesn&rsquo;t matter much. But the base web page, as tiny as they can be with SPAs, still require a nice user-facing URL. And if you have multiple pages that users can navigate to independently, those would need to be updated in an atomic way, otherwise half the pages could resolved to an older version. This impacts this web site even more: The index pages of my <a href="/blog/">blog</a> all need to be updated each time an article is added to the top, so navigation would be somewhat broken if half of those index pages pointed to the &ldquo;wrong version&rdquo;.</p>
+
+<p>Is there something like the old <a href="https://en.wikipedia.org/wiki/Yahoo!_GeoCities">Geocities</a>, but without all the ads, and where you can bring in your own domain name? Is it just as expensive as my cheap Linux VM server?</p>
+
+<p>I recently got, as a job perk, a large amount of monthly credits I can use &ldquo;for personal projects&rdquo; on my own account on <a href="https://azure.microsoft.com/">Azure</a>. So, my original plan was to simply move my web site to a VM hosted in Azure. The cost would be slightly more expensive (Who knew static IPs aren&rsquo;t free anymore?), but would have been amply covered by my monthly credits.</p>
+
+<p>Lucky for me though, they added a new service called <a href="https://azure.microsoft.com/en-ca/products/app-service/static/">Azure Static Web Apps</a>, and its lowest tier is free. Including bringing your own custom domain.</p>
+
+<p>If you have a folder of static HTTP resources, place them on a GitHub repository (it could be private), install <a href="https://code.visualstudio.com/">Visual Studio Code</a> and its <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps">Azure Static Web Apps extension</a>, and follow its steps. This will set up a &ldquo;Resource Group&rdquo;, in it the static web app proper, and the <a href="https://docs.github.com/en/actions">GitHub Action</a> to automatically deploy the files on every push. My first run at to took me about 10 minutes.</p>
+
+<p>The GitHub Action set up for Static Web Apps supports many static web site generators, including <a href="https://gohugo.io/">Hugo</a> that I use for the Blog section, but this is optional. My site also uses my own setup using <a href="https://en.wikipedia.org/wiki/XML">XML</a> and <a href="https://en.wikipedia.org/wiki/XSLT">XSLT</a> as a templating engine. I&rsquo;m starting to dislike both XSLT and Hugo (and its limited use of the <a href="https://pkg.go.dev/text/template">Go templating engine</a>), so if I end up using a new templating engine, I&rsquo;ll let the GitHub Action build the pages on each build. I&rsquo;m looking into <a href="https://www.11ty.dev/">11ty</a>, and it looks promising. For now though, I&rsquo;m generating the pages &ldquo;offline&rdquo;, and pushing them into the GitHub to web site pipeline.</p>
+
+<p>I was also surprised how easy and cheap (free) it was to use my own custom domain (benad.me and blog.benad.me) with Azure Static Web Apps. Some verification of ownership has to be done, either through some CNAME or TXT entry, but the process was painless. I don&rsquo;t have to maintain my own TLS server certificate with <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> and <a href="https://certbot.eff.org/">certbot</a>, since Azure will sign the certificate for your custom domains, for free.</p>
+
+<p>And you can now see the final result of this move. For an end user, this version of my web site if nearly identical to the previous one. But now I don&rsquo;t have to worry about security updates, backups, TLS certificate updates, and all that goes with exposing your own Linux machine to the internet. All for free (apart from the custom domain, of course).</p>
+
+<p>To be very clear, I still know how to host my own Linux web server. If this &ldquo;Static Web Apps&rdquo; service breaks for some reason, I still have created a brand new Debian VM ready to be used just for this web site. But for the time being, this is good enough.</p>
+
+                <p>Published on March 4, 2023 at 13:59 EST</p>
+                <p>Older post: <a href="https://benad.me/blog/2023/01/22/mastodon-and-the-fediverse/">Mastodon and the Fediverse</a></p>
+                </p>
+        </div>
+        <div id="disqus_thread" class="span8 offset2"></div>
+</div>
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a></p>
+			</footer>
+		</div>
+		<script src="/js/vendor/jquery-1.9.1.min.js"></script>
+		<script src="/js/vendor/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>
+

@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://benad.me/</loc>
-    <lastmod>2023-01-22T15:47:00-05:00</lastmod>
+    <lastmod>2023-03-04T13:59:08-05:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://benad.me/blog/2023/03/04/the-static-web-site-server/</loc>
+    <lastmod>2023-03-04T13:59:08-05:00</lastmod>
   </url>
   
   <url>

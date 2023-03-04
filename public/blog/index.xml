@@ -6,8 +6,38 @@
     <description>Benad&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Jan 2023 15:47:00 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 04 Mar 2023 13:59:08 -0500</lastBuildDate>
     <atom:link href="https://benad.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Static Web Site Server</title>
+      <link>https://benad.me/blog/2023/03/04/the-static-web-site-server/</link>
+      <pubDate>Sat, 04 Mar 2023 13:59:08 -0500</pubDate>
+      
+      <guid>https://benad.me/blog/2023/03/04/the-static-web-site-server/</guid>
+      <description>&lt;p&gt;Hosting this web site on my own server (well, at least my own virtual machine) was a good learning experience, so for me a point of pride. I can at least say that I know how to host a Linux-based web server, buy a domain name, set up its TLS certificate, maintain the server with security updates, set up its backup plan, and so on. But even for a small-scale web site like this, it&amp;rsquo;s still somewhat expensive (about $60 USD per year) and takes a lot of effort. Maybe that was fine in 2009, but do we expect small web sites to do the same in 2023? Is it still worth it to set up and maintain your own Linux server?&lt;/p&gt;
+
+&lt;p&gt;The need for static web site hosting didn&amp;rsquo;t go away. Single Page Applications are quite common, or even just a handful of pages (&amp;ldquo;Few Pages Application&amp;rdquo;?). They avoid server-side rendering by generating the DOM from REST-like backends, with caching done on the client-side. So, yeah, a SPA is similar to this humble web site.&lt;/p&gt;
+
+&lt;p&gt;What then is the modern, recommended approach to hosting SPAs? I initially though that most of it could be hosted on Content Delivery Networks (CDNs), well, at least all the resources used by the web page. As long as the URL contains the &amp;ldquo;version&amp;rdquo; of the resource, where the page&amp;rsquo;s resources are hosted doesn&amp;rsquo;t matter much. But the base web page, as tiny as they can be with SPAs, still require a nice user-facing URL. And if you have multiple pages that users can navigate to independently, those would need to be updated in an atomic way, otherwise half the pages could resolved to an older version. This impacts this web site even more: The index pages of my &lt;a href=&#34;https://benad.me/blog/&#34;&gt;blog&lt;/a&gt; all need to be updated each time an article is added to the top, so navigation would be somewhat broken if half of those index pages pointed to the &amp;ldquo;wrong version&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Is there something like the old &lt;a href=&#34;https://en.wikipedia.org/wiki/Yahoo!_GeoCities&#34;&gt;Geocities&lt;/a&gt;, but without all the ads, and where you can bring in your own domain name? Is it just as expensive as my cheap Linux VM server?&lt;/p&gt;
+
+&lt;p&gt;I recently got, as a job perk, a large amount of monthly credits I can use &amp;ldquo;for personal projects&amp;rdquo; on my own account on &lt;a href=&#34;https://azure.microsoft.com/&#34;&gt;Azure&lt;/a&gt;. So, my original plan was to simply move my web site to a VM hosted in Azure. The cost would be slightly more expensive (Who knew static IPs aren&amp;rsquo;t free anymore?), but would have been amply covered by my monthly credits.&lt;/p&gt;
+
+&lt;p&gt;Lucky for me though, they added a new service called &lt;a href=&#34;https://azure.microsoft.com/en-ca/products/app-service/static/&#34;&gt;Azure Static Web Apps&lt;/a&gt;, and its lowest tier is free. Including bringing your own custom domain.&lt;/p&gt;
+
+&lt;p&gt;If you have a folder of static HTTP resources, place them on a GitHub repository (it could be private), install &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; and its &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps&#34;&gt;Azure Static Web Apps extension&lt;/a&gt;, and follow its steps. This will set up a &amp;ldquo;Resource Group&amp;rdquo;, in it the static web app proper, and the &lt;a href=&#34;https://docs.github.com/en/actions&#34;&gt;GitHub Action&lt;/a&gt; to automatically deploy the files on every push. My first run at to took me about 10 minutes.&lt;/p&gt;
+
+&lt;p&gt;The GitHub Action set up for Static Web Apps supports many static web site generators, including &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; that I use for the Blog section, but this is optional. My site also uses my own setup using &lt;a href=&#34;https://en.wikipedia.org/wiki/XML&#34;&gt;XML&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/XSLT&#34;&gt;XSLT&lt;/a&gt; as a templating engine. I&amp;rsquo;m starting to dislike both XSLT and Hugo (and its limited use of the &lt;a href=&#34;https://pkg.go.dev/text/template&#34;&gt;Go templating engine&lt;/a&gt;), so if I end up using a new templating engine, I&amp;rsquo;ll let the GitHub Action build the pages on each build. I&amp;rsquo;m looking into &lt;a href=&#34;https://www.11ty.dev/&#34;&gt;11ty&lt;/a&gt;, and it looks promising. For now though, I&amp;rsquo;m generating the pages &amp;ldquo;offline&amp;rdquo;, and pushing them into the GitHub to web site pipeline.&lt;/p&gt;
+
+&lt;p&gt;I was also surprised how easy and cheap (free) it was to use my own custom domain (benad.me and blog.benad.me) with Azure Static Web Apps. Some verification of ownership has to be done, either through some CNAME or TXT entry, but the process was painless. I don&amp;rsquo;t have to maintain my own TLS server certificate with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; and &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;certbot&lt;/a&gt;, since Azure will sign the certificate for your custom domains, for free.&lt;/p&gt;
+
+&lt;p&gt;And you can now see the final result of this move. For an end user, this version of my web site if nearly identical to the previous one. But now I don&amp;rsquo;t have to worry about security updates, backups, TLS certificate updates, and all that goes with exposing your own Linux machine to the internet. All for free (apart from the custom domain, of course).&lt;/p&gt;
+
+&lt;p&gt;To be very clear, I still know how to host my own Linux web server. If this &amp;ldquo;Static Web Apps&amp;rdquo; service breaks for some reason, I still have created a brand new Debian VM ready to be used just for this web site. But for the time being, this is good enough.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mastodon and the Fediverse</title>
@@ -232,36 +262,6 @@ exit
 &lt;p&gt;Speaking of the Pi, there is an open-source script called &lt;a href=&#34;https://github.com/ecdye/zram-config&#34;&gt;zram-config&lt;/a&gt; (not to be confused with the Ubuntu package) that is far more flexible, using a configuration file to tune the amount of zram, the compression technique and so on. Designed for the Debian-based OS used by the Pi, it also offers using zram as an intermediate device before the &lt;code&gt;tmp&lt;/code&gt; or some other file system, since the Pi&amp;rsquo;s SD-card backed file system can be quite slow.&lt;/p&gt;
 
 &lt;p&gt;The impact on CPU should be minimal (I&amp;rsquo;ve read it uses less than 2% of a CPU core). Still, unless you frequently use the swap device on your Linux system, it may not be worthwhile to reserve a large amount of memory to a zram device.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Restic: Modern Linux Backups</title>
-      <link>https://benad.me/blog/2020/11/28/restic-modern-linux-backups/</link>
-      <pubDate>Sat, 28 Nov 2020 10:55:01 -0500</pubDate>
-      
-      <guid>https://benad.me/blog/2020/11/28/restic-modern-linux-backups/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been using the built-in backup tool of &lt;a href=&#34;https://www.ubuntu.com&#34;&gt;Ubuntu&lt;/a&gt;, called &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt;, for quite a while. Still, all along, Duplicity felt &lt;em&gt;old&lt;/em&gt;. It essentially does backups with &lt;code&gt;tar&lt;/code&gt;, compresses them with &lt;code&gt;gzip&lt;/code&gt; and encrypts them with &lt;code&gt;gpg&lt;/code&gt;, so the whole backup process feels &lt;em&gt;linear&lt;/em&gt;. While Duplicity does use GNU Tar&amp;rsquo;s form of incremental backups and adds in some form of partitioning for each increment, restoring a single file still means that Duplicity may have to decrypt and decompress an entire block if your file just happens to be at the end of that stream.&lt;/p&gt;
-
-&lt;p&gt;There is the obvious benefit that those old tools are quite reliable and proven. Still, they are quite slow and inconvenient, to the point where many users end up using Git as a form of backup. This seems to be evidence that there are different kinds of &amp;ldquo;backups&amp;rdquo; that differ in their usage patterns, and as such different backup tools for each kind may be preferable.&lt;/p&gt;
-
-&lt;p&gt;One backup &amp;ldquo;kind&amp;rdquo; is the full system backup, be it a full &amp;ldquo;byte-level&amp;rdquo; clone of the disk at the &lt;code&gt;dd&lt;/code&gt; level, or a file system one using &lt;code&gt;tar&lt;/code&gt;. It&amp;rsquo;s fine if they are slower and more linear, as this kind of backup is done less often, with lesser concerns about optimizing the increments (if any). The goal is to restore the whole system back to a stable state, and less about restoring a specific file from a history of file changes.&lt;/p&gt;
-
-&lt;p&gt;A system image clone can be done &amp;ldquo;offline&amp;rdquo; by booting into something like &lt;a href=&#34;https://clonezilla.org&#34;&gt;Clonezilla&lt;/a&gt;. If you use &lt;a href=&#34;https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29&#34;&gt;LVM&lt;/a&gt;, &lt;a href=&#34;https://en.m.wikipedia.org/wiki/ZFS&#34;&gt;ZFS&lt;/a&gt; or &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Btrfs&#34;&gt;Btrfs&lt;/a&gt;, you can also use a &amp;ldquo;live snapshot&amp;rdquo; of a file system at a point in time, and then clone that &amp;ldquo;live&amp;rdquo; while the system is still running.&lt;/p&gt;
-
-&lt;p&gt;The other backup “kind” would then be the user files. They are not specifically tied to a specific system, so they can be safely restored on a new computer. Typically, individual files are restored rather than all of them at once, and since user files are often changed it would be preferable to have a longer backup history for each. Practically, this means that restoring user files is more often non-linear than a full system restore.&lt;/p&gt;
-
-&lt;p&gt;And this where something like &lt;code&gt;tar&lt;/code&gt; doesn’t work well. Not all user data compresses well, and it can be argued that most of it, by size at least, are media files that are already compressed. User data is often organized in separate folders that have different backup needs, especially around backup frequency. The user data files could come from multiple computers and yet be backed up in the same destination. User data is typically more “valuable”, so they are often backed up online, where storage and bandwidth are ongoing costs. This also means that encryption of those backups should be enabled by default.&lt;/p&gt;
-
-&lt;p&gt;There are already quite a few commercial backup software made for user data, for example &lt;a href=&#34;https://en.wikipedia.org/wiki/Code42&#34;&gt;Crashplan&lt;/a&gt; and &lt;a href=&#34;https://www.backblaze.com/&#34;&gt;Backblaze&lt;/a&gt; to name a few. But they often don’t support Linux, and users are forced to use their proprietary online storage service. &lt;a href=&#34;https://restic.net/&#34;&gt;Restic&lt;/a&gt; is an open-source backup tool that is storage-agnostic, cross-platform, and is a great alternative to those commercial tools.&lt;/p&gt;
-
-&lt;p&gt;Compared to Duplicity, Restic has some great advantages that a quickly visible. First, it is &lt;em&gt;fast&lt;/em&gt;. If the first thing you do (and you should) is to try running a small local backup and fully verify it, you&amp;rsquo;ll find that Restic is several times faster; In my experience, Restic takes seconds for what would take minutes with Duplicity, with the exact same local backup storage location. Second, it is quite flexible around file sets and backup scheduling. To put it simply, you can add new or updated files to your backup destination (“repository”), whenever you want, in any combination. While it does mean that you have to build up your own scheduled tasks to run the backups, you are then free to combine what files, from what machine, and when backups will run, all to the same backup destination.&lt;/p&gt;
-
-&lt;p&gt;Restic natively supports &lt;a href=&#34;https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html&#34;&gt;a few backup storage types&lt;/a&gt;. It can also integrate with &lt;a href=&#34;https://rclone.org&#34;&gt;rclone&lt;/a&gt; to support, through it, &lt;a href=&#34;https://rclone.org/overview/&#34;&gt;an even larger number of storage locations&lt;/a&gt;. For example, I’ve set up my OneDrive account in rclone, and used that in Restic to use it as my backup storage location, even though Restic doesn’t natively support OneDrive.&lt;/p&gt;
-
-&lt;p&gt;There are a few disadvantages with Restic though. It doesn’t support “per-file” compression, as it would reduce the encryption’s security, and Restic favours security over disk usage. It still uses binary deltas for make backup increments smaller, so it’s not that bad. It is still a command-line standalone tool, so it is not as user-friendly as commercial tools, and isn’t “integrated” with the system, like Duplicity is within Ubuntu for example. This also means that while it is cross-platform, it doesn’t use much OS-specific features, specifically for Windows and macOS. Restic is also a relatively new backup tool, not yet considered “1.0”, so it’s still highly recommended you test your backups thoroughly (Restic has built-in tools to fully verify your backups).&lt;/p&gt;
-
-&lt;p&gt;Even with all those caveats, Restic became my preferred Linux backup tool, both to local and online destinations.&lt;/p&gt;
 </description>
     </item>
     
