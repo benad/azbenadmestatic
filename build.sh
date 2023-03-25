@@ -13,3 +13,6 @@ hugo
 cp public/sitemap.xml public/blog/
 popd
 
+pushd ../tweetback
+bash publish.sh
+popd

@@ -14,4 +14,6 @@ cp -rv -t public ../benadme-sources-git/public/*
 mkdir -p public/blog/
 cp -rv -t public ../benadme-blog-git/public/blog
 
+cp -rv -t public ../tweetback/public/twitter
+
 python gen_config.py > public/staticwebapp.config.json
