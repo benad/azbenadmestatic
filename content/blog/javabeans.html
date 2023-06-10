@@ -1,0 +1,53 @@
+---toml
+title = "JavaBeans"
+date = "2005-09-24T14:52:00-04:00"
+permalink = "blog/2005/9/24/javabeans/"
+---
+
+<p>For the longest time I kept seeing the word "bean" in Java libraries and frameworks, and still couldn't really grasp what is a "JavaBean".</p>
+
+<p>The <a href="http://java.sun.com/docs/books/tutorial/javabeans/whatis/beanDefinition.html">official</a> definition is that a Bean is a component, that is a "self-contained, reusable software unit[s]". Well, that was vague. So when you trying to grasp what "Entreprise JavaBeans" mean, well you're lost.</p>
+
+<p>A similar concept I found in another language was the structure in the C language. It is simply a block of memory that is <i>structured</i>, that is has multiple fields you can read or write.</p>
+
+<p>If you consider the environment of Object Oriented Design, classes usually represent modularity and functionality, whereas components would represent more a service (as described in my <a href="http://benad.livejournal.com/2440.html">previous post</a>) or a block of data you can pass around in function parameters and such.</p>
+
+<p>If you go back to my example of a structure in C, you'll notice that you cannot really use a C structure to hold and maintain a "service". Also, you could always make in Java something equivalent to a C structure:</p>
+
+<pre>public class FullName {
+  public String firstName;
+  public String lastName;
+}</pre>
+
+<p>So... That's it? Since we have a class, we could "wrap" <tt>firstName</tt> and <tt>lastName</tt> inside a functional interface:</p>
+
+<pre>public class FullName {
+  private String firstName;
+  private String lastName;
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String f) { firstName = f; }
+  public String getLastName() { return lastName; }
+  public void setLastName(String l) { lastName = l; }
+}</pre>
+
+<p>Design-wise, it's not much better, as any class using <tt>FullName</tt> still assume that it has those two properties (firstName and lastName). A difference though is that using functions to get/set parameters gives you the liberty of changing the internal way the properties are stored, as long as your accessor functions (<tt>get*</tt> and <tt>set*</tt>) are not changed.</p>
+
+<p>But there are many other gains to use such wrapper functions in a component compared to not using wrapper functions at all (as in C):</p>
+
+<p><b>Monitors</b>: As soon as you change one of the interval values of a component, it could notify other objects that the component changed.</p>
+
+<p><b>Validation</b>: If the value you pass in the write function of a component's property is invalid, the function could rise a runtime exception.</p>
+
+<p><b>Persistence</b>: The properties of the component do not have to reside in memory. They could be stored on a file on disk or in a database.</p>
+
+<p><b>Proxy</b>: The component could be encapsulated by another class (with the same interface) to intercept all the read/write functions and perform additional logic. Your component could exist on a different machine, and the proxy you use is only a proxy to the real component on the other machine.</p>
+
+<p>And this brings us back to the original question: What is a JavaBean? Simply put, a JavaBean is a <b>design pattern</b>. If you always name you accessor functions the same way, than a library could figure out at run time what are the properties of your component (this is called "introspection"). For JavaBeans, the read function is named like <tt>getFirstName</tt> and the write function like <tt>setFirstName</tt>. Also, the object type returned by the read function must be the same as the only parameter of the write function.</p>
+
+<p>So, that's it for now. There are a lot of things built on top of that simple design pattern, and in the following posts I'll present some of them.</p>
+
+<p>References:</p>
+<ul>
+<li><a href="http://java.sun.com/j2se/1.5.0/docs/guide/beans/index.html">JavaBeans</a></li>
+<li><a href="http://java.sun.com/j2se/1.5.0/docs/guide/reflection/index.html">Reflection</a> (for proxies)</li>
+</ul>

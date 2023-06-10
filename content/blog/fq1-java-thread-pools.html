@@ -1,0 +1,9 @@
+---toml
+title = "FQ1: Java Thread Pools"
+date = "2009-06-21T09:14:00-04:00"
+permalink = "blog/2009/6/21/fq1-java-thread-pools/"
+---
+
+<p>Java 6 has built-in support for thread pools in the package <a href="http://java.sun.com/javase/5/docs/api/java/util/concurrent/package-summary.html">java.util.concurrent</a>, also available for older version in <a href="http://backport-jsr166.sourceforge.net/">backport-jsr166</a>.</p>
+
+<p>BTW, if you need a <tt>ThreadPoolExecutor</tt> that blocks when the underlying queue is full, then implement a <tt>RejectedExecutionHandler</tt> that, in <tt>rejectedExecution(Runnable r, ThreadPoolExecutor executor)</tt> calls <tt>executor.getQueue().put(r)</tt>. Somehow, none of the classes provided in the package does that for you.</p>

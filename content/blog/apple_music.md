@@ -1,0 +1,23 @@
+---toml
+date = "2018-07-11T21:09:43-04:00"
+title = "Streaming Music From Google Play to Apple"
+
+---
+
+Over 4 years ago, I moved from the [now-defunct](https://www.engadget.com/2015/12/15/rdio-shutdown-december-22/)  [Rdio](https://en.wikipedia.org/wiki/Rdio) music streaming service to the newly released Google Play Music, for reasons I [documented at the time](https://benad.me/blog/2014/6/28/google-play-music-in-canada/). At $8 per month, it remained a better deal than all of the competition that became available in Canada since. Apart from a few issues, I was quite pleased with the service, until Google started to sunset the service in favour of this new "YouTube Music".
+
+In the matter of a few weeks, as GPM subscribers got free access to both it and YouTube Music (but not YouTube Red in Canada for some reason), it was easy to compare both, while simulateously seeing what was the larger music library of GPM progressively shrunk to YouTube Music’s size.
+
+One thing I noticed is how, at least on iOS, the sound quality was significantly worse. YouTube Music uses the infrastructure of YouTube for its music subscription library, so depending on the environment the audio/video format that plays varies. On the iOS app for YouTube Music, for some reason, the audio codec was consistently AAC at 140 kbps, which may be fine for videos, but pales in comparison to GPM’s 320 kbps MP3 or Apple Music’s 256 kbps AAC.
+
+I also noticed that GPM’s lacklustre curation for classical music still was better than YTM’s non-support for classical music. In both cases the metadata for classical albums is mediocre, to the point where missing information has to be found on the *album art*, but at least on GPM there were half-decent classical playlists. In YTM, anything that’s not recent popular "mass market" albums is lost behind the limited search engine.
+
+Put another way, Google is clearly telling me that their future in music streaming isn’t for me.
+
+So I tried Apple Music for a little while, using their generous 3-months free trial. For sure, it had a [rocky](https://mashable.com/2015/07/23/apple-music-nightmare/) [start](https://www.macrumors.com/2011/12/16/apple-temporarily-halts-new-itunes-match-subscriptions-in-new-international-markets/), so I remained weary that it could mangle my well-curated iTunes Match library. Also, I heard many complains that its interface was confusing or buggy. But after its 3rd year in operation it seems like all of those issues were fixed, and I experienced none of those issues.
+
+In many aspects, not only did Apple Music matched GPM in terms of functionality, but overall its quality exceeded GPM (and even more YTM) by a large margin. Sound quality is excellent, as it’s essentially the same high-quality 256 kbps AAC you’d buy from iTunes. My reservations about the stability of iTunes Match I had in 2014 were resolved since. The metadata for classical music is the best I’ve ever seen, including properly grouping movements into pieces. The curation through playlists or radio stations is spectacularly good. This isn’t a new thing: Apple did curated playlists since 2003 with [iTunes Essentials](https://itunes.apple.com/ca/essentials). And while their algorithmic radio stations aren’t as clever as Google’s or Spotify’s, Apple's curated playlists almost make up for it. As for the user interface, I found Apple Music (and iTunes in general) easier to use than GPM or YTM, though as an avid user of iTunes since its inception I may have become accustomed to its peculiarities.
+
+But then, is Apple Music better than Spotify? I don’t know, as I chose to be on Apple Music for roughly the same reason I chose Google Play Music years ago: I want my music library to contain both my personal CD collection *and* the streaming music library. As far as I know, there’s no equivalent to iTunes Match with Spotify, and last time I checked Spotify didn’t already have my weird CD collection in their library. Looking at YouTube Music, it gives no indication that they ever will support uploading your CD collection in the future as Google Play Music is retired.
+
+There is still a place for bottom-of-the-barrel free (ad-supported) music streaming, like Spotify, YouTube Music, or even the pseudo-free Amazon Music (free with a subscription with Amazon Prime). They pretty much all suck for anything outside of mainstream music, but for most people that’s "good enough", I guess? A music service maintained by people that actually *care* about music is something I missed since the days of [Grooveshark](https://en.m.wikipedia.org/wiki/Grooveshark), and something I found back with Apple Music.

@@ -1,0 +1,21 @@
+---toml
+title = "plasticfs example"
+date = "2005-11-14T16:52:00-05:00"
+permalink = "blog/2005/11/14/plasticfs-example/"
+---
+
+<p>Oh, oh, a great example of <a href="http://plasticfs.sourceforge.net/">plasticfs</a>!</p>
+
+<pre>mkdir /tmp/example 
+cd /tmp/example 
+PLASTICFS="chroot /tmp/example | viewpath /tmp/example /" \
+LD_PRELOAD=libplasticfs.so \
+bash</pre>
+
+<p>This is actually from the <a href="http://plasticfs.sourceforge.net/plasticfs-1.9.pdf">documentation file</a>. Basically, if you want to open the file <tt>/etc/hello.txt</tt>, this is what will happen:</p>
+
+<ul><li><tt>/etc/hello.txt</tt> becomes <tt>/tmp/example/etc/hello.txt</tt></li>
+<li><tt>etc/hello.txt</tt> is searched in <tt>/tmp/example/</tt>, then in <tt>/</tt> (meaning you can read any file from <tt>/</tt>)</li>
+<li>If the file is changed, the change is stored in <tt>/tmp/example/etc/hello.txt</tt></li></ul>
+
+<p>So... you can do your typical <tt>./configure && make install</tt> without being root since all changes will be stored in <tt>/tmp/example</tt>!</p>

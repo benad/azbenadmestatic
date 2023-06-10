@@ -1,0 +1,15 @@
+---toml
+title = "Updating to Ubuntu 12.04"
+date = "2012-05-09T20:27:52-04:00"
+permalink = "blog/2012/5/10/updating-to-ubuntu-1204/"
+---
+
+<p><a href="https://wiki.ubuntu.com/PrecisePangolin/ReleaseNotes/UbuntuDesktop#Upgrading_from_Ubuntu_10.04_LTS_to_Ubuntu_12.04_LTS">Against their recommendation</a>, today I updated my Ubuntu 10.04 virtual machine to 12.04. As expected, some things broke but not too bad.</p>
+
+<p>First, it messed up the grub bootloader, meaning it didn't work at all. So I had to download <a href="https://help.ubuntu.com/community/Boot-Repair">the Boot Repair CD</a>, and it quickly fixed the issue.</p>
+
+<p>Second, for some reason the Unity Dash / search thingy showed no search results nor any icons I could browse. Somehow, the packages <code>unity-place-applications</code> and <code>unity-place-files</code> were not installed by the update process. Why those packages are not required by Unity is beyond me.</p>
+
+<p>Finally, and this isn't <em>really</em> Ubuntu's fault, it seems like the built-in mouse and video drivers for VMware were clashing badly with the different-versioned drivers on my Windows 7 VM running at the same time. That means I can't run both VMs at the same time until VMware or whichever's drivers are fixed.</p>
+
+<p>So, my first impression? While I was lost for 10 seconds finding a way on make windows not full screen again, Unity is pretty nice. I miss a bit being able to fully browse all the software installed in a menu-like fashion, but otherwise it's a nice shortcut to be able to search and lauch applications <em>à la</em> Windows or Mac. I was also surprised to see how much backwards-compatible it was with what I previously installed, including Opera from a 3-party repository. I still prefer Debian, but I still liked a lot Ubuntu and how they're trying to push the edge in the Linux desktop experience.</p>

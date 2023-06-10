@@ -1,0 +1,11 @@
+---toml
+title = "The Problem With Prn"
+date = "2012-07-30T21:26:48-04:00"
+permalink = "blog/2012/7/31/the-problem-with-prn/"
+---
+
+<p>We hit a very strange bug today at work. As we process various forms of mutual fund data, we had a consistent issue with a <a href="http://www.google.com/finance?q=Prn&amp;rm=0">fund from PowerShare</a>. Each fund is saved on disk with the fund symbol followed by ".txt" as the file name. No problem on Linux, but the moment we wanted to transfer it to a Windows machine, no matter what we did, we just couldn't make the transfer work. Zipping up the file didn't work, since it just wouldn't decompress. Oh, the file name? <code>PRN.txt</code>.</p>
+
+<p>Oh, the legacy crap of Windows... It just so happens that <code>PRN</code> is a reserved device name in DOS and <a href="http://msdn.microsoft.com/en-us/library/aa365247(VS.85">cannot be used as a file name prefix</a>.aspx). Really? After all those years? Doing <code>echo Hello &gt; prn.txt</code> can't work because of some legacy from <em>decades</em> ago nobody cares about anymore?</p>
+
+<p>I've done my fair share of Windows development in the past few months, and quite frankly I'm getting fed up of how much crap Windows programmers have to deal with. I've had issues with the archive support of the built-in Windows Security Essentials, horrible kernel deadlocks with <a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx">Process Explorer</a>, quirks with Windows' concept of child process (hint: it sucks), and I can go on. I thought Apple's breakneck pace of OS changes or Linux' slowness are annoying, but not nearly as much as Windows' half-assed POSIX support and 30 years of legacy of bad design from <em>30 years ago</em>.</p>

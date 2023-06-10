@@ -1,0 +1,15 @@
+---toml
+date = "2016-05-23T14:01:52-04:00"
+title = "Flattening Circular Buffers"
+
+---
+
+A few weeks ago I discovered [TPCircularBuffer](https://github.com/michaeltyson/TPCircularBuffer), a [circular buffer](https://en.wikipedia.org/wiki/Circular_buffer) implementation for [Darwin](https://en.wikipedia.org/wiki/Darwin_%28operating_system%29) operating system implementations, including Mac OS X and iOS. Now, I've implemented circular buffers before, so I though there wasn't much need for yet another circular buffer implementation (let alone one specific to iOS), until I noticed something very interesting in the code.
+
+A trick TPCircularBuffer uses is to map two adjacent memory blocks to the same buffer. The buffer holds the actual data, and the virtual memory manager ensures that both maps contain the exact same data, since effectively both virtual memory blocks remaps to the same memory. This makes things a lot easier than my naive implementations: Rather than dealing with convoluted pointer arithmetics each time the producer or consumer reads or writes a sequence of values that cross the end of the buffer, a simple linear read or write works. In fact, the pointers from that doubly-mapped memory can be safely given to any normal function that accepts a pointer, removing the need to make memory copies before each use of the buffer by an external function.
+
+In fact, this optimization is so common that a previous version of the Wikipedia page for circular buffers [had some sample code](https://web.archive.org/web/20081011095409/http://en.wikipedia.org/wiki/Ring_buffer#Exemplary_POSIX_Implementation) using common POSIX functions. There's even a 10-year-old [VRB - Virtual Ring Buffer](http://vrb.sourceforge.net/) library for Linux systems. As for Windows, I've yet to seen some good sample code, but you can do the equivalent with [CreateFileMapping](https://msdn.microsoft.com/en-us/library/aa366537%28VS.85%29.aspx) and [MapViewOfFile](https://msdn.microsoft.com/en-us/library/aa366761%28VS.85%29.aspx).
+
+Both Wikipedia's and VRB's implementations can be misleading, and not very portable though. On Darwin, and I suspect BSD and many other systems, the mapped memory must be fully aligned to the size of a memory page ("[allocation granularity](https://msdn.microsoft.com/en-us/library/windows/desktop/ms724958%28v=vs.85%29.aspx)" in Windows terms). On POSIX, that means using the value of `sysconf(_SC_PAGESIZE)`. Since most of the times the page size is a power of 2, that could explain the otherwise strange `buffer->count_bytes = 1UL << order` from Wikipedia's sample code.
+
+By the way, I'd like to reiterate how poor the built-in Mac OS X documentation is for POSIX and UNIX-like functions. Though it does warn pretty well about page size alignment and the risks involved with `MAP_FIXED` of `mmap`, the rest of the documentation fails to mention how to set permissions of the memory map. Thankfully, the latest Linux man pages for the same functions are far better documented.

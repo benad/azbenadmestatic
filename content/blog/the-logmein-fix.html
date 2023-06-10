@@ -1,0 +1,13 @@
+---toml
+title = "The LogMeIn Fix"
+date = "2012-08-22T20:54:36-04:00"
+permalink = "blog/49b1231d-4e46-416e-9653-2768a2f15e90/"
+---
+
+<p>While <a href="https://secure.logmein.com/">LogMeIn</a> is my preferred remote desktop service, because the cost is per client not per computer, I often experience <a href="http://community.logmein.com/t5/Free/black-screen-on-my-mac-servers/m-p/60778">a bug that affects screen-less Mac servers</a>.</p>
+
+<p>Often I tried to restart the LogMeIn service from an SSH connection, but that fixes only cases when the service itself was hanged. The other times, even after the service restarted, the screen would remain blank. Oddly enough, Apple&#8217;s own VNC server worked fine each time, so using <a href="http://www.zinger-soft.com/iSSH_features.html">iSSH</a> I was able to view the desktop. Still, without a firewall-poking VPN solution I can use from my iPhone this isn&#8217;t a good long-term solution.</p>
+
+<p>The solution <a href="http://www.remotemacserver.com/?p=41">posted here</a> seems to work more consistently. It essentially involved hard-killing the <code>loginwindow</code> process, and the OS takes care of restarting it, making LogMeIn re-hook to it.</p>
+
+<p>Next step, add a port map to my router to make my server SSH port remotely accessible, and find a free dynamic DNS service that doesn&#8217;t suck.</p>

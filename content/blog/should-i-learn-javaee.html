@@ -1,0 +1,12 @@
+---toml
+title = "Should I learn JavaEE?"
+date = "2009-08-29T14:32:00-04:00"
+permalink = "blog/2009/8/29/should-i-learn-javaee/"
+---
+
+<p>Last week I picked up the PDF version of Sun's free <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/">JavaEE 5 tutorial</a>. I saw that it was one thousand pages long, so since then I've been procrastinating about reading it. And I'm writing a blog post about my procrastination.</p>
+<p>Not just because it's long (well, for a "tutorial", no one expects 1000 pages), but because I'm not sure I need to. On one hand, apart from hype and <a href="http://trinisoftinc.wordpress.com/2009/08/28/myths-myths-myths/">pretty bad arguments</a>, it could be tangentially useful for my work. On the other hand, saying you have JavaEE experience at work could, well, exponentially increase your responsibilities without much pay difference.</p>
+<p>I know a bit of JavaEE, and that's it. But most of what it offers I already used in other forms. Persistence API? Hibernate. Remote objects and clustering? Spring and Terracotta. JSP? GSP (Groovy Server Pages). Web Services? A servlet that returns a JSON object.</p>
+<p>But then, none of my solutions "scale", that is other devs can understand what I'm doing, or be free to run my code on different implementations of the library APIs I use, or have any kind of large-scale commercial support. It's all fine to run some GSPs in Jetty running from a self-expanding JAR file, but then when "the customer" has to run it on their own on <b>hundreds</b> of machines, well, no it's not fine.</p>
+<p>Look, I hate code generation. And creating layers of "data access objects" through remote "Enterprise Java Beans" is not fun. But I don't know of anything else that scales as well while being properly supported. You can brag about running a Hadoop cluster on a fiber channel network, but in the "enterprise" world the question is if some poor dev in India can tweak your code five years after you moved on to another job.</p>
+<p>So they say that with annotations JavaEE 5 is now easier to use. I'll see. I guess I just convinced myself while writing this post.</p>

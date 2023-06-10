@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>About This Site - The Future</title>
+        <id>meta_future</id>
+    </head>
+    <body>
+        <section>
+            <p>Well, there isn't much more to say for now, apart from trying to focus as much as possible on the content of this web site.</p>
+            <p>As I write the web site, I continually adapt my XSD and XSLT template to match new XML tags I come up to help me write the contents. As a "catch-all" fallback, I've left the possibility for me to write raw HTML tags in my XML documents, though over time these will be replaced with my custom-made tags (with eerily similar names to their HTML counterparts).</p>
+            <p>Also, I may have to struggle a bit to make my web pages more "accessible" to disabled users, and potentially also some of those text-to-speech technologies. My understanding is that they would easily break on my XML code, though the static HTML pages I generate as a fallback should work fine. How to test?</p>
+            <p>Finally, even though I currently think I "nailed" making my web pages gracefully degrade on smaller and less powerful browsing devices, I could still make my pages render specifically for some browsers like Opera Mini or the mobile Safari used on the iPhone.</p>
+        </section>
+    </body>
+
+</page>

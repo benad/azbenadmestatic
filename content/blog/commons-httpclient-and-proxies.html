@@ -1,0 +1,15 @@
+---toml
+title = "commons-httpclient and proxies"
+date = "2005-09-29T18:42:00-04:00"
+permalink = "blog/2005/9/29/commons-httpclient-and-proxies/"
+---
+
+<p>Sorry for the lack of updates. This week I was busy with 10-hour days, personnal issues, the <a href="http://www.netbeans.org/servlets/NewsItemView?newsItemID=727">Beta of NetBeans 5</a> and <a href="http://www.paulvandyk.de/share/micro/pod2/">Paul van Dyk's Politics of Dancing 2</a>.</p>
+
+<p>In the mess, and under pressure, I learned something quite important about <a href="http://jakarta.apache.org/commons/httpclient/">Jakarta Commons HTTPClient</a>: it doesn't use the system's proxy settings. Why? Because this is platform-dependant.</p>
+
+<p>Let me be more precise: depending on what implementation of Java you use and what version, you <i>may</i> or <i>may not</i> have the proxy settings from the OS. On some implementations, the settings will be placed in <tt>System.getProperty("http.proxyHost")</tt>, <tt>http.proxyPort</tt>, <tt>https.proxyHost</tt> and <tt>https.proxyPort</tt>. On others (for example JRE 1.5.0_04 implemented by Sun for Windows 2000/XP), you'll only have <tt>javaplugin.proxy.config.list</tt>, whose value is in the form "<tt>http=host:port,https=host:port</tt>" (or "<tt>http=host:port,</tt>" or "<tt>,https=host:port</tt>").</p>
+
+<p>Follow <a href="http://mail-archives.apache.org/mod_mbox/jakarta-httpclient-user/200507.mbox/%3c07B503DD-ABCD-4EC3-BA6E-5EC069700F5D@gmail.com%3e">this example</a> to see how much this is a total mess...</p>
+
+<p>That's <i>not</i> the kind of stuff you'd like to learn under pressure while the client, behind a stupid corporate firewall and a stupid proxy, cannot connect to the server using your client...</p>

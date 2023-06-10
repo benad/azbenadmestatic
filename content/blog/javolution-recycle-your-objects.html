@@ -1,0 +1,21 @@
+---toml
+title = "Javolution: Recycle Your Objects!"
+date = "2006-01-18T15:24:00-05:00"
+permalink = "blog/2006/1/18/javolution-recycle-your-objects/"
+---
+
+<p>If you are coding in C, C++ or Objective C, there are two things you are surely paranoid about: null pointers and memory leaks. Null pointers, because it crashes the whole process. Memory leaks, because objects you create in the heap by using <tt>malloc</tt> or <tt>new</tt> are not automatically deleted when the function (or the code block) that created it  exits.</p>
+
+<p>One design trick commonly used in Objective C to prevent memory leaks is simple: a function (or code block) is responsible to free the memory it allocated on the heap. If you are consistent using that design, then having memory leaks are less likely.</p>
+
+<p>If you're lazy and don't want to write all this code to free memory, you can always use a garbage collector like <a href="http://benad.livejournal.com/5981.html">Boehm's garbage collector for C</a>. This could actually be faster than the code you would write to "figure out" what memory blocks to free in a set of structures that point to each other.</p>
+
+<p>A problem remains though. Imagine you write a function that needs a total 100MB of temporary memory to work, in the form of thousands of little memory blocks. If you expect to call the function many times, then a lot of time will be wasted freeing memory you will allocate all over again the next time. In that case, you want to keep and reuse the memory you allocated <i>just in case</i> you're going to call the function again.</p>
+
+<p>Well, in Java, even though you have a garbage collector silently running in a background thread, things are more complicated. Not only making a new object instance is more costly than a <tt>malloc</tt> in C, but if you create and throw away too many objects the garbage collector will unexpectedly slow down your code.</p>
+
+<p>And so comes <a href="http://www.javolution.org/">Javolution</a>. This library lets you create objects from a "heap context", which is a Factory that recycles objects you don't use anymore. Because the context keeps a reference to all the objects it controls, Java's garbage collector will <b>not</b> collect those objects. That way, not only you will increase performance by not having to re-create those objects every time, but also the execution time of your function will be consistent. Or, another way of saying it, your function will have <i>"real time" predictability</i>.</p>
+
+<p>Javolution also implements some typical classes from <tt><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/package-summary.html">java.lang</a></tt> and <tt><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/package-summary.html">java.util</a></tt> such as <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/StringBuffer.html">StringBuffer</a> (<a href="http://www.javolution.org/api/javolution/lang/Text.html">Text</a> and <a href="http://www.javolution.org/api/javolution/lang/TextBuilder.html">TextBuilder</a>), <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/ArrayList.html">ArrayList</a> (<a href="http://www.javolution.org/api/javolution/util/FastList.html">FastList</a>) and <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/HashMap.html">HashMap</a> (<a href="http://www.javolution.org/api/javolution/util/FastMap.html">FastMap</a>) using contexts and the same design approach (reuse objects as much as possible), with spectacular performance improvements.</p>
+
+<p>I wonder what would happen to the performance of real-time network-based Java applications such as <a href="http://azureus.sourceforge.net/">Azureus</a>, <a href="http://freenetproject.org/">Freenet</a> or <a href="http://i2p.net/">i2p</a> if they used a bit Javolution...</p>

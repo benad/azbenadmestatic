@@ -1,0 +1,13 @@
+---toml
+title = "All Roads Lead to OSGi"
+date = "2012-12-23T22:09:22-05:00"
+permalink = "blog/2012/12/23/all-roads-lead-to-osgi/"
+---
+
+<p>As architectural requirements are bloated, you will eventually need something like <a href="http://www.osgi.org">OSGi</a>. Sadly, OSGi is only for Java, as it naturally grew from the stringent and growing requirements of embedded systems and IDEs alike.</p>
+
+<p>Can there be such a thing for other languages? For .NET, I supposed that building something like OSGi shouldn't be too difficult, but for native code provided by C and C++, things get difficult. Yes, you can make up some <a href="https://en.wikipedia.org/wiki/Microkernel">microkernel</a> under a <a href="https://en.wikipedia.org/wiki/Hypervisor">hypervisor</a>, but in this case you lose all contact with the host operating system's services. If your architecture has to be able to interact with 3rd-party code made for a proprietary OS, you're out of luck.</p>
+
+<p>The "<a href="http://www.avast.com/internet-security#safezone">SafeZone</a>" feature of avast is then very interesting. It essentially loads a normal Windows process, but intercepting <em>all</em> of its operating system calls. This seems overkill for anything but an antivirus, but I wonder why web browser plugins haven't considered running "untrusted" plugins this way. Or maybe Internet Explorer 10 internally does that and I'm not aware of it.</p>
+
+<p>That, or maybe the reason why OSGi runs in Java is because Java is already a virtual machine. In a way, when bloating requirements, you have to pick your battles.</p>

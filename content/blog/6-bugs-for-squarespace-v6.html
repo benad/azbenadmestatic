@@ -1,0 +1,25 @@
+---toml
+title = "6 Bugs For Squarespace V6"
+date = "2012-08-23T21:00:20-04:00"
+permalink = "blog/c2c3ffc1-c0ba-4f65-97ba-7f1029839e5e/"
+---
+
+<p>I mentioned <a href="http://blog.benad.me/2012/7/19/another-blog-move.html">a month ago</a> that I&#8217;d be upgrading to Squarespace version 6. I did so last weekend, and I already regret my decision.</p>
+
+<p>My blogging needs are few. I write my post in Markdown syntax, send it from my iPad, and expect my blog to pick my new post and generate an RSS feed out of it. Well, that seems to be asking <em>way</em> too much from Squarespace.</p>
+
+<p><strong>Bug 1</strong>: You can&#8217;t post using Markdown from the iOS app. Actually, the iOS app is spectacularly buggy and crash-prone if you even attempt to place Markdown posts in your blog. So why do I even bother with the iOS app if I can make blog posts to Squarespace by email?</p>
+
+<p><strong>Bug 2</strong>: You can&#8217;t post by email using Markdown syntax. Technically, that&#8217;s not a bug but a lack of feature, but come on, that shouldn&#8217;t be too difficult to implement considering Markdown support is one of the advertised feature of Squarespace. If Markdown posting is considered too much of a &#8220;power user&#8221; feature, why not let users post rich-formatted emails, as you can do from Apple&#8217;s Mail or Gmail?</p>
+
+<p><strong>Bug 3</strong>: Well, that&#8217;s because Squarespace doesn&#8217;t support HTML MIME parts in emails. If you dared place italics, bold or even paragraph marks from Gmail, they&#8217;ll be <em>silently</em> stripped, since only the &#8220;plain text&#8221; part will be used. Oddly enough, if you put HTML code in your plain text email, <em>that</em> is supported! Having experience doing MIME multipart parsing in Perl and Java, it&#8217;s pretty easy. Actually, MIME is supported by <a href="http://www.oracle.com/technetwork/java/javamail/index.html">JavaMail</a>, which is built in Java EE used by Squarespace, so they have no excuse.</p>
+
+<p><strong>Bug 4</strong>: Now, looking at the RSS output, I hope you placed a non-empty description to your site, otherwise the required &#8220;description&#8221; element of the RSS will be completely missing, rendering the RSS invalid. Why Squarespace doesn&#8217;t validate their own RSS output with some DTD is beyond me.</p>
+
+<p><strong>Bug 5</strong>: So, you still dare post to Squarespace by email? Well, the post&#8217;s URL, instead of the nice preset you chose, for example <code>2012/08/21/my_post.html</code>, will be instead a super nice GUID mutant like <a href="http://blog.benad.me/49b1231d-4e46-416e-9653-2768a2f15e90"><code>49b1231d-4e46-416e-9653-2768a2f15e90</code></a> (actual URL for yesterday&#8217;s post)!</p>
+
+<p><strong>Bug 6</strong>: You really, <em>still</em> want to post by email, because it&#8217;s the only way to post formatted text from an iPad (their web site&#8217;s full posting interface crashes mobile Safari)? Well, the RSS channel&#8217;s <code>lastBuldDate</code> will remain unchanged, so it won&#8217;t be picked up by most RSS services, including Google&#8217;s Feedburner and Reader.</p>
+
+<p>So, yeah, I opened those 6 support tickets already, and I&#8217;m quite annoyed, especially considering all these work great with free blogging services, but somehow doesn&#8217;t work at all with an expensive, paid service like Squarespace. I won&#8217;t make my displeasure more public than this blog post, especially since within weeks they may already fix those bugs, but if by the end of the year this is not resolved I might just give up with all those blogging hosts and host my own install of Wordpress on my web site. Sometimes, you just have to do it yourself.</p>
+
+<p>Have to go. Somehow I have to send to Squarespace support a <em>screenshot</em> of the RSS XML source. I mean, <em>come on</em>!</p>

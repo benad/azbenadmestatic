@@ -1,0 +1,26 @@
+---toml
+title = "TortoiseHG on a Mac"
+date = "2012-08-10T21:17:15-04:00"
+permalink = "blog/2012/8/11/tortoisehg-on-a-mac-1/"
+---
+
+<p>A quick "HOWTO" to finish the week. The version of <a href="http://tortoisehg.bitbucket.org/">TortoiseHG</a> available in <a href="http://www.macports.org/">MacPorts</a> is hopelessly outdated. So here's what I did to get the latest version of it working on a Mac.</p>
+
+<pre><code>sudo port install python27 py27-pyqt4 py27-qscintilla py27-iniparse py27-sphinx
+cd Documents
+hg clone http://bitbucket.org/tortoisehg/thg/
+</code></pre>
+
+<p>Then, I create a simple wrapper inside the new <code>thg</code> directory called <code>thg.sh</code>, since TortoiseHG needs to use other Python 2.7 binaries:</p>
+
+<pre><code>#!/bin/bash
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+python `dirname $0`/thg $*
+</code></pre>
+
+<p>Finally, I add the following to my <code>~/.profile</code>:</p>
+
+<pre><code>alias thg='~/Documents/thg/thg.sh'
+</code></pre>
+
+<p>That's it! You can now do <code>thg help</code>. Also, to keep TortoiseHG up-to-date, go inside the <code>thg</code> directory and run <code>hg pull -u</code>.</p>

@@ -1,0 +1,9 @@
+---toml
+title = "The Almighty Clonezilla"
+date = "2012-06-01T21:13:58-04:00"
+permalink = "blog/2012/6/2/the-almighty-clonezilla/"
+---
+
+<p>At work I had to make a backup copy of a USB key. Because it was some kind of "restore disk", it had a weird 1MB partition at the beginning of the device, so I had to make a byte-exact copy of the whole disk. And since it was a 32GB key, even though there was only 9GB of data used, the based <code>dd</code> command took a long time to run.</p>
+
+<p>Or I could have just used a <em>second</em> USB key to boot from <a href="http://clonezilla.org/">Clonezilla</a>, a free Linux-based disk cloning solution. It's not CLI-based, yet you still need to be a little bit proficient with computer administrator. Otherwise, it is quite powerful, doesn't lock you into weird proprietary image formats like other commercial products, it's free and quite well maintained.</p>

@@ -1,0 +1,37 @@
+---json
+{
+  "maxCount": 10,
+  "permalink": "blog/index.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Benad's Blog",
+    "url": "https://benad.me/blog/",
+    "siteUrl": "https://benad.me/"
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.url }}</link>
+    <description>{{ metadata.title }}</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | getRssDate }}</lastBuildDate>
+    <atom:link href="{{ permalink | absoluteUrl(metadata.siteUrl) }}" rel="self" type="application/rss+xml" />
+    {% set posts = collections.post | reverse %} 
+{%- for postIndex in range(0, maxCount if posts.length > maxCount else posts.length) %}
+{%- set post = posts[postIndex] %}
+{%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <pubDate>{{ post.date | getRssDate }}</pubDate>
+      
+      <guid>{{ absolutePostUrl }}</guid>
+      <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+    </item>
+    {% endfor %}
+    
+  </channel>
+</rss>

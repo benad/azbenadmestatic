@@ -1,0 +1,21 @@
+---toml
+title = "Debugging Hell"
+date = "2006-05-10T07:46:00-04:00"
+permalink = "blog/2006/5/10/debugging-hell/"
+---
+
+<p>For all the nice things you can have in a nice Java debugger, for example <a href="http://www.netbeans.org/">NetBeans</a>, I never expected this to happen.</p>
+
+<p>At work I was stuck having to make my own class to read a little-endian binary file with unsigned integer values and other weird things (we all know there is no such thing as "unsigned int" in Java and that it's big-endian, right?). So I made a class which wrapped around <tt>java.io.InputStream</tt> and had a "<tt>getUInt()</tt>" function in the form "<tt>public long getUInt()</tt>" that reads and returns the next "<tt>UINT32</tt>" from the <tt>InputStream</tt>.<p>
+
+<p>And weird things happened in the debugger. I have this kind of code:</p>
+
+<pre>long i;<br/>
+while ((i = reader.getUInt()) > 0) {
+  //...
+}
+</pre>
+
+<p>I stop the code using a breakpoint at the first line, put my mouse over "<tt>i</tt>" in the debugger, and it would say "<tt>12</tt>". Put my mouse over "<tt>reader</tt>", and it shows me the object reference information and so on. Place my mouse over "<tt>getUInt()</tt>" and it would say "<tt>8</tt>". Place my mouse again over it, it would now say "<tt>0</tt>". And so on... <i>What?</i></p>
+
+<p><b>Duh!</b> Next time, call the function "<tt>readUInt()</tt>", otherwise NetBeans thinks it's a Java Bean accessor function which <i>shouldn't</i> change the state of the object, and happily calls the function over and over again even though your code is not supposed to be running...</p>

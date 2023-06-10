@@ -1,36 +1,43 @@
-# Notes
+# benad.me 11ty Test
 
-## Requirements
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-* BASH
-* Perl
-* curl (for `mvnw`)
-* Java 11
-* [Hugo 0.15](https://github.com/gohugoio/hugo/releases/tag/v0.15)
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
-Make sure the machine's timezone is not UTC, ideally Montreal.
-On Ubuntu, use `sudo dpkg-reconfigure tzdata`.
+## Links
 
-## Setup
+* https://github.com/11ty/eleventy-base-blog
+* https://moment.github.io/luxon/
+* https://mozilla.github.io/nunjucks/
+* https://www.saxonica.com/saxon-js/documentation2/index.html#!api/transform
+* https://github.com/santisoler/cc-licenses#cc-attribution-sharealike-40-international
 
-```sh
-git clone -b cleanup git@github.com:benad/benadme-sources-git.git
-git clone -b azstatic git@github.com:benad/benadme-blog-git.git
-git clone -b paginated git@github.com:benad/tweetback-benad.git tweetback
-cd tweetback
-npm install
-cd ..
-git clone git@github.com:benad/azbenadmestatic.git
-```
+## Notes
 
-As a separate project, that handles redirection from `blog.benad.me` to
-`benad.me`: https://github.com/benad/azbenadmestaticblog .
+Don't use "America/Montreal", otherwise it will show up only as "GMT-5". Use
+"America/New_York".
 
-## Usage
+`single.njk` has an example of how to "group" items in a page. This simulates
+Hugo's Paginator.PageGroups fonctionality.
 
-```sh
-bash build.sh
-bash sync.sh
-git commit -m "Updates..."
-git push
-```
+The file `src/page.sef.json` must be generated or updated from `src/page.xsl`
+using `npm run xslt-compile`. In the future this could be done automatically by
+the `xml` extension in `eleventy.config.js`.
+
+Right now, `xml` assumes the header `<?xml-stylesheet type="text/xsl"...` has an
+href that points to the `xsl` file that should have its `src/*.sef.json`.
+
+### Converting Blog Posts
+
+Change `+++\n(?<front>.*\n)+++\n` to `---toml\n$<front>---\n`
+
+Syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace .
+
+In that `$<front>`:
+* Remove `type = "post"`
+* Change `url = "(?<urlval>.*)"` with `permalink = "$<urlval>/"` (notice the trailing `/`)
+
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg

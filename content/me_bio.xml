@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>Autobiography</title>
+        <id>me_bio</id>
+    </head>
+    <body>
+        <section>
+            <p>This is not a proper biography <i>per se</i>, since most personal
+            stuff is left out. Here is more about things of my past that might
+            be of interest to the general public.</p>
+        </section>
+        <section title="The Age of Music">
+            <p>My early childhood is, outside the confines of my family home,
+            relatively un-eventful, until the middle of the first grade of elementary
+            school. After an odd "auditory test", where students would be asked
+            to compare the pitch of music notes, my parents were presented with
+            two choices about my academic future. The first was, given my early
+            academic results, to skip two years of school directly to grade 4.
+            Since I was already the smallest student in first grade, such
+            prospect, in a public school, would have been physically hazardous
+            for me. The second was for me to start attending a public school for
+            academically and musically gifted students. Feeling my boredom and fear
+            of retribution from taller students, my parents obviously chose the
+            latter choice.</p>
+            <p>From then, I spent roughly half of my school time learning and
+            playing music, and so on until the end of high school. My
+            specialization was the violin. That always was quite a physical
+            challenge due to its unforgiveness and my lack of precise finger
+            movement. I since then stopped playing music, with some regret.</p>
+            <p>Yet, beyond the theory and the endless hours of physical
+            practice and pain, I learned from music many things that shaped me.
+            Such things are difficult to describe here, but suffice to say that
+            whatever would interest me from then on, I would be <i>artful</i>
+            at it.</p>
+        </section>
+        <section title="Discovering a Talent">
+            <p>It is difficult to say with humility that you are genuinely
+            talented at something. But if you are, regardless of how much effort
+            it would take to grow in such talent, that domain always feels
+            easy and natural. For me, it was anything related to computer
+            software.</p>
+            <p>Early on, my mother discovered that "gadgets" would fascinate me.
+            Discovering how a tool of object works would fill me with passion,
+            that is until I understood of it worked. The problem though was with
+            my overall clumsiness with physical objects (which also affected my
+            learning of violin). But with software, learning was
+            <i>limitless</i> and unaffected by physical akwardness.</p>
+            <p>Me and my mother will always remember my first encounter with a
+            <i>Macintosh</i> computer. Busy at work and with no access to a
+            babysitter, she knew that I was old enough to "take care of myself"
+            in her office while she went teaching at the university for the
+            next hour or so. The
+            only piece of "entertainment" was a Macintosh computer with the
+            "Mac Draw" software loaded and the general instruction "have fun
+            drawing pictures". And, without any instruction or prior training,
+            so did I. And played with the system settings. And, out of many
+            things, changed the desktop pattern, which was the only thing I
+            haven't properly reverted before she came back. Which prompted
+            my mother to ask me how I did it.</p>
+            <p>Unlike the other "PCs" I've seen after, nothing felt as intuitive
+            and limitless as a Macintosh. While this was true for most people,
+            for me this meant I would learn about the software easily and
+            at a high pace.</p>
+        </section>
+        <section title="A Proper Profession">
+            <p>Now then, there isn't anything special about being good at
+            <i>using</i> software. Understanding how it
+            works, maybe. Reverse-engineering it, maybe a bit more.
+            But developing good software based on a deep
+            understanding and appreciation for high quality software, now that's
+            difficult. So being talented enough to design and develop <i>great</i>
+            software in a way that seems, to the casual observer, both easy and
+            "like magic", now <i>that's</i> something special enough to be
+            considered a talent. But how can you know if you have such talent
+            in something?</p>
+            <p>It took quite a leap of faith to try, on my own and with limited
+            understanding of the English language, "real" programming before
+            finishing college. And even up to the end of the 90s, "programmers"
+            were not as such in high demand as it is now. But after some
+            practice, I could say that I liked it and was good enough to
+            potentially make software development a lifelong profession, even
+            without high demand or high pay.</p>
+            <p>So I was surprised to see this "information age" arrive so fast,
+            and lucky enouch to be in a profession with such high demand.
+            Even if I were to be lazy and just coast off my talent, I <i>like</i>
+            writing good software, even more when other people can appreciate
+            it. So even with talent, I'm still a slave to my "art".</p>
+        </section>
+        <section title="The Rest">
+            <p>What happened during University and later is, unless I become a
+            celebrity of some kind, unworthy of much attention. Suffice to say
+            that while my life is sometimes very difficult, it is still
+            relatively <i>cozy</i>. Enough for me to have the time to write
+            this.</p>
+            <p>This is when one would normally think about what kind of
+            achievements would define their life. Or what one would like to
+            experience before death.</p>
+            <p>But I don't. <i>Toughtful passion</i> simply drives me.</p>
+            <p>... Or something pretentious like that.</p>
+        </section>
+        
+    </body>
+
+</page>

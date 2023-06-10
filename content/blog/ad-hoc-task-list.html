@@ -1,0 +1,43 @@
+---toml
+title = "Ad hoc task list"
+date = "2005-09-21T15:34:00-04:00"
+permalink = "blog/2005/9/21/ad-hoc-task-list/"
+---
+
+<p>Here's a very useful (and cool) trick I made up a couple of years ago.</p>
+
+<p>When you're working on a project or something, you often have to maintain a "To Do" list. There are some good programs to do this, for example <a href="http://www.omnigroup.com/applications/omnioutliner/">OmniOutliner</a>, but then to view it you'll need some software. Or you can use some web-based application, but then you'd be "locked in" that application.</p>
+
+<p>So, a plain text file is the way to go...</p>
+
+<p>As a convention, you can keep the highest priority tasks on top and the completed one on the bottom. If you are using a fixed-width font to view the text file, you also have more liberty to add "column" for due dates and such:</p>
+
+<pre>- 20050917 12: Finish backup system
+- 20050931 01: Deployment tests
+- xxxxxxxx 17: Take a break</pre>
+
+<p>This is nice, but what about the <i>status</i> of those tasks? Here's the trick I came up with:</p>
+
+<pre>LEGEND:
+  -: todo
+  &gt;: postponed
+  &lt;: late
+  ~: started
+  #: almost done (testing needed)
+  x: done
+  *: continuous development ("sticky task")
+  @: cancelled (or postponed for a long time)]]></pre>
+
+<p>As you can see, it's pretty intuitive. Here's an example:</p>
+
+<pre># Write schema
+- Update DB access
+* JavaDoc
+&lt; Update specs
+- Add logging
+&gt; Add admin backed
+@ Add reporting tool  &lt;---- Not really needed
+x First draft of specs
+x First draft of design doc</pre>
+
+<p>Useful, no? And doesn't cost a thing!</p>

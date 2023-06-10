@@ -1,0 +1,17 @@
+---toml
+title = "NestedVM: Compile (almost) Anything To Java"
+date = "2008-01-22T14:35:00-05:00"
+permalink = "blog/2008/1/22/nestedvm-compile-almost-anything-to-java/"
+---
+
+<p>Recently I was looking for a <a href="http://java.sun.com/javase/6/docs/technotes/guides/jdbc/">JDBC</a> driver for <a href="http://sqlite.org/">SQLite</a>. I always tend to prefer pure Java drivers, as my development environment is on Mac OS X, Linux and even at times Windows, so not having to recompile the library used by the driver (through <a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/index.html">JNI</a>) on every platform I use and having the freedom of bundling the JAR file of the driver with my JARs saves me a headache. Foolishly, I searched for a pure-Java SQLite driver, forgetting that it's an <i>embedded</i> database in C, meaning it shouldn't technically exist.</p>
+
+<p>Well, until I discovered <a href="http://www.zentus.com/sqlitejdbc/">SQLiteJDBC</a>, which is available in both JNI (faster) and 100% pure Java. Uh, <i><b>what?</b></i> How is that even possible? Well, the author, used tool that makes a binary translation of <a href="http://en.wikipedia.org/wiki/MIPS_architecture">MIPS</a> object code to Java bytecode, called <a href="http://nestedvm.ibex.org/">NestedVM</a>. Basically, anything you can compile for the MIPS chip can be <i>translated</i> to Java, including all your memory leaks and buffer overflows.</p>
+
+<p>Of course, that won't work well if your code depends on too much system calls (because you'll have to rewrite them all in Java) or if your code is sensitive to <a href="http://en.wikipedia.org/wiki/Endianness">endianness</a>, since both MIPS and Java are big-endian while x86 is little-endian.</p>
+
+<p>Still, this is perfect for those weird audio and video codecs (performance will have a hit, but it works), obscure compression engines, encryption, weird network protocols, etc. And if you didn't got it yet, it works for <i><b>any</b></i> language (C, C++, D, C#, Haskel, whatever).</p>
+
+<p>Also, if you implement the missing system calls you need in Java, there's noting stopping you from using <a href="http://gcc.gnu.org/java/">GCJ</a> to compile your system calls to native code, while keeping your native MIPS library in native code, thus maximizing performance in a simple recompile.</p>
+
+<p>My dream with this is to have a Java implementation of the <a href="http://apr.apache.org/">Apache Portable Runtime</a> (APR), or at least one that would compile against the limited set of system calls already provided by NestedVM. That way, I would have a "rich" runtime environment, and it would make it really easy to port anything code development using (exclusively) APR into pure Java. There's also this dream of combining that with a Java implementation of the X server like <a href="http://www.jcraft.com/weirdx/index.html">WeirdX</a>, a new X client implementation and some window manager to have a <i>real</i> Java desktop...</p>

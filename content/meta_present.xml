@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>About This Site - The Present</title>
+        <id>meta_past</id>
+    </head>
+    <body>
+        <section title="Purpose">
+            <p>Why build a personal web site?</p>
+            <p>In the 90s, to have a personal web site was some kind of "rite of passage". For most, that would mean building a web page on Geocities or something similar. While the page wouldn't look very professional and the free hosting service would add ads on top of your messy page, it felt satisfying to use some text editor and type HTML by hand.</p>
+            <p>But to have an actual host server and domain name in the 90s was quite a challenge. The "dot-com" era barely started, so hosting services and domain name registration wasn't as easy or as competitive as today. For most people though, a free 5 MB hosting was sufficient.</p>
+            <p>The content of those personal web sites was pretty much irrelevant. The achievement was to have a "web page", and that was sufficient. Yet some users insisted to make useful personal web sites.</p>
+            <p>The first kind of useful personal web site was the "home page". Web browsers always had the feature of setting the initial page to some user-specified address, so many created their own web page, stored on the local hard drive, containing shortcuts and links to online services they often use. Placing that "home page" online made it possible to use it across multiple machines. Nowadays, many web sites offer user-customizable home pages, or at least recommend users to make their "portals" their home page, so almost nobody handcrafted their own home page anymore.</p>
+            <p>The second kind were "web logs", or "blogs". I'm still unsure why people would want to place online their personal journal, for everybody to see, but the teenagers demanded it. Now "blogging" is almost synonymous to semi-commercial independant journalism, so unless you want to post lengthy articles, blogging isn't for you.</p>
+            <p>So, where do I fit in this? I don't need a "home page" to list my bookmarks, online or not, and even if I needed one it would be private. Also, I already have <a href="http://blog.benad.me/">a blog</a>, so I don't have any need to move it to my own personal web site.</p>
+        </section>
+        <section title="Business Card">
+            <p>I discovered the primary use of my web site when I started considering the "indentity" nature of a personal site.</p>
+            <p>A few years ago when I was cleaning up my résumé I hesitated to place a reference to my old web site. My web site, back then, was visually horrible and unprofessional compared to my résumé. And yet, I always struggled to make my résumé compact enough, and always hoped to write on it: "For more information, go to..."</p>
+            <p>With a personal business card, it's even worse. I suspect the reason why so many professionals are perfectionists about their business cards is because <i>it is so small</i>. You have so little space to say anything that any mistake would be "interpreted" out of proportion.</p>
+            <p>So what if your personal business card, résumé, or whatever remained simple, but pointed to a more complete web site? That web site, then, would be less "personal" and more "professional". Maybe not only about your profession, but still a clean public image (and offering plausible deniability for the rest of your online activities.)</p>
+            <p>From this simple purpose, all the other questions that could arise are simply answered.</p>
+        </section>
+        <section title="benad.me">
+            <p>So, then, first thing first, the domain name. It has to be a name that somewhat identifies me, yet at the same time would fit well in that "business card" methaphor.</p>
+            <p>The naïve approach would be for me to get the domain name "benoitnadeau.com", or a variant thereof. But then, apart from being cliché and slightly tacky, this would assume that no one else on Earth named "Benoit Nadeau" would want to build their own personal web site, or that at least I'd be the first one.</p>
+            <p>So, I chose to go in the direction of using my nickname "Benad". It's much shorter than my full name thus fits well on a business card. Already though "benad.com" is already taken, but I see that as little loss since (and maybe I'm the only one seeing it this way) I would find it odd to present myself as some kind of corporation. I have similar reactions to other top-level domains. ".net"? I'm a network? ".org", an organization?</p>
+            <p>Browsing around for available top-level domains, I discovered the ".me" domain, actually the domain of Montenegro. Even if it felt a bit... narcisistic, "benad.me" is descriptive, elegant, small and would have quite a "panache" on a business card.</p>
+        </section>
+        <section title="Architecture">
+            <p>The domain name was only the first step though. Hosting is the next step, but hosting requirements would be based on what kind of technologies my web site would use.</p>
+            <p>Now, I could show off my software development talents by developing the most advanced AJAX, Web 2.0, buzzword-compliant web site that would rely on a database backend and some scripting language on top. Or, better, go all the way and build an "Enterprise" level Java infrastructure. Now, that would be nice, except for one thing: maintenance. Not that maintaining would be particularly difficult, but just that many, many things could break. And I won't be even talking about potential security holes, SQL injections, denial-of-service attacks, or just pissing off my hosting provider because my code went in an infinite loop and crashed its server.</p>
+            <p>Even at its simplest, a dynamic web site allows for potential security holes I would have to start to worry about. And, in the end, nobody sees the actual code that generated the dymanic pages. Unless I show off many dynamic HTML and AJAX tricks most of the effort that would go in writing the code would be kept opaque to users.</p>
+            <p>So, static web pages it is, then. There are a few template-based systems that let you mass-generate multiple static web pages, but none of them that I'm familiar with, with the exception of XSLT. And it just so happens that 95% of the web browsers currently in use support XSLT to generate web pages.</p>
+            <p>Let me put this in less technical terms: The process of transforming the web page's content, whose structure I define, into a web page through a template, that I also define, is not done by the server but by the web browser itself. If you look at the source of this "web page" right now, you will notice that its source is written in XML <i>whose structure and format I defined</i>, unlike HTML.</p>
+            <p>Let me emphasise this point: <b>This web site is not in HTML</b>, well at least not directly. Even things like the side bar on the right, with its contact information and table of contents, is part of the XSLT template, not of the source XML of each page.</p>
+            <p>This has two advantages: First, I don't need to install any software server-side to transform whatever templating system I use into HTML, as this is done in real-time by the web browser. Second, it shows off that I'm one of the rare people that can write from scratch an entire web site in XML with its XML Schema Document (XSD) and XSLT to transform it into HTML and that works with all major web browsers.</p>
+            <p>As side effect, the web site becomes also made of completely static documents, so no security holes due to my code, and bandwidth is saved by transfering to the web browser only optimized XML documents, with the XSLT template downloaded only once and re-applied to every downloaded XML page.</p>
+        </section>
+        <section title="Design">
+            <p>After all that being said, most users won't notice any of this technical infrastructure. Their main concern is how the web site <i>looks</i> like. And make no mistake, I'm not a good visual designer.</p>
+            <p>Or maybe in a strange way I <i>am</i> a good designer, insofar that I'm highly critical of good design. I can tell easily, beyond simple aestetic of color matching, if a web page is functional and enjoyable. Because of this, I ended up being overly critical of my own design prototypes. No matter what I would do in my CSS editor, things would be oddly <i>off</i>. Is it because the default set of web-ready fonts is horrible? That, since I can't draw, CSS becomes extremely limited for image-less web designs?</p>
+            <p>I had to resort myself to go back to my overall direction for this web site: a "business card". Minimalist, few if not no colors, clean design.</p>
+            <p>I came up with a simple design, inspired by the way I manage my notebooks. On the left, the title of the sections, on the right the "menu", and in the center the actual text. The section titles on the left seem odd at first, but helps the readers "scan" for a relevant section of the "wall of text" in the middle of the page. Also, it forces me to write in a way that even if the section titles were completely ignored, the text would "flow" well enough to render the section titles completely optional for a proper understanding of the text. Regardless, I marked the section titles with standard HTML header tags so that even in the event that the CSS is completely turned off, the text would display as a single, readable stream of text cut with section headers from time to time.</p>
+            <p>In the end, my web site is quite minimalist, if not plain and boring. But what is gained is a focus on functional content, that remains functional even on cell phones and archaic browsers.</p>
+        </section>
+        <section title="Going On">
+            <p>Of course, I could go on and on about the different tools, CSS design libraries and the various hacks I had to do to make that XML rendering work, but I think this is not the place to explain all of this. Maybe a post or two on <a href="http://blog.benad.me/">a blog</a> would suffice.</p>
+        </section>
+    </body>
+
+</page>

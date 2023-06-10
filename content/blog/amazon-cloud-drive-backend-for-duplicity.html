@@ -1,0 +1,9 @@
+---toml
+title = "Amazon Cloud Drive Backend for Duplicity"
+date = "2016-03-02T21:16:19-05:00"
+permalink = "blog/2016/3/2/amazon-cloud-drive-backend-for-duplicity/"
+---
+
+<p>To follow up on <a href="http://blog.benad.me/blog/2016/2/24/diy-backup">my previous post</a>, I wrote <a href="https://bitbucket.org/benad/acdbackend">acdbackend</a>, to add Amazon Cloud Drive support to <a href="http://duplicity.nongnu.org">duplicity</a>, by wrapping around the <a href="https://github.com/yadayada/acd_cli">acd_cli</a> tool.</p>
+
+<p>Actually, adding online storage services to duplicity is pleasantly easy to implement. If you have some command-line tool for your service that supports download and upload using stdin/stdout, file listing, and deleting files, then in an hour you can have it working in duplicity.</p>

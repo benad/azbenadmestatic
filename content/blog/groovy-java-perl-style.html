@@ -1,0 +1,25 @@
+---toml
+title = "Groovy: Java, Perl-style"
+date = "2005-11-28T16:42:00-05:00"
+permalink = "blog/2005/11/28/groovy-java-perl-style/"
+---
+
+<p>Two weeks ago, while trying to recommend a friend what scripting languages for Java he could use (I ended up giving him <a href="http://www.java-source.net/open-source/scripting-languages">this link</a>), I started trying them out myself. I was worried, though, that they would either be too drastically different from a C-like or Java-like syntax, or if not, that they would be atrociously slow, given that you're running all of this <i>on top of Java</i>.</p>
+
+<p>An issue I started to find is how much those languages tended to be almost a <i>theoretical</i> replacement of the <a href="http://java.sun.com/docs/books/jls/index.html">Java language</a>, as if a few new features they would add on top of it would be enough to justify learning yet another language. I fell like we're back to 1975.</p>
+
+<p>Yet, lots of stuff annoys me with Java. Even simple things like reading lines from a file <a href="http://www.livejournal.com/users/benad/6237.html">needs a complex macro</a>. But I don't want a radical replacement of the Java syntax, and I still want OK performance...</p>
+
+<p>And then I saw <a href="http://groovy.codehaus.org/">Groovy</a>. It is not your typical "computer scientist" language, but more a "software hacker" language. In many ways, it is close to <a href="http://www.perl.com/">Perl</a>:</p>
+
+<ul>
+<li><b>It's ugly but short.</b> The syntax is there to write code faster, not in a more "beautiful" way. Groovy is not as horrible as Perl, but can be a bit difficult to read.</li>
+<li><b>It's compiled to bytecode before execution.</b> Actually, <tt>groovyc</tt> will generate class files for you. It's normal Java code, but you still need the Groovy JAR files. In effect, because Groovy thus taps in into the run-time optimizations of Java, this could make Groovy faster than similar Perl code.</li>
+<li><b>It does what you want, not what you write.</b> Simple things like the <tt>==</tt> operator does what it should have meant for strings, without having to use explicitly <tt>.equals(String)</tt> (you still can). Like Perl, object type is not required, since everything derives from <tt>java.lang.Object</tt>. Same thing also for function parameters and its return value. Oh, and you don't have to write that semicolon at the end of the line (yeah, that's a bit weird at first).</li>
+<li><b>Code that should be simple <i>is</i> simple.</b> All those things like using a database, reading or writing an XML or HTML file, reading and writing to a file, using <a href="http://www.livejournal.com/users/benad/3568.html">Java Beans</a> or using regular expressions is <i>easy</i>. With Groovy you avoid having to rely on a complex or strange framework to write code faster.</li>
+<li><b>Scripts can be reused easily.</b> Every groovy script file is actually a class file with its <tt>main</tt> function and its member functions. So while the scripts look "flat", they are self-contained and reusable. (But, honestly, you better write your high-quality Java library in Java, not Groovy...)</li>
+</ul>
+
+<p>Obviously, Groovy is far from perfect. The language is rather new, so documentation is difficult to find, and you could hit an occasional bug or two. Also, it doesn't have a debugger yet, but it shouldn't be too hard to add one later since the Java bytecode it generates could use the standard interface to Java debuggers that is already used by all those Java IDEs out there. And, performance-wise, it's still slower than Java.</p>
+
+<p>But otherwise, Groovy can be used to write quick-and-dirty scripts or used as a replacement of the ugly mess that is <a href="http://java.sun.com/products/jsp/index.jsp">JSP</a>. Yes, like what Perl was meant for, but in and for Java.</p>

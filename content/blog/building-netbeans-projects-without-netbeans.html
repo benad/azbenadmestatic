@@ -1,0 +1,14 @@
+---toml
+title = "Building NetBeans projects without NetBeans"
+date = "2006-09-12T16:00:00-04:00"
+permalink = "blog/2006/9/12/building-netbeans-projects-without-netbeans/"
+---
+
+<p>It should be easy, right? I mean, everyone knows that NetBeans projects are based on Ant scripts...</p>
+<p>Well, you still have to be careful with some details to make your Ant script usable outside of NetBeans:</p>
+<ul><li>Make sure you use at least Ant 1.6.5. You can look inside <tt>nbproject/project.xml</tt> to see exactly what is the minimum version needed.</li>
+<li>Make sure your Java Platform (under "Libraries") is set to the default. Otherwise it simply won't find the needed platform properties another machine. The typical way this works is that the platform name is taken from <tt>nbproject/project.properties</tt>, and the user settings containing paths (to <tt>java</tt>, <tt>javac</tt>, etc.) are taken by the file path in <tt>user.properties.file</tt> in <tt>nbproject/private/private.properties</tt>, which normally is not distributed.</li>
+<li>On standalone projects, having the <tt>dist</tt> directory build with the <tt>lib</tt> directory and <tt>README.txt</tt> works only within NetBeans. If you need proper packaging, write it yourself in the <tt>-post-jar</tt> target in <tt>build.xml</tt>, it's safer that way.</li>
+</ul>
+<p>Oh, and sorry about this lack of postings in the past few months. I had no vacation since May, and you know what happens when it's all work and no fun...</p>
+<p>I now have interesting things to write so I'll post later this week.</p>

@@ -1,0 +1,13 @@
+---toml
+title = "Java with no SDK"
+date = "2012-09-13T21:25:52-04:00"
+permalink = "blog/2012/9/13/java-with-no-sdk/"
+---
+
+<p>Google recently <a href="http://google-opensource.blogspot.ca/2012/09/j2objc-java-to-ios-objective-c.html">announced</a> the release of the open-source project <a href="https://code.google.com/p/j2objc/">J2ObjC</a>, which can translate Java source code to Objective-C for iOS. Interesting, but I wonder how useful it can be if your Java code doesn't have access to the breadth of the Java SDK.</p>
+
+<p>The same can be said of many languages, including Perl, Python and C# (without .NET). Yes, that makes us programmers more integrators of various APIs that actual code writers, but still the higher level you get, the more wasteful it is to "reinvent the wheel" compared to simply reusing some free library.</p>
+
+<p>This was one of Brooks' partly correct predictions in <a href="http://en.wikipedia.org/wiki/The_Mythical_Man-Month">The Mythical Man-Month</a>, which <a href="http://blog.benad.me/2012/6/25/the-mythical-man-month.html">I reviewed in June</a>. He predicted that there would be more and more availability of those 3rd-party libraries that would make software development easier. Where is was <em>greatly</em> wrong is that he predicted that this would lead to a (commercial) market of libraries, compared to the plethora of open-source libraries. Not even libraries whose use are restricted to open-source software (like GPL), but highly permissive licenses like BSD, Apache, MPL and even public domain. In a way, Brooks underestimated developers' ability to simply help each other out, from sharing code snippets on forums to large-scale open-source projects.</p>
+
+<p>Speaking of open-source libraries, I wonder how well <a href="http://lucene.apache.org/core/">Lucene</a> could be ported to Objective-C using J2ObjC...</p>

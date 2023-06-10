@@ -1,0 +1,27 @@
+---toml
+title = "Bad MVC, Good MVC"
+date = "2005-09-08T17:19:00-04:00"
+permalink = "blog/2005/9/8/bad-mvc-good-mvc/"
+---
+
+The first time I've seen a diagram describing the "Model-View-Controller" design pattern, it was like this:
+<p/>
+<span class="full-image-block ssNonEditable"><span><img src="http://static.squarespace.com/static/5005d17ae4b0d534734e7aa0/502e8a15e4b063ee260c5ee9/502e8a15e4b063ee260c606a/1335044193053/1000w" alt=""/></span></span>
+<p/>
+Well, I didn't "get it". If I change <i>anything</i> I potentially have to change <i>everything</i> else. So what's the point of having a dependency graph for that?
+<p/>
+Recently, searching for building <a href="http://xul.sourceforge.net/">XUL</a>-like GUIs for Java, I came across <a href="http://www.gui4j.org/">gui4j</a>. One of the things this framework does is to disallow any code to access the GUI maintained by gui4j <i>in any way</i>. At first I was pissed and tried to figure out a way to make it "coupled" with <a href="http://xmlbeans.apache.org/">XMLBeans</a> directly, which is my Model.
+<p/>
+But then, once I figured out how to use "Events", things were simpler. The Controller can tell the View, through an Observer pattern, that it needs to "refresh" itself. Then, the View <i>asks</i> the Controller what values it has to put in the GUI elements. The Controller never changes the GUI in any other way.
+<p/>
+For the Model, it is used by the Controller to return to the View the values it asked for. The Controller also asks the Model to notify the View Observer whenever something changes in the Model. That way, whenever the Controller changes something in the Model it doesn't have to explicitly tell the View to "refresh" itself (very useful when you have multiple independent Views that edits the same Model). At any rate, the Model and View are uncoupled.
+<p/>
+The result? This:
+<p/>
+<span class="full-image-block ssNonEditable"><span><img src="http://static.squarespace.com/static/5005d17ae4b0d534734e7aa0/502e8a15e4b063ee260c5ee9/502e8a15e4b063ee260c606b/1335044238004/1000w" alt=""/></span></span>
+<p/>
+Hmmm... That looks like... Layered...
+<p/>
+This is really great when you have to maintain the code for this. In the past writing a GUI editor for XML files in Java would take me > 2000 lines of code. But with XMLBeans and gui4j, I need about 100 lines, and simple ones too. Also, if you think about it, if I change the Model I don't have to change the View at all. And I can the the View without touching anything else, unless I need more "logic" from the Controller. All of this because, in effect, my GUI development is now Layered!
+<p/>
+You don't have to use gui4j to get this, but the point remains: High coupling between components is <i>bad</i>, even if in the end you get used to it. Good architecture is always better.

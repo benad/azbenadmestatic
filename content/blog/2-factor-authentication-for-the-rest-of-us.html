@@ -1,0 +1,11 @@
+---toml
+title = "2-Factor Authentication for the Rest of Us"
+date = "2012-08-31T21:07:48-04:00"
+permalink = "blog/2012/8/31/qsyc6a0wo5j9p6m66770gkxlu8h0o9/"
+---
+
+<p>When I saw that <a href="http://helpdesk.lastpass.com/security-options/google-authenticator/">LastPass supports Google Authenticator</a> for <a href="http://en.wikipedia.org/wiki/Two-factor_authentication">2-factor authentication</a>, I was wondering: How that's possible?</p>
+
+<p>When, it just so happens that Google's two-step authentication is <a href="http://en.wikipedia.org/wiki/Google_Authenticator">publicly documented</a> and is also <a href="http://code.google.com/p/google-authenticator/">open-sourced</a>. It supports both time-based authentication (similar to RSA SecurID) and sequence-based. There are free implementations of the client for all types of cell phones, but you can also make use of Google's own app by saving a URL in the form <code>otpauth://totp/&lt;account&gt;?secret=&lt;base32&gt;</code> in a QR code.</p>
+
+<p>Of course, that doesn't do anything if a hacker steals you password database, <em>including</em> the secret keys used for 2-factor. That's why after that happened to Dropbox, them <a href="https://blog.dropbox.com/index.php/another-layer-of-security-for-your-dropbox-account/">adding 2-factor authentication</a> seems to be purely a PR move. Oh well, back to Wuala.</p>

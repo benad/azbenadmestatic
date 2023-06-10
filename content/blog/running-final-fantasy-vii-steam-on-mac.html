@@ -1,0 +1,26 @@
+---toml
+title = "Running Final Fantasy VII (Steam) on Mac"
+date = "2014-07-12T13:50:24-04:00"
+permalink = "blog/2014/7/12/running-final-fantasy-vii-steam-on-mac/"
+---
+
+<p>The recent <a href="http://www.finalfantasyviipc.com/en">re-release of Final Fantasy VII</a> on PC and <a href="http://store.steampowered.com/app/39140/">Steam</a> at last made the game easily accessible on modern computers. No need for MIDI drivers or the Truemotion codec, since they were replaced with Ogg-vorbis music and On2 VP8 video files. As an added bonus, the game can sync the save files "to the cloud", and has a way of "boosting" the character stats in those save files to make the game easier if necessary.</p>
+
+<p>But then, the game is made only for Windows, and I only have a Mac. Sure, I can use <a href="https://www.apple.com/support/bootcamp/">Bootcamp</a> or a virtual machine, but I'd rather play it on the Mac itself than install and maintain a Windows machine. And not everybody has spare Windows licenses anyway.</p>
+
+<p>So I attempted to use Wine, the "not a Windows emulator". I don't know why each time I use Wine, I'm still pleasantly surprised at how well it works. Sure, the very early versions of Wine were quite unstable, but that was a decade ago. Nowadays, at least 90% of Windows software can run quite well in Wine, without too much effort or hacking, and it just keeps getting better each time I try it.</p>
+
+<p>Now, the latest version of Wine can run Steam quite well. Inside of that Steam, installing and running Final Fantasy VII worked flawlessly.</p>
+
+<p>Setting up Wine and Steam on Macs is quite easy:</p>
+
+<ol>
+<li>Install <a href="https://developer.apple.com/xcode/">Xcode</a>. Go in Xcode, Preferences, Downloads and install the command-line tools.</li>
+<li><a href="https://www.macports.org/install.php">Install MacPorts</a>.</li>
+<li>In the Terminal, run <code>sudo port install wine-devel winetricks</code>.</li>
+<li>Run <code>winecfg</code>, and close the window.</li>
+<li>Run <code>winetricks steam</code>.</li>
+<li>Run <code>env WINEPREFIX="$HOME/.local/share/wineprefixes/steam" wine C:\\windows\\command\\start.exe /Unix ~/.local/share/wineprefixes/steam/dosdevices/c:/users/Public/Start\ Menu/Programs/Steam/Steam.lnk</code></li>
+</ol>
+
+<p>And that's it. When installing the game I checked the option to install a shortcut in the Start menu, and I've made a small tool called <a href="https://gist.github.com/benad/f864e339c9b1c148f0f8">run_desktop.pl</a> to launch the game directly from the Mac. For example, I would start it with <code>perl run_desktop.pl ~/.local/share/applications/wine/Programs/Steam/FINAL\ FANTASY\ VII.desktop</code>.</p>

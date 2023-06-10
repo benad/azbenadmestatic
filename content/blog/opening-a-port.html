@@ -1,0 +1,9 @@
+---toml
+title = "Opening A Port"
+date = "2012-09-10T21:46:54-04:00"
+permalink = "blog/2012/9/10/opening-a-port/"
+---
+
+<p>Now that I have some dynamic DNS through <a href="http://www.no-ip.com/">No-IP.com</a>, I'm about to set up a second SSH hardened server on my Mac server using a different port, based on <a href="http://robsavino.wordpress.com/2011/08/09/mac-os-x-lion-changing-sshd-port/">this blog post</a>. What remains is to make that port reachable through my router. One of the main downsides of the somewhat overpriced <a href="http://www.apple.com/ca/airportextreme/?cid=jm">AirPort Extreme</a> of Apple is that adding a port forwarding rule makes the router restart. Actually, most configuration changes, even the smallest, make it restart.</p>
+
+<p>This is where the <a href="http://en.wikipedia.org/wiki/Universal_Plug_and_Play">UPnP</a> and <a href="http://en.wikipedia.org/wiki/NAT_Port_Mapping_Protocol">NAT-PMP</a> comes into play. Those protocols makes it possible for some software to "talk" to your router to dynamically add a port forwarding rule that remains active until the computer reboots. Now, all I'll have to do is play with the code of <a href="http://miniupnp.free.fr/index.html">MiniUPnP</a> and <a href="http://miniupnp.free.fr/libnatpmp.html">libnatpmp</a> and make a client that opens the port at each reboot. But then, time is short, so that will have to wait for a little while.</p>

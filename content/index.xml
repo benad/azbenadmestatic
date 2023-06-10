@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>Welcome</title>
+        <id>index</id>
+        <meta>
+            <html:link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benadme" />
+        </meta>
+    </head>
+    <body>
+        <section>
+            <p>Welcome to my little humble home on the Internet. This place is
+            about me, Benoit Nadeau, also known by the alias Benad. It is also a
+            hub for my various Internet activites and interests.</p>
+        </section>
+        <section title="Updates">
+            <subsection title="February 12, 2022">
+                <p>Posts are regularly added to the <a href="/blog/">blog</a>, including a new series about modern CLI tools.</p>
+            </subsection>
+            <subsection title="January 18, 2018">
+                <p>This site is now <a href="/blog/2016/09/12/https-the-new-standard/">using HTTPS</a> and <a href="/blog/2017/10/12/hello-ipv6/">supports IPv6</a>.</p>
+            </subsection>
+            <subsection title="April 26, 2016">
+                <p>Added <a href="meta_blog.xml">The Static Blog</a>, about the relocation of my blog to this site.</p>
+            </subsection>
+            <subsection title="December 6, 2015">
+                <p>Added the article <a href="case_architect.xml">A Case for Software Architects</a>, where I try to define the software architect role in a software development project.</p>
+            </subsection>
+            <subsection title="June 30, 2014">
+                <p>Added the article <a href="why_programming.xml">Why Are You A Programmer?</a>, listing humorous stereotypes of the various kind of programmers.</p>
+            </subsection>
+            <subsection title="August 4, 2013">
+                <p>This web site is now written in HTML5. More information in the article <a href="meta_html5.xml">The Future is HTML5</a></p>
+                <p>Also, I corrected countless grammatical errors all over the place, but hopefully nobody noticed.</p>
+            </subsection>
+            <subsection title="June 3, 2012">
+                <p>First, my blog moved (again) to the permanent URL <a href="https://blog.benad.me">blog.benad.me.</a></p>
+                <p>Second, I added the article "<a href="software_design.xml">What is Software Design</a>".</p>
+            </subsection>
+            <subsection title="March 4, 2012">
+                <p>Since January 2012 I'm posting daily on my <a href="http://benad-blog.posterous.com/">Posterous blog</a>.</p>
+            </subsection>
+            <subsection title="October 9, 2010">
+                <p>Added article <a href="ed.xml">ed, or How I Learned To Love The Mouse"</a>
+                and cleaned up the site a bit.</p>
+            </subsection>
+            <subsection title="March 1, 2010">
+                <p>Completed <a href="meta_present.xml">About This Site - The Present</a>
+                and <a href="meta_future.xml">About This Site - The Future</a>.
+                Hopefully I'll update this site at a faster pace in the following
+                weeks.</p>
+            </subsection>
+            <subsection title="September 3, 2009">
+                <p>Added the page <a href="meta_past.xml">About This Site -
+                The Past</a> and a (manually crafted, for now) <a
+                href="//feeds.feedburner.com/benadme">RSS feed</a>.</p>
+            </subsection>
+            <subsection title="August 23, 2009">
+                <p>Initial release. For now, only the "<a href="me.xml">About
+                Me</a>" section is complete, but at least it's a start.</p>
+            </subsection>
+        </section>
+        <section title="Menu">
+            <p>The site is broken up in the following sections. More sections
+            will be added in the future if needed.</p>
+            <subsection title="About Me" href="me.xml">
+                <p>Find out more about who is Benad. This could be quite boring
+                and overwhelmingly narcissistic, so feel free to move on to
+                another section.</p>
+            </subsection>
+            <subsection title="About This Site" href="meta.xml">
+                <p>Learn about the making of this site. Can get technical at
+                times. Interesting if you like reading a web site describing
+                itself.</p>
+            </subsection>
+            <subsection title="Articles" href="articles.xml">
+                <p>Long-winded rants or thoughts about things, when they are too
+                big to fit in my blog.</p>
+            </subsection>
+            <subsection title="Links" href="links.xml">
+                <p>Various references to my Internet activities.</p>
+            </subsection>
+        </section>
+    </body>
+
+</page>

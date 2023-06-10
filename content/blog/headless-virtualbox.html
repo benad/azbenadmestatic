@@ -1,0 +1,11 @@
+---toml
+title = "Headless VirtualBox"
+date = "2012-07-13T21:16:12-04:00"
+permalink = "blog/2012/7/14/headless-virtualbox/"
+---
+
+<p><a href="https://www.virtualbox.org/">VirtualBox</a>, an open-source virtual machine host, is getting closer to what VMware Server was a few years ago. While VirtualBox is made first for an interactive GUI, it can be run in "headless mode" on a server, and now a few tools make it easy to manage it.</p>
+
+<p>First, a command-line tool called <a href="http://vboxtool.sourceforge.net/">VBoxTool</a> that helps batch start and stop multiple VirtualBox instances as a single service. This is particularly useful for script that runs on startup and that saves the machines states at shutdown. <a href="https://www.virtualbox.org/manual/ch08.html">VirtualBox's own command-line interface</a> still has to be used to create and configure new machines, but once added the VBoxTool it becomes part of your "server".</p>
+
+<p>Once your VirtualBox server is running, the second tool you can use is a nice web interface called <a href="http://code.google.com/p/phpvirtualbox/">phpVirtualBox</a>. It provides a good view of all your virtual machine in a web browser, and let's you interactively start or stop them. With <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox's own extension pack</a> that provides RDP remote access to the virtual machine's screen, the phpVirtualBox site lets you access them through a web browser. For commercial environments (where you're not allowed to use the <a href="https://www.virtualbox.org/wiki/VirtualBox_PUEL">personal-use-only extension</a>), the latest source of VirtualBox has a <a href="https://www.virtualbox.org/browser/vbox/trunk/src/VBox/ExtPacks/VNC">VNC server extension</a>, which could be combined with <a href="http://kanaka.github.com/noVNC/">NoVNC</a> to access using a web browser if installing a VNC client is too much troublesome.</p>

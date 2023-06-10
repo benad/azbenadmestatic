@@ -1,0 +1,11 @@
+---toml
+title = "Web Functional Testing with Selenium"
+date = "2012-08-27T21:15:10-04:00"
+permalink = "blog/2012/8/27/web-functional-testing-with-selenium/"
+---
+
+<p>When I first used the Firefox plugin "<a href="http://seleniumhq.org/projects/ide/">Selenium IDE</a>", all I wanted was a way to automate virtual clicks in a web browser. I was stuck with only the web console of <a href="http://www.ibm.com/software/websphere/">WebSphere</a>, and doing a simple redeployment of a WAR required over 30 clicks. But with Selenium IDE, all of those 30 clicks were automated.</p>
+
+<p>But that's not the crux of what Selenium offers. At its core, there is the <a href="http://seleniumhq.org/projects/webdriver/">WebDriver</a>, a plugin you can install on many browsers, including Firefox, Chrome and Internet Explorer, so that they can be remotely controlled from a test driver you can code in Java, C# or Python. This is perfect to run functional tests of your web application. While you still need to go through the trouble of setting up virtual machines to host various versions of Internet Explorer, once that's done and WebDriver is installed on each, remotely controlling them is quite easy.</p>
+
+<p>Also, as web applications now tend to be CSS-heavy, it makes it quite easy to identify elements to "click on" by using CSS selectors rather than error-prone XPaths. That way, it is quite straightforward to map the expected interactive elements to their JavaScript hooks to their functional tests. This is a great way also to do regression tests of all your application's functionality across browsers when you do infrastructure changes in your JavaScript or even something as deep as your database. Definitively worth the setup if your application has considerable traffic.</p>

@@ -1,0 +1,23 @@
+---toml
+title = "SQL Gotchas"
+date = "2005-09-10T15:27:00-04:00"
+permalink = "blog/2005/9/10/sql-gotchas/"
+---
+
+<p>I noticed over the years that a lot of people are writing code to use big relational databases with SQL and complain that "the database is slow". Again and again I would have to give them some training about what things are faster and what things are slower with a relational database.
+<p/>
+Let's take any database with transactions. If you want to insert or update large quantities of data in the database and you use "auto commit", that is every single update flushes the data immediately, your insertions will be several times slower than what it should be. Why? Because update speed in transactions depend on how fast the database flushes the transaction log, which depends on many, many factors (such as the hard drive's average seek time and memory caches). So, if you put several updates in a single transaction, you can update much faster in total. But too many updates per transaction will make the transaction log so big that it will slow down, since the transaction is too big to "fit" in your caches or the seek time, etc.
+<p/>
+Basically, you have this:
+<p/>
+<span class="full-image-block ssNonEditable"><span><img src="http://static.squarespace.com/static/5005d17ae4b0d534734e7aa0/502e8a15e4b063ee260c5ee9/502e8a15e4b063ee260c6063/1335044437393/1000w" alt=""/></span></span>
+<p/>
+So, to have the best update speed, you'll need to experiment.
+<p/>
+Also, badly constructed or too complex SQL queries can significantly slow down your queries. Usually the database may need to resort to creating temporary tables to compute the "steps" needed to have your query's result, so if that temporary table cannot fit into memory and has to be done on disk things get even slower. This is usually the case for sorting and uniqueness conditions.
+<p/>
+Finally, if you use any abstraction layer for your database, for example <a href="http://www.hibernate.org/">Hibernate</a>, <a href="http://ibatis.apache.org/">iBATIS</a> or <a href="http://db.apache.org/torque/">Torque</a>, you'll have to carefully learn how often and when the layer interacts with the database. Often the defaults are tuned for easier development at the cost of (sometimes catastrophic) slower performance.
+<p/>
+How come I wrote all of this without a <i>single</i> example? Because <i>it all depends</i> on so many factors that even with dozens of examples I wouldn't be able to cover everything.
+<p/>
+The lesson is simple: <b><i>learn</i></b>. With all those abstraction layers and free and easy to install databases, it's too easy to start using a database through some fancy web development framework and JSP pages and hit a wall of bad performance without noticing it. Simply having experience with your database implementation and abstraction layer and knowing a bit of how it works makes you aware of those issues during development, and can save you from having to optimize database performance when it's too late.

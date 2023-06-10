@@ -1,0 +1,15 @@
+---toml
+title = "Valgrind: Destroy the Corruption"
+date = "2006-02-02T15:40:00-05:00"
+permalink = "blog/2006/2/2/valgrind-destroy-the-corruption/"
+---
+
+<p>One of my biggest issues with C development, especially when you have to write code that handles complex structures and lots of string manipulation, is how easy it is to accidentally mess up you memory. By messing up with memory, I don't mean just trying to use <tt>NULL</tt> pointer, that's relatively easy to avoid. Here are the common errors you can make.</p>
+
+<p>The first easy error is what is commonly called "off-by-one". For example, you have an array of size <tt>n</tt>, and you write at an index <tt>x >= n</tt>, or at memory location <tt>p > base + n</tt>.</p>
+
+<p>The second error is the well-known memory leak. You don't always have the luxury of adding a garbage collector like <a href="http://benad.livejournal.com/5981.html">gc</a> to your code.</p>
+
+<p>The third error is reading unset memory, i.e. code that depends on a value that's read even before it is even set. I know, most platforms initialize memory allocated on the heap to the value 0 in all memory positions, but still this is <i>really</i> bad.</p>
+
+<p>I found a free, open-source for Linux called <a href="http://valgrind.org">Valgrind</a> that can detect any of the above errors at run-time. It runs your compiled program (written in any language, not just C) in an environment where all memory accesses are monitored. Obviously, this adds a large overhead (expect you code to run up to 20x slower), but Valgrind is <i>very</i> thorough. It really helped me make my C code "just" perfect...</p>

@@ -1,0 +1,25 @@
+---toml
+title = "Virtualization As A Solution For Package Management"
+date = "2005-12-11T12:00:00-05:00"
+permalink = "blog/2005/12/11/virtualization-as-a-solution-for-package-management/"
+---
+
+<p>Let me revisit a bit my previous <a href="http://www.livejournal.com/users/benad/6907.html">rant about package management on Linux</a>. I came to the conclusion that using what is effectively a <a href="http://en.wikipedia.org/wiki/Chroot">chroot</a> on every package you can enforce package integrity on disk. And, using <a href="http://plasticfs.sourceforge.net/">plasticfs</a>, you can allow "union" file systems (to allow packages to save files on disk) without having to mount too many different filesystems.</p>
+
+<p>Firstly, I was a bit wrong about my choice of plasticfs. If you think about it, the chroot can be done <i>inside</i> a filesystem which dynamically generates the directory structure based on <i>where</i> you are chrooted. For example, if anything is done in <tt>~/packages/emacs</tt>, then the file system "knows" that it is done by <a href="http://www.gnu.org/software/emacs/emacs.html">Emacs</a> which was chrooted in that directory.</p>
+
+<p>Secondly, I skipped over the important issue of sharing hardware resources. You can't, let's say, run two different versions of <a href="http://httpd.apache.org/">Apache httpd</a> without changing the configuration settings of either, otherwise they would both try to use port 80 at the same time.</p>
+
+<p>Thirdly, and this is even trickier, is about how much the software package assumes things from the current Linux distribution, for example where are the DVD-ROM and USB devices, how to change the monitor's resolution, how to add a "service" to the system, and so on.</p>
+
+<p>For the first point, instead of plasticfs you could use <a href="http://fuse.sourceforge.net/">FUSE</a>. Even though it needs a kernel module, it lets user processes define a file system, making it much easier (and safer) to develop a new file system. There are already lots of <a href="http://fuse.sourceforge.net/wiki/index.php/FileSystems">file systems implemented on FUSE</a> out there if you want to experiment with it.</p>
+
+<p>Traditionally, the proposed solution for the third point was standardization. Trying to do that on the open-source environment is too difficult. As an example, <a href="http://www.pathname.com/fhs/">FHS</a> is not only horrible, but is so painful to use that most Linux distributions that are made prefer avoiding it completely. I mean, who would want to learn the difference between <tt>/sbin</tt>, <tt>/usr/sbin</tt>, <tt>/opt/sbin</tt> and <tt>/usr/local/sbin</tt>?</p>
+
+<p>Well, in those cases, a more radical approach is needed. One would have to build a Linux distribution that could be run <i>on top of</i> any other Linux distribution. Everything up to the kernel functions would have to be virtualized.</p>
+
+<p>And so comes <a href="http://user-mode-linux.sourceforge.net/">User-mode Linux</a>. It simply runs a linux kernel and some boot disk image as a normal user process. <i>Everything</i> is isolated from the host system, apart from "transports" between the user-mode Linux and its host. For now you can already "transport" network access, the <a href="http://www.x.org/">X server</a>, sound devices and, obviously, part of the host's filesystem. All this is done at minimal memory and performance cost for the host's Linux system. Obviously, if you can run the software with a simple chroot in your virtual file system, you don't need to waste your resources on running it under UML, unless you need additional security protection.</p>
+
+<p>You don't need to start a different Linux kernel for <i>every</i> software package, but now at least you control the environment enough to have a package management system that works for <b>almost all Linux software</b> without ever having a chance to screw up your Linux system.</p>
+
+<p>Next step, I have to find a name for this...</p>

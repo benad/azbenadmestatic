@@ -1,0 +1,13 @@
+---toml
+title = "Deceptively Good Encryption"
+date = "2012-07-29T22:14:41-04:00"
+permalink = "blog/2012/7/29/deceptively-good-encryption/"
+---
+
+<p>Yesterday I was trying to find a good encryption algorithm one could realistically memorize, when I found that <a href="http://en.wikipedia.org/wiki/RC4">RC4</a> is great for that. The <a href="http://en.wikipedia.org/wiki/RC4#Description">implementation</a> not only fits into a few lines of code, but also doesn't require one to remember obscure constant or odd steps in the algorithm you can easily forget. In contrast, the <a href="http://en.m.wikipedia.org/wiki/XXTEA">Corrected Block Tiny Encryption Algorithm</a> contains strange constants and difficult to explain operations.</p>
+
+<p>Of course, weaknesses in RC4 led to an important attack on WEP wireless encryption (which you shouldn't use anymore, by the way), so it's not as secure as <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> for example. But then, there are variants such as <a href="http://www.users.zetnet.co.uk/hopwood/crypto/scan/cs.html#RC4-drop">RC4-drop</a> and <a href="http://ciphersaber.gurus.org/faq.html#cs2">CiperSaber-2</a> that may provide additional safeguards, making the traditional RC4 attack too difficult.</p>
+
+<p>Since RC4 can be <a href="http://en.wikipedia.org/wiki/Bit-flipping_attack">bit-flipped</a>, it needs to be combined with some <a href="http://en.wikipedia.org/wiki/Message_authentication_code">MAC</a> using a crypto hash that also can be remembered. Luckily, both <a href="http://en.wikipedia.org/wiki/HMAC#Implementation">HMAC</a> and <a href="http://www.cs.technion.ac.il/~biham/Reports/Tiger/">Tiger</a>'s <a href="http://www.cs.technion.ac.il/~biham/Reports/Tiger/tiger/node3.html">specifications</a> are pretty simple to remember, and quite secure to boot.</p>
+
+<p>Now, I wonder, how difficult would it be for a non-programmer, or even a kid, to learn RC4-drop, HMAC and Tiger? Purely hypothetical question, of course...</p>

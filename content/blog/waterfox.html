@@ -1,0 +1,11 @@
+---toml
+title = "Waterfox"
+date = "2012-11-23T21:39:33-05:00"
+permalink = "blog/2012/11/23/waterfox/"
+---
+
+<p>It saddens me to see that <a href="http://thenextweb.com/apps/2012/11/22/mozilla-quietly-kills-firefox-64-bit-for-windows-despite-an-alleged-50-of-testers-using-it/">Mozilla decided to deprecate 64-bit builds of Firefox</a>. That decision is even more puzzling considering that Firefox, unlike Google Chrome, still runs all tabs within a single process, making it even more likely to either hit the 4GB limit or leak memory due to memory fragmentation.</p>
+
+<p>Personally, I too was running Firefox in 32-bit, though the comments to this news pointed me to a rebuild of Firefox called "<a href="http://www.waterfoxproject.org/">Waterfox</a>". Not only it targets 64-bit, but also is compiled with heavy optimizations using the Intel compiler. It is to note that JavaScript is slightly slower since the JIT compiler optimizations were heavily biased 32-bit architectures. Otherwise, Waterfox is significantly faster, and automatically reused all of my Firefox settings and extensions.</p>
+
+<p>Now, the primary concern about why Firefox dropped 32-bit support is because 64-bit browser plugins tend to be less stable than 32-bit ones. Personally, I used the switch to Waterfox as an excuse to stop using all those plugins that made Firefox less stable in the first place. I find that moving extensions to external processes to be a major kludge, and quite frankly I just wish that within a few years they just disappear.</p>

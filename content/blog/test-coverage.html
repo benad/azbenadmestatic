@@ -1,0 +1,23 @@
+---toml
+title = "Test Coverage"
+date = "2005-10-19T18:19:00-04:00"
+permalink = "blog/2005/10/19/test-coverage/"
+---
+
+<p>I <a href="http://www.livejournal.com/users/benad/5064.html">previously</a> talked a bit about testing, but there was something important that I forgot to mention. How do you know if your tests are <i>good</i>?</p>
+
+<p>Obviously, your tests have to expect the correct functionality. If your test cases are wrong, then you'll never know if a bug you discovered through testing was caused by the application itself or just your test driver doing weird things.</p>
+
+<p>But also, you have to make sure your tests cover enough of your code's functionality. In "black box testing", where you assume nothing about the system being tested, you can do functional testing, and nothing more. But when you have access to the code, then you could define "coverage" not based on functionality but in terms of the amount of machine code that is executed at least once by your test driver.</p>
+
+<p>For example, if your tests covered 100% of all your code, and that the tests are correct, then it would be <i>really</i> difficult (though not impossible) to have some bug hidden in there...</p>
+
+<p>For Java, one free tool you can use is <a href="http://emma.sourceforge.net/">EMMA</a>, a code coverage tool. You can use it not only through your usual test drivers, but also for manual testing, in the cases where you can't fully automate GUI testing. At least in the case of manual testing, the coverage results can tell you if you forgot to test something in the GUI.</p>
+
+<p>Note that if you have blocks of code that you don't want to have as part of your coverage statistics, then make sure you let the compiler "know" that it can completely remove the code from the compiled bytecode. For example:</p>
+
+<pre>private static final boolean DEBUG_MODE = false;
+//...
+    if (DEBUG_MODE)
+        System.out("Some verbose debug message");
+</pre>

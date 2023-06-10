@@ -1,0 +1,60 @@
+---toml
+title = "Using interfaces instead of inheritance"
+date = "2005-09-18T17:19:00-04:00"
+permalink = "blog/2005/9/18/using-interfaces-instead-of-inheritance/"
+---
+
+<p>In my <a href="http://benad.livejournal.com/2440.html">previous post</a> about dependency injection I skipped an important step. You should avoid class inheritance and use interfaces instead, to reduce coupling</p>
+
+<p>Let's follow our previous example with the <tt>DataStore</tt> interface. For a moment, let's suppose that we have the class <tt>SQLDataStore</tt> that implements the base functionality of SQL-based data stores and <tt>MySQLDataStore</tt> that extends it to support <a href="http://www.mysql.com/">MySQL</a>:</p>
+
+<i>SQLDataStore:</i>
+
+<pre>public class SQLDataStore implements DataStore {
+  protected byte[] cache;
+  //...
+  protected void preFillCache(String sql) { /* ... */ }
+  public void store(long key, byte[] value) { /* ... */ }
+  //...
+}</pre>
+
+<i>MySQLDataStore:</i>
+
+<pre>public class MySQLDataStore extends SQLDataStore {
+  public void store(long key, byte[] value) {
+    //...
+    preFillCache(some_sql);
+    // do something with this.cache...
+  }
+}</pre>
+
+<p>Notice the horrible coupling introduced here. If I change the cache to be using <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/HashMap.html">java.util.HashMap</a>, then <i>any</i> <tt>*SQLDataStore</tt> class, that is anything that can extend <tt>SQLDataStore</tt>, <i>might</i> have to be changed.</p>
+
+<p>Basically, subclassing a class with <i>extends</i> let's you "patch" a class, but it's still horrible a avoided as much as possible. The solution? Use interfaces:</p>
+
+<i>SQLDataStore:</i>
+
+<pre>public interface SQLDataStore extends DataStore {    
+  public static final class Factory {
+    public static SQLDataStore create() {
+      return SQLDataStoreImpl.create();
+    }
+  }
+}
+
+final class SQLDataStoreImpl implements SQLDataStore {
+  private SQLDataStore() {}
+  //...
+  private void preFillCache(String sql) { /* ... */ }
+  public static SQLDataStoreImpl create() {
+    return new SQLDataStoreImpl();
+}</pre>
+
+<p>Notice that now <i>no one</i> can use <tt>preFillCache</tt>, as it is not part of the "contract" of what others can use in <tt>SQLDataStore</tt>. If others want to use any behavior in <tt>SQLDataStore</tt>, they have to create a new instance from the Factory and be limited to what the "contract" defines, with no chance to subclass it, even by accident. Also notice that <tt>SQLDataStore</tt>, now simply an interface, extends another interface, and is thus safe from "hidden coupling".</p>
+
+<p>To create the new instance of <tt>SQLDataStore</tt> you do <tt>SQLDataStore store = SQLDataStore.Factory.create()</tt>, or you can use  Dependency Injection. And now you can figure out what I meant in my previous post...</p>
+
+<p>References:</p>
+<ul><li><a href="http://www.javaworld.com/javaworld/jw-08-2003/jw-0801-toolbox.html">Why extends is evil</a></li>
+<li><a href="http://www.jtiger.org/articles/why-extends-is-not-evil.html">Why extends is not evil</a></li>
+</ul>

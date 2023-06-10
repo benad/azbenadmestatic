@@ -1,0 +1,17 @@
+---toml
+title = "Replacing Google Authenticator"
+date = "2013-09-04T21:23:54-04:00"
+permalink = "blog/2013/9/4/replacing-google-authenticator/"
+---
+
+<p>Less than a week ago, LastPass <a href="http://blog.lastpass.com/2013/08/introducing-toopher-and-duo-support-for.html">announced</a> that they now support two new alternative methods of two-factor authentication in addition to Google Authenticator, or more precisely <a href="http://tools.ietf.org/html/rfc6238">TOTP (RFC 6238)</a>. Even though I don't necessarily want to use them, it reminded me how much I found the Google Authenticator app on iOS to be buggy, and so I started looking around for alternatives.</p>
+
+<p>By doing so, I learned two additional things that made me want to migrate out of Google Authenticator as quickly as possible. First, people mentioned that it is <a href="http://www.dafacto.com/2013/07/04/google-authenticator-broken-in-ios7-use-authy-instead/">broken on iOS 7 beta</a>. Considering the app wasn't updated by Google for <em>years</em>, I imagined that Google Authenticator was simply abandoned and I would have to switch to a <em>supported</em> app as soon as possible.</p>
+
+<p>Also, I learned that Google Authenticator stores the private "keys" in the iOS keychain. Practically, this means that the only way the keys can be backed up is by using encrypted backups with iTunes, which is not the default. If you use unencrypted or iCloud backups and if you lose your phone, then you will not be able to restore your keys. Luckily, I regularly build encrypted backups in iTunes, but still the whole process is scary for a novice user.</p>
+
+<p>So, I moved to <a href="https://www.authy.com/">Authy</a>. It supports their own two-factor protocol and TOTP. The setup requires an SMS confirmation, likely for their own protocol, but once this is done it makes it possible to enable <a href="http://blog.authy.com/backups">encrypted online backups</a> of your keys. Also, they have a nice Mac program that lets you send the tokens from the iPhone to your Mac, ready to be copy-pasted. Even without that, at least the iOS app allows copying tokens to the clipboard. Now, surely there are other free iOS TOTP apps out there, though this one is very good and secure for novice users.</p>
+
+<p>And what luck I had. Today, Google released an update to Google Authenticator for iOS, and they botched it. Badly. By doing the worst thing possible: <a href="http://www.theguardian.com/technology/2013/sep/04/google-pulls-authenticator-app-wipes-details">Deleting all private keys</a>. I can't imagine in what horrible situation I would have been in if the keys for the 6 services I placed in it completely vanished. Worse, some web sites that enable TOTP have no recovery method whatsoever, meaning that users would be completely locked out of their accounts.</p>
+
+<p>What's the lesson? Never put all your eggs in one basket, and if you really have to do so, seek out alternatives and have backup plans in case of failure.</p>

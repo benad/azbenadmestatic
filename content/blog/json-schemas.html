@@ -1,0 +1,11 @@
+---toml
+title = "JSON Schemas"
+date = "2012-11-05T20:53:43-05:00"
+permalink = "blog/2012/11/5/json-schemas/"
+---
+
+<p><a href="http://json.org/">JSON</a> now became a cheap and easy way to escape the (perceived) complexities of <a href="http://www.w3.org/TR/REC-xml/">XML</a>. For most, extensibility, namespaces and validation are just annoyances. Or maybe too many developers disliked the syntax of XML, so they moved to the JavaScript-like JSON. But what if you really, <em>really</em> wanted to validate JSON objects against a schema?</p>
+
+<p>Well, there&#8217;s <a href="http://json-schema.org/">JSON-schema</a>, of course. While not actively developed anymore (its <a href="http://tools.ietf.org/html/draft-zyp-json-schema-03">IETF draft</a> expired in mid&#8211;2011), it was defined under the same philosophy as JSON itself, meaning small and simple. And while there are no formal tools to test the validators themselves, a <a href="http://json-schema.org/implementations.html">good list of free tools</a> implement it at least partly.</p>
+
+<p>Interestingly, to be able to define references in schema definitions, they also defined &#8220;links&#8221; to refer to a JSON element, akin to XML&#8217;s <a href="http://www.w3.org/TR/xpath/">XPath</a>. It&#8217;s still missing namespaces, but, hey, good enough.</p>

@@ -1,0 +1,32 @@
+---toml
+title = "Linux Package Management: A Solution?"
+date = "2005-11-14T15:59:00-05:00"
+permalink = "blog/2005/11/14/linux-package-management-a-solution/"
+---
+
+<p>Now, let's talk about something non-Java related for once...</p>
+
+<p>If you're using Linux or BSD, you surely already used some form of <a href="http://en.wikipedia.org/wiki/Package_management">package management</a>. In short, a package manager does two things:</p>
+
+<ul><li>Lets you install a software package based on some information about how to install it, where to install it on your computer, and on what other packages it depends.</li>
+<li>Lets you uninstall a package by maintaining a list of what files are installed by what package.</li></ul>
+
+<p>Well, knowing that your hard drive is read/write, you could always make the accident of manually removing files from a package, thus making the database listed in the second (important) point above out-of-sync with what is <i>actually</i> installed.</p>
+
+<p>Even worse, with bad version control, to different packages could depend on different versions of the same package, and <i>only one version at a time can be installed</i>. That may seem to make sense for services like a web server, but for libraries this can easily lead to <a href="http://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.</p>
+
+<p>Now, what if each package would be installed into its own "virtual" filesystem, so that it can see only the package it needs? If you take a standard Linux distribution, you'll have two issues if you try to do this.</p>
+
+<p>First, you can try making a "<a href="http://en.wikipedia.org/wiki/Chroot">chroot</a>" for every software package. if you're in a chroot, you can't get out. That's great for security, but imagine that you're using Firefox and you want to save a file to your desktop. Well, Firefox's desktop won't be the same as OpenOffice's desktop.</p>
+
+<p>To resolve this, you could use a <a href="http://en.wikipedia.org/wiki/Unionfs">unionfs</a> before doing a chroot in it. It's pretty simple: the file system is a <i>union</i> of many file systems, and only the first one is read/write, while all others are read only. So, the read/write file system would be the common writing place, and the others are the package you want to run and all its dependencies. Every package would be then placed in a read-only <a href="http://en.wikipedia.org/wiki/Disk_image">disk image</a>, and everything would be clean, no? Oh, wait, given the quantity of packages you can use at once, you'll need so many file systems that the kernel will refuse to mount anything more....</p>
+
+<p>Rather that patching the kernel to allow it to mount <i>even more</i> file systems, which would slow it down too much, what could you do?</p>
+
+<p>The solution requires a special version of the <tt>libc</tt> library, but I think it's worth it. What you do is that you launch the package's software having patched <i>all</i> the system calls related to the file system with a library called <a href="http://plasticfs.sourceforge.net/">plasticfs</a>. On-the-fly, any process will have a different "view" of the underlying file system. This includes a "union" file system, but also many things like changing case-sensivity, logging file system access, simulating DOS 8.3 file naming, and a combination of all of these.</p>
+
+<p>With this, packages can be installed on the hard-drive, and plasticfs will protect it from letting the software permanently it's original files that other packages may depend on. With the unionfs implemented by plasticfs, changes to files are only made on a copy of the original. Different versions of the same package can exist, even in the same location, since different versions are viewed by different packages, at the same time. No need to change the configuration or code of <i>any</i> package to make this work either, so this doesn't force any developer to do anything different, or for the package maintainers to rebuild every piece of software to "fit" the package manager's way of placing files on disk.</p>
+
+<p>I can go on like this for long... At last you could have a secure, easy to use, hard to break and stable way to "install" software on Linux. Someone needs to test plasticfs on GCC4. Someone needs to make a tool to easily package any software in such a system. Someone needs to make a "Linux live CD" out of this. Someone needs to make a Linux distribution based on this.</p>
+
+<p>I have to find time to do this myself, or at least to help someone do it...</p>

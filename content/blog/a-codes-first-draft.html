@@ -1,0 +1,17 @@
+---toml
+title = "A Code's First Draft"
+date = "2015-05-31T22:18:25-04:00"
+permalink = "blog/2015/5/31/a-codes-first-draft/"
+---
+
+<p><a href="http://en.wikipedia.org/wiki/Iterative_and_incremental_development">Incremental software development</a>, or evolutions of it, is now pretty much the standard approach, as we now expect requirements to be changed all the time. But this too easily leads to "over engineering", as since we expect change at all times, we spend too much effort on maximizing the flexibility of the code over any other quality.</p>
+
+<p>I admit that in the past I too fell into the trap of over engineering my code, for the sake of "beautiful design" over functionality,  making the code far too unnecessarily difficult to understand. From that experience, I now make incremental design changes more reactively.</p>
+
+<p>Practically, it means that I always make a "first draft" of my code with minimal design, and then, based on that experience, make a second draft with a first draft of the design, all that before the first wave of requirements changes. This is quite different than <a href="http://en.wikipedia.org/wiki/Software_prototyping">software prototyping</a>, where the first iteration is expected to be deleted or completely rewritten over time. In my case, most of the code of the first draft remains, but moved and refactored to fit the first design change.</p>
+
+<p>The first code draft is done primarily as a proof of concept that demonstrates feasibility, to reduce future risk as much as possible. That way, regardless of future design or functional changes, at least we have a simple functional version of the code. That first draft could even be used as some "sample pseudo-code" to document the functional mechanism of the code, outside of the design and architectural complexities that are added later on as the software grows. That implies that the first code draft should be so clear and simple that it is (almost fully) self-documented.</p>
+
+<p>Secondarily, it helps in making worthwhile design decisions early. Once you have working code, it's easier to see what design patterns would be useful, and precisely where. You can see in context the costs and benefits of each design pattern, and only those that are worth it are applied as a first design iteration. Once additional features are added or existing one changed some new design decisions may be needed, but if by the time of the second draft you have sound code and design, it will be easier to adapt than if you greedily made inappropriate or unnecessary design choice.</p>
+
+<p>At some point, though, the extra effort in doing design changes on top of purely functional coding changes may be too costly if requirements changes are chaotic or indisciplined. This may be why so many programmers invest in design upfront while they have the chance, dooming the code to over engineering. The software engineers may be the only ones in the software development process that can present (and defend) the impact of endless changes on quality (bad code, inappropriate design, etc.), so over-design may be indicative of greater organizational issues.</p>

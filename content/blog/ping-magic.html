@@ -1,0 +1,11 @@
+---toml
+title = "Ping Magic"
+date = "2012-05-04T21:28:11-04:00"
+permalink = "blog/2012/5/4/ping-magic/"
+---
+
+<p>Another quick meta post before I fall asleep, exhausted from two weeks of work. I noticed that my posts show up on <a href="https://twitter.com/benad">my twitter account</a> through <a href="http://twitterfeed.com/">twitterfeed.com</a> within a minute or so. Which is weird, since twitterfeed is set up to scan <a href="http://feeds.feedburner.com/benad">my blog's RSS feed</a> only every 30 minutes.</p>
+
+<p>Well, it just so happens that my blog pings multiple "ping" services each time I post, namely <a href="http://www.weblogs.com/">weblogs.com</a> and <a href="http://blogsearch.google.com/">Google</a>. The last one, in turn, instantly updates my <a href="http://feedburner.google.com/">feedburner</a> RSS proxy, which in turns pings twitterfeed using Google's reference <a href="https://pubsubhubbub.appspot.com/">pubsubhubbub</a> server specified in the "hub" link of the RSS feed.</p>
+
+<p>So, magic.</p>

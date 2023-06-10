@@ -1,0 +1,33 @@
+---toml
+title = "OpenSSL: My Heart is Bleeding"
+date = "2014-04-14T21:29:07-04:00"
+permalink = "blog/2014/4/14/openssl-my-heart-is-bleeding/"
+---
+
+<p>After a week, I think I can comfortably explain what happened with this "heartbleed" OpenSSL bug. Now, everybody make mistakes. Especially programmers. Especially me. But at least my errors didn't create a major security hole in 20% of the Internet. Let's review some basic tenets of Software Engineering:</p>
+
+<ol>
+<li>All code (of minimal size and complexity) has bugs. Less code and complexity (and functionality) means less bugs.</li>
+<li>Software should be made resilliant against errors. If it can't, it should at least halt (crash).</li>
+<li>Software should be designed for Humans, both the code and user interface.</li>
+</ol>
+
+<p>Out of hubris, excess and arrogance, the OpenSSL developers managed to do the opposite of all of these tenets. To <a href="http://article.gmane.org/gmane.os.openbsd.misc/211963">quote Theo de Raadt</a>:</p>
+
+<blockquote>
+  <p>OpenSSL is not developed by a responsible team.</p>
+</blockquote>
+
+<p>Why? Let's do some investigation.</p>
+
+<p>First, <a href="http://www.robin-seggelmann.de/">Robin Seggelmann</a> had this idea to add a <a href="http://tools.ietf.org/html/draft-ietf-tls-dtls-heartbeat-00">completely unnecessary "heartbeat" feature to TLS</a>.  Looking at the protocol design alone, the simple fact that the size of the payload exists in two different places (TLS itself and Heartbeat) is pretty bad and begs for a security hole. Anyway, tenet one.</p>
+
+<p>Still, Seggelmann went ahead and <a href="https://github.com/openssl/openssl/commit/4817504d069b4c5082161b02a22116ad75f822b1">sent working code a year later</a>, on December 31st, at 11:59 PM, the best time for a code review. Of course, the code is filled with non-descriptive variable names which hide the error in plain sight during the ineffective code review, but given the <a href="https://www.peereboom.us/assl/assl/html/openssl.html">poor quality of the OpenSSL code</a>, they find this acceptable. That's tenet three.</p>
+
+<p>At this point, you may ask: "Shouldn't most modern <code>malloc</code> implementations minimally protect software against buffer overflows and overreads?" If you did, you are correct. But then, years ago, OpenSSL implemented their <a href="http://www.tedunangst.com/flak/post/heartbleed-vs-mallocconf">own memory allocation scheme</a>. If you try to revert that back to plain <code>malloc</code>, OpenSSL doesn't work anymore because its code has bugs that <a href="http://www.tedunangst.com/flak/post/analysis-of-openssl-freelist-reuse">depends on memory blocks being recycled in LIFO fashion</a>. That's tenet two.</p>
+
+<p>The result is bad, and very, very real. In Canada, <a href="http://www.cbc.ca/news/business/heartbleed-bug-900-sins-stolen-from-revenue-canada-1.2609192">nearly a thousand Social Insurance Numbers were leaked</a>. And that doesn't count or even start to imagine how many private keys and information leaked like that over the past two years.</p>
+
+<p>By the way, this kind of mess have been my experience with cryptographic software. The usability problem with cryptography isn't just for end users, but also the code itself. Using single-letter variables in a mathematical context where each variable is described at length may be acceptable, but meaningless variable <em>letters</em> without comments in code isn't. While I don't mind much about such "math code" in data compression, for security this makes the code less likely to be secure. Basically, everybody think that being smart is sufficient for writing good code, so of course they would be offended if a software engineer would recommend writing the code from their specs instead of letting them do it themselves. No wonder the worst code always comes from university "careerists".</p>
+
+<p>Personally, I'd stop using OpenSSL as soon as possible.</p>

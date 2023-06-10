@@ -1,0 +1,15 @@
+---toml
+title = "Continuous integration with Ivy"
+date = "2005-10-25T17:30:00-04:00"
+permalink = "blog/2005/10/25/continuous-integration-with-ivy/"
+---
+
+<p>As a <a href="http://www.perl.com/">Perl</a> user, I got used quite quickly to the <a href="http://search.cpan.org/~andk/CPAN-1.76/lib/CPAN.pm">CPAN</a> module, which helps me install a Perl module, <i>including all its dependencies</i>. But the more I use Java, the more I miss the ability to use a tool to automatically download all the JAR files of open-source libraries I use...</p>
+
+<p>And so comes <a href="http://www.jayasoft.org/ivy">Ivy</a>. Its most simple use is a bit like CPAN, where you can download JAR files based on XML descriptors that define what are the dependencies for a given library. There is already descriptors for many open-source projects on <a href="http://ivyrep.jayasoft.org/">ivyrep</a>, so that way it acts like CPAN.</p>
+
+<p>More importantly, Ivy can figure out the needed build order for your own projects. For example, if project A depends on project B, then B is going to be built before A. Also, A will be automatically rebuilt if B is changed. This is something that was particularly lacking in Java: a Make-like dependency system between components that need to be integrated together.</p>
+
+<p>In effect, Ivy handles the integration between your modules automatically. Ivy also offers the possibility to work with <a href="http://cruisecontrol.sourceforge.net/">CruiseControl</a> in a tool called <a href="http://www.jayasoft.org/ivycruise">ivycruise</a>. That way, your automated build system handles dependencies between the modules <i>as they are added during development</i>, thus continuously integrating your software.</p>
+
+<p>There are many, many advantages to continuous integration, but the greatest is that you won't be afraid of creating and updating small libraries re-used in many different projects, since the process of downloading and updating your library is automated for the users of your library. That way, you promote code reuse across projects.</p>

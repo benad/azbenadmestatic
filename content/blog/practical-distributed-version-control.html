@@ -1,0 +1,17 @@
+---toml
+title = "Practical Distributed Version Control"
+date = "2005-09-27T18:25:00-04:00"
+permalink = "blog/2005/9/27/practical-distributed-version-control/"
+---
+
+<p>Several times I've come across the same issue when you use version control during development. Assume that to implement the functionality F, you need to create the classes C1, C2 and C3. If any of those classes are missing, then not only is functionality F not working, but it would (partially) break the whole build of the software (see <a href="http://www.livejournal.com/users/benad/2778.html">this post</a> about automated builds and tests). The logical step would be to checkin only when all three classes are completed.</p>
+
+<p>Let me open a parenthesis here... The atomicity of the operation here is crucial. If, by accident, someone had to check out a version on the repository that has only 2 out of the three classes, his build would be "unstable". Now imagine that it's not 3 files, but 300 files. Using <a href="http://www.nongnu.org/cvs/">CVS</a>, if the checkin is interrupted in the middle, then only half the files would be in the repository and the operation wouldn't be rolled back, breaking the logical integrity of the repository. So, if you're still using CVS (or, worse, <a href="http://www.gnu.org/software/rcs/rcs.html">RCS</a>), you should change now.</p>
+
+<p>An issue remains: While you're working on C1, C2 and C3, you would still like to use version control <i>for yourself</i>. The easy solution is to make a branch on the server and merge/join your branch to the trunk from time to time.</p>
+
+<p>But often this is not practical. Maybe the repository is too difficult to access or too slow to work that way. Maybe sometimes you don't even have access to the server or the network (when you're working on your laptop). In extreme cases, you have dozens, if not hundreds, of developers working at the same time; having to maintain so many branches on the server would seriously tax it.</p>
+
+<p>In those cases, it may be wiser to have a version control server on your PC, and join/merge your repository with the "main" repository. This is, in essence, distributed version control.</p>
+
+<p>There is many tools to do that, some commercial, some open-source, but the one I prefer is <a href="http://svk.elixus.org/">SVK</a>, which is build on top of <a href="http://subversion.tigris.org">Subversion</a>. I like it because, while it may be bit hard to compile and install, it's free, well built, fast, stable and easy to use. And, obviously, all its operations are atomic, so it is safe to use.</p>

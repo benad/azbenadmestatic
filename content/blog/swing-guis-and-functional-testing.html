@@ -1,0 +1,64 @@
+---toml
+title = "Swing GUIs and Functional Testing"
+date = "2005-10-09T15:58:00-04:00"
+permalink = "blog/2005/10/9/swing-guis-and-functional-testing/"
+---
+
+<p>If you don't already know, there is roughly three types of testing you can do to attest the quality of your software: unit testing (testing a single module or class), functional testing (or integration testing; validating the overall functionality of the whole software against the specifications) and performance testing (speed, memory, scalability...).</p>
+
+<p>Now if you want to test a GUI in Java implemented with <a href="http://java.sun.com/j2se/1.5.0/docs/guide/swing/index.html">Swing</a>, how do you do it? Well, for performance, you'll have to improvise by asking "potential users" to use the GUI for a couple of hours, and see if they think the GUI is "easy to use" or "responsive", etc.</p>
+
+<p>But for functional testing, you should have a clear set of requirements in the specs, for example "<i>if you click button 'Add', then the sum of fields 'A' and 'B' should be placed in field 'Sum'</i>. Even more complex, you have scenarios like "<i>if you press enter in either field 'A' or 'B', then it is as if you clicked on button 'Sum'</i>". So you have a GUI that looks like this:</p>
+
+<p><span class="full-image-block ssNonEditable"><span><img src="http://static.squarespace.com/static/5005d17ae4b0d534734e7aa0/502e8a15e4b063ee260c5ee9/502e8a15e4b063ee260c603c/1335045160055/1000w" alt=""/></span></span></p>
+
+<p>The code for when you click on "Add" and when you press enter are pretty simple:</p>
+
+<pre>private void bFieldActionPerformed(java.awt.event.ActionEvent evt) {                                       
+  addButton.doClick();
+}
+private void aFieldActionPerformed(java.awt.event.ActionEvent evt) {                                       
+  addButton.doClick();
+}
+private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
+  double aVal, bVal;
+  try {
+    aVal = Double.parseDouble(aField.getText());
+  } catch (NumberFormatException ex) {
+    sumResultLabel.setText("Field A is not a number");
+    return;
+  }
+  try {
+    bVal = Double.parseDouble(bField.getText());
+  } catch (NumberFormatException ex) {
+    sumResultLabel.setText("Field B is not a number");
+    return;
+  }
+  sumResultLabel.setText(Double.toString(aVal + bVal));
+}</pre>
+
+<p>That was pretty simple, but when you want to do functional testing, are you going to manually use the GUI for every test? Well, not if you're using <a href="http://www.uispec4j.org/">UISpec4J</a>. Automated testing, done with <a href="http://www.junit.org/">JUnit</a>, would be done like this for the above two specifications:</p>
+
+<pre>public void testCorrectSum() {
+  Panel panel = new Panel(new MyWindow());
+  panel.getInputTextBox("aField").insertText("2.5", 0);
+  panel.getInputTextBox("bField").insertText("3.5", 0);
+  panel.getButton("Add").click();
+  assertEquals(6.0, Double.parseDouble(panel.getTextBox("sumResult").getText()), 0.0);
+}
+public void testEnterKey() {
+  Panel panel = new Panel(new MyWindow());
+  panel.getInputTextBox("aField").insertText("2.5", 0);
+  panel.getInputTextBox("bField").setText("3.5"); //this does the "press enter"
+  assertEquals(6.0, Double.parseDouble(panel.getTextBox("sumResult").getText()), 0.0);
+}</pre>
+
+<p>Wow, that was simple. Combine this with <a href="http://fitnesse.org/">FitNesse</a>, a wiki-based functional testing environment (see <a href="http://fitnesse.org/FitNesse.TwoMinuteExample">this for a quick example</a>), and you now have a great way to automate all functional testing and changes in the specifications (and the GUI).</p>
+
+<p>Before you jump on those libraries, here are some caveats you have to be aware of:</p>
+
+<ul><li>UISpec4J is at version 0.13 at the time I'm writing this. The API could change between releases (hence the "alpha" status), and not all Swing components are supported. It worked fine for me though.</li>
+<li>UISpec4J finds you components based on the "name" attribute, which is set with the <tt>setName</tt> function. By default the name is empty when you add new components with <a href="http://www.netbeans.org/">NetBeans</a>, so be careful.</li>
+<li>Swing usually needs a GUI environment to run, so even though UISpec4J hides everything from the screen, if you try running this on Linux with no X Server running, Swing will simply refuse to run and the tests will fail. The solution for this if you plan to run this on a server is to run X within a VNC server even if you don't plan to connect to it (<a href="http://www.tightvnc.com/vncserver.1.html">vncserver man page from TightVNC</a>).</li>
+<li>You still can't test the <i>visual</i> aspect of the GUI, i.e. the way it <i>looks</i> like, without a manual test.</li>
+</ul>

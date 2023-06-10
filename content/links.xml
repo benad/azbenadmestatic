@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>Links</title>
+        <id>links</id>
+    </head>
+    <body>
+        <section>
+            <html:ul>
+                <html:li>Email: <a href="mailto:benad@me.com">benad@me.com</a>.</html:li>
+                <html:li>Mastodon: <a href="https://mstdn.party/@benad">@benad@mstdn.party</a></html:li>
+                <html:li>LinkedIn (account required): <a href="https://www.linkedin.com/in/benoitnadeau">linkedin.com/in/benoitnadeau</a>.</html:li>
+	    	    <html:li>My <a href="http://blog.benad.me/">blog</a>, mostly about technical programming subjects.</html:li>
+                <html:li><a href="/twitter/">Archive of my Twitter account @benad</a> (original location: <a href="https://twitter.com/benad">https://twitter.com/benad</a>).</html:li>
+            </html:ul>
+        </section>
+    </body>
+
+</page>

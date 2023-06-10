@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>Articles</title>
+        <id>articles</id>
+    </head>
+    <body>
+        <section>
+            <p>Here are a few articles that I wrote.</p>
+            <subsection title="ed, or How I Learned To Love The Mouse" href="ed.xml">
+                <p>A closer look at a programmer's choice of a text editor software.</p>
+            </subsection>
+            <subsection title="What is Software Design" href="software_design.xml">
+                <p>The one with the missing punctuation. An introductary look at design in programming and software development.</p>
+            </subsection>
+            <subsection title="Why Are You A Programmer?" href="why_programming.xml">
+            	<p>What makes people become programmers? A humorous list of patterns I've noticed...</p>
+        	</subsection>
+            <subsection title="A Case for Software Architects" href="case_architect.xml">
+            	<p>Trying to define the role of a software architect in large software development projects.</p>
+        	</subsection>
+        </section>
+    </body>
+
+</page>

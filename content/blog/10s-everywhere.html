@@ -1,0 +1,19 @@
+---toml
+title = "10s Everywhere"
+date = "2015-08-02T15:57:31-04:00"
+permalink = "blog/2015/8/2/10s-everywhere/"
+---
+
+<p>So recently I installed Windows 10 on my MacBook Pro alongside Mac OS X Yosemite 10.10. If you're keeping count, that's four 10s.</p>
+
+<p>Upgrading Windows 8.1 to 10 was a strange experience. First, the Windows 10 notification icon never showed up. Looking at the Event Logs of <code>GWX.exe</code> ("Get Windows 10", I guess), it kept crashing with "data is invalid" for the past few months. Yet, the same logs showed clearly that my license was valid and ready to be upgraded to 10. Luckily, Microsoft now offers the <a href="https://www.microsoft.com/en-us/software-download/windows10ISO">Windows 10 ISO download</a>, and the software used to download and "burn" a USB key also allowed for an in-place upgrade with no need for a USB key or DVD.</p>
+
+<p>Yet, after the upgrade, I noticed that all network connections were disabled. Yes, the Boot Camp drivers were installed correctly, and Windows insisted the drivers were correctly working, but it's as if the entire TCP stack was removed. I tried everything for a few hours, getting lost in <code>regedit</code>, so I gave up and used the option to revert back to Windows 8.1. Once back, it was now worse, with even all keyboards disabled.</p>
+
+<p>Before reverting back to 8.1, I attempted to remove all 3rd-party software that could have an impact on the network, including an old copy of the Cisco VPN client and the Avast anti-virus. The Cisco VPN client refused to be uninstalled for some reason. Back on 8.1, I could easily remove the VPN client (using the on-screen keyboard), but it's as if 8.1 kept trace of the Avast install even though Avast was not there anymore. Luckily, I found the download link to the full offline Avast 2015 installer in the <a href="https://forum.avast.com/index.php?topic=168666.0">user forums</a>. After doing so, both the keyboard and the network were enabled.</p>
+
+<p>Having learned that VPN and Anti-virus software can break things in Windows 10, I uninstalled all of these, and then upgraded to 10 again. I had to reinstall the Boot Camp drivers for my model of MacBook Pro, and this time everything was working fine. I could restore easily Avast, but the old Cisco VPN driver clearly couldn't work anymore. This isn't a big issue, since I keep a Windows 7 virtual machine for that.</p>
+
+<p>What about using Boot Camp in a virtual machine? Well, there are two workarounds I had to do to make it work with Parallels Desktop. First, <a href="http://kb.parallels.com/en/122808">Article ID 122808</a> describes how to patch the file <code>C:\Windows\inf\volume.inf</code> so that Parallels can detect the Windows 10 partition. It just so happens that I already had my copy of <a href="http://www.paragon-software.com/home/ntfs-mac/">Paragon NTFS for Mac</a>, so changing the file when booted in the Mac partition was easy. Then, from <a href="http://kb.parallels.com/en/116582">Article ID 116582</a>, since I'm using a 64-bit EFI installation of Windows, I had to run their strange <code>bootcamp-enable-efi.sh</code> script. It needs administrator privileges, so I temporarily enabled that on my user account to run it. After all of this, Windows got a bit confused about the product activation, but after a few reboots between native and virtual machine modes, it somehow picked up the activation.</p>
+
+<p>So, what about Windows 10 itself? For me, It worked fine. It isn't a huge upgrade compared to Windows 8.1, but it's more usable in a desktop environment. For Windows 7 users, I would definitively recommend it, maybe after a few months until they fix the remaining bugs. As usual, backing up your files is highly recommended (even if you don't upgrade).</p>

@@ -1,0 +1,32 @@
+---toml
+title = "\"Hardcore Java\" tools"
+date = "2006-10-09T17:25:00-04:00"
+permalink = "blog/2006/10/9/hardcore-java-tools/"
+---
+
+<p>It's been a while (<i>so</i> busy...), but here are useful "hardcore Java" tools I've used in the past couple of months (all free-open-source):
+</p>
+<p><a href="http://javolution.org/">Javolution</a>
+</p>
+<blockquote>
+  <p> "Soft" real-time Java library, with incredibly fast implementations of <tt>StringBuffer</tt>, <tt>HashMap</tt> and XML parsers. Not essential, but may be a good first step at optimizing Java code performance if it tends to do a lot of data processing (creating and deleting objects). And simply using their classes can increase performance relative to Java's built-in classes in <tt>java.lang</tt> and <tt>java.util</tt>.
+  </p>
+</blockquote>
+<p><a href="http://www.kirkk.com/main/Main/JarAnalyzer">JarAnalizer</a>
+</p>
+<blockquote>
+  <p>This tool lists all dependencies between JAR files in a nice text, XML of HTML report. This is when you're not sure you were given <i>all</i> JAR files needed to run some package, or worse, not enough.
+  </p>
+</blockquote>
+<p><a href="http://sourceforge.net/projects/jode/">Jode</a>
+</p>
+<blockquote>
+  <p>Java bytecode decompiler. Make sure you build it yourself from the code in Subversion, since only that version properly supports Java 1.4. Very useful. I haven't looked at <a href="http://jdec.sourceforge.net/">Jdec</a> yet.&nbsp;
+  </p>
+</blockquote>
+<p> <a href="http://retroweaver.sourceforge.net/index.html">Retroweaver</a>
+</p>
+<blockquote>
+  <p>Transforms Java 1.5 bytecode to something compatible with Java 1.4. Combine this with Jode above to decompile any Java 1.5 code.
+  </p>
+</blockquote>

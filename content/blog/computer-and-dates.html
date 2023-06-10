@@ -1,0 +1,7 @@
+---toml
+title = "Computer and Dates"
+date = "2012-02-29T14:56:00-05:00"
+permalink = "blog/2012/2/29/computer-and-dates/"
+---
+
+<div class='posterous_autopost'><p>Obligatory comment about people born on February 29, etc.</p>  <p>A <a href="http://www.theregister.co.uk/2012/02/29/windows_azure_outage/">massive outage</a> in Microsoft&rsquo;s own hosting system <a href="http://www.windowsazure.com/">Azure</a> may have been <a href="http://slashdot.org/comments.pl?sid=2699757&amp;cid=39198637">due to the leap day</a> was a good reminder that for computers, our Gregorian-based calendar is <em>difficult</em>.</p>  <p>What we think are simple calculations, for example the number of hours between two dates, can be quite difficult. How many days you have in each month? What about moving forward or backward one hour due to daylight savings time? And I&rsquo;m not even going to talk about converting from me time zone to another when both are affected by daylight savings. Come to think about it, those questions are difficult independently of if they&rsquo;re being made on a computer or not.</p>  <p>That&rsquo;s why I consider logging files on a computer using anything but either <a href="http://en.wikipedia.org/wiki/Unix_time">Unix epoch time</a> or pseudo UTC (based on epoch) unaffected by leap seconds to be sacrilegious. I&rsquo;ve done my fair share of using countless 3rd party libraries to do time computation, and in the end I don&rsquo;t think it&rsquo;s worth when those dates are not UI-facing. So, epoch FTW!</p></div>

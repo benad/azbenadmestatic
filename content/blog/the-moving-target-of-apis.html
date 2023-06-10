@@ -1,0 +1,13 @@
+---toml
+title = "The Moving Target of APIs"
+date = "2012-12-10T21:37:36-05:00"
+permalink = "blog/2012/12/10/the-moving-target-of-apis/"
+---
+
+<p>The biggest danger when using an API provided by a framework or operating system is that suddenly the functionality you were using was removed. Now, rarely do commercial APIs remove whole sections without at the very least warning in advance the developers about it, but backwards-incompatible changes do often happen.</p>
+
+<p>Developing for Mac OS X is a great example. If you wrote some software that worked on Mac OS X 10.0, you can be sure it won't work anymore since Apple dropped PowerPC support with 10.7, and X86 wasn't supported back then. While most of the Cocoa API remains the same, the rest, especially Carbon, is very shaky. The developer tools don't support more than two previous versions of the system, so if your program isn't continuously updated within a 3-year windows it is likely to start breaking.</p>
+
+<p>But all of that pales compared to what Microsoft does. While Apple isn't in unafraid to break backwards compatibility to make huge leaps forward in innovation, Microsoft is starting to go down the same path not for innovation, but to manipulate developers towards their own interests. There have been many subtle changes in that transition to Windows 8 that bring no advantage to users, annoyance to developers, and market advantage to Microsoft. It feels like Microsoft did a 180° turn from pro-developers to anti-developers. Indeed, if it weren't from a gigantic outcry from developers, Microsoft wanted to drop all free versions of Visual Studio for desktop programs. I simply cannot fantom why developers want to pay Microsoft for the privilege to develop programs for Windows 8.</p>
+
+<p>This is where open development environments like Gnome, KDE, Python and even arguably OpenJDK shine: The entire API's source is open, so if you have to tweak it or restore older deprecated features, you can. Being a developer on a commercial platform often feels like you're a peon at the whims of large corporation's product vision.</p>

@@ -1,0 +1,13 @@
+---toml
+title = "Prêt à Voter"
+date = "2012-09-04T20:59:31-04:00"
+permalink = "blog/2012/9/4/prt-voter/"
+---
+
+<p>Here in Canada our elections are manually counted rather than using electronic machines. That works well because we aren't litigious assholes like Americans. So that's why I tend to disagree with the assertion that with so many voters it's difficult and error-prone to count votes. What I do agree with is that be it with voting machines or people, it's quite easy to fake election results (well, there are ways to check, but more on that later).</p>
+
+<p>Hence this "<a href="http://www.pretavoter.com/">Prêt à Voter</a>". Based on a lot of research, it presents a cryptographically verifiable method of democratic voting that can be counted by computers. Essentially, it means that the entire voting process can be verified end-to-end, while at the same time preventing election officials from knowing whom you voted for what. The biggest possible flaw is if all election clerks (one per party, press, foreign groups, etc.) conspire to copy each other's private keys, so all you need is an environment where there's enough mutual distrust to warrant a secretive (within clerks) yet open (for voters and auditors) system.</p>
+
+<p>There is another issue. As one of the author mentions in <a href="http://evoting.bismark.se/verifiable-electronic-voting/">his blog post about PAV</a>, even if the process and code is open, the crypto can be difficult. Indeed, the <a href="http://www.pretavoter.com/publications/PretaVoter2010.pdf">summary paper</a> is enough to scare off even an experienced software developer. If I had to fully understand it (assuming I had access to all the references, damn academic papers paywalls), I'd be easily be spending a full week of learning. No wonder the average voter would have difficulty in understanding a voting process that allows the kind of validation that "common sense" would dictate as impossible, but the math of recently discovered crypto makes it "magically" possible.</p>
+
+<p>So, it comes down to this: If you had to trust somebody to be the stewards of your democratic system, whom would it be? The lawyers, the current political party in power, or math wizards? Sadly, we already know the answer. We saw that elections in Iran and Russia didn't pass even basic statistical checks, and yet in both countries you know how well the population listened to statisticians.</p>

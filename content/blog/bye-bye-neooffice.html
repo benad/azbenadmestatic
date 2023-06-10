@@ -1,0 +1,12 @@
+---toml
+title = "Bye bye NeoOffice"
+date = "2008-05-21T13:02:00-04:00"
+permalink = "blog/2008/5/21/bye-bye-neooffice/"
+---
+
+<p>OK. So I have this Windows-made OpenOffice 1 document (<tt>.swx</tt>), which uses Arial Bold, a quite common font used in Microsoft Office. Opened in <a href="http://www.neooffice.org/neojava/en/index.php">NeoOffice</a>, it renders all instance of Arial Bold to... nothing. Zilch. Beautiful 0-pixel-per-character text. Remove the Bold and the text is rendered as usual.</p>
+<p>The main developer of NeoOffice closed the bug as "not a bug": <a href="http://bugzilla.neooffice.org/bug.php?op=show&amp;bugid=2527&amp;pos=23">see the bug report</a>. And I quote: "Closing as not a bug. NeoOffice does not synthesize fake fonts on the fly.".</p>
+<p>Wow. If my memory serves me right, font variant "synthesis" was supported on the Mac since Macintosh System 1.0. Now I don't give a damn if the Carbon-based Java VM kludge you use supports it or not (actually, all non-hacked pure-Java applications on my Mac support it). This is a critical feature of all text processors in the past 30 years, and NeoOffice doesn't support it.</p>
+<p>So I try the same thing in <a href="http://download.openoffice.org/3.0beta/">OpenOffice 3.0 Beta MacOSXIntel Aqua</a>, and Arial Bold works flawlessly again.</p>
+<p>I've been coping with NeoOffice-specific bugs for the past 2 years, but now enough is enough. The <b>official</b> OpenOffice port for Mac OS X with Aqua interface works perfectly with fonts rendering, even as a Beta.</p>
+<p>Bye bye Neoffice, you sucked for the last time.</p>

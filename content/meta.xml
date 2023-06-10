@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>About This Site</title>
+        <id>meta</id>
+    </head>
+    <body>
+        <section>
+            <p>This section is a "behind the scenes" of the development of this
+            web site.</p>
+            <subsection href="meta_past.xml" title="The Past">
+                <p>My previous and futile attempts at building a personal web
+                site.</p>
+            </subsection>
+            <subsection href="meta_present.xml" title="The Present">
+                <p>How I built up this web site. Behind the simple looks of
+                these pages lies a design elegance. Really.</p>
+            </subsection>
+            <subsection href="meta_future.xml" title="The Future">
+                <p>Some things are unfinished, but then "release early, release
+                often" they would say...</p>
+            </subsection>
+            <subsection href="meta_html5.xml" title="The Future is HTML5">
+                <p>... And eventually I rewrote the web site using HTML5.</p>
+            </subsection>
+            <subsection href="meta_blog.xml" title="The Static Blog">
+                <p>I also moved my blog to this site. This is why and how.</p>
+            </subsection>
+        </section>
+    </body>
+
+</page>

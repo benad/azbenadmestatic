@@ -1,0 +1,11 @@
+---toml
+title = "\"Trust Us\" Security"
+date = "2012-10-20T19:34:05-04:00"
+permalink = "blog/2012/10/20/trust-us-security/"
+---
+
+<p>I find new security services like this new <a href="https://silentcircle.com/">Silent Circle</a> quite funny. What is the security model? "Trust us". Unless the client code is open source and peer reviewed, that's not good enough for me. I don't mind if the code license doesn't permit redistribution, as long as the end user can see the source code of whatever is used to create a layer of security.</p>
+
+<p>This was partly the reason why I moved over time from using <a href="https://agilebits.com/onepassword">1Password</a> to using <a href="http://lastpass.com/">LastPass</a>. The idea of storing all your encrypted credentials online sounds crazy, until you realize that everything is encrypted client-side in your browser using JavaScript. That means that effectively I can prove to myself that the encryption is sound, while for 1Password, even if used entirely offline, <em>may</em> be riddled with security holes.</p>
+
+<p>Of course, at some point I just have to give up trying to review all the code and trust others. Still I cannot trust fully closed-source encryption, as at the very least by making the code open to all, you increase the chance of having somebody find security holes, or attest to the software's security.</p>

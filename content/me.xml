@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<page xmlns="http://benad.me/schema/page"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:html="http://www.w3.org/TR/xhtml1/strict"
+    xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+    
+    <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+    
+    <head>
+        <title>About Me</title>
+        <id>me</id>
+    </head>
+    <body>
+        <section>
+            <p>This section is about me, Benoit Nadeau. While it always feels
+            strange to talk about oneself, and worse, someone else's
+            narcissistic rant, I'll try my best to make these pages as
+            entertaining as possible.</p>
+            <subsection title="Benad?" href="me_benad.xml">
+                <p>What is the origin of the strange nickname "Benad"?</p>
+            </subsection>
+            <subsection title="What I'm not" href="me_not.xml">
+                <p>What you assume I am, but if you start to know me, am <i>not</i>.</p>
+            </subsection>
+            <subsection title="Autobiography" href="me_bio.xml">
+                <p>A short autobiography of some kind.</p>
+            </subsection>
+        </section>
+        
+    </body>
+
+</page>

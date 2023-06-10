@@ -1,0 +1,19 @@
+---toml
+title = "Automating Java Builds with CruiseControl"
+date = "2005-09-13T17:18:00-04:00"
+permalink = "blog/2005/9/13/automating-java-builds-with-cruisecontrol/"
+---
+
+<p>Many, many years ago, when I was testing an early, pre-1.0 beta of <a href="http://www.mozilla.org/products/mozilla1.x/">Mozilla</a>, I found a weird link to what the Mozilla developers call "<a href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=SeaMonkey">tinderbox</a>". And I was amazed. This is Mozilla's continuous build system, that automatically builds Mozilla on several platforms and runs automated test around the clock. It also has references to who did the last checkins in <a href="http://www.nongnu.org/cvs/">CVS</a> and what was changed since the last successful build, if the build failed.</p>
+
+<p>This is very practical is you're working in a team that is changing pretty much the same code at the same time, as you can trac easily who's doing what where and detect errors sooner. Also, you can always get an "installation-ready" build at any time.</p>
+
+<p>Sometimes tough you don't want to build your application all the time, but maybe only when someone checks in, that is only when the code changes, which makes sense. What's nicer when you use <a href="http://subversion.tigris.org/">SubVersion</a> is that the checkins are atomic, and the build number could simply be the revision number of when the checkout was made.</p>
+
+<p>If you're developing in Java then you surely already are using <a href="http://ant.apache.org/">Ant</a> or <a href="http://maven.apache.org/">Maven</a>, testing libraries like <a href="http://www.junit.org/">JUnit</a>, <a href="http://www.jmock.org/">jMock</a> and <a href="http://www.easymock.org/">EasyMock</a>, and some version control system. In that case I highly recommend <a href="http://cruisecontrol.sourceforge.net/">CruiseControl</a>.</p>
+
+<p><a href="http://media.pragprog.com/movies/auto/CruiseControl_MikeClark.html">Here</a> is a nice 2-minute video by Mike Clark about what CruiseControl does.</p>
+
+<p>Also, an advantage you have of using Maven instead of Ant to build the project is that Maven will generate many reports for you as part of the build process, so you can compare many "metrics" about code quality by comparing the reports over time.</p>
+
+<p>I'll be talking in more detail about the automated test libraries I mentioned above in a future post.</p>

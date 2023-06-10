@@ -1,0 +1,13 @@
+---toml
+title = "Learning the D Programming Language"
+date = "2013-06-23T16:34:40-04:00"
+permalink = "blog/2013/6/23/learning-the-d-programming-language/"
+---
+
+<p>Over the years, I tended to learn about one programming language a year. For example, in the past three years I've learned Python, Erlang and C#.</p>
+
+<p>For this year, I was torn between <a href="http://dlang.org/">D</a> and <a href="http://golang.org/">Go</a>. Both are <a href="http://stackoverflow.com/questions/3554956/d-versus-go-comparison">quite similar</a>, though you can clearly feel that "D" doesn't simply stand for <a href="http://www.digitalmars.com/">Digital Mars</a>, but also as some kind of spiritual successor of C. And while D doesn't have a large commercial backing like Google's Go, it is older and was refined over the course of years of actual use, a bit like C was before it was standardized.</p>
+
+<p>What pushed me towards D though is its ability to not only call C libraries (almost all programming languages can do that), but also be called from C libraries. The D runtime can be <a href="http://permalink.gmane.org/gmane.comp.lang.d.learn/11438">manually started</a> within its host process, so this can be transparently done. This is a big deal, since it means D can be used to produce code libraries at the same level as C and C++ and can be integrated almost anywhere.</p>
+
+<p>This does lead to my biggest gripe about D. If you looked at the link above, you'd notice that using <code>rt_init()</code> and <code>rt_term()</code> isn't documented outside of sample code and mailing lists. The official documentation is terse, and the <a href="http://www.amazon.com/exec/obidos/ASIN/0321635361/classicempire">official book</a> dates back from 2010, lacking all the new features of version 2 of the language. This is a little bit worrying, though I've had a similar experience with <a href="http://groovy.codehaus.org/">Groovy</a> and that didn't affect me too much after all. That, and at work I have access to the book at work.</p>

@@ -1,0 +1,60 @@
+---toml
+title = "Email Backups"
+date = "2012-08-20T21:29:32-04:00"
+permalink = "blog/3b95310a-84b0-497e-ac39-33f25b967eef/"
+---
+
+<p>This may be just my own paranoia at losing data, but I have the habit of doing backups of all my emails, for nearly a decade now. This seems odd in this age of &#8220;cloud computing&#8221; and <em>gigabytes</em> of storage for your Gmail inbox, but what if you lose your account?</p>
+
+<p>For Gmail, I use the Python script <a href="http://pyropus.ca/software/getmail/">Getmail</a>. I roughly followed the instructions from <a href="http://www.mattcutts.com/blog/backup-gmail-in-linux-with-getmail/">this blog post by Matt Cutts</a>, which worked great on my Mac. I can imagine that doing so on Windows would involve somehow <a href="http://www.cygwin.com/">Cygwin</a> and some ungodly contraption to make <code>cron</code> jobs work on Windows.</p>
+
+<p>By the way, I do all my email backups in &#8220;mbox&#8221; format, which is essentially a plain text flat file. You can easily open it with <code>mutt -R -f mboxfile.txt</code>, and it tends to withstand data corruption much better that any other format.</p>
+
+<p>I could use Getmail too for my iCloud account, which is also accessed through IMAP, but I like being fancy and copy the emails to an mbox file using Apple&#8217;s Mail itself. To do so, I run a <a href="http://dovecot.org/">Dovecot</a> server on my Mac and make it store all the emails in an mbox file. Behind the scenes Dovecot will use index files to make manipulations on that mbox file faster.</p>
+
+<p>Installing it and making it run is quite easy with MacPorts:</p>
+
+<pre><code>sudo port install dovecot2 mutt
+cd /opt/local/etc/dovecot
+sudo cp /opt/local/share/doc/dovecot/example-config/dovecot.conf .
+sudo cp -r /opt/local/share/doc/dovecot/example-config/conf.d .
+</code></pre>
+
+<p>Some file editing (use <code>sudo nano ...</code>), with <code>&lt;</code> the edits you need to make:</p>
+
+<p>10-mail.conf:</p>
+
+<pre><code>30c30
+&lt; mail_location = mbox:~/mail
+---
+&gt; #mail_location =
+</code></pre>
+
+<p>10-ssl.conf:</p>
+
+<pre><code>6c6
+&lt; ssl = no
+---
+&gt; #ssl = yes
+12,13c12,13
+&lt; #ssl_cert = &lt;/etc/ssl/certs/dovecot.pem
+&lt; #ssl_key = &lt;/etc/ssl/private/dovecot.pem
+---
+&gt; ssl_cert = &lt;/etc/ssl/certs/dovecot.pem
+&gt; ssl_key = &lt;/etc/ssl/private/dovecot.pem
+</code></pre>
+
+<p>auth-system.conf.ext:</p>
+
+<pre><code>14c14
+&lt;   args = login
+---
+&gt;   #args = dovecot
+</code></pre>
+
+<p>Finally, register and start the new service:</p>
+
+<pre><code>sudo launchctl load   -w /Library/LaunchDaemons/org.macports.dovecot2.plist
+</code></pre>
+
+<p>At this point, create a new &#8220;mail&#8221; directory in your home directory and a bunch of empty files for each IMAP folder, simply connect with IMAP on local host with your account&#8217;s user name and password, and you&#8217;re good to go.</p>

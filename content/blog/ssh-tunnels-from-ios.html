@@ -1,0 +1,11 @@
+---toml
+title = "SSH Tunnels from iOS"
+date = "2012-09-30T22:34:33-04:00"
+permalink = "blog/2012/9/30/ssh-tunnels-from-ios/"
+---
+
+<p>At times I wished I could setup some kind of VPN server at home so that I can access to all of my home network from anywhere using my iPhone. The problem is that setting up that VPN server that is compatible with my router and iOS would be quite difficult. Instead, if all I want is to access specific network ports, I could be using SSH.</p>
+
+<p>I already up my router to make a (hardened) SSH server accessible from the Internet, so all I need is a good SSH client on iOS that supports SSH tunnelling. For that, there's <a href="http://www.zinger-soft.com/iSSH_features.html">iSSH</a>. iSSH also supports public key authentication and adequate support for both VNC (Linux and Mac) and RDP (Windows).</p>
+
+<p>What you can then do with iSSH then is to create a tunnel to a FTP server on your home network, place iSSH in the background (for up to 10 minutes, due to iOS limitations), and use some FTP client like <a href="http://www.goodreader.net/goodreader.html">GoodReader</a> to download the files you want. In my tests it worked great, even with a 3G connection.</p>

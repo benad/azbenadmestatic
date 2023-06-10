@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?><page xmlns="http://benad.me/schema/page" xmlns:html="http://www.w3.org/TR/xhtml1/strict" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://benad.me/schema/page page.xsd">
+  <!--
+    Benad's Web Site by Benoit Nadeau is licensed under a Creative Commons
+    Attribution-ShareAlike 4.0 International License
+    https://creativecommons.org/licenses/by-sa/4.0/
+    -->
+  <head>
+    <title>Resume</title>
+    <id>resume</id>
+  </head>
+  <body>
+    <section title="Contact">
+      <p>Benoit Nadeau</p>
+      <p>
+        <a href="mailto:benad@me.com">benad@me.com</a> <html:br/><a href="https://benad.me/">benad.me</a> <html:br/>
+LinkedIn (account required): <a href="https://www.linkedin.com/in/benoitnadeau">linkedin.com/in/benoitnadeau</a></p>
+    </section>
+    <section title="Education">
+      <p>Bachelor, Software Engineering <html:br/>
+Concordia University, Montréal Canada <html:br/>
+1999-2003</p>
+    </section>
+    <section title="Languages">
+      <html:ul>
+        <html:li>French</html:li>
+        <html:li>English</html:li>
+      </html:ul>
+      <p>Highly proficient in both languages, spoken and written.</p>
+    </section>
+    <section title="Work Experience">
+      <subsection title="Open Speech Services - Nuance Communications">
+        <p>2003 - 2011</p>
+        <p>Tools for linguists and speech recognition scientists.</p>
+        <html:ul>
+          <html:li>Perl</html:li>
+          <html:li>MySQL (the transcription DB)</html:li>
+          <html:li>Java</html:li>
+          <html:li>Speech Recognition for Addresses</html:li>
+          <html:li>Version Control (Subversion)</html:li>
+          <html:li>Linux Sysadmin (Apache HTTPD, Tomcat)</html:li>
+          <html:li>Log Analytics Tool (Apache Lucene)</html:li>
+          <html:li>Solaris Sysadmin</html:li>
+        </html:ul>
+      </subsection>
+      <subsection title="Dragon Assistant - Nuance Communications">
+        <p>2011 - 2014</p>
+        <p>Windows desktop spech assistant and dictation software. Built in collaboration with Intel, includinng building  speech recognition SDK.</p>
+        <html:ul>
+          <html:li>C Win32 Audio</html:li>
+          <html:li>C# .NET WPF</html:li>
+          <html:li>Continuous Integration (Jenkins)</html:li>
+          <html:li>Version Control (Mercurial)</html:li>
+          <html:li>Installer and Updater</html:li>
+          <html:li>Speech Assistant prototypes</html:li>
+        </html:ul>
+      </subsection>
+      <subsection title="Mobility Professional Services - Nuance Communications">
+        <p>2014 - 2016</p>
+        <p>Software libraries to integrate customer application with Nuance's speech recognition services.</p>
+        <html:ul>
+          <html:li>Android development (networking and API libraries)</html:li>
+          <html:li>C audio processing and codec</html:li>
+          <html:li>C WebSockets</html:li>
+        </html:ul>
+      </subsection>
+      <subsection title="Business Intelligence - Nuance Communications">
+        <p>2016 - </p>
+        <p>Processing large volume of log data for analytics and reporting ("Business Intelligence").</p>
+        <html:ul>
+          <html:li>Python 3</html:li>
+          <html:li>Java</html:li>
+          <html:li>C#</html:li>
+          <html:li>MS SQL</html:li>
+          <html:li>MS SSIS</html:li>
+          <html:li>Linux and Windows system monitoring (Zabbix)</html:li>
+          <html:li>Hadoop (Sysadmin, Spark)</html:li>
+          <html:li>Virtual Machines administration</html:li>
+        </html:ul>
+      </subsection>
+    </section>
+    <section title="Other Experience">
+      <html:ul>
+        <html:li>Internet of Things</html:li>
+        <html:li>This web site (see <a href="/meta.html">About This Site</a>)</html:li>
+        <html:li>Git</html:li>
+      </html:ul>
+    </section>
+  </body>
+</page>

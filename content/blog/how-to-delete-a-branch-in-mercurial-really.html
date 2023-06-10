@@ -1,0 +1,27 @@
+---toml
+title = "How to Delete a Branch in Mercurial (really)"
+date = "2012-07-09T21:30:39-04:00"
+permalink = "blog/2012/7/10/how-to-delete-a-branch-in-mercurial-really/"
+---
+
+<p>If you enable the <a href="http://mercurial.selenic.com/wiki/RebaseExtension">rebase extension</a>, for a branch called <code>mywork</code>, it is simply:</p>
+
+<pre><code>hg up 'max(roots(branch(mywork)))^1'
+# dummy change
+hg ci -m "rebasing mywork"
+hg rebase -b mywork
+</code></pre>
+
+<p>If that didn't work, you'll be able to restore things by using <code>hg unbundle</code> on the backup bundle displayed on screen after the <code>hg rebase</code> command.</p>
+
+<p>If you don't know, you can enable the rebase extension by adding <code>rebase=</code> to an extensions section of hgrc. More specifically, add this at the end of your repository's <code>.hg/hgrc</code>:</p>
+
+<pre><code>[extensions]
+rebase=
+</code></pre>
+
+<p>While removing a branch name is an after-effect of rebase, it still works. Of course, Mercurial now warns you when you use <code>hg branch</code> that it is global and what you meant was maybe a bookmark, useful if your background is Git.</p>
+
+<p>Speaking of Git, I found the <a href="http://try.github.com/">Github tutorial</a> absolutely horrible. It fails at explaining the meaning or syntax of the commands it asks you to run. Worse, by the end of it, it shows you a "best practice" of creating a private branch which ends up being merged (debased in Mercurial parlance) on the main (master) branch, and then summarily deleted after doing so. Showing such a destructive operation for a version control system to brand new users kind of defeats the purpose, whatever it could have been.</p>
+
+<p>It may be too late now, since Git is cool and all, but it would have helped to have some usability experts help designing (and naming things in) its command-line interface. Having been involved into training others in version control systems, the conceptual model of Git is so badly design that I suspect most Git users have no idea what they do, and have so much pain learning it that they have to justify their use of it to others religiously, like Vim, EMACS, Eclipse and so on. I guess mnemonic is just another term for blissful ignorance.</p>

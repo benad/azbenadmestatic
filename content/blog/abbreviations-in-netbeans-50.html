@@ -1,0 +1,31 @@
+---toml
+title = "Abbreviations in NetBeans 5.0"
+date = "2005-11-03T17:18:00-05:00"
+permalink = "blog/2005/11/3/abbreviations-in-netbeans-50/"
+---
+
+<p>As a habit from the <a href="http://www.netbeans.org/">NetBeans</a> releases before 3.6, I tend to use it only when it is file, not Beta or even Release Candidate. But right now I'm still playing a lot with <a href="http://www.netbeans.org/community/releases/50/index.html">NetBeans 5.0 Beta</a>. And what a release 5.0 is going to be...</p>
+
+<p>Again, an example. Let's say you want to do something like this Perl code:</p>
+
+<pre>while (<handle>) {
+    #some code here
+}</pre>
+
+<p>In Java, it is less obvious than this. While the preferences window of 5.0 Beta is a bit buggy, I created a new abbreviation in Editor -&gt; Code Templates, quit NetBeans, and fired a text editor on the file <tt>~/.netbeans/5.0beta/config/Editors/text/x-java/abbreviations.xml</tt> to change it like this:</p>
+
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE abbrevs PUBLIC "-//NetBeans//DTD Editor Abbreviations settings 1.0//EN"
+                         "http://www.netbeans.org/dtds/EditorAbbreviations-1_0.dtd"&gt;
+&lt;abbrevs&gt;
+    &lt;abbrev key="readline" xml:space="preserve"&gt;String line;
+java.io.BufferedReader reader = new java.io.BufferedReader(
+  new java.io.InputStreamReader(${is instanceof="java.io.InputStream"}));
+while ((line = reader.readLine()) != null) {
+    ${cursor}
+}&lt;/abbrev&gt;
+&lt;/abbrevs&gt;</pre>
+
+<p>Started up NetBeans, and when you type "<tt>readline</tt>" followed by a space, you'll have the above code. The cursor will be placed on the "<tt>${is ...</tt>" part, already filled by the most recently referenced InputStream. If you place another "<tt>${is}</tt>" above, then it will be automatically replaced as you type to replace the text. Finally, when you press enter or TAB, the cursor is placed where "<tt>${cursor}</tt>" is. Try the abbreviations "<tt>fori</tt>" or "<tt>forc</tt>".</p>
+
+<p>"But then", you might say, "what about the IOException that can be thrown by readLine?". When you'll see the red line below the line "<tt>while ... reader.readLine() ...</tt>", click on it. You'll see a small  light bulb with suggestions to fix you code. Yeah, like <a href="http://www.eclipse.org/">Eclipse</a>, but in such a user-friendly way.</p>

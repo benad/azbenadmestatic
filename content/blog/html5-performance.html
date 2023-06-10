@@ -1,0 +1,13 @@
+---toml
+title = "HTML5 Performance"
+date = "2012-12-19T21:13:26-05:00"
+permalink = "blog/2012/12/19/html5-performance/"
+---
+
+<p>I recently saw a demo of a <a href="http://www.sencha.com/blog/the-making-of-fastbook-an-html5-love-story">pure HTML5 Facebook app</a>, and something odd stood out. It seems that on modern browsers, especially mobile ones, the bottleneck isn't JavaScript performance anymore, but modifying the DOM tree.</p>
+
+<p>After years of feature bloat in CSS, it seems like layout and rendering all those DOM elements became a complex mess. Raw JavaScript computation is now extremely fast, but the moment you significantly modify a Paige's structure, be ready to take a performance hit.</p>
+
+<p>Sencha's solution is then to recycle as much as possible existing DOM objects, and do so with some clever proxying of DOM events to the JavaScript code. It is a significant effort, but I suspect that their solution cleverly avoids the glaring bottleneck.</p>
+
+<p>At any rate, it feels like more and more serious HTML5 development approaches the complexity of what traditional desktop GUI development was 20 years ago. That means that eventually we'll badly have to depend on higher-level frameworks to simplify HTML5 development, like Sencha just did.</p>
