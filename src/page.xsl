@@ -62,7 +62,7 @@
                 <footer>
                     <hr/>
                     <p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a></p>
-		            <p>Mastodon: <a rel="me" href="https://mstdn.party/@benad">@benad@mstdn.party</a></p>
+		            <p>Mastodon: <a rel="me" href="https://mstdn.ca/@benad">@benad@mstdn.ca</a></p>
                 </footer>
             </div>
             <script src="/js/vendor/jquery-1.9.1.min.js"></script>

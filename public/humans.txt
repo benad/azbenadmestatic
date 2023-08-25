@@ -1,6 +1,6 @@
 /* TEAM */
 
-    Benoit Nadeau -- Main developer -- @benad@mstdn.party
+    Benoit Nadeau -- Main developer -- @benad@mstdn.ca
 
 /* SITE */
 
