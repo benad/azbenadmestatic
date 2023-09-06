@@ -6,7 +6,7 @@
         "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
         "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
         "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-        "prebuild": "npx xslt3 -xsl:src/page.xsl -s:src/page.xsl -export:generated/page.sef.json -t"
+        "prebuild": "npx xslt3 -xsl:src/page.xsl -s:src/page.xsl -export:_generated/page.sef.json -t"
     },
     "engines": {
         "node": ">=14"

@@ -5,7 +5,7 @@ const toml = require("@iarna/toml");
 const extract = require('extract-zip')
 const fs = require('node:fs');
 
-const xslDir = 'generated';
+const xslDir = '_generated';
 const twitterZip = 'src/twitter.zip'
 
 var parseDate = function (dateObj, zone) {
@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
-		"./public/": "/"
+		"./src/public/": "/"
 	});
 
 	// Watch content images for the image pipeline.
@@ -102,7 +102,7 @@ module.exports = function (eleventyConfig) {
 		// These are all optional:
 		dir: {
 			input: "content",          // default: "."
-			includes: "../_includes",  // default: "_includes"
+			includes: "../src",  // default: "_includes"
 			data: "../_data",          // default: "_data"
 			output: "_site"
 		},
