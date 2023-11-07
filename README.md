@@ -58,10 +58,14 @@ href that points to the `xsl` file that should have its `generated/*.sef.json`.
 Moving to per-year `content` folders:
 
 ```ps1
-$YEAR=2022
-mkdir .\content\blog_${YEAR}
-Copy-Item .\content\blog_2023\blog_2023.11tydata.js .\content\blog_${YEAR}\blog_${YEAR}.11tydata.js
-rg -l "date = .$YEAR-" .\content | foreach { Move-Item -Destination .\content\blog_${YEAR} $_ }
+cd content\blog
+2009..2023 | foreach {
+    $YEAR = $_
+    mkdir ${YEAR}
+    rg -l "^date = .${YEAR}-" . | foreach {
+        Move-Item -Destination ${YEAR} $_
+    }
+}
 ```
 
 [cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
