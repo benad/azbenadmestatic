@@ -59,11 +59,11 @@ Moving to per-year `content` folders:
 
 ```ps1
 cd content\blog
-2009..2023 | foreach {
+2005..2023 | foreach {
     $YEAR = $_
     mkdir ${YEAR}
     rg -l "^date = .${YEAR}-" . | foreach {
-        Move-Item -Destination ${YEAR} $_
+        git mv $_ ${YEAR}
     }
 }
 ```
