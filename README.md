@@ -55,6 +55,15 @@ The file `generated/page.sef.json` must be generated or updated from
 Right now, `xml` assumes the header `<?xml-stylesheet type="text/xsl"...` has an
 href that points to the `xsl` file that should have its `generated/*.sef.json`.
 
+Moving to per-year `content` folders:
+
+```ps1
+$YEAR=2022
+mkdir .\content\blog_${YEAR}
+Copy-Item .\content\blog_2023\blog_2023.11tydata.js .\content\blog_${YEAR}\blog_${YEAR}.11tydata.js
+rg -l "date = .$YEAR-" .\content | foreach { Move-Item -Destination .\content\blog_${YEAR} $_ }
+```
+
 [cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
