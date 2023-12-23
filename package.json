@@ -13,16 +13,15 @@
     },
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",
-        "@11ty/eleventy-img": "^3.1.0",
         "@11ty/eleventy-navigation": "^0.3.5",
-        "@11ty/eleventy-plugin-bundle": "^1.0.4",
+        "@11ty/eleventy-plugin-bundle": "^1.0.5",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
         "@iarna/toml": "^2.2.5",
         "extract-zip": "^2.0.1",
-        "luxon": "^3.3.0",
+        "luxon": "^3.4.4",
         "markdown-it-anchor": "^8.6.7",
-        "saxon-js": "^2.5.0",
-        "xslt3": "^2.5.0"
+        "saxon-js": "^2.6.0",
+        "xslt3": "^2.6.0"
     }
 }
