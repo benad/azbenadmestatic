@@ -5,7 +5,7 @@ title = "A Eulogy for Old Bookmarks"
 
 ***TODO***
 
-Bookmarks came from 20+ years...
+Bookmarks came from 20+ years, including https://en.wikipedia.org/wiki/Camino_(web_browser) .
 
 https://web.archive.org/web/20051001022440/http://info.myway.com/index/id/ourmission.html
 
