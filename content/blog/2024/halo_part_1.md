@@ -3,9 +3,7 @@ date = "2024-03-30T12:00:00-05:00"
 title = "Halo, Part 1: Marathon"
 ---
 
-In early 2022, when I saw that [Halo Infinite](https://en.wikipedia.org/wiki/Halo_Infinite) was available with my [Xbox Game Pass](https://en.wikipedia.org/wiki/Xbox_Game_Pass) subscription that I had on my PC, I thought it might have been the time to try out this whole "[Halo](https://en.wikipedia.org/wiki/Halo_(franchise))" game thing.
-
-Starting playing Halo games from its latest entry didn't feel like a good idea. To better understand its historical impact, and what made the Halo series different than the other games in its genre, it might be better to play the games in order. It just so happened that "[Halo: The Master Chief Collection](https://en.wikipedia.org/wiki/Halo:_The_Master_Chief_Collection)" and the other Halo sequels were also available with Game Pass, so I resolved myself to start gradually playing all of Halo's single player campaigns.
+In early 2020, when I saw that that "[Halo: The Master Chief Collection](https://en.wikipedia.org/wiki/Halo:_The_Master_Chief_Collection)" was available with my [Xbox Game Pass](https://en.wikipedia.org/wiki/Xbox_Game_Pass) subscription that I had on my PC, I thought it might have been the time to try out this whole "[Halo](https://en.wikipedia.org/wiki/Halo_(franchise))" game thing before [Halo Infinite](https://en.wikipedia.org/wiki/Halo_Infinite) is released.
 
 Before that, some context as to why I actively avoided playing any Halo games during so many years.
 
