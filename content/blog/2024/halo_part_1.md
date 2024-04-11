@@ -1,5 +1,5 @@
 ---toml
-date = "2024-03-29T14:35:00-05:00"
+date = "2024-03-29T15:35:00-04:00"
 title = "Halo, Part 1: Marathon"
 ---
 
