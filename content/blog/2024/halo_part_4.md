@@ -1,5 +1,5 @@
 ---toml
-date = "2024-05-15T11:10:00-04:00"
+date = "2024-05-16T13:20:00-04:00"
 title = "Halo, Part 4: The Threes"
 ---
 
@@ -17,11 +17,8 @@ And I agree that this is a "classic". From my experience, it was a nearly perfec
 
 ### Halo 3: ODST
 
-***TODO***
+While the "[Halo: Reach](https://en.wikipedia.org/wiki/Halo:_Reach)" game was still being built, another team within Bungie released "[Halo 3: ODST](https://en.wikipedia.org/wiki/Halo_3:_ODST)", using the same game engine as Halo 3. ODST brought in a few innovations of its own. It has a "hub" level that ties in the later levels, each about a different member of the ODST, similar to "[Marathon Infinity](https://en.wikipedia.org/wiki/Marathon_Infinity)". Another first for the series is an in-game map, something we could take for granted in earlier FPS games that vanished when FPS games moved to fully 3D environments. While your character's shield recharches as in previous Halo games, for the first time your base health doesn't heal automatically, and instead you have to pick up health items. Night vision googles can also be used in low-light environments.
 
-https://en.wikipedia.org/wiki/Halo_3:_ODST
+Its story happens during the events of Halo 2 and 3, yet is self-contained, making it easier to follow and more accessible than the rest of the series.
 
-Dual-development with Reach, but much smaller game. Similar to Assassin's Creed Rogue - Wikipedia .
-
-* Pros: Map (!), Hub level (like Marathon Infinity).
-* Cons: Really short, tech is very close to Halo 3.
+It's just a shame that ODST's single-player campaign is so short. While it is not as technically impressive as Reach, released a year later by Bungie on the same Xbox 360 console, ODST feels closer to the "classic Halo" gameplay compared to [Destiny](https://en.wikipedia.org/wiki/Destiny_%28video_game%29)'s influence on Reach.
