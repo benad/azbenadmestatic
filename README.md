@@ -9,6 +9,8 @@ This work is licensed under a
 
 Author: Benoit Nadeau
 
+Test commit
+
 ## HOWTO
 
 Requires NodeJS 18+
