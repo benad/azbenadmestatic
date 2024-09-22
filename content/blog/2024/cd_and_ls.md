@@ -13,9 +13,24 @@ Surely there has to be a better way.
 
 ***TODO***
 
+Control-t: Add file or directory as argument. Can select multiple arguments using Tab or Control-i.
+
+Alt-c: Fuzzy cd
+
+Control-r: History, but better
+
 https://github.com/junegunn/fzf
 
 https://junegunn.github.io/fzf/shell-integration/
+
+Example with preview sidebar using `bat` and skip some folders like `.git`:
+
+```
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+```
 
 ### The File manager `nnn` 
 
