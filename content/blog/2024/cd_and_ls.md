@@ -9,7 +9,7 @@ Even then, my main issue is about *navigation*. I would often navigate to some l
 
 Surely there has to be a better way.
 
-### Fuzzy Search with `fzf`
+### Fuzzy Searching with `fzf`
 
 [fzf](https://github.com/junegunn/fzf) is a "fuzzy finder" that can search for files in real time as you type part of their paths. It can also be used for looking for directories, or to search matching lines from any input.
 
@@ -23,7 +23,7 @@ export FZF_ALT_C_OPTS="--preview 'ls {}'"
 
 `fzf` can be used with any other process' output. For example, [fzf-git](https://github.com/junegunn/fzf-git.sh), from the same author, supports fuzzy searching for Git objects, like branch names or file paths known to Git, and inserts the result on the command-line.
 
-### The File manager `nnn`
+### The n<sup>3</sup> File Manager
 
 So, while `fzf` helps with finding specific files, it isn't a solution for file system navigation. You still need to display the files in the current directory, and performing file operation across multiple directories lacks visualization.
 
