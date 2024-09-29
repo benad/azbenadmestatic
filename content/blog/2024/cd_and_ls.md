@@ -1,5 +1,5 @@
 ---toml
-date = "2024-09-30T11:15:00-04:00"
+date = "2024-09-29T11:15:00-04:00"
 title = "Change Directory and List"
 ---
 
