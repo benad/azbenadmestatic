@@ -1,6 +1,7 @@
 ---toml
 date = "2023-09-06T20:00:00-05:00"
 title = "The Programmer's Key"
+permalink = "blog/2023/09/06/the-programmer-s-key/"
 ---
 
 I recently discovered [Infinite Mac](https://infinitemac.org/), a web site that lets you emulate, within your web browser, old Macintosh systems. It does so by porting to WebAssembly some popular Mac emulators, including [SheepShaver](https://sheepshaver.cebix.net/) for Power Macintosh emulation.
