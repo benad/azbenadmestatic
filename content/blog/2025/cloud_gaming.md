@@ -1,5 +1,5 @@
 ---toml
-date = "2025-01-19T13:15:00-04:00"
+date = "2025-01-19T13:15:00-05:00"
 title = "Cloud Gaming Returns"
 ---
 
