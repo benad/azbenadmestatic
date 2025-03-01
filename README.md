@@ -11,12 +11,13 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires NodeJS 18+
+Requires NodeJS 22+
 
-```sh
-npm install
-npm run build
-```
+* Install [fnm](https://github.com/Schniz/fnm). Ensure the shell is set up to use it.
+* `fnm install`
+* `fnm use`
+* `npm ci`
+* `npm run build`
 
 The site will be under `_site`.
 
