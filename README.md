@@ -11,7 +11,7 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires NodeJS 22+
+Requires NodeJS 22+, or the version specified in `.node-version`.
 
 * Install [fnm](https://github.com/Schniz/fnm). Ensure the shell is set up to use it.
 * `fnm install`
