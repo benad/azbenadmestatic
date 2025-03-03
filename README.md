@@ -11,12 +11,18 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires NodeJS 18+
+Requires NodeJS 22+, or the version specified in `.node-version`.
 
-```sh
-npm install
-npm run build
-```
+To install the correct version of NodeJS with `fnm`:
+
+* Install [fnm](https://github.com/Schniz/fnm). Ensure the shell is set up to use it.
+* `fnm install`
+* `fnm use`
+
+Then to build:
+
+* `npm ci`
+* `npm run build`
 
 The site will be under `_site`.
 
