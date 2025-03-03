@@ -13,9 +13,14 @@ Author: Benoit Nadeau
 
 Requires NodeJS 22+, or the version specified in `.node-version`.
 
+To install the correct version of NodeJS with `fnm`:
+
 * Install [fnm](https://github.com/Schniz/fnm). Ensure the shell is set up to use it.
 * `fnm install`
 * `fnm use`
+
+Then to build:
+
 * `npm ci`
 * `npm run build`
 
