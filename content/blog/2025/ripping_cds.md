@@ -1,6 +1,6 @@
 ---toml
 title = "Ripping CDs Like It's 2000"
-date = "2025-04-12T16:00:00-05:00"
+date = "2025-04-12T16:00:00-04:00"
 ---
 
 ***TODO***
