@@ -9,7 +9,7 @@
         "prebuild": "npx xslt3 -xsl:src/page.xsl -s:src/page.xsl -export:_generated/page.sef.json -t"
     },
     "engines": {
-        "node": ">=14"
+        "node": ">=18"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
