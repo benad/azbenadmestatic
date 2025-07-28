@@ -9,18 +9,18 @@
         "prebuild": "npx xslt3 -xsl:src/page.xsl -s:src/page.xsl -export:_generated/page.sef.json -t"
     },
     "engines": {
-        "node": ">=14"
+        "node": ">=18"
     },
     "devDependencies": {
-        "@11ty/eleventy": "^3.0.0",
-        "@11ty/eleventy-navigation": "^0.3.5",
-        "@11ty/eleventy-plugin-bundle": "^1.0.5",
-        "@11ty/eleventy-plugin-rss": "^1.2.0",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+        "@11ty/eleventy": "^3.1.2",
+        "@11ty/eleventy-navigation": "^1.0.4",
+        "@11ty/eleventy-plugin-bundle": "^3.0.6",
+        "@11ty/eleventy-plugin-rss": "^2.0.4",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
         "@iarna/toml": "^2.2.5",
         "extract-zip": "^2.0.1",
-        "luxon": "^3.4.4",
-        "markdown-it-anchor": "^8.6.7",
+        "luxon": "^3.7.1",
+        "markdown-it-anchor": "^9.2.0",
         "saxon-js": "^2.7.0",
         "xslt3": "^2.7.0"
     }
