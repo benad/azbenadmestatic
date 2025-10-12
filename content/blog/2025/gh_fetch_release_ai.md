@@ -1,5 +1,5 @@
 ---toml
-date = "2025-01-19T13:15:00-05:00"
+date = "2025-10-13T14:00:00-04:00"
 title = "gh-fetch-release and AI"
 ---
 
