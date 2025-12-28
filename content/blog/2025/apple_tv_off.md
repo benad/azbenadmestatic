@@ -1,5 +1,5 @@
 ---toml
-date = "2025-12-28T16:00:00-04:00"
+date = "2025-12-28T14:15:00-05:00"
 title = "Turning Off my Apple TV"
 ---
 
