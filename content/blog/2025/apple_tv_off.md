@@ -1,6 +1,6 @@
 ---toml
 date = "2025-12-28T14:15:00-05:00"
-title = "Turning Off my Apple TV"
+title = "Turning Off My Apple TV"
 ---
 
 Early this year, I bought a Google TV Streamer, and since, I barely used my Apple TV anymore, so I reset and unplugged it.
