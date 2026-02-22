@@ -1,11 +1,11 @@
 ---toml
 date = "2026-02-22T1400:00-05:00"
-title = "Switching to the Steam Desk"
+title = "Switching to the Steam Deck"
 ---
 
 I'm not using my Nintendo Switch anymore. Most games I want to play are simply not available for it, and I can't see myself buying a Switch 2 for the few that are available on the new console. It's sad because I really like its form factor, and I still prefer video game consoles over PC gaming. After a long day of work on a PC, I don't have the energy or the time to "maintain" yet another computer to relax and play some games.
 
-So, I bought a Steam Deck.
+So, I bought a [Steam Deck](https://store.steampowered.com/steamdeck).
 
 I'd like to note that the first PC I bought was a "Steam Machine", as described in [my blog post from 10 years ago](/blog/2015/1/13/alpha-my-first-pc/). The situation was similar to this one: I want to play games from my backlog of PC games, but I want a "console-like" experience. This [Alienware Alpha](https://web.archive.org/web/20150113173020/http://www.alienware.com/landings/alpha/) machine was poor at both. It was an [XBMC](https://en.wikipedia.org/wiki/Kodi_(software)) frontend to Windows 8 using an Xbox 360 controller connected wirelessly using a dongle. There was an option to use [Steam OS](https://en.wikipedia.org/wiki/SteamOS), but it was still in its infancy, supporting only games that were rebuilt to its Linux environment.
 
