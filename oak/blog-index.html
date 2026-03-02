@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Blog - Benad's Web Site</title>
+		<meta name="description" content=""/>
+		<link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat.min.css"/>
+		<script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="//feeds.feedburner.com/benad">
+		<style>
+			header h1 {
+				text-align: center;
+				font-style: italic;
+			}
+			header h2 {
+				text-align: center;
+			}
+			/* Simple two-column layout: sidebar + main content */
+			.site-layout {
+				display: flex;
+				gap: var(--space-6);
+				flex-wrap: wrap;
+			}
+			.site-layout > nav {
+				order: 2;
+				flex: 0 0 auto;
+				min-width: 10em;
+			}
+			.site-layout > section {
+				order: 1;
+				flex: 1 1 0;
+				min-width: 60%;
+				padding-left: 140px;
+			}
+			.site-layout > section h3 {
+				float: left;
+				position: relative;
+				margin-left: -140px;
+				margin-top: -3px;
+				font-size: 18px;
+				line-height: 24px;
+				text-align: right;
+				width: 120px;
+			}
+			@media (max-width: 600px) {
+				.site-layout > nav,
+				.site-layout > section {
+					flex: 1 1 100%;
+					order: unset;
+				}
+				.site-layout > nav {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 0 1em;
+				}
+				.site-layout > nav p {
+					margin: 0;
+				}
+				.site-layout > section {
+					padding-left: 0;
+				}
+				.site-layout > section h3 {
+					margin-left: 0;
+					float: none;
+					display: block;
+					width: auto;
+					text-align: left;
+				}
+			}
+			footer {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<main style="max-width: 960px; margin: 0 auto; padding: var(--space-4);">
+			<header>
+				<h1>Benad's Web Site</h1>
+				<h2>Blog</h2>
+			</header>
+
+			<div class="site-layout">
+				<nav>
+					<p><a href="/index.html">Home</a></p>
+					<p><a href="/blog">Blog</a></p>
+					<p><a href="/me.html">About Me</a></p>
+					<p><a href="/meta.html">About This Site</a></p>
+					<p><a href="/articles.html">Articles</a></p>
+					<p><a href="/links.html">Links</a></p>
+				</nav>
+
+				<section>
+					<h3>2026</h3>
+					<p>February 22, 2026: <a href="/blog/2026/02/22/switching-to-the-steam-deck/">Switching to the Steam Deck</a></p>
+					<h3>2025</h3>
+					<p>December 28, 2025: <a href="/blog/2025/12/28/turning-off-my-apple-tv/">Turning Off My Apple TV</a></p>
+					<p>October 13, 2025: <a href="/blog/2025/10/13/gh-fetch-release-and-ai/">gh-fetch-release and AI</a></p>
+					<p>August 10, 2025: <a href="/blog/2025/08/10/git-bash-home-away-from-home/">Git BASH: Home away from home</a></p>
+					<p>April 13, 2025: <a href="/blog/2025/04/13/ripping-cds-like-its-2000/">Ripping CDs Like It&#39;s 2000</a></p>
+					<p>January 19, 2025: <a href="/blog/2025/01/19/cloud-gaming-returns/">Cloud Gaming Returns</a></p>
+					<h3>2024</h3>
+					<p>September 29, 2024: <a href="/blog/2024/09/29/change-directory-and-list/">Change Directory and List</a></p>
+					<p>July 28, 2024: <a href="/blog/2024/07/28/halo-part-5-343/">Halo, Part 5: 343</a></p>
+					<p>June 16, 2024: <a href="/blog/2024/06/16/halo-part-4-the-threes/">Halo, Part 4: The Threes</a></p>
+					<p>May 11, 2024: <a href="/blog/2024/05/11/halo-part-3-evolving-combat/">Halo, Part 3: Evolving Combat</a></p>
+					<p>April 11, 2024: <a href="/blog/2024/04/11/halo-part-2-reach/">Halo, Part 2: Reach</a></p>
+					<p>March 29, 2024: <a href="/blog/2024/03/29/halo-part-1-marathon/">Halo, Part 1: Marathon</a></p>
+					<p>February 19, 2024: <a href="/blog/2024/02/19/my-best-broken-bookmarks/">My Best Broken Bookmarks</a></p>
+					<h3>2023</h3>
+					<p>December 28, 2023: <a href="/blog/2023/12/28/doom-at-30-pushing-the-tech/">DOOM at 30: Pushing the Tech</a></p>
+					<p>September 6, 2023: <a href="/blog/2023/09/06/the-programmer-s-key/">The Programmer&#39;s Key</a></p>
+					<p>July 3, 2023: <a href="/blog/2023/07/03/teletext-or-the-ghost-between-the-frames/">Teletext, or The Ghost Between the Frames</a></p>
+					<p>June 11, 2023: <a href="/blog/2023/06/11/it-goes-to-11-from-hugo-to-11ty/">It Goes to 11: From Hugo to 11ty</a></p>
+					<p>March 4, 2023: <a href="/blog/2023/03/04/the-static-web-site-server/">The Static Web Site Server</a></p>
+					<p>January 22, 2023: <a href="/blog/2023/01/22/mastodon-and-the-fediverse/">Mastodon and the Fediverse</a></p>
+					<h3>2022</h3>
+					<p>September 7, 2022: <a href="/blog/2022/09/07/the-slow-hacker/">The Slow Hacker</a></p>
+					<p><a href="/blog/page/2/">Older posts</a> <a href="/blog/page/29/">Oldest posts</a></p>
+				</section>
+			</div>
+
+			<footer>
+				<hr/>
+				<p>Benad's Web Site by Benoit Nadeau is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a></p>
+				<p>Mastodon: <a rel="me" href="https://mstdn.ca/@benad">@benad@mstdn.ca</a></p>
+			</footer>
+		</main>
+	</body>
+</html>
