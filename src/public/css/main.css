@@ -34,7 +34,7 @@ header h2 {
 	float: left;
 	position: relative;
 	margin-left: -140px;
-	margin-top: -3px;
+	margin-top: 0.15em;
 	font-size: 18px;
 	line-height: 24px;
 	text-align: right;
