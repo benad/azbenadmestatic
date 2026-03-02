@@ -1,12 +1,12 @@
 {% include 'header.njk' %}
-                <div class="row">
-                <h1 class="title">Benad's Web Site</h1>
-                <h2 class="pageheader">{{ title }}</h2>
-        </div>
-        <div class="row">
+			<header>
+				<h1>Benad's Web Site</h1>
+				<h2>{{ title }}</h2>
+			</header>
+			<div class="site-layout">
 {% include 'sidebar.njk' %}
-            <div class="span8 offset2">
-                {{ content | safe }}
-            </div>
-        </div>
+				<section>
+				{{ content | safe }}
+				</section>
+			</div>
 {% include 'footer.njk' %}
