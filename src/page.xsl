@@ -8,8 +8,6 @@
     <xsl:output encoding="utf-8" indent="yes" method="html" omit-xml-declaration="yes"/>
     
     <xsl:template match="page:page">
-    	<xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html>
-</xsl:text>
     <html lang="en">
         <head>
             <meta charset="utf-8"/>
