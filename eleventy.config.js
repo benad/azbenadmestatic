@@ -2,7 +2,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const SaxonJS = require("saxon-js");
 const toml = require("@iarna/toml");
-const extract = require('extract-zip')
+const AdmZip = require('adm-zip');
 const fs = require('node:fs');
 
 const xslDir = '_generated';
@@ -93,7 +93,7 @@ module.exports = function (eleventyConfig) {
 			const dest = process.cwd() + '/' + dir.output;
 			if (!fs.existsSync(dest + '/twitter')) {
 				console.log('Unzipping %s to %s', twitterZip, dest);
-				return extract(twitterZip, { dir: dest });
+				new AdmZip(twitterZip).extractAllTo(dest, true);
 			}
 		}
 	});
