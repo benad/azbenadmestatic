@@ -9,14 +9,14 @@
         "prebuild": "npx xslt3 -xsl:src/page.xsl -s:src/page.xsl -export:_generated/page.sef.json -t"
     },
     "engines": {
-        "node": ">=18"
+        "node": ">=20.19"
     },
     "devDependencies": {
-        "@11ty/eleventy": "^3.1.2",
-        "@11ty/eleventy-navigation": "^1.0.4",
-        "@11ty/eleventy-plugin-bundle": "^3.0.6",
-        "@11ty/eleventy-plugin-rss": "^2.0.4",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+        "@11ty/eleventy": "^3.1.5",
+        "@11ty/eleventy-navigation": "^1.0.5",
+        "@11ty/eleventy-plugin-bundle": "^3.0.7",
+        "@11ty/eleventy-plugin-rss": "^3.0.0",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
         "@iarna/toml": "^2.2.5",
         "adm-zip": "^0.5.16",
         "luxon": "^3.7.1",
