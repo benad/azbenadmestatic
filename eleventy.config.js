@@ -1,4 +1,4 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { default: pluginRss } = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const SaxonJS = require("saxon-js");
 const toml = require("@iarna/toml");
