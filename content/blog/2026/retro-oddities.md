@@ -1,5 +1,5 @@
 ---toml
-date = "2026-05-19T1400:00-05:00"
+date = "2026-04-26T13:30:00-04:00"
 title = "Retro Oddities"
 ---
 
@@ -17,28 +17,10 @@ Hacking the 3DS is not too difficult if you [follow this guide](https://3ds.hack
 
 ### The Beatles Adventures in Pepperland
 
-***TODO***
+The international version of [Super Mario Bros. 2](https://en.wikipedia.org/wiki/Super_Mario_Bros._2) always felt oddly out of place in the Mario games, mostly due to its origins from the game [Doki Doki Panic](https://en.wikipedia.org/wiki/Super_Mario_Bros._2#Yume_K%C5%8Dj%C5%8D:_Doki_Doki_Panic). But what if Doki Doki Panic, instead of being "reskinned" as a Mario game, had been transformed into an adaptation of the [Yellow Submarine movie](https://en.wikipedia.org/wiki/Yellow_Submarine_(film))?
 
-https://en.wikipedia.org/wiki/Super_Mario_Bros._2
+The SMB2 Rom Hack [Adventures in Pepperland by Nesdraug and Shauing](https://nesdraug.tumblr.com/post/664655742277664768/the-beatles-adventures-in-pepperland-is-a-hack-for) works incredibly well thematically. It delightfully adapts the Yellow Submarine worlds, characters and music into their NES equivalent. You can watch [its announcement trailer](https://youtu.be/lqNzOm-v4i8) or a full [playthrough of the game](https://youtu.be/wK2WO6jQ92Y) if you don't want to go to the trouble of setting up the ROM patch and emulation yourself. You can find more information about it on [ROMHacking.net](https://www.romhacking.net/reviews/7908/).
 
-https://en.wikipedia.org/wiki/Super_Mario_Bros._2#Yume_K%C5%8Dj%C5%8D:_Doki_Doki_Panic
+### Quake 64 and Quake II on Nintendo 64
 
-https://www.romhacking.net/reviews/7908/
-
-https://nesdraug.tumblr.com/post/664655742277664768/the-beatles-adventures-in-pepperland-is-a-hack-for
-
-Announcement video: https://youtu.be/lqNzOm-v4i8
-
-Long play: https://youtu.be/wK2WO6jQ92Y
-
-### Quake 64 and Quake 2 on Nintendo 64
-
-***TODO***
-
-https://quake.fandom.com/wiki/Quake_(2021_Re-Release)
-
-https://quake.fandom.com/wiki/Quake_(Nintendo_64_version)
-
-https://quake.fandom.com/wiki/Quake_II_(Nintendo_64_version)
-
-https://quake.fandom.com/wiki/Quake_II_Remaster_gameplay_changes
+I recently realized that the only versions of [Quake](https://quake.fandom.com/wiki/Quake_(Nintendo_64_version)) and [Quake II](https://quake.fandom.com/wiki/Quake_II_(Nintendo_64_version)) that I played was for the Nintendo 64 which were heavily modified from their original PC versions. Both Quake were recently re-released on modern consoles and PC in their original PC versions. It was nice to see then that both re-releases also came bundled with their Nintendo 64 ports, named "[Quake 64](https://quake.fandom.com/wiki/Quake_(2021_Re-Release)#Quake_64)" for Quake and as "Quake II 64" for Quake II.
