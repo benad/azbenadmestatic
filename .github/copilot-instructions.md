@@ -4,8 +4,7 @@
 
 ```sh
 npm ci                # install dependencies
-npm run prebuild      # compile src/page.xsl → _generated/page.sef.json (required before first build or after XSL changes)
-npm run build         # full build → _site/
+npm run build         # full build → _site/ (also compiles src/page.xsl → _generated/page.sef.json automatically)
 npm run start         # build + local dev server with watch
 npm run debug         # build with Eleventy debug output
 ```
@@ -42,7 +41,7 @@ This is an [Eleventy (11ty)](https://www.11ty.dev/) static site with **two conte
 
 - **TOML front matter** for all blog posts — use `---toml` fences, not `---`
 - **Timezone**: always use `"America/New_York"`, never `"America/Montreal"` (displays as GMT-5 otherwise)
-- **XSL changes require `npm run prebuild`** to recompile the SEF JSON before the next build
+- **XSL changes**: `src/page.xsl` is automatically recompiled to SEF JSON on every `npm run build`
 - Blog posts are organized into per-year subdirectories: `content/blog/YYYY/`
 - Deployed to **Azure Static Web Apps** via GitHub Actions (`.github/workflows/`); pushes to `main` deploy to production, pushes to `dev` create preview environments
 - Node version is managed with `fnm`; run `fnm install && fnm use` if version doesn't match `.node-version`
