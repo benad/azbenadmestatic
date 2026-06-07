@@ -1,7 +1,7 @@
 {
     "name": "benadme-11ty-test",
     "scripts": {
-        "build": "npm run prebuild && npx @11ty/eleventy",
+        "build": "npx @11ty/eleventy",
         "start": "npx @11ty/eleventy --serve --quiet",
         "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
         "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",

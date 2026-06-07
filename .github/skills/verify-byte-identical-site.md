@@ -18,7 +18,7 @@ Use this skill when you need to prove a site change preserved the generated outp
 
 ## Rules
 
-- Use `npm run build`; it refreshes the XSL output first.
+- Use `npm run build`.
 - Keep `_generated/` and `_site/` out of git.
 - If the diff is not just expected timestamp noise, investigate the rendering change before shipping.
 
