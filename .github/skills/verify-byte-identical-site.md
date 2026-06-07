@@ -9,16 +9,16 @@ Use this skill when you need to prove a site change preserved the generated outp
 
 ## Workflow
 
-1. Run `npm ci`, `npm run prebuild`, and `npm run build`.
+1. Run `npm ci` and `npm run build`.
 2. Copy `_site/` to a snapshot outside the repo.
 3. Make the change.
-4. Re-run `npm run prebuild` if XSL changed, then `npm run build`.
+4. Re-run `npm run build` after the change.
 5. Diff the new `_site/` against the snapshot.
 6. Treat the RSS `<lastBuildDate>` change in `content/blogrss.njk` as expected build noise.
 
 ## Rules
 
-- Use the repo's documented build commands.
+- Use `npm run build`; it refreshes the XSL output first.
 - Keep `_generated/` and `_site/` out of git.
 - If the diff is not just expected timestamp noise, investigate the rendering change before shipping.
 
