@@ -15,7 +15,7 @@ var parseDate = function (dateObj, zone) {
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
-	
+
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
@@ -73,14 +73,14 @@ module.exports = function (eleventyConfig) {
 			}
 
 			const xslText = fs.readFileSync(xslpath, "utf-8");
-			
+
 			const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>", { contentType: "text/html" });
-			
+
 			// Expose DOM globals for xslt-processor
 			const originalDocument = global.document;
 			const originalDOMParser = global.DOMParser;
 			const originalXMLSerializer = global.XMLSerializer;
-			
+
 			global.document = dom.window.document;
 			global.DOMParser = dom.window.DOMParser;
 			global.XMLSerializer = dom.window.XMLSerializer;
@@ -97,9 +97,9 @@ module.exports = function (eleventyConfig) {
 				const fragment = processor.transformToFragment(xmlDoc, dom.window.document);
 				const tempDiv = dom.window.document.createElement("div");
 				tempDiv.appendChild(fragment);
-				
+
 				html = tempDiv.innerHTML;
-				
+
 				if (!html.startsWith("<!DOCTYPE")) {
 					html = "<!DOCTYPE html>\n" + html;
 				}
