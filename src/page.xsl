@@ -151,7 +151,11 @@
     
     <xsl:template match="html:*">
         <xsl:element name="{local-name()}">
-            <xsl:copy-of select="@*"/>
+            <xsl:for-each select="@*">
+                <xsl:attribute name="{name()}">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:for-each>
             <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>

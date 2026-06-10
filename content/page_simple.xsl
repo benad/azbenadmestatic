@@ -77,7 +77,11 @@
     
     <xsl:template match="html:*">
         <xsl:element name="{local-name()}" xmlns="http://www.w3.org/1999/xhtml">
-            <xsl:copy-of select="@*"/>
+            <xsl:for-each select="@*">
+                <xsl:attribute name="{name()}">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:for-each>
             <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>

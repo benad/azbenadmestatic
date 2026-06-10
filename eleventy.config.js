@@ -1,11 +1,11 @@
 const { default: pluginRss } = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
-const SaxonJS = require("saxon-js");
+const { XSLTProcessor } = require("@tradik/xslt-processor");
+const { JSDOM } = require("jsdom");
 const toml = require("@iarna/toml");
 const AdmZip = require('adm-zip');
 const fs = require('node:fs');
-
-const xslDir = '_generated';
+const path = require('node:path');
 const twitterZip = 'src/twitter.zip'
 
 var parseDate = function (dateObj, zone) {
@@ -66,15 +66,51 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addExtension("xml", {
 		compile: async function (inputContent) {
-			var xslpath = xslDir + "/" + inputContent.match(/<\?xml-stylesheet .*href="([^"]+)" *\?>/)[1];
-			xslpath = xslpath.replace(".xsl", ".sef.json");
-			let xmlout = SaxonJS.transform({
-				stylesheetFileName: xslpath,
-				sourceText: inputContent,
-				destination: "serialized"
-			}, "sync");
+			const xslFilename = inputContent.match(/<\?xml-stylesheet .*href="([^"]+)" *\?>/)[1];
+			let xslpath = path.join(process.cwd(), "src", xslFilename);
+			if (!fs.existsSync(xslpath)) {
+				xslpath = path.join(process.cwd(), "content", xslFilename);
+			}
+
+			const xslText = fs.readFileSync(xslpath, "utf-8");
+			
+			const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>", { contentType: "text/html" });
+			
+			// Expose DOM globals for xslt-processor
+			const originalDocument = global.document;
+			const originalDOMParser = global.DOMParser;
+			const originalXMLSerializer = global.XMLSerializer;
+			
+			global.document = dom.window.document;
+			global.DOMParser = dom.window.DOMParser;
+			global.XMLSerializer = dom.window.XMLSerializer;
+
+			let html;
+			try {
+				const parser = new dom.window.DOMParser();
+				const xslDoc = parser.parseFromString(xslText, "application/xml");
+				const xmlDoc = parser.parseFromString(inputContent, "application/xml");
+
+				const processor = new XSLTProcessor();
+				processor.importStylesheet(xslDoc);
+
+				const fragment = processor.transformToFragment(xmlDoc, dom.window.document);
+				const tempDiv = dom.window.document.createElement("div");
+				tempDiv.appendChild(fragment);
+				
+				html = tempDiv.innerHTML;
+				
+				if (!html.startsWith("<!DOCTYPE")) {
+					html = "<!DOCTYPE html>\n" + html;
+				}
+			} finally {
+				global.document = originalDocument;
+				global.DOMParser = originalDOMParser;
+				global.XMLSerializer = originalXMLSerializer;
+			}
+
 			return (data) => {
-				return xmlout.principalResult;
+				return html;
 			};
 		},
 		compileOptions: {
