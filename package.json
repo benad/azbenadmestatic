@@ -18,8 +18,8 @@
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
         "@iarna/toml": "^2.2.5",
         "@tradik/xslt-processor": "^1.0.3",
+        "@xmldom/xmldom": "^0.9.10",
         "adm-zip": "^0.5.16",
-        "jsdom": "^29.1.1",
         "luxon": "^3.7.1",
         "markdown-it-anchor": "^9.2.0"
     }
