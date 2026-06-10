@@ -70,7 +70,14 @@
         <xsl:when test="@href">
         <xsl:element name="a">
         <xsl:attribute name="href">
-        <xsl:value-of select="replace(@href, '^([^/]+)\.xml$', '$1.html')"/>
+        <xsl:choose>
+          <xsl:when test="not(contains(@href, '/')) and substring(@href, string-length(@href) - 3) = '.xml'">
+            <xsl:value-of select="concat(substring(@href, 1, string-length(@href) - 4), '.html')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@href"/>
+          </xsl:otherwise>
+        </xsl:choose>
         </xsl:attribute>
         <xsl:value-of select="@title"/>
         </xsl:element>
@@ -92,7 +99,16 @@
     
     <xsl:template match="page:a">
         <xsl:element name="a">
-        <xsl:attribute name="href"><xsl:value-of select="replace(@href, '^([^/]+)\.xml$', '$1.html')"/></xsl:attribute>
+        <xsl:attribute name="href">
+          <xsl:choose>
+            <xsl:when test="not(contains(@href, '/')) and substring(@href, string-length(@href) - 3) = '.xml'">
+              <xsl:value-of select="concat(substring(@href, 1, string-length(@href) - 4), '.html')"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="@href"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:attribute>
         <xsl:if test="@title">
         <xsl:attribute name="title"><xsl:value-of select="@title"/></xsl:attribute>
         </xsl:if>
