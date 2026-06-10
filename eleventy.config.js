@@ -13,7 +13,7 @@ var parseDate = function (dateObj, zone) {
 };
 
 // Custom HTML Serializer to serialize W3C XML DOM into browser-compatible HTML
-function serializeToHTML(node, isRoot = false) {
+function serializeToHTML(node, isRoot = false, isRawText = false) {
 	if (!node) return "";
 
 	switch (node.nodeType) {
@@ -36,10 +36,11 @@ function serializeToHTML(node, isRoot = false) {
 				return `<${tagName}${attrs}>`;
 			}
 
+			const childIsRawText = tagName === "script" || tagName === "style";
 			let children = "";
 			if (node.childNodes) {
 				for (let i = 0; i < node.childNodes.length; i++) {
-					children += serializeToHTML(node.childNodes[i], false);
+					children += serializeToHTML(node.childNodes[i], false, childIsRawText);
 				}
 			}
 
@@ -50,7 +51,10 @@ function serializeToHTML(node, isRoot = false) {
 			if (isRoot && /^\s*$/.test(node.nodeValue)) {
 				return "";
 			}
-			return escapeText(node.nodeValue);
+			return isRawText ? node.nodeValue : escapeText(node.nodeValue);
+
+		case 4: // CDATASection
+			return node.nodeValue;
 
 		case 8: // Comment
 			return `<!--${node.nodeValue}-->`;
@@ -60,7 +64,7 @@ function serializeToHTML(node, isRoot = false) {
 			let children = "";
 			if (node.childNodes) {
 				for (let i = 0; i < node.childNodes.length; i++) {
-					children += serializeToHTML(node.childNodes[i], true);
+					children += serializeToHTML(node.childNodes[i], true, isRawText);
 				}
 			}
 			return children;
@@ -168,11 +172,7 @@ module.exports = function (eleventyConfig) {
 				processor.importStylesheet(xslDoc);
 
 				const fragment = processor.transformToFragment(xmlDoc, doc);
-				html = serializeToHTML(fragment);
-
-				if (!html.startsWith("<!DOCTYPE")) {
-					html = "<!DOCTYPE html>\n" + html;
-				}
+				html = "<!DOCTYPE html>\n" + serializeToHTML(fragment);
 			} finally {
 				global.document = originalDocument;
 				global.DOMParser = originalDOMParser;
