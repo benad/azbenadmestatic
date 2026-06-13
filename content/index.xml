@@ -25,6 +25,9 @@
             hub for my various Internet activites and interests.</p>
         </section>
         <section title="Updates">
+            <subsection title="June 13, 2026">
+                <p>Added the article <a href="meta_simplifications.xml">Simplifications</a>, about the way I simplified the building and deployment of this web site.</p>
+            </subsection>
             <subsection title="February 12, 2022">
                 <p>Posts are regularly added to the <a href="/blog/">blog</a>, including a new series about modern CLI tools.</p>
             </subsection>

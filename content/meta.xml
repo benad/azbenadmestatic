@@ -37,6 +37,9 @@
             <subsection href="meta_blog.xml" title="The Static Blog">
                 <p>I also moved my blog to this site. This is why and how.</p>
             </subsection>
+            <subsection href="meta_simplifications.xml" title="Simplifications">
+                <p>Since 2023, I simplified the building and deployment of this web site.</p>
+            </subsection>
         </section>
     </body>
 
