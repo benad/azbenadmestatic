@@ -5,8 +5,7 @@
         "start": "npx @11ty/eleventy --serve --quiet",
         "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
         "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-        "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-        "prebuild": "npx xslt3 -xsl:src/page.xsl -s:src/page.xsl -export:_generated/page.sef.json -t"
+        "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
     },
     "engines": {
         "node": ">=20.19"
@@ -18,10 +17,10 @@
         "@11ty/eleventy-plugin-rss": "^3.0.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
         "@iarna/toml": "^2.2.5",
+        "@tradik/xslt-processor": "^1.0.3",
+        "@xmldom/xmldom": "^0.9.10",
         "adm-zip": "^0.5.16",
         "luxon": "^3.7.1",
-        "markdown-it-anchor": "^9.2.0",
-        "saxon-js": "^2.7.0",
-        "xslt3": "^2.7.0"
+        "markdown-it-anchor": "^9.2.0"
     }
 }

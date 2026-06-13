@@ -1,21 +1,99 @@
 const { default: pluginRss } = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
-const SaxonJS = require("saxon-js");
+const { XSLTProcessor } = require("@tradik/xslt-processor");
+const { DOMImplementation, DOMParser } = require("@xmldom/xmldom");
 const toml = require("@iarna/toml");
 const AdmZip = require('adm-zip');
 const fs = require('node:fs');
-
-const xslDir = '_generated';
+const path = require('node:path');
 const twitterZip = 'src/twitter.zip'
 
 var parseDate = function (dateObj, zone) {
 	return DateTime.fromJSDate(dateObj, { zone: zone || "America/New_York" });
 };
 
+// Custom HTML Serializer to serialize W3C XML DOM into browser-compatible HTML
+function serializeToHTML(node, isRoot = false, isRawText = false) {
+	if (!node) return "";
+
+	switch (node.nodeType) {
+		case 1: { // Element
+			const tagName = node.tagName.toLowerCase();
+			let attrs = "";
+			if (node.attributes) {
+				for (let i = 0; i < node.attributes.length; i++) {
+					const attr = node.attributes[i];
+					attrs += ` ${attr.name}="${escapeAttr(attr.value)}"`;
+				}
+			}
+
+			const voidElements = new Set([
+				"area", "base", "br", "col", "embed", "hr", "img", "input",
+				"link", "meta", "param", "source", "track", "wbr"
+			]);
+
+			if (voidElements.has(tagName)) {
+				return `<${tagName}${attrs}>`;
+			}
+
+			const childIsRawText = tagName === "script" || tagName === "style";
+			let children = "";
+			if (node.childNodes) {
+				for (let i = 0; i < node.childNodes.length; i++) {
+					children += serializeToHTML(node.childNodes[i], false, childIsRawText);
+				}
+			}
+
+			return `<${tagName}${attrs}>${children}</${tagName}>`;
+		}
+
+		case 3: // Text
+			if (isRoot && /^\s*$/.test(node.nodeValue)) {
+				return "";
+			}
+			return isRawText ? node.nodeValue : escapeText(node.nodeValue);
+
+		case 4: // CDATASection
+			return node.nodeValue;
+
+		case 8: // Comment
+			return `<!--${node.nodeValue}-->`;
+
+		case 9: // Document
+		case 11: { // DocumentFragment
+			let children = "";
+			if (node.childNodes) {
+				for (let i = 0; i < node.childNodes.length; i++) {
+					children += serializeToHTML(node.childNodes[i], true, isRawText);
+				}
+			}
+			return children;
+		}
+
+		default:
+			return "";
+	}
+}
+
+function escapeText(str) {
+	if (typeof str !== "string") return "";
+	return str
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
+}
+
+function escapeAttr(str) {
+	if (typeof str !== "string") return "";
+	return str
+		.replace(/&/g, "&amp;")
+		.replace(/"/g, "&quot;");
+}
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
-	
+
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
@@ -66,15 +144,42 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addExtension("xml", {
 		compile: async function (inputContent) {
-			var xslpath = xslDir + "/" + inputContent.match(/<\?xml-stylesheet .*href="([^"]+)" *\?>/)[1];
-			xslpath = xslpath.replace(".xsl", ".sef.json");
-			let xmlout = SaxonJS.transform({
-				stylesheetFileName: xslpath,
-				sourceText: inputContent,
-				destination: "serialized"
-			}, "sync");
+			const xslFilename = inputContent.match(/<\?xml-stylesheet .*href="([^"]+)" *\?>/)[1];
+			let xslpath = path.join(process.cwd(), "src", xslFilename);
+			if (!fs.existsSync(xslpath)) {
+				xslpath = path.join(process.cwd(), "content", xslFilename);
+			}
+
+			const xslText = fs.readFileSync(xslpath, "utf-8");
+
+			const impl = new DOMImplementation();
+			const doc = impl.createDocument(null, null, null);
+
+			// Expose DOM globals for xslt-processor
+			const originalDocument = global.document;
+			const originalDOMParser = global.DOMParser;
+
+			global.document = doc;
+			global.DOMParser = DOMParser;
+
+			let html;
+			try {
+				const parser = new DOMParser();
+				const xslDoc = parser.parseFromString(xslText, "application/xml");
+				const xmlDoc = parser.parseFromString(inputContent, "application/xml");
+
+				const processor = new XSLTProcessor();
+				processor.importStylesheet(xslDoc);
+
+				const fragment = processor.transformToFragment(xmlDoc, doc);
+				html = "<!DOCTYPE html>\n" + serializeToHTML(fragment);
+			} finally {
+				global.document = originalDocument;
+				global.DOMParser = originalDOMParser;
+			}
+
 			return (data) => {
-				return xmlout.principalResult;
+				return html;
 			};
 		},
 		compileOptions: {

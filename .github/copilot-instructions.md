@@ -4,12 +4,12 @@
 
 ```sh
 npm ci                # install dependencies
-npm run build         # full build → _site/ (also compiles src/page.xsl → _generated/page.sef.json automatically)
+npm run build         # full build → _site/
 npm run start         # build + local dev server with watch
 npm run debug         # build with Eleventy debug output
 ```
 
-`_generated/` and `_site/` are excluded from Git and must be generated locally.
+`_site/` is excluded from Git and must be generated locally.
 
 ## Architecture
 
@@ -23,10 +23,10 @@ This is an [Eleventy (11ty)](https://www.11ty.dev/) static site with **two conte
 - Collection name: `collections.post`
 - Permalink pattern for blog posts: `blog/YYYY/MM/DD/<slugified-title>/` (auto-generated, or set explicitly via `permalink` in front matter)
 
-### 2. XML + XSLT (Saxon-JS)
+### 2. XML + XSLT
 - Source: any `.xml` file under `content/` (e.g. `content/me.xml`, `content/articles.xml`, or an XML file inside `content/blog/`)
 - Each XML file declares `<?xml-stylesheet type="text/xsl" href="page.xsl"?>` referencing an XSL file
-- At build time, Eleventy's custom `xml` extension uses Saxon-JS to transform XML → HTML using the pre-compiled SEF file at `_generated/<name>.sef.json`
+- At build time, Eleventy's custom `xml` extension uses `@tradik/xslt-processor` and `@xmldom/xmldom` to transform XML → HTML at runtime using the referenced stylesheet
 - Output: `<slug>.html` (except `index.xml` → `index.html` which is the RSS feed)
 - Custom XML schema namespace: `http://benad.me/schema/page`
 - `content/page_simple.xsl` is an alternate XSL stylesheet for simpler pages
@@ -41,7 +41,7 @@ This is an [Eleventy (11ty)](https://www.11ty.dev/) static site with **two conte
 
 - **TOML front matter** for all blog posts — use `---toml` fences, not `---`
 - **Timezone**: always use `"America/New_York"`, never `"America/Montreal"` (displays as GMT-5 otherwise)
-- **XSL changes**: `src/page.xsl` is automatically recompiled to SEF JSON on every `npm run build`
+- **XSL changes**: `src/page.xsl` is loaded and applied at runtime on every `npm run build`
 - Blog posts are organized into per-year subdirectories: `content/blog/YYYY/`
 - Deployed to **Azure Static Web Apps** via GitHub Actions (`.github/workflows/`); pushes to `main` deploy to production, pushes to `dev` create preview environments
 - Node version is managed with `fnm`; run `fnm install && fnm use` if version doesn't match `.node-version`
