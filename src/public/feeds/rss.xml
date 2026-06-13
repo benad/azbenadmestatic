@@ -11,7 +11,7 @@
       <atom:link href="https://benad.me/feeds/rss.xml" rel="self" type="application/rss+xml" />
       <item>
          <title>June 13, 2026</title>
-         <description>&lt;p&gt;Added the article &lt;a href="https://benad.me/meta_simplifications.xml"&gt;Simplifications&lt;/a&gt;, about the way I simplified the building and deployment of this web site.&lt;/p&gt;</description>
+         <description>&lt;p&gt;Added the article &lt;a href="https://benad.me/meta_simplifications.html"&gt;Simplifications&lt;/a&gt;, about the way I simplified the building and deployment of this web site.&lt;/p&gt;</description>
          <pubDate>Sat, 13 Jun 2026 12:00:00 GMT</pubDate>
          <guid>http://benad.me/#item20260613</guid>
       </item>
