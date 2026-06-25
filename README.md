@@ -11,7 +11,7 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires NodeJS 22+, or the version specified in `.node-version`.
+Requires NodeJS 22.15+, or the version specified in `.node-version`.
 
 To install the correct version of NodeJS with `fnm`:
 
