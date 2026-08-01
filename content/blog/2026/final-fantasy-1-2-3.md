@@ -15,7 +15,7 @@ Recently, there was a sale that heavily discounted all Final Fantasy games on Xb
 
 I've just finished Final Fantasy V, but for this post I'll focus on the three games that were released on the Famicom.
 
-## Final Fantasy
+### Final Fantasy
 
 * Original Release:
     * Family Computer: 1987 (Japan)
