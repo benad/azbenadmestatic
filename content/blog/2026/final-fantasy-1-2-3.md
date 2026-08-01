@@ -1,5 +1,5 @@
 ---toml
-date = "2026-08-01T18:00:00-04:00"
+date = "2026-08-01T13:55:00-04:00"
 title = "Final Fantasy I, II and III"
 ---
 
@@ -40,13 +40,11 @@ This game is still too early in the series to "feel" like a "proper" Final Fanta
     * Xbox Series X/S: 2024
 * Time Played: 22 hours
 
-***TODO***
+This game defined what makes a Final Fantasy game. Each entry in the series is a brand new story, while keeping some common themes from the previous games. This entry introduces a character named Cid and the [Chocobo](https://en.wikipedia.org/wiki/Chocobo) animals. Your playable characters are part of the story, with their own backstories and unique characteristics.
 
-https://en.wikipedia.org/wiki/Final_Fantasy_II
+It is also the first game to introduce unique gameplay elements. When speaking with other characters, you can learn some special keywords that you can later mention to other characters to unlock new dialogue options. Some NPCs can accompany you, following you around like in [Dragon Quest](https://en.wikipedia.org/wiki/Dragon_Quest), though they don't yet participate in battles.
 
-*Proper* first FF game, with non-generic playable characters that have their own stories, Chocobo and Cid.
-
-Level up by actions rather than experience points. Example each weapon type, receiving damage, levels for each learned magic spell (Cure, Fire, etc.), and so on. It sucks. Same system used in [Final Fantasy Legend II](https://en.wikipedia.org/wiki/Final_Fantasy_Legend_II) on the GameBoy, and it sucked there too.
+The biggest change is that it forgoes the character-wide experience-point ("XP") system, where gaining enough XP eventually raises a character’s level, permanently improving some of their statistics. Instead, each stat must be increased on its own, and even each type of equipment and magic spell must be individually leveled up. The internal values that keep track of each stat's progression are hidden. Magic spells are the exception, as they have a clear progression bar that increases each time you use them. Even the way each stat is increased is inconsistent: maximum hit points ("HP") and shields can be leveled up by being hit, maximum magic points ("MP") by using any kind of magic, agility by intentionally running away from battles, and so on. Many game guides recommend repeating those actions, including having party members hit each other, on the trust that some hidden progression number increases and will eventually increase your characters' statistics. I hated that gameplay mechanic. It was also used in [Final Fantasy Legend II](https://en.wikipedia.org/wiki/Final_Fantasy_Legend_II) on the Game Boy, and it sucked there too. Luckily, that mechanic was never used again in the series, and some of the game rebalancing that was introduced in the various remakes of this game, including the Pixel Remaster, alleviates some of that unintuitive grind.
 
 ### Final Fantasy III
 
@@ -56,10 +54,8 @@ Level up by actions rather than experience points. Example each weapon type, rec
     * Xbox Series X/S: 2024
 * Time Played: 18 hours
 
-***TODO***
+This game introduces a job system that allows you to assign a job to each of your party's members and change it at will. Each job comes with its own unique abilities, and the job level impacts your stat progression when your character levels up. It has a strange mechanic where some jobs, beyond a certain job level, will have little to no impact on your character's stat progression when leveling up, forcing you to assign a different job to your character. While that might sound good "on paper", this mechanic is not well explained in-game, and if you're not careful, you could end up grinding levels with no change. Planning out job assignments and character progression [using large tables and spreadsheets](https://gamefaqs.gamespot.com/nes/563415-final-fantasy-iii/faqs/27853) wasn't fun, to say the least.
 
-https://en.wikipedia.org/wiki/Final_Fantasy_III
+It is also infamous for its lack of save points, especially near the end of the game. This isn't too much of a concern in Pixel Remaster, because it supports a "quick save" feature that lets you save at any location, but in the original Famicom game there is a section near the end of the game that lasts well over 5 hours without a save point, even in the best of conditions.
 
-Jobs. Active job and its job level impacts what permanent stats are increased where leveling up, so what jobs to use need to be carefully planned out. Some jobs limit or have no stats past some level, so you could be stuck.
-
-Only way to restore MP is sleep or the rare Elixir. Last dungeon is *very* long, with a single save point.
+I just found the game too difficult, and its other elements, like the story, art and music, were just not good enough to compensate. It is the most difficult RPG I've played, mostly due to poor design decisions. Unless you're compelled to finish every Final Fantasy game, you can skip this one.
