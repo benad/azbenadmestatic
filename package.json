@@ -11,7 +11,7 @@
         "node": ">=22.15"
     },
     "devDependencies": {
-        "@11ty/eleventy": "4.0.0-alpha.8",
+        "@11ty/eleventy": "4.0.0-alpha.10",
         "@11ty/eleventy-plugin-rss": "3.0.0",
         "@iarna/toml": "^2.2.5",
         "@tradik/xslt-processor": "^1.0.3",
