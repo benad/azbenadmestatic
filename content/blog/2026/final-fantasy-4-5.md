@@ -1,12 +1,9 @@
----toml
-date = "2026-08-15T14:00:00-04:00"
-title = "Final Fantasy IV and V"
+---
+date: "2026-08-15T14:00:00-04:00"
+title: "Final Fantasy IV and V"
 ---
 
-
-***TODO***
-
-Keeping FF VI for a future post, instead of collapsing all 3 for "Super Famicom" era. Also, games are getting longer.
+I initially wanted to write a single blog post for all the [Super Famicom](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System) era of Final Fantasy games, but I just finished FF V, and not only did I notice that the games are getting longer, but also that I want to reserve extra consideration for the seminal FF VI.
 
 ### Final Fantasy IV
 
@@ -17,13 +14,17 @@ Keeping FF VI for a future post, instead of collapsing all 3 for "Super Famicom"
     * Xbox Series X/S: 2024
 * Time Played: 25 hours
 
-SNES version based on Japanese "Easy Type" release, which makes the game easier. One of the easier FF games, with "standard" mechanics. The best recommendation for the first FF game to play for newcomers.
+Released as "Final Fantasy II" in North America by Nintendo, I consider [Final Fantasy IV](https://en.wikipedia.org/wiki/Final_Fantasy_IV) as the "point of reference" for the series. It has all the elements we come to expect from the franchise, has been deliberately made easier (compared to its original Japanese release), and in my opinion is the best first Final Fantasy game to play for newcomers.
 
-Unique character actions, which matches their personality and background. 4 main characters, but extra character can join in battle, and some characters may leave depending on story needs.
+The story-driven characters (in the style of FF II on the [Famicom](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System)) are back in this entry. Each character have their own unique battle actions that, while not equally useful, reinforce their personality. Apart from those, the gameplay has no unique gimmicks, making it substantially easier to learn for newcomers and form the base gameplay mechanics you can expect from RPG games in general. Unlike [FF III](https://en.wikipedia.org/wiki/Final_Fantasy_III), save points are plentiful, and items to restore your party's status between battles (at save points or elsewhere) are cheap.
 
-Items to restore party, used outside or at frequent save points, and cheap and plentiful, so even long dungeons offer chance to safely level up.
+The story feels more like a TV show, where each episode brings new interesting locales and story twists. While the story is somewhat thin, it remains interesting through the strength of its character development.
 
-Story feels like a TV show, with a lot of variety to keep the player engaged. (Unlike FF VII, doesn't rely on mini-games for engagement.)
+While the graphics and art of later Final Fantasy entries on the Super Famicom are better and technically more detailed, FF IV has timeless [pixel art](https://en.wikipedia.org/wiki/Pixel_art) charm. The music also stands out with incredibly memorable themes.
+
+Overall, if you had to pick your first retro Final Fantasy game to play, it would be this one. Then, if you have to play a second retro entry, play [FF VI](https://en.wikipedia.org/wiki/Final_Fantasy_VI).
+
+***TODO***
 
 ### Final Fantasy V
 
