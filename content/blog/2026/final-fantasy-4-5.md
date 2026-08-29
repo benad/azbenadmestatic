@@ -1,5 +1,5 @@
 ---
-date: "2026-08-15T14:00:00-04:00"
+date: "2026-08-29T11:00:00-04:00"
 title: "Final Fantasy IV and V"
 ---
 
@@ -24,8 +24,6 @@ While the graphics and art of later Final Fantasy entries on the Super Famicom a
 
 Overall, if you had to pick your first retro Final Fantasy game to play, it would be this one. Then, if you have to play a second retro entry, play [FF VI](https://en.wikipedia.org/wiki/Final_Fantasy_VI).
 
-***TODO***
-
 ### Final Fantasy V
 
 * Original Release:
@@ -34,8 +32,12 @@ Overall, if you had to pick your first retro Final Fantasy game to play, it woul
     * Xbox Series X/S: 2024
 * Time Played: 36 hours
 
-Jobs again. Unlike III, equipped job at level up has no direct impact on permanent stat increase (this will partly come back in FF VI with espers). Job abilities, active (actions in battle) or passive, are unlocked as jobs level up, but you don't know in advance without a guide. "Freelancer" job wasn't clear that all mastered passible jobs are active at once, which has a huge impact near the end of the game.
+This game has character jobs again, but with a few differences compared to [FF III](https://en.wikipedia.org/wiki/Final_Fantasy_III). The characters aren't generic anymore, even though they don't have unique abilities. Job levels are now orthogonal to the characters' own, so the active job when a character levels up has no impact on the character's permanent stat increases. This mechanic of "what is currently equipped impacts permanent stat increase on level up" will somewhat come back in [FF VI](https://en.wikipedia.org/wiki/Final_Fantasy_VI).
 
-Story is a mess. Last dungeon is a mess. Too many bosses are puzzle-like, and without a guide the game has so many "combinations" (weapons, status effects, jobs, etc.) that blindly experimenting is incredibly frustrating. Guides are absolutely necessary. Not as difficult as FF III, but compare to the simpler FF IV this is really difficult, and not in a fun way.
+Each job unlocks its own abilities when leveling, either active abilities (they show up as a command during battle) or passive (always active with the job). There are two ability slots that can be changed: The first is limited to the unlocked abilities of the active job, the second can be any unlocked ability of any other job. All the passive abilities of the current job remain in effect. This means that you might want to invest in unlocking abilities of a job so that they become available while another job is active. For example, you would unlock the "White Magic Level 2" active ability, and as the Knight job you could equip it to allow you to use some white magic.
 
-Music is some of the best, especially the ending sequence. It may be worth getting trough the trouble just for that alone.
+So, as evidenced here, you'll need a guide for this. Even if you fully understand the mechanics, the game doesn't show what abilities will be unlocked when the jobs level up, so you can't easily decide what jobs you should prefer. In addition, the "base" neutral job "Freelancer" is not well explained and has a huge impact near the end of the game: It can equip any ability, and all unlocked passive abilities are automatically active.
+
+The story and main characters aren't too interesting, and, as is often the case with Final Fantasy, the story becomes a total mess near the end of the game. Too many bosses introduce unique puzzle-like mechanics. Those bosses not only catch you off guard, regardless of the job and equipment optimization you prepared for the fight, but are also obtuse without a guide. Blindly experimenting with what could work on those bosses is a huge waste of time.
+
+This game may be worth finishing for the music alone. It has the best music in the series up to this point and greatly elevates an otherwise bland story. The music sequence at the end is among the best in video games. Otherwise, you can skip this game.
