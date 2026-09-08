@@ -22,7 +22,7 @@
                 <xsl:text>&#10;      </xsl:text>
                 <link rel="stylesheet" href="/css/oat.min.css"/>
                 <xsl:text>&#10;      </xsl:text>
-                <link rel="stylesheet" href="/css/main.css"/><script src="/js/oat.min.js" defer="defer"></script><link rel="me" href="https://micro.blog/benad"/>
+                <link rel="stylesheet" href="/css/main.css"/><script src="/js/oat.min.js" defer="defer"></script><link rel="author" href="/humans.txt"/>
                 <xsl:text>&#10;      </xsl:text>
                 <xsl:apply-templates select="page:head/page:meta/html:*"/>
                 <xsl:text>&#10;   </xsl:text>
