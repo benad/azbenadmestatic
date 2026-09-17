@@ -11,7 +11,24 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires NodeJS 22+, or the version specified in `.node-version`.
+Requires Deno 2.9+ (or NodeJS 22+, or the version specified in `.node-version`).
+
+### Using Deno (recommended)
+
+Install [Deno](https://deno.com/).
+
+To build:
+
+* `deno install` (or `deno ci` for a clean install)
+* `deno task build`
+
+To start the local development server:
+
+* `deno task start`
+
+The site will be under `_site`.
+
+### Using NodeJS
 
 To install the correct version of NodeJS with `fnm`:
 
