@@ -49,7 +49,7 @@ See `staticwebapp.config.json`.
 
 ### Dependency Management & Security Updates
 
-To maintain compatibility with NodeJS-only development, this project keeps both `package-lock.json` (for NodeJS) and `deno.lock` (for Deno). 
+To maintain compatibility with NodeJS-only development, this project keeps both `package-lock.json` (for NodeJS) and `deno.lock` (for Deno).
 
 To prevent these lockfiles from falling out of sync and causing different package versions to be installed depending on the developer's runtime, **all dependency updates and security audits should be driven by npm first.**
 
