@@ -4,14 +4,15 @@
     "name": "Deno",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   
-    "updateContentCommand": "curl -fsSL https://deno.land/install.sh | sh",
-    "postCreateCommand": "deno install",
+    "updateContentCommand": "curl -fsSL https://deno.land/install.sh | sh -s -- -y",
+    "postCreateCommand": "~/.deno/bin/deno install",
 
-    "containerEnv": {
+    "remoteEnv": {
         "PATH": "/home/vscode/.deno/bin:${containerEnv:PATH}"
     },
     
     // Configure tool-specific properties.
+  
     "customizations": {
         "vscode": {
             "extensions": [
