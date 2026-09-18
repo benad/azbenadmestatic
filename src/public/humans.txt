@@ -5,5 +5,5 @@
 /* SITE */
 
     HTML5, CSS3
-    jQuery, Modernizr
-    11ty
+    Oat -- https://oat.ink/
+    11ty -- https://www.11ty.dev/
