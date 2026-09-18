@@ -11,11 +11,13 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires Deno 2.9+ (or NodeJS 22+, or the version specified in `.node-version`).
+Requires Deno 2+ (or NodeJS 22+, or the version specified in `.node-version`).
 
 ### Using Deno (recommended)
 
-Install [Deno](https://deno.com/).
+Install [Deno](https://deno.com/). To install or switch to the recommended version:
+
+* `deno upgrade --version 2.2.3`
 
 To build:
 
