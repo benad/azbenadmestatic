@@ -1,12 +1,12 @@
-const { default: pluginRss } = require("@11ty/eleventy-plugin-rss");
-const { DateTime } = require("luxon");
-const { XSLTProcessor } = require("@tradik/xslt-processor");
-const { DOMImplementation, DOMParser } = require("@xmldom/xmldom");
-const toml = require("@iarna/toml");
-const AdmZip = require('adm-zip');
-const fs = require('node:fs');
-const path = require('node:path');
-const twitterZip = 'src/twitter.zip'
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import { DateTime } from "luxon";
+import { XSLTProcessor } from "@tradik/xslt-processor";
+import { DOMImplementation, DOMParser } from "@xmldom/xmldom";
+import toml from "@iarna/toml";
+import AdmZip from 'adm-zip';
+import fs from 'node:fs';
+import path from 'node:path';
+const twitterZip = 'src/twitter.zip';
 
 var parseDate = function (dateObj, zone) {
 	return DateTime.fromJSDate(dateObj, { zone: zone || "America/New_York" });
@@ -91,7 +91,7 @@ function escapeAttr(str) {
 }
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 
 	// Copy the contents of the `public` folder to the output folder

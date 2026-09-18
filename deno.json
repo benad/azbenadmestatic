@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "build": "deno run --allow-read --allow-write --allow-env --allow-sys node_modules/@11ty/eleventy/cmd.cjs",
+    "start": "deno run --allow-read --allow-write --allow-env --allow-sys --allow-net node_modules/@11ty/eleventy/cmd.cjs --serve --quiet"
+  }
+}

@@ -1,11 +1,11 @@
 {
     "name": "benadme-11ty-test",
     "scripts": {
-        "build": "npx @11ty/eleventy",
-        "start": "npx @11ty/eleventy --serve --quiet",
-        "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-        "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-        "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+        "build": "eleventy",
+        "start": "eleventy --serve --quiet",
+        "debug": "DEBUG=Eleventy* eleventy",
+        "debugstart": "DEBUG=Eleventy* eleventy --serve --quiet",
+        "benchmark": "DEBUG=Eleventy:Benchmark* eleventy"
     },
     "engines": {
         "node": ">=22.23"

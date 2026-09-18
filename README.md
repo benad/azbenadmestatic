@@ -11,7 +11,22 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires NodeJS 22.15+, or the version specified in `.node-version`.
+Requires Deno 2.9+ (or NodeJS 22.15+, or the version specified in `.node-version`).
+
+### Using Deno (recommended)
+
+Install [Deno](https://deno.com/).
+
+To build:
+
+* `deno install` (or `deno ci` for a clean install)
+* `deno task build`
+
+To start the local development server:
+
+* `deno task start`
+
+### Using NodeJS
 
 To install the correct version of NodeJS with `fnm`:
 
@@ -24,11 +39,27 @@ Then to build:
 * `npm ci`
 * `npm run build`
 
-The site will be under `_site`.
+### Output
+
+The generated site will be under `_site`.
 
 For the files `*.html` at the first level, it is expected for `X.xml` to redirect
 to `X.html`, excepted for `index.xml` (which is the RSS of the site).
 See `staticwebapp.config.json`.
+
+### Dependency Management & Security Updates
+
+To maintain compatibility with NodeJS-only development, this project keeps both `package-lock.json` (for NodeJS) and `deno.lock` (for Deno).
+
+To prevent these lockfiles from falling out of sync and causing different package versions to be installed depending on the developer's runtime, **all dependency updates and security audits should be driven by npm first.**
+
+When updating dependencies or fixing security vulnerabilities:
+1. Use npm to perform the update:
+   * `npm audit fix` (to fix vulnerabilities)
+   * `npm install <package>` (to add/update a package)
+2. Sync the changes to Deno by deleting its lockfile and letting it rebuild from the updated `package.json` and `package-lock.json`:
+   * `rm deno.lock`
+   * `deno install`
 
 ## Structure
 
