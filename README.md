@@ -11,7 +11,7 @@ Author: Benoit Nadeau
 
 ## HOWTO
 
-Requires Deno 2+ (or the version specified in `.deno-version`, or NodeJS 22+, or the version specified in `.node-version`).
+Requires Deno 2.9+ (or the version specified in `.deno-version`, or NodeJS 22+, or the version specified in `.node-version`).
 
 ### Using Deno (recommended)
 
