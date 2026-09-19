@@ -4,7 +4,8 @@
     "name": "Deno",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   
-    "updateContentCommand": "curl -fsSL https://deno.land/install.sh | sh -s -- -y",
+    // Pin installer script to denoland/deno_install v0.3.4 and Deno runtime to .deno-version
+    "updateContentCommand": "curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/1f1d6faeaf3a58b6709d34bbaf8af51ec56ff566/install.sh | sh -s -- -y v$(cat .deno-version)",
     "postCreateCommand": "~/.deno/bin/deno install",
 
     "remoteEnv": {
