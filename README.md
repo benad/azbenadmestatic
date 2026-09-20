@@ -19,14 +19,14 @@ Install [Deno](https://deno.com/). To install or switch to the recommended versi
 
 * `deno upgrade --version $(cat .deno-version)`
 
-To build:
+To build and verify:
 
-* `deno install` (or `deno ci` for a clean install)
-* `deno task build`
+* `deno task ci` (runs linter, type checks, and builds the site)
+* Or `deno task build` to only build the site
 
-To start the local development server:
+To run the local development server:
 
-* `deno task start`
+* `deno task start` (serves the site locally)
 
 ### Using NodeJS
 

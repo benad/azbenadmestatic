@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const twitterZip = 'src/twitter.zip';
 
-var parseDate = function (dateObj, zone) {
+const parseDate = function (dateObj, zone) {
 	return DateTime.fromJSDate(dateObj, { zone: zone || "America/New_York" });
 };
 
@@ -90,14 +90,16 @@ function escapeAttr(str) {
 		.replace(/"/g, "&quot;");
 }
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 
-	// Copy the contents of the `public` folder to the output folder
-	// For example, `./public/css/` ends up in `_site/css/`
-	eleventyConfig.addPassthroughCopy({
-		"./src/public/": "/"
+	// Copy the contents of the `public` folder to the root of the output folder
+	// Avoid copying "./src/public/" to "/" directly, as recursive-copy calls mkdir on
+	// the parent of the destination (path.dirname("_site") === "."), requiring write access to ".".
+	fs.readdirSync("./src/public").forEach((item) => {
+		eleventyConfig.addPassthroughCopy({
+			[`./src/public/${item}`]: item
+		});
 	});
 
 	// Watch content images for the image pipeline.
@@ -143,7 +145,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats("xml");
 
 	eleventyConfig.addExtension("xml", {
-		compile: async function (inputContent) {
+		compile: function (inputContent) {
 			const xslFilename = inputContent.match(/<\?xml-stylesheet .*href="([^"]+)" *\?>/)[1];
 			let xslpath = path.join(process.cwd(), "src", xslFilename);
 			if (!fs.existsSync(xslpath)) {
@@ -178,12 +180,12 @@ export default function (eleventyConfig) {
 				global.DOMParser = originalDOMParser;
 			}
 
-			return (data) => {
+			return (_data) => {
 				return html;
 			};
 		},
 		compileOptions: {
-			permalink: function (contents, inputPath) {
+			permalink: function (_contents, _inputPath) {
 				return (data) => {
 					if (data.page.filePathStem == '/index')
 						return 'index.html';
@@ -193,12 +195,21 @@ export default function (eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.on('eleventy.after', async ({ dir, results, runMode, outputMode }) => {
+	eleventyConfig.on('eleventy.after', ({ dir, _results, _runMode, outputMode }) => {
 		if (outputMode == 'fs') {
-			const dest = process.cwd() + '/' + dir.output;
-			if (!fs.existsSync(dest + '/twitter')) {
-				console.log('Unzipping %s to %s', twitterZip, dest);
-				new AdmZip(twitterZip).extractAllTo(dest, true);
+			const twitterDest = path.join(dir.output, 'twitter');
+			if (!fs.existsSync(twitterDest)) {
+				console.log('Unzipping %s to %s', twitterZip, dir.output);
+				const zip = new AdmZip(twitterZip);
+				for (const entry of zip.getEntries()) {
+					const entryPath = path.join(dir.output, entry.entryName);
+					if (entry.isDirectory) {
+						fs.mkdirSync(entryPath, { recursive: true });
+					} else {
+						fs.mkdirSync(path.dirname(entryPath), { recursive: true });
+						fs.writeFileSync(entryPath, entry.getData());
+					}
+				}
 			}
 		}
 	});
