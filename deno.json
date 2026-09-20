@@ -28,7 +28,7 @@
 
   "tasks": {
     "build": "deno run -P npm:@11ty/eleventy",
-    "start": "deno run -P --allow-read npm:@11ty/eleventy --serve --quiet --port=8080",
+    "start": "DENO_DIR=./.deno deno run -P npm:@11ty/eleventy --serve --quiet --port=8080",
     "lint": "deno lint",
     "fmt": "deno fmt",
     "check": "deno check eleventy.config.mjs",
