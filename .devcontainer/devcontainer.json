@@ -1,21 +1,26 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-    "name": "Node.js",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+    "name": "Deno",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   
-    // Features to add to the dev container. More info: https://containers.dev/features.
-    // "features": {},
-  
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [],
-  
-    // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "yarn install",
-    "postCreateCommand": "npm ci"
+    // Pin installer script to denoland/deno_install v0.3.4 and Deno runtime to .deno-version
+    "updateContentCommand": "curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/1f1d6faeaf3a58b6709d34bbaf8af51ec56ff566/install.sh | sh -s -- -y v$(cat .deno-version)",
+    "postCreateCommand": "~/.deno/bin/deno install",
+
+    "remoteEnv": {
+        "PATH": "/home/vscode/.deno/bin:${containerEnv:PATH}"
+    },
+    
     // Configure tool-specific properties.
-    // "customizations": {},
+  
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "denoland.vscode-deno"
+            ]
+        }
+    },
   
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"
