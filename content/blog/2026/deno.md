@@ -1,5 +1,5 @@
 ---
-date: "2026-09-27T19:00:00-04:00"
+date: "2026-09-27T20:00:00-04:00"
 title: "Securing 11ty with Deno"
 ---
 
@@ -11,4 +11,4 @@ But that still doesn't solve the issue that, when 11ty's builder runs in the [Gi
 
 I've recently looked into [Deno](https://deno.com/), an alternative to NodeJS, and it seems to be better aligned with my security concerns. When installing modules, it doesn't run any kind of installation script offered by the packages. When running a JavaScript module, it locks down by default any access to the host environment, including shell scripting, launching processes, environment variables, networks access, and so on.
 
-At first, I just tried to see if 11ty (both the current version 3 and the upcoming version 4), and it worked! A few adjustments were needed for my setup, but those remained backwards compatible with NodeJS, so I could still revert things. Once I made it work, I locked down its permissions to a bare minimum, adjusting my script until it works.
+At first, I just tried to see if 11ty (both the current version 3 and the upcoming version 4), and it worked! A few adjustments were needed for my setup, but those remained backwards compatible with NodeJS, so I could still revert things. Once I made it work, I locked down its permissions to a bare minimum, adjusting my script until it worked again with the reduced permissions.
