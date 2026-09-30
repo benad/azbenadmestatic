@@ -542,8 +542,8 @@
         "markdown-it"
       ]
     },
-    "markdown-it@14.2.0": {
-      "integrity": "sha512-1TGiQiJVRQ3NPmZH6sx5Cfnmg6GQm9jvC1ch4TK511NjSJvjzKLzn5pPfZRNZkRPZP0HqCioSndqH8v2nRaWVQ==",
+    "markdown-it@14.3.2": {
+      "integrity": "sha512-sHHjZ5fJKlgrG4qns2YwVcdNep35h5fERrfkD2YNsb9UFk0UIHarbiTaHKVMlPuWAoiilyK8Fv/jAm11slsY7Q==",
       "dependencies": [
         "argparse@2.0.1",
         "entities@4.5.0",
