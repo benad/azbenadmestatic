@@ -484,8 +484,8 @@
         "markdown-it"
       ]
     },
-    "markdown-it@14.3.2": {
-      "integrity": "sha512-sHHjZ5fJKlgrG4qns2YwVcdNep35h5fERrfkD2YNsb9UFk0UIHarbiTaHKVMlPuWAoiilyK8Fv/jAm11slsY7Q==",
+    "markdown-it@14.3.3": {
+      "integrity": "sha512-L//tDAkjTjJCU6pBUSBTgs3Kg4InVaZuUZog/b6V12UKhcDQ7S78877ibbCanRExwPuYP1CZD7Gd2dxSy1GXRg==",
       "dependencies": [
         "argparse",
         "entities@4.5.0",
