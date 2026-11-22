@@ -6,7 +6,17 @@ import toml from "@iarna/toml";
 import AdmZip from 'adm-zip';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from "node:url";
 const twitterZip = 'src/twitter.zip';
+
+async function readPackageAsset(specifier) {
+	if (typeof Deno !== "undefined") {
+		const module = await import(specifier, { with: { type: "text" } });
+		return module.default;
+	}
+
+	return fs.promises.readFile(fileURLToPath(import.meta.resolve(specifier)), "utf8");
+}
 
 const parseDate = function (dateObj, zone) {
 	return DateTime.fromJSDate(dateObj, { zone: zone || "America/New_York" });
@@ -100,6 +110,24 @@ export default function (eleventyConfig) {
 		eleventyConfig.addPassthroughCopy({
 			[`./src/public/${item}`]: item
 		});
+	});
+
+	eleventyConfig.on("eleventy.after", async ({ dir, outputMode }) => {
+		if (outputMode !== "fs") {
+			return;
+		}
+
+		const assets = [
+			["@knadh/oat/oat.min.css", "css/oat.min.css"],
+			["@knadh/oat/oat.min.js", "js/oat.min.js"],
+		];
+
+		await Promise.all(assets.map(async ([specifier, outputPath]) => {
+			const content = await readPackageAsset(specifier);
+			const destination = path.join(dir.output, outputPath);
+			await fs.promises.mkdir(path.dirname(destination), { recursive: true });
+			await fs.promises.writeFile(destination, content);
+		}));
 	});
 
 	// Watch content images for the image pipeline.
