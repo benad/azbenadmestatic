@@ -10,6 +10,7 @@
     "npm:@11ty/eleventy@^3.1.7": "3.1.7",
     "npm:@iarna/toml@*": "2.2.5",
     "npm:@iarna/toml@^2.2.5": "2.2.5",
+    "npm:@knadh/oat@1.1.0": "1.1.0",
     "npm:@tradik/xslt-processor@*": "1.0.3",
     "npm:@tradik/xslt-processor@^1.0.3": "1.0.3",
     "npm:@xmldom/xmldom@*": "0.9.12",
@@ -177,6 +178,9 @@
     },
     "@iarna/toml@2.2.5": {
       "integrity": "sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg=="
+    },
+    "@knadh/oat@1.1.0": {
+      "integrity": "sha512-6nYrV+a5qiLmcyUeQmvbs6xNECaqRI37x9Ds9K8SN5jgKvJxFL+AlZQDHLELtdtp1wD1pUul29XNv8GI69gzUw=="
     },
     "@sindresorhus/slugify@2.2.1": {
       "integrity": "sha512-MkngSCRZ8JdSOCHRaYd+D01XhvU3Hjy6MGl06zhOk614hp9EOAp5gIkBeQg7wtmxpitU6eAL4kdiRMcJa2dlrw==",
@@ -700,6 +704,7 @@
         "npm:@11ty/eleventy-plugin-syntaxhighlight@^5.0.2",
         "npm:@11ty/eleventy@^3.1.7",
         "npm:@iarna/toml@^2.2.5",
+        "npm:@knadh/oat@1.1.0",
         "npm:@tradik/xslt-processor@^1.0.3",
         "npm:@xmldom/xmldom@~0.9.12",
         "npm:adm-zip@0.6",
