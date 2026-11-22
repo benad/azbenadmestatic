@@ -17,6 +17,7 @@
         "@11ty/eleventy-plugin-rss": "^3.0.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
         "@iarna/toml": "^2.2.5",
+        "@knadh/oat": "1.1.0",
         "@tradik/xslt-processor": "^1.0.3",
         "@xmldom/xmldom": "^0.9.12",
         "adm-zip": "^0.6.0",
