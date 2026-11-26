@@ -17,7 +17,7 @@ It is true that some level of privacy and "working around government-imposed fir
 
 I used to be a fan of PGP. While it can encrypt or sign any file, I liked how it could be "ASCII armored" into plain text, making it easy to transport over email. With its open specifications (***TODO*** RFC), named OpenPGP, and its primary open-source implementation, GnuPG, it became a sort of de-facto standard for file and message signature and encryption.
 
-The problem is, it kind of sucks. Its whole system of key exchange and trust levels is just far too complex for most people, myself included. The tools, even more recent GUI ones (***TODO*** examples, like Kleopatra? and Mac one), still end up being too complex to use. Even the simplest of use cases, encrypting a file with a password, is somehow difficult.
+The problem is, it kind of sucks. Its whole system of key exchange and trust levels is just far too complex for most people, myself included. The tools, even more recent GUI ones (***TODO*** example: https://apps.kde.org/kleopatra/ ), still end up being too complex to use. Even the simplest of use cases, encrypting a file with a password, is somehow difficult.
 
 The truth is that if the security thing is not dead easy, people don't bother. Even if OpenPGP was available for email for decades now, everybody still sends plain text emails. Security is seen as a transport thing, not a client-side thing.
 
@@ -37,12 +37,19 @@ TODO note: S/MIME was supported in Netscape Communicator 4. It was the flagship 
 
 ***TODO*** Really simple, compared to the bloated OpenPGP and S/MIME. Look at the number of implementations of JWT and JWS and JWK. Not all stacks are full or equivalent, but it just shows that it's "dumb-proof" enough to be implemented anywhere, without decades of legacy stuff to support. It's more "pick and choose", but the specs are really clear.
 
+* JWT (https://datatracker.ietf.org/doc/rfc7519/ ): JSON Web Token
+* JWS (https://datatracker.ietf.org/doc/rfc7515/ ): Integrity protection via digital signatures	
+* JWE (https://datatracker.ietf.org/doc/rfc7516/ ): Confidentiality via encryption	
+* JWK (https://datatracker.ietf.org/doc/rfc7517/ ): JSON representation of cryptographic keys	
+* JWA (https://datatracker.ietf.org/doc/rfc7518/ ): Algorithms for JWS/JWE
+
 ## COSE
 
 ***TODO*** Was a fan of CBOR before finding COSE even existed. Self-describing like JSON or XML, has a bit of XML-like extensibility (through tags), doesn't require a schema like Protobuf. Not just "binary JSON" like MessagePack. Doesn't support "out of the box" every known structure like YAML. Specs is small and "dumb-proof", to the point that most software doesn't have the need to use a common "CBOR library" and just implement what's needed from scratch. Comparison between "the spec is too small and ambiguous" (JSON minefield), "the spec is too bloated" (XML, or worse, YAML).
 
-***TODO*** CBOR applied to JOSE, and more flexibility, equals COSE. Far fewer library implementations than JOSE, but is increasingly popular, and again simple enough that most software just implement from scratch. Which is quite a feat compared to the monstrous ASN.1 X.509 stack, or the custom binary format of OpenPGP.
+https://datatracker.ietf.org/doc/rfc9052/
 
+***TODO*** CBOR applied to JOSE, and more flexibility, equals COSE. Far fewer library implementations than JOSE, but is increasingly popular, and again simple enough that most software just implement from scratch. Which is quite a feat compared to the monstrous ASN.1 X.509 stack, or the custom binary format of OpenPGP.
 
 ## TODO OLDER
 
