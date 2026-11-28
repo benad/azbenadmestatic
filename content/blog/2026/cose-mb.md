@@ -17,7 +17,7 @@ It is true that some level of privacy and "working around government-imposed fir
 
 I used to be a fan of PGP. While it can encrypt or sign any file, I liked how it could be "ASCII armored" into plain text, making it easy to transport over email. With its open specifications (***TODO*** RFC), named OpenPGP, and its primary open-source implementation, GnuPG, it became a sort of de-facto standard for file and message signature and encryption.
 
-The problem is, it kind of sucks. Its whole system of key exchange and trust levels is just far too complex for most people, myself included. The tools, even more recent GUI ones (***TODO*** example: https://apps.kde.org/kleopatra/ ), still end up being too complex to use. Even the simplest of use cases, encrypting a file with a password, is somehow difficult.
+The problem is, it kind of sucks. Its whole system of key exchange and trust levels is just far too complex for most people, myself included. The tools, even more recent GUI ones (***TODO*** examples, like Kleopatra? and Mac one), still end up being too complex to use. Even the simplest of use cases, encrypting a file with a password, is somehow difficult.
 
 The truth is that if the security thing is not dead easy, people don't bother. Even if OpenPGP was available for email for decades now, everybody still sends plain text emails. Security is seen as a transport thing, not a client-side thing.
 
@@ -50,6 +50,52 @@ TODO note: S/MIME was supported in Netscape Communicator 4. It was the flagship 
 https://datatracker.ietf.org/doc/rfc9052/
 
 ***TODO*** CBOR applied to JOSE, and more flexibility, equals COSE. Far fewer library implementations than JOSE, but is increasingly popular, and again simple enough that most software just implement from scratch. Which is quite a feat compared to the monstrous ASN.1 X.509 stack, or the custom binary format of OpenPGP.
+
+## COSE-MB Idea
+
+***TODO***
+
+## Examples
+
+Public key:
+
+```
+C1;S=k1;;ogBYS6QBAiABIVggsKUDQ8eKZnAnwgERnO2B1-ehHjmzlQntgcE9h0B4Ea0iWCBAW_372-wVGoDbzWSvTKwCmhCIR6Ri_BRIrgwe-2hfHQEB
+```
+
+Message:
+
+```
+Hello, world!
+```
+
+Encrypted to self, Blusky 300-chars limit:
+
+Fragment 1:
+
+```
+C1;P=1/02;I=4ad50853;;ogBY4NhghEOhAQOhBUyLgSGhOD3nJ4KfT0hYdK8deeq0hVqG1fq4RKmWrHj1wsocv4vNUwUkTsyuFwDpasuRkt3Z75jtYPMKZEHmaPmSnp5OzZOQ-ZjFyjMX7Rv80oARZPT9RWQS48Ywx8igFQUaDZKwHR_i-jDwsKv-dknomIBIT7-9-LJvUSUG-E3WN8RkgYNAogE4GCCkAQIgASFYIGflpLHPO8gAvzGKCtlwaOmDLTCw9qU4AvHXvO54NUMiIlggLtUYe5QXOP3CcS-bXH
+```
+
+Fragment 2:
+
+```
+C1;P=2;I=4ad50853;;eT8MKdzfI5l59tuzEFBo76v6xAAQI
+```
+
+Overhead is P-256 ephemeral key, nonce, COSE structure, timestamp.
+
+[Base85](https://rfc.zeromq.org/spec/32/):
+
+```
+C1;E=1;;Q5XrN/Kfw1P-Cm?1X:OsuMb(aYB(E}I-aWVx!>I!6-M^u[]P%Tp9foia3L7/h5!}$<4I5S/L]d:n$54]!@pyn0h?cAN&4fFvBz@FYH5S+wfs(iD{i:}w<03iP.d68Rds%.dRaJ4iFVzJ[:M[b-s!J!Xry4{V@:gv9KS46r]]O[kZRdS2S/lKFRcjZ0xp]sQYyJt0u>L/M0goECy=XeaMmRu0Si=Gysxt@/c&zI&X6u*mO.rhb3k%zA-%Db2t=zcawwq}(([(Z99<h85J!B&OaiHD{RmIe0rJl3
+```
+
+[Base2048](https://github.com/qntm/base2048), seems to work well with Twitter and Bluesky:
+
+```
+C1;E=2;;ਝUњଛħʨࠌʝਕϘϮྌ௰໔шළฐಀಬଜԱςκຯଶࠑӨƵƵಣܨƷܤRӻൎԵوϣශࡧøՍॺڄϿၒʩཨψलඅॐઍဂԛஞऋՊoඍॾҟȥકಝȢ๐ѬଽÞܦԚථθبBFಪဿٺqওݓಠദя੦Գ൯ǷಐਇΓ୮ݧૠࢰߗҬѵଜஹސඥƓകӈȶƓࠀߘP8Ԋଗf২Тƾဃธ೫ֆܯවȜચܨݭਚ෫ߏഉଆѰצƏλശΝƺχڧݟܙ௭ڦΦݙƸܣȥƮਉཫগरɽυ౸ӈԗܐजਇe2
+```
 
 ## TODO OLDER
 
